@@ -1,0 +1,93 @@
+<?php
+namespace Modules\Person\Controller;
+use Common\Controller\ModuleController;
+use Think\Controller;
+use Think\Page;
+
+/**我的产品页面
+ * Class ProductionController
+ * @package Modules\Person\Controller
+ */
+class ProductionController extends ModuleController {
+    public function  index(){
+        MK();
+        $map  = array('status' => array('gt',-1),'uid'=>UID);
+        $list = $this->p_lists('Production',$map,'update_time');
+        int_to_string($list);
+        $list = list_sort_by($list,'status');
+        $this->assign('list', $list);
+        $this->meta_title = '产品列表';
+        $this->_display();
+    }
+
+    /**
+     * 删除数据
+     */
+    public function  del(){
+        parent::editRow('Production',array('status'=>-1),array('uid'=>UID));
+    }
+
+    /**
+     * 禁用数据
+     */
+    public function  forbid(){
+        parent::editRow('Production',array('status'=>0),array('uid'=>UID));
+    }
+
+    /**
+     * 恢复数据
+     */
+    public function  resume(){
+        parent::editRow('Production',array('status'=>1),array('uid'=>UID));
+    }
+
+
+    /**
+     * 添加或者修改
+     */
+    public function  add(){
+        if(IS_POST){
+            $_POST['uid']=UID;//用户id
+            parent::add('production');
+        }else{
+            parent::add('production',"添加产品");
+        }
+    }
+
+    public function edit(){
+        if(IS_POST){
+            $id = I('post.id');
+            $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->count();
+            if($data){
+                parent::edit('Production',$id);
+            }else{
+                $this->error('编辑数据非法!');
+            }
+        }else{
+            $id = I('get.id');
+            $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->find();
+            if($data){
+                parent::edit('Production',$id,$data['name'].'[修改]');
+            }else{
+                $this->error("编辑数据非法!");
+            }
+        }
+    }
+
+    /**
+     * 查看产品相关评论
+     */
+    public function comment(){
+        $id = I('get.id');
+        $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->field('name')->find();
+        if($data){
+            $this->assign('meta_title',$data['name'].'的相关评论');
+            $map  = array('topic_table'=>'production','topic_id'=>$id);
+            $list = $this->p_lists('Comment',$map,'update_time');
+            $this->assign('list',$list);
+            $this->_display();
+        }else{
+            $this->error('未找到相关产品！');
+        }
+    }
+}

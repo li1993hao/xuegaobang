@@ -1,0 +1,21 @@
+<c:prev cur="info"/>
+<c:next cur="info"/>
+<hr/>
+<div class="blog_footer clearfix">
+    <div class="blog_prev">
+        上一篇:
+        <notempty name="prev">
+            <a href="{$prev.url}" data-color="{$prev.list_color}">{$prev.title|msubstr=0,20,true}</a>
+            <else/>
+            没有了!
+        </notempty>
+    </div>
+    <div class="blog_next">
+        下一篇:
+        <notempty name="next">
+            <a href="{$next.url}" data-color="{$next.list_color}">{$next.title|msubstr=0,20,true}</a>
+            <else/>
+            没有了!
+        </notempty>
+    </div>
+</div>

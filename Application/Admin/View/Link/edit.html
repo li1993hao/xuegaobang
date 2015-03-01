@@ -1,0 +1,158 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    {:isset($info['id'])?'编辑':'新增'}链接
+</block>
+<block name="content">
+        <div class="form-group">
+            <label>名称<span class="check-tips"></span></label>
+            <div>
+                <input type="text" class="text input-large" id="name" name="name" value="{$info.name|default=''}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>排序<span class="check-tips">（用于分组显示的顺序）</span></label>
+            <div >
+                <input type="text" class="text input-small" id="sort" name="sort" value="{$info.sort|default=0}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div id="upload-img-box">
+                <if condition="$info['path']">
+                    <img class="block_img" src="{$info['path']}" height="70px" width="150px"/>
+                </if>
+            </div>
+            <input type="file" id="upload_file">
+            <input type="hidden" name="picture_id" id="file" value="{$info['id']|default=0}"/>
+            </if>
+
+        </div>
+
+        <div class="form-group">
+            <label>链接<span class="check-tips">（U函数解析的URL或者外链,不对链接的合法性做检测,请准确填写,外链一定要是http://开头）</span></label>
+            <div>
+                <input type="text" id="url" class="text input-large" name="url" value="{$info.url|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>分组<span class="check-tips"></span></label>
+            <div >
+                <select name="group" id="group">
+                    <volist name="groups" id="vo">
+                        <option value="{$key}">{$vo}</option>
+                    </volist>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="id" id="info_id" value="{$info.id|default=''}">
+            <a class="btn btn-primary btn-sm " onclick="add()">确 定</a>
+            <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+</block>
+<block name="js">
+    <script type="text/javascript" src="__VENDOR__/uploadify/jquery.uploadify.min.js?ver={:time()}"></script>
+    <script type="text/javascript">
+        Think.setValue("group", "{$info.group|default = 't-1'}");
+        //上传文件
+        /* 初始化上传插件 */
+        $("#upload_file").uploadify({
+            "width": 120,
+            "height": 30,
+            "swf": "__VENDOR__/uploadify/uploadify.swf",
+            "fileObjName": "download",
+            "buttonText": "上传图片",
+            "uploader": "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+            'removeTimeout': 1,
+            'fileTypeExts': '*.png;*.jpg;*.bmp;*.gif;',
+            "onUploadSuccess": uploadFile,
+            'onFallback': function () {
+                alert('未检测到兼容版本的Flash.');
+            }
+        });
+
+        checkGroupType();
+        $("#group").change(function () {
+            checkGroupType();
+        });
+
+
+        function uploadFile(file, data) {
+            var json = $.parseJSON(data);
+            if (json.status) {
+                setTimeout(function () {
+                    $("#upload-img-box").empty().html(
+                            '<img class="block_img" src="'+Think.ROOT+json.path+'" height="70px" width="150px"/>'
+                    );
+                }, 1500);
+                $("#file").val(json.id);
+            } else {
+                errorAlert(json.msg);
+            }
+        }
+
+        function checkGroupType() {
+            var group = $("#group").val().split("-");
+            var group_type = group[0];
+            if (group_type == 't') {
+                $("#upload_file").hide();
+                $("#upload-img-box").hide();
+            } else {
+                $("#upload_file").show();
+                $("#upload-img-box").show();
+            }
+        }
+
+
+        function add() {
+            var name = $("#name").val();
+            var des = $("#url").val();
+            var file = $("#file").val();
+            var info_id = $('#info_id').val();
+            var group = $("#group").val().split("-");
+            var group_id = group[1];
+            var group_type = group[0];
+
+
+            if (name == "") {
+                errorAlert("名称不能为空!");
+                $("#name").focus();
+                return;
+            }
+            if (des == "") {
+                errorAlert("url不能为空!");
+                $("#url").focus();
+                return;
+            }
+
+
+            var data = {};
+            data.name = name;
+            data.url = des;
+            data.group= $("#group").val();
+            if(info_id!==''){
+                data.id = info_id;
+            }
+            if (group_type == 'p' && file==0) {
+                errorAlert("您必须上传一张图片!");
+                return;
+            }
+
+            if(group_type != 1){
+                data.picture_id=file;
+            }
+            $.post("{:U('')}",data,function(datas){
+                if(datas.status){
+                    okAlert(datas.msg);
+                    setTimeout(function(){
+                        location.reload();
+
+                    },1500);
+                }else{
+                    errorAlert(datas.msg);
+                }
+
+            },'json');
+        }
+    </script>
+</block>

@@ -1,0 +1,59 @@
+﻿<extend name="public/base"/>
+<block name="content">
+<!--=== Content Part ===-->
+<div class="container">
+<div class="row magazine-page" style="margin-top: 10px">
+    <!--Magazine Slider-->
+    <div class="col-md-7 carousel-wapper">
+        <div class="carousel  slide carousel-v1 margin-bottom-20" id="myCarousel-1">
+            <div class="carousel-inner">
+                <volist name=":position(3)" id="vo">
+                    <div class="item <eq name='i' value='1'>active</eq>">
+                        <present name="vo.cover_path">
+                            <a href="{$vo.url}"><img style="height: 215px;width:100%" alt="{$vo.title}" src="{$vo.cover_path}"></a>
+                            <else/>
+                            <a href="{$vo.url}"> <img style="height: 215px;width:100%" alt="{$vo.title}" src="__DEFAULT__"/></a>
+                        </present>
+                        <div class="carousel-caption">
+                            <p><a href="{$vo.url}" style="color: #ffffff">{$vo.title}</a></p>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+            <div class="carousel-arrow">
+                <a data-slide="prev" href="#myCarousel-1" class="left carousel-control">
+                    <i class="icon-angle-left"></i>
+                </a>
+                <a data-slide="next" href="#myCarousel-1" class="right carousel-control">
+                    <i class="icon-angle-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-5">
+        <div class="tab-v1">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#messages"  data-toggle="tab">文章排行</a></li>
+            </ul>
+            <div class="tab-content">
+                </div>
+                <div class="tab-pane active" id="messages">
+                    <ul class="list-unstyled">
+                        <c:hot name="info" >
+                            <li><a href="{$info['url']}" data-color="{$info.list_color}"> {$info['title']|msubstr=0,20}</a>
+                                <div class="pull-right">{$info.create_time|date='Y-m-d',###}</div>
+                            </li>
+                        </c:hot>
+                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div><!--/container-->
+<!-- End Content Part -->
+</block>
+
+

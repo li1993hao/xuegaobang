@@ -1,0 +1,23 @@
+---
+产品管理:
+  - title: 产品管理
+    url: index/index
+    children:
+      - title: dd
+        url: index/aa
+  - title: 产品审核
+    url: index/verify
+论坛管理:
+  - title: 帖子管理
+    url: tieBa/index
+用户管理:
+  - title: 用户管理
+    url: user/index
+  - title: 用户审核
+    url: user/verify
+
+
+
+
+
+

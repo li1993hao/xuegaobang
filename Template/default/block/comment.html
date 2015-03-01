@@ -1,0 +1,28 @@
+    <div class="media" id="comment_body">
+        <h3>评论</h3><span style="font-size: 12px;color: #909090">{$comment_tip}</span>
+        <hr/>
+        <div class="media-body" >
+            <notempty name="comment_list">
+                <volist name="comment_list" id="comment">
+                    <h5 class="media-heading"></h5>
+                    <p class="comment_content">{$comment.content}</p>
+                    <div class="comment_footer">
+                        <span title="评论时间:{$comment.create_time|date='Y-m-d H:i',###}">{$comment.create_time_text}</span> by {$comment.uid_text}<a class="comment_reply" data-reply="{$comment['id']|url_encode}"  data-user="{$comment.uid_text}" onclick="commentReply(this)" href="javascript:;">回复</a></div>
+                    <hr>
+                </volist>
+            <else/>
+                <h3 style="color:#000000" class="text-center">暂无评论！</h3>
+            </notempty>
+        </div>
+    </div>
+    <div class="post-comment">
+        <h3>发布评论</h3>
+        <hr/>
+            <div class="row margin-bottom-20">
+                <div class="col-md-11 col-md-offset-0">
+                    <textarea  class="form-control" id="comment_content" rows="8"></textarea>
+                </div>
+            </div>
+            <p><button class="btn-u"  onclick="comment(this)" id="comment_btn">提交</button></p>
+    </div>
+    {$comment_page}

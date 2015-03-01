@@ -1,0 +1,35 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    {$meta_title}
+</block>
+<block name="content">
+    <notempty name="list">
+        <div class="dialogs">
+            <voilist name="list" id="vo">
+                <div class="itemdiv dialogdiv">
+                    <div class="user">
+                        <img alt="{:get_user_filed($vo['uid'],'nickname')}"
+                             src="{$vo.uid|get_user_image}"/>
+                    </div>
+                    <div class="body">
+                        <div class="time">
+                            <i class="icon-time"></i>
+                            <span class="green">{:formatTime($vo['create_time'])}</span>
+                        </div>
+                        <div class="name">
+                            <a href="#">{:get_user_filed($vo['uid'],'nickname')}</a>
+                        </div>
+                        <div class="text">{$vo.content}</div>
+                    </div>
+                </div>
+            </voilist>
+        </div>
+        <else/>
+        <h1 class="text-center">暂无评论!</h1>
+    </notempty>
+    <!-- 分页 -->
+    <div class="page">
+        {$_page}
+    </div>
+    </div>
+</block>

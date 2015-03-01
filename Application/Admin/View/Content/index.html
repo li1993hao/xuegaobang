@@ -1,0 +1,64 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    分类列表
+</block>
+<block name="content">
+    <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>排序</th>
+            <th>ID</th>
+            <th>分类名称</th>
+            <th>类型</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <notempty name="nodeList">
+            <volist name="nodeList" id="node">
+                <tr>
+                    <td>{$node.sort}</td>
+                    <td>{$node.id}</td>
+                    <td>
+                        <for start="0" end="$node.level">
+                            <if condition="$i eq $node['level']-1">
+                                <if condition="$node['last']">
+                                    |__
+                                    <else/>
+                                    |--
+                                </if>
+                                <else/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </if>
+                        </for>
+                        {$node.name}
+                    </td>
+                    <td>
+                        <switch name="node.type">
+                            <case value="1">分类</case>
+                            <case value="2">单页面</case>
+                            <case value="3">外部链接</case>
+                            <default/>
+                            栏目
+                        </switch>
+                    </td>
+                    <td>
+                        <if condition="$node['type'] eq 1">
+                            <a href="{:U('add?category_id='.$node['id'])}">添加内容</a>|
+                            <a href="{:U('news?category_id='.$node['id'])}">查看</a>
+                        </if>
+                        <if condition="$node['type'] eq 2">
+                            <a href="{:U('edit?category_id='.$node['id'])}">修改</a>
+                        </if>
+                        </switch></td>
+                </tr>
+            </volist>
+            <else/>
+            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr>
+        </notempty>
+
+        </tbody>
+    </table>
+    </div>
+</block>

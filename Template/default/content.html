@@ -1,0 +1,57 @@
+<extend name="public/base"/>
+<block name="style">
+    <link rel="stylesheet" href="__THEME__/unify/css/pages/blog.css">
+</block>
+<block name="content">
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumb">
+                <volist name="nav" id="av">
+                    <if condition="$i eq count($nav)">
+                        <li class="active">{$av.name}</li>
+                        <else/>
+                        <li><a href="{$av.url}">{$av.name}</a></li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Begin Content -->
+            <div class="blog-item">
+                <div class="blog margin-bottom-40">
+                    <if condition="info.title_color eq '#555' ">
+                        <h2 class="text-center">{$info.title}</h2>
+                    <else/>
+                        <h2 class="text-center" style="color:{$info.title_color}">{$info.title}</h2>
+                    </if>
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline">
+                            <li><i class="icon-calendar"></i>{$info.create_time|date='Y-m-d H:i',###}</li>
+                            <li><i class="icon-pencil"></i>{:get_nickname($info['uid'])}</li>
+                            <li><i class="icon-eye-open"></i> {$info.view}</li>
+                            <notempty name="info.keyword">
+                                <li>
+                                    <i class="icon-tags"></i>
+                                    <span>{$info.keyword}</span>
+                                </li>
+                            </notempty>
+                            {:plugin('SocialShare')}
+                        </ul>
+                    </div>
+                    <section>{$info.content|htmlspecialchars_decode}</section>
+                    {:plugin('SocialButton')}
+                    <include file="block/content_prev_next"/>
+                </div>
+                <hr/>
+                {:hook('documentDetailAfter')}
+            </div>
+        </div>
+    </div>
+    <!--/container-->
+    <!-- End Content Part -->
+</block>
+
+
+

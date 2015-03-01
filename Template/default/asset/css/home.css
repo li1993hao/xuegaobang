@@ -1,0 +1,19 @@
+.comment_footer a{
+    float: right;
+}
+.comment_content{
+    font-size: 14px;
+}
+.comment_footer{
+    color: #909090;
+}
+
+.blog_next{
+    float: right;
+}
+.blog_prev{
+    float: left;
+}
+
+.blog_footer{
+}

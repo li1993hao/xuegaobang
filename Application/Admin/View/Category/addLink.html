@@ -1,0 +1,98 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    添加外部链接
+</block>
+<block name="content">
+    <form class="form-horizontal normal-form" action="{:U(add)}">
+        <notempty name="node">
+            <input type="hidden" name="id" value="{$node['id']}"/>
+         </notempty>
+        <input type="hidden" name="type" value="{$type}"/>
+        <div class="form-group">
+            <label  class="item-label">父亲节点</label>
+            <div class="controls">
+                <select  name="pid">
+                    <option value="0">无</option>
+                    <volist name="pid" id="p">
+                        <if condition="$p['id'] eq $select_id">
+                            <option value="{$p.id}" selected>{$p.name}</option>
+                            <else/>
+                            <option value="{$p.id}">{$p.name}</option>
+                        </if>
+
+                    </volist>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="item-label">栏目名称</label>
+            <div class="controls">
+                <input type="text"   name="name"
+                       placeholder="请输入名称" value="{$node['name']}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="item-label">英文名称</label>
+            <div class="controls">
+                <input type="text" class="text input-large"  name="symbol" value="{$node['symbol']}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="item-label">链接</label>
+            <div class="controls">
+                <input type="text" class="text input-large"  name="url" value="{$node['url']}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label  class="item-label">首页显示</label>
+            <div class="controls">
+                <select name="index_show">
+                    <present name="node">
+                        <if condition="1 eq $node['index_show']">
+                            <option value="1" selected>是</option>
+                            <else/>
+                            <option value="1" >是</option>
+                        </if>
+                        <if condition="0 eq $node['index_show']">
+                            <option value="0" selected>否</option>
+                            <else/>
+                            <option value="0" >否</option>
+                        </if>
+                        <else/>
+                        <option value="1" >是</option>
+                        <option value="0" >否</option>
+                    </present>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label  class="item-label">禁用</label>
+            <div class="controls">
+                <select name="status">
+                    <present name="node">
+                        <if condition="1 eq $node['status']">
+                            <option value="1" selected>否</option>
+                            <else/>
+                            <option value="1" >否</option>
+                        </if>
+                        <if condition="0 eq $node['status']">
+                            <option value="0" selected>是</option>
+                            <else/>
+                            <option value="0" >是</option>
+                        </if>
+                        <else/>
+                        <option value="1" >否</option>
+                        <option value="0" >是</option>
+                    </present>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
+</block>

@@ -1,0 +1,108 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    分类管理
+</block>
+<block name="content">
+    <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="{:U('add?type=1')}">添加分类</a>
+        <a class="btn btn-sm btn-primary" href="{:U('add?type=2')}">添加单页面</a>
+        <a class="btn btn-sm btn-primary"  href="{:U('add?type=3')}">添加外部链接</a>
+        <a class="btn btn-sm btn-primary"  href="{:U('import')}">批量添加</a>
+        <a class="btn btn-sm ajax-get btn-primary"  href="{:U('clearCache')}">更新栏目缓存</a>
+    </div>
+    <div class="able-responsive">
+        <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>排序</th>
+                <th>ID</th>
+                <th>分类名称</th>
+                <th>类型</th>
+                <th>状态</th>
+                <th>首页显示</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        <notempty name="nodeList">
+            <volist name="nodeList" id="node">
+                <tr>
+                    <td class="text-center">
+                        <label>
+                            <input style="width:40px;text-align: center" class="sort_input" type="text" data-id="{$node.id}" value="{$node.sort}"/>
+                        </label>
+                        </td>
+                    <td>{$node.id}</td>
+                    <td>
+                        <for start="0" end="$node.level">
+                            <if condition="$i eq $node['level']-1">
+                                <if condition="$node['last']">
+                                    &nbsp;|__
+                                    <else/>
+                                    |--
+                                </if>
+                                <else/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </if>
+                        </for>
+                        {$node.name}</td>
+                    <td><switch name="node.type">
+                        <case value="1">分类</case>
+                        <case value="2">单页面</case>
+                        <case value="3">外部链接</case>
+                        <default />栏目
+                    </switch>
+                    </td>
+                    <td>
+                        {$node.status_text}
+                    </td>
+                    <td>
+                        <if condition="$node['index_show'] eq 0">
+                            否
+                            <else/>
+                            是
+                        </if>
+                    </td>
+                    <td>
+                        <eq name="node.status" value="1">
+                            <a href="{:U('changeStatus?method=forbid&id='.$node['id'])}" class="ajax-get">禁用</a>
+                            <else/>
+                            <a href="{:U('changeStatus?method=resume&id='.$node['id'])}" class="ajax-get">启用</a>
+                        </eq>
+                        <a href="{:U('delete?id='.$node['id'])}" class="ajax-get confirm">删除</a>
+                        <a href="{:U('edit?id='.$node['id'].'&type='.$node['type'])}">修改</a>
+                        <eq name="node.type" value="1">
+                         <a href="{:U('add?select_id='.$node['id'])}">添加分类</a>
+                        </eq>
+                    </switch></td>
+                </tr>
+            </volist>
+         <else/>
+            <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+         </notempty>
+
+        </tbody>
+    </table>
+    </div>
+ </block>
+
+<block name="js">
+    <script type="text/javascript">
+        $(".sort_input").on('change',function(){
+            var id = $(this).data('id');
+            var value = $(this).val();
+            if($.isNumeric(value)){
+                $.post("{:U('sort')}",{'id':id,'value':value},function(data){
+                    if(data.status){
+                    }else{
+                        errorAlert(data.msg);
+                    }
+
+                },'json')
+            }else{
+                errorAlert('输入必须是数字~~');
+                $(this).focus();
+            }
+        });
+    </script>
+</block>

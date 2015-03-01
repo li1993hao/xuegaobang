@@ -1,0 +1,53 @@
+<div class="margin-bottom-40"></div>
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="__THEME__/unify/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="__THEME__/unify/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="__THEME__/unify/plugins/hover-dropdown.min.js"></script>
+<!--<script type="text/javascript" src="__THEME__/unify/plugins/back-to-top.js"></script>-->
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="__THEME__/unify/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="__THEME__/unify/plugins/parallax-slider/js/modernizr.js"></script>
+<script type="text/javascript" src="__THEME__/unify/plugins/parallax-slider/js/jquery.cslider.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="__THEME__/unify/js/app.js"></script>
+<script type="text/javascript" src="__THEME__/unify/js/pages/index.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initSliders();
+        Index.initParallaxSlider();
+    });
+
+    $('.carousel').carousel({
+        interval: 4000 // in milliseconds
+    });
+
+    $("#search_text").keyup(function(e) {
+        if (e.keyCode === 13) {
+            $('#search_btn').click();
+        }
+    });
+
+    $('#search_btn').click(function(){
+        var text = $("#search_text").val();
+        text = text.trim();
+        if(!text){
+            shake($('#search_text').parent());
+            $('#search_text').prop('placeholder','写点什么吧..');
+        }else{
+            var url = "{:U('Index/search?search=PLACEHOLDER')}";
+            location.href= url.replace('PLACEHOLDER',text);
+        }
+    });
+
+    $('a').each(function(){
+        var color = $(this).data('color');
+        if(color && color!='#555'){
+            $(this).css('color',color);
+        }
+    });
+</script>
+
+<!--[if lt IE 9]>
+<script src="__THEME__/unify/plugins/respond.js"></script>
+<![endif]-->

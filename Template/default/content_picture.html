@@ -1,0 +1,110 @@
+<extend name="public/base"/>
+<block name="style">
+</block>
+<block name="content">
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumb">
+                <volist name="nav" id="av">
+                    <if condition="$i eq count($nav)">
+                        <li class="active">{$av.name}</li>
+                        <else/>
+                        <li><a href="{$av.url}">{$av.name}</a></li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Begin Content -->
+            <div class=" blog-item">
+                <div class="blog margin-bottom-40">
+                    <if condition="info.title_color eq '#555' ">
+                        <h2 class="text-center">{$info.title}</h2>
+                        <else/>
+                        <h2 class="text-center" style="color:{$info.title_color}">{$info.title}</h2>
+                    </if>
+                    <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline">
+                            <li><i class="icon-calendar"></i>{$info.create_time|date='Y-m-d H:i',###}</li>
+                            <li><i class="icon-pencil"></i>{:get_nickname($info['uid'])}</li>
+                            <li><i class="icon-eye-open"></i> {$info.view}</li>
+                        </ul>
+                    </div>
+                    <section>
+                            <volist name="info.picture" id="pic">
+                            <div>
+                                    <image  u="image" src="{$pic.path}" width="695px" height="456px" />
+                                    <image  u="thumb" src="{$pic.path}" />
+                                <div  class="image-text">{$pic.text}</div>
+                            </div>
+                             </volist>
+                    </section>
+                    <include file="block/content_prev_next"/>
+                </div>
+                <hr/>
+                <div id="comment_wraper">
+                    <include file="block/comment"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/container-->
+    <!-- End Content Part -->
+</block>
+<block name="js">
+    <script type="text/javascript">
+        function comment(ele){
+            var data = {};
+            var content = $("#comment_content").val();
+            var id = $("#comment_list").data('id');
+            var t = $("#comment_list").data('t');
+            var reply = $(ele).data('reply');
+            var pid = $(ele).data('pid');
+
+            data.topic_table = t;
+            data.topic_id = id;
+            data.content = content;
+
+            if(reply !== undefined){
+                data.reply = reply;
+            }
+            $.post("{:U('index/comment')}",data,function(data){
+                if(data.status){
+                    alert("评论成功!");
+                    var href = location.href.replace("#comment_body",'')+"#comment_body";
+                    location.href = href;
+                    location.reload();
+                }else{
+                    alert(data.msg);
+                }
+            });
+        }
+
+        function commentReply(ele){
+            var reply = $(ele).data('reply');
+            var pid  = $(ele).data('pid');
+            var user = $(ele).data('user');
+            var content = $($($(ele).parent()).prev()).html();
+            $("#comment_btn").data('reply',reply);
+            $("#comment_btn").data('pid',pid);
+            content = '//@'+user+":"+content;
+            $("#comment_content").val(content);
+            $("#comment_content").focus();
+            var t = document.getElementById('comment_content');
+            if(t.setSelectionRange){
+                t.setSelectionRange(0,0);
+            }
+            else if (t.createTextRange) {
+                var range = t.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', 0);
+                range.moveStart('character', 0);
+                range.select();
+            }
+        }
+    </script>
+</block>
+
+

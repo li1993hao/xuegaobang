@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <include file="Public/head"/>
+    <block name="style">
+    </block>
+    <style>
+        /*扩展*/
+        div.tab-red li.active a{
+            border-top: solid 2px #e74c3c;
+        }
+        div.tab-yellow li.active a{
+            border-top: solid 2px #f1c40f;
+        }
+        div.panel-orange li.active a{
+            border-top: solid 2px #e67e22;
+        }
+
+        div.tab-blue li.active a{
+            border-top: solid 2px #3498db;
+        }
+        #menu a:hover{
+            text-decoration:none;
+        }
+        #menu ul a:hover{
+            background-color:#72c02c;
+        }
+     </style>
+</head>
+<body>
+<!-- 头部 -->
+<include file="Public/header"/>
+<!-- /头部 -->
+
+<!-- 主体 -->
+<include file="Public/body"/>
+<!-- /主体 -->
+
+<!-- 底部 -->
+<include file="Public/footer"/>
+{:hook('pageFooter')}
+<block name="js">
+</block>
+</body>
+</html>

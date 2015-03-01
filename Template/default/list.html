@@ -1,0 +1,76 @@
+<extend name="public/base"/>
+<block name="style">
+    <link rel="stylesheet" href="__THEME__/unify/css/pages/page_search.css" >
+</block>
+<block name="content">
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumb">
+                <volist name="nav" id="av">
+                    <if condition="$i eq count($nav)">
+                        <li class="active">{$av.name}</li>
+                     <else/>
+                        <li><a href="{$av.url}">{$av.name}</a></li>
+                     </if>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Begin Content -->
+                <notempty name="list">
+                    <volist name="list" id="info">
+                        <present name="info.cover_path">
+                            <div class="row <eq name='info.is_up' value='1'>search-blocks search-blocks-left-orange<else/>search-blocks search-blocks-left-green</eq> ">
+                                <div class="col-md-4">
+                                    <a href="{$info.url}"><img class="img-responsive" src="{$info['cover_path']}" alt="{$info.title}"/></a>
+                                    <h4></h4>
+                                    <ul class="list-unstyled list-inline">
+                                        <li><i class="icon-calendar"></i>{$info.create_time|date='Y-m-d H:i',###}</li>
+                                        <li><i class="icon-eye-open"></i> <a href="#">{$info.view}</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><a href="{$info.url}" data-color="{$info.list_color}">{$info.title}</a></h4>
+                                    <p>{$info.description|msubstr=0,120}</p>
+                                    <p><a class="btn-u btn-u-small" href="{$info.url}">详情</a></p>
+                                </div>
+                            </div>
+
+                            <else/>
+                            <div class="row <eq name='info.is_up' value='1'>search-blocks search-blocks-left-orange<else/>search-blocks search-blocks-left-green</eq> ">
+                                <h4><a href="{$info.url}" data-color="{$info.list_color}">{$info.title}</a></h4>
+                                <div>
+                                    <ul class="list-unstyled list-inline">
+                                        <li><i class="icon-calendar"></i>{$info.create_time|date='Y-m-d H:i',###}</li>
+                                        <li><i class="icon-pencil"></i>{:get_nickname($info['uid'])}</li>
+                                        <li><i class="icon-eye-open"></i> <a href="#">{$info.view}</a></li>
+                                        <notempty name="info.keyword">
+                                            <li>
+                                                <i class="icon-tags"></i>
+                                                <span>{$info.keyword}</span>
+                                            </li>
+                                        </notempty>
+
+                                    </ul>
+                                </div>
+                                <p>{$info.description}</p>
+                                <p><a class="btn-u btn-u-small" href="{$info.url}">详情</a></p>
+                            </div>
+                        </present>
+                        <hr/>
+                    </volist>
+
+                    {$page}
+
+                    <else/>
+                        <h1 class="text-center">{$tip|default='暂时还没有新闻哦~~'}</h1>
+                    </notempty>
+        </div>
+    </div>
+    <!--/container-->
+    <!-- End Content Part -->
+</block>
+
+

@@ -1,0 +1,92 @@
+<extend name="Common@Base/base" />
+<block name="title">
+    {$meta_title}
+</block>
+<block name="content">
+    <div class="cf">
+        <div class="btn-group">
+            <button class="btn btn-sm btn-primary ajax-post confirm" url="{:U('del?category_id='.$category_id)}"  target-form="ids">删除</button>
+            <a class="btn btn-sm btn-primary" href="{:U('add?category_id='.$category_id)}"  target-form="ids">新增</a>
+        </div>
+        <!-- 高级搜索 -->
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" name="{$model['search_key']|default='title'}"  value="{:I('title')}" placeholder="请输入关键字..." autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+    <!-- 数据列表 -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <!-- 表头 -->
+            <thead>
+            <tr>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>标题</th>
+                <th>浏览量</th>
+                <th>创建时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <!-- 列表 -->
+            <tbody>
+            <volist name="list_data" id="data">
+                <tr>
+                    <td class="center">
+                        <label>
+                            <input type="checkbox" class="ids ace" name="ids[]" value="{$data.id}">
+                            <span class="lbl"></span>
+                        </label>
+                    </td>
+                    <td>{$data.title}</td>
+                    <td>{$data.view}</td>
+                    <td>{$data.create_time|time_format}</td>
+                    <td>{$data.status_text}</td>
+                    <td>
+                        <if condition="$data.is_up eq 0">
+                            <a class="ajax-get" href="{:U('up?category_id='.$category_id.'&id='.$data['id'].'&value=1')}">置顶</a>
+                            <else/>
+                            <a class="ajax-get" href="{:U('up?category_id='.$category_id.'&id='.$data['id'].'&value=0')}">取消置顶</a>
+                        </if>
+                        <if condition="$data.status eq 0">
+                            <a class="ajax-get" href="{:U('changeStatus?category_id='.$category_id.'&id='.$data['id'].'&method=resume')}">启用</a>
+                            <else/>
+                            <a class="ajax-get" href="{:U('changeStatus?category_id='.$category_id.'&id='.$data['id'].'&method=forbid')}">禁用</a>
+                        </if>
+                        <a href="{:U('edit?category_id='.$category_id.'&id='.$data['id'])}">编辑</a>
+                        <a class="ajax-get" href="{:U('del?category_id='.$category_id).'&ids='.$data['id']}">删除</a>
+                    </td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+    </div>
+    <div class="page">
+        {$_page|default=''}
+    </div>
+</block>
+
+<block name="js">
+    <script type="text/javascript">
+        $(function(){
+            //回车搜索
+            $("#search").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    var url = "{:U('news?category_id='.$category_id.'&title=PLACEHODLE')}";
+                    var query  = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                }
+            });
+
+        })
+    </script>
+</block>

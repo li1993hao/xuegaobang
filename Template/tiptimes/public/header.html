@@ -1,0 +1,26 @@
+<div class="header">
+    <div class="header-top">
+        <div class="welcome">欢迎您的光临！</div>
+        <img class="icon-phone" src="__THEME__/images/phone.png"/>
+        <div class="phone">010-2223256</div>
+    </div>
+    <div class="navbar">
+        <div class="nav-logo"><img src="__THEME__/images/LOGO.png"/></div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="{:U('index/index')}">
+                        首页
+                    </a>
+                </li>
+                <c:nav root="rootNav"  name="cat">
+                    <li>
+                        <a href="{$cat['url']}">
+                            {$cat['name']}
+                        </a>
+                    </li>
+                </c:nav>
+            </ul>
+        </div>
+    </div>
+</div>

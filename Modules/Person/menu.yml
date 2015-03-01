@@ -1,0 +1,25 @@
+---
+企业信息:
+  - title: 企业资料
+    url: index/index
+  - title: 通知中心
+    url: notice/index
+  - title: 企业评论
+    url: index/comment
+我的产品:
+  - title: 产品管理
+    url: production/index
+    children:
+      - title: 添加产品
+        url: production/add
+      - title: 编辑产品
+        url: production/edit
+      - title: 产品评论
+        url: production/comment
+
+
+
+
+
+
+
