@@ -203,8 +203,13 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
+<<<<<<< HEAD
                         
     权限管理
+=======
+                        
+    权限管理
+>>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -212,6 +217,7 @@
 
                 <div class="row">
                     <div class="col-xs-12">
+<<<<<<< HEAD
                         
     <div class="btn-group">
         <a class="btn btn-sm btn-primary" href="<?php echo U('createGroup');?>">新 增</a>
@@ -271,6 +277,67 @@
     <div class="page">
         <?php echo ($_page); ?>
     </div>
+=======
+                        
+    <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="<?php echo U('createGroup');?>">新 增</a>
+        <a url="<?php echo U('changestatus',array('method'=>'resumeGroup'));?>" class="btn btn-sm btn-primary ajax-post" target-form="ids" >启 用</a>
+        <a url="<?php echo U('changestatus',array('method'=>'forbidGroup'));?>" class="btn  btn-sm btn-primary  ajax-post" target-form="ids" >禁 用</a>
+        <a url="<?php echo U('changestatus',array('method'=>'deleteGroup'));?>" class="btn btn-sm btn-primary  ajax-post confirm" target-form="ids" >删 除</a>
+    </div>
+	<!-- 数据列表 -->
+	<div class="table-responsive">
+
+	<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+		<th class="text-center">
+            <label>
+                <input type="checkbox" class="ace check-all">
+                <span class="lbl"></span>
+            </label>
+        </th>
+		<th class="">用户组</th>
+		<th class="">描述</th>
+
+		<th class="">授权</th>
+		<th class="">状态</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td class="text-center">
+                <label>
+                    <input type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>" class="ace ids">
+                    <span class="lbl"></span>
+                </label>
+            </td>
+			<td><a href="<?php echo U('AuthManager/editgroup?id='.$vo['id']);?>"><?php echo ($vo["title"]); ?></a> </td>
+			<td><span><?php echo mb_strimwidth($vo['description'],0,60,"...","utf-8");?></span></td>
+
+
+			<td><a href="<?php echo U('AuthManager/access?group_name='.$vo['title'].'&group_id='.$vo['id']);?>" >访问授权</a>
+			<a href="<?php echo U('AuthManager/category?group_name='.$vo['title'].'&group_id='.$vo['id']);?>" >分类授权</a>
+			<a href="<?php echo U('AuthManager/module?group_name='.$vo['title'].'&group_id='.$vo['id']);?>" >模块授权</a>
+			</td>
+			<td><?php echo ($vo["status_text"]); ?></td>
+			<td><?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('AuthManager/changeStatus?method=forbidGroup&id='.$vo['id']);?>" class="ajax-get">禁用</a>
+				<?php else: ?>
+				<a href="<?php echo U('AuthManager/changeStatus?method=resumeGroup&id='.$vo['id']);?>" class="ajax-get">启用</a><?php endif; ?>
+				<a href="<?php echo U('AuthManager/changeStatus?method=deleteGroup&id='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                </td>
+		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		<?php else: ?>
+		<td colspan="6" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+	</tbody>
+    </table>
+
+	</div>
+    <div class="page">
+        <?php echo ($_page); ?>
+    </div>
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>

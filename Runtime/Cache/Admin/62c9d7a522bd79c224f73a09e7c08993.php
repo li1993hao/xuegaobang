@@ -203,8 +203,13 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
+<<<<<<< HEAD
                         
     模型列表
+=======
+                        
+    模型列表
+>>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -212,6 +217,7 @@
 
                 <div class="row">
                     <div class="col-xs-12">
+<<<<<<< HEAD
                         
     <div class="btn-group">
         <?php if(isset($current_type)): if(is_array($types)): foreach($types as $key=>$vo): if(($current_type) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
@@ -291,6 +297,87 @@
     <div class="page">
         <?php echo ($_page); ?>
     </div>
+=======
+                        
+    <div class="btn-group">
+        <?php if(isset($current_type)): if(is_array($types)): foreach($types as $key=>$vo): if(($current_type) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
+                        <span class="icon-caret-down icon-on-right"></span>
+                    </button><?php endif; endforeach; endif; ?>
+            <?php else: ?>
+            <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">全部
+                <span class="icon-caret-down icon-on-right"></span>
+            </button><?php endif; ?>
+
+        <ul class="dropdown-menu dropdown-primary">
+            <?php if(isset($current_type)): ?><li>
+                    <a href="<?php echo U('index');?>" >全部</a>
+                </li>
+                <?php if(is_array($types)): foreach($types as $key=>$vo): ?><li>
+                        <?php if(($current_type) != $key): ?><a href="<?php echo U('index?type='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
+                    </li><?php endforeach; endif; ?>
+                <?php else: ?>
+                <?php if(is_array($types)): foreach($types as $key=>$vo): ?><li>
+                        <a href="<?php echo U('index?type='.$key);?>"><?php echo ($vo); ?></a>
+                    </li><?php endforeach; endif; endif; ?>
+        </ul>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('Model/add');?>">新 增</a>
+        <button class="btn btn-sm btn-primary  ajax-post" target-form="ids" url="<?php echo U('Model/setStatus',array('status'=>1));?>">启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" target-form="ids" url="<?php echo U('Model/setStatus',array('status'=>0));?>">禁 用</button>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('Model/generate');?>">生 成</a>
+    </div>
+
+    <!-- 数据列表 -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>编号</th>
+                <th>标识</th>
+                <th>名称</th>
+                <th>创建时间</th>
+                <th>状态</th>
+                <th>组别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($vo["id"]); ?>">
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><?php echo ($vo["name"]); ?></td>
+                        <td><a data-id="<?php echo ($vo["id"]); ?>" href="<?php echo U('model/edit?id='.$vo['id']);?>"><?php echo ($vo["title"]); ?></a></td>
+                        <td><span><?php echo (time_format($vo["create_time"])); ?></span></td>
+                        <td><?php echo ($vo["status_text"]); ?></td>
+                        <td><?php echo (get_model_type($vo["type"])); ?></td>
+                        <td>
+                            <a href="<?php echo U('think/lists?model='.$vo['name']);?>">数据</a>
+                            <a href="<?php echo U('model/setstatus?ids='.$vo['id'].'&status='.abs(1-$vo['status']));?>"
+                               class="ajax-get"><?php echo (show_status_op($vo["status"])); ?></a>
+                            <a href="<?php echo U('model/edit?id='.$vo['id']);?>">编辑</a>
+                            <a href="<?php echo U('model/del?ids='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php else: ?>
+                <td colspan="8" class="text-center"> aOh! 暂时还没有内容!</td><?php endif; ?>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="page">
+        <?php echo ($_page); ?>
+    </div>
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>

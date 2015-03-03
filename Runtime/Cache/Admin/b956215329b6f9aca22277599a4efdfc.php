@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
-    插件列表
-=======
-                        
-    插件列表
->>>>>>> origin/master
+    菜单列表
 
                     </h1>
                 </div>
@@ -217,113 +212,84 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
-	<div class="btn-group">
-		<a href="<?php echo U('create');?>" class="btn btn-sm btn-primary">快速创建</a>
-	</div>
-	<!-- 数据列表 -->
+    <div>
+        <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="<?php echo U('add',array('pid'=>I('get.pid',0)));?>">新 增</a>
+        <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo U('del');?>" target-form="ids" data-tip="确定要删除所选菜单么?">删 除</button>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('import',array('pid'=>I('get.pid',0)));?>">导 入</a>
+        <button class="btn list_sort btn-sm btn-primary" url="<?php echo U('sort',array('pid'=>I('get.pid',0)),'');?>">排序</button>
+        </div>
+        <!-- 高级搜索 -->
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>名称</th>
-					<th>标识</th>
-					<th>描述</th>
-					<th>状态</th>
-					<th>作者</th>
-					<th>版本</th>
-					<th>操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<td><?php echo ($vo["title"]); ?></td>
-					<td><?php echo ($vo["name"]); ?></td>
-					<td><?php echo ($vo["description"]); ?></td>
-					<td><?php echo ((isset($vo["status_text"]) && ($vo["status_text"] !== ""))?($vo["status_text"]):"未安装"); ?></td>
-					<td><?php echo ($vo["author"]); ?></td>
-					<td><?php echo ($vo["version"]); ?></td>
-					<td>
-						<?php if(empty($vo["uninstall"])): $class = get_addon_class($vo['name']); if(!class_exists($class)){ $has_config = 0; }else{ $addon = new $class(); $has_config = count($addon->getConfig()); } ?>
-							<?php if ($has_config): ?>
-								<a href="<?php echo U('config',array('id'=>$vo['id']));?>">设置</a>
-							<?php endif ?>
-						<?php if ($vo['status'] >=0): ?>
-							<?php if(($vo["status"]) == "0"): ?><a class="ajax-get" href="<?php echo U('enable',array('id'=>$vo['id']));?>">启用</a>
-							<?php else: ?>
-								<a class="ajax-get" href="<?php echo U('disable',array('id'=>$vo['id']));?>">禁用</a><?php endif; ?>
-						<?php endif ?>
-							
-								<a class="ajax-get confirm" href="<?php echo U('uninstall?id='.$vo['id']);?>">卸载</a>
-							
-						<?php else: ?>
-							<a class="ajax-get" href="<?php echo U('install?addon_name='.$vo['name']);?>">安装</a><?php endif; ?>
-					</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				<?php else: ?>
-				<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-			</tbody>
-		</table>
-	</div>
-	<!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
+            <thead>
+                <tr>
+                    <th class="center">
+                        <label>
+                            <input type="checkbox" class="ace check-all">
+                            <span class="lbl"></span>
+                        </label>
+                    </th>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>上级菜单</th>
+                    <th>分组</th>
+                    <th>URL</th>
+                    <th>排序</th>
+                    <th>仅开发者模式显示</th>
+                    <th>隐藏</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><tr>
+                    <td class="center">
+                        <label>
+                        <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($menu["id"]); ?>">
+                        <span class="lbl"></span>
+                        </label>
+                    </td>
+                    <td><?php echo ($menu["id"]); ?></td>
+                    <td>
+                        <a href="<?php echo U('index?pid='.$menu['id']);?>"><?php echo ($menu["title"]); ?></a>
+                    </td>
+                    <td><?php echo ((isset($menu["up_title"]) && ($menu["up_title"] !== ""))?($menu["up_title"]):'无'); ?></td>
+                    <td><?php echo ($menu["group"]); ?></td>
+                    <td><?php echo ($menu["url"]); ?></td>
+                    <td><?php echo ($menu["sort"]); ?></td>
+                    <td>
+                        <a href="<?php echo U('toogleDev',array('id'=>$menu['id'],'value'=>abs($menu['is_dev']-1)));?>" class="ajax-get">
+                        <?php echo ($menu["is_dev_text"]); ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<?php echo U('toogleHide',array('id'=>$menu['id'],'value'=>abs($menu['hide']-1)));?>" class="ajax-get">
+                        <?php echo ($menu["hide_text"]); ?>
+                        </a>
+                    </td>
+                    <td>
+                        <a title="编辑" href="<?php echo U('edit?id='.$menu['id']);?>">编辑</a>
+                        <a class="confirm ajax-get" title="删除" href="<?php echo U('del?id='.$menu['id']);?>">删除</a>
+                    </td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php else: ?>
+            <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+            </tbody>
+        </table>
+        <!-- 分页 -->
+        <div class="page">
+
+        </div>
     </div>
-=======
-                        
-	<div class="btn-group">
-		<a href="<?php echo U('create');?>" class="btn btn-sm btn-primary">快速创建</a>
-	</div>
-	<!-- 数据列表 -->
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>名称</th>
-					<th>标识</th>
-					<th>描述</th>
-					<th>状态</th>
-					<th>作者</th>
-					<th>版本</th>
-					<th>操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<td><?php echo ($vo["title"]); ?></td>
-					<td><?php echo ($vo["name"]); ?></td>
-					<td><?php echo ($vo["description"]); ?></td>
-					<td><?php echo ((isset($vo["status_text"]) && ($vo["status_text"] !== ""))?($vo["status_text"]):"未安装"); ?></td>
-					<td><?php echo ($vo["author"]); ?></td>
-					<td><?php echo ($vo["version"]); ?></td>
-					<td>
-						<?php if(empty($vo["uninstall"])): $class = get_addon_class($vo['name']); if(!class_exists($class)){ $has_config = 0; }else{ $addon = new $class(); $has_config = count($addon->getConfig()); } ?>
-							<?php if ($has_config): ?>
-								<a href="<?php echo U('config',array('id'=>$vo['id']));?>">设置</a>
-							<?php endif ?>
-						<?php if ($vo['status'] >=0): ?>
-							<?php if(($vo["status"]) == "0"): ?><a class="ajax-get" href="<?php echo U('enable',array('id'=>$vo['id']));?>">启用</a>
-							<?php else: ?>
-								<a class="ajax-get" href="<?php echo U('disable',array('id'=>$vo['id']));?>">禁用</a><?php endif; ?>
-						<?php endif ?>
-							
-								<a class="ajax-get confirm" href="<?php echo U('uninstall?id='.$vo['id']);?>">卸载</a>
-							
-						<?php else: ?>
-							<a class="ajax-get" href="<?php echo U('install?addon_name='.$vo['name']);?>">安装</a><?php endif; ?>
-					</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				<?php else: ?>
-				<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-			</tbody>
-		</table>
-	</div>
-	<!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
->>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -396,6 +362,37 @@
 
 
 
+    <script type="text/javascript">
+        $(function() {
+            //回车搜索
+            $("#search").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?title=PLACEHODLE');?>";
+                    var query = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                    return false;
+                }
+            });
+            //点击排序
+            $('.list_sort').click(function(){
+                var url = $(this).attr('url');
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }
+
+                if(url != undefined && url != ''){
+                    window.location.href = url + '/ids/' + param;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

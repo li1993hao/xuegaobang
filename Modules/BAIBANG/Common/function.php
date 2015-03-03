@@ -12,14 +12,16 @@
  *   'index'=>array('title'=>'商品管理','action'=>'index,edit,add')
  * );
  */
-function _MODULE_MENU(){
+function _MODULE_MENU()
+{
     return array(
-        'SP'=>array(
-            array('title'=>'SP','url'=>'index/index','children'=>
+        'SP' => array(
+            array('title' => 'SP', 'url' => 'index/index', 'children' =>
                 array(
-                    array('title'=>'ooo','url'=>'index/aa')
+                    array('title' => 'ooo', 'url' => 'index/aa')
                 )),
-            array('title'=>'dd','url'=>'index/ding')
+            array('title' => 'dd', 'url' => 'index/ding')
         )
     );
 }
+

@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
-   <?php echo ($meta_title); ?>
-=======
-                        
-   <?php echo ($meta_title); ?>
->>>>>>> origin/master
+    <?php echo ($meta_title); ?>
 
                     </h1>
                 </div>
@@ -217,67 +212,47 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
     <script type="text/javascript" src="/xuegaobang/Public/vendor/uploadify/jquery.uploadify.min.js"></script>
-    <form class="form-horizontal " action="<?php echo UU(REAL_ACTION_NAME.'?model='.$model['name']);?>" method="post">
-=======
-                        
-    <script type="text/javascript" src="/xuegaobang/Public/vendor/uploadify/jquery.uploadify.min.js"></script>
-    <form class="form-horizontal " action="<?php echo UU(REAL_ACTION_NAME.'?model='.$model['name']);?>" method="post">
->>>>>>> origin/master
-        <!-- 标签页导航 -->
-<div class="tabbable">
+    <!-- 标签页导航 -->
+    <form action="<?php echo U('add');?>" method="post" class="form-horizontal normal-form">
+        <input name="category_id" type="hidden" value="<?php echo ($category_id); ?>"/>
+        <div class="tabbable">
     <ul class="nav nav-tabs padding-16 tab-size-bigger tab-space-1">
         <?php $_result=parse_config_attr($model['field_group']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><li <?php if(($key) == "1"): ?>class="active"<?php endif; ?>><a data-toggle="tab" href="#tab<?php echo ($key); ?>"><?php echo ($group); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
     </ul>
-    <div class="tab-content no-border padding-24">
+    <div class="tab-content  padding-24">
         <!-- 表单 -->
         <?php $_result=parse_config_attr($model['field_group']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><div id="tab<?php echo ($key); ?>" class="tab-pane <?php if(($key) == "1"): ?>in active<?php endif; ?> tab<?php echo ($key); ?>">
-            <?php if(is_array($fields[$key])): $i = 0; $__LIST__ = $fields[$key];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$field): $mod = ($i % 2 );++$i; if($field['is_show'] == 1 || $field['is_show'] == 3): ?><div class="form-group">
+            <?php if(is_array($fields[$key])): $i = 0; $__LIST__ = $fields[$key];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$field): $mod = ($i % 2 );++$i; if($field['is_show'] == 1 || $field['is_show'] == 2): ?><div class="form-group">
                         <label class="item-label"><?php echo ($field['title']); ?>:<span class="check-tips"><?php if(!empty($field['remark'])): ?>（<?php echo ($field['remark']); ?>）<?php endif; ?></span></label>
-
                         <div class="controls">
-                            <?php switch($field["type"]): case "num": ?><input type="text" class="text input-mid" name="<?php echo ($field["name"]); ?>"
-                                           value="<?php echo ($data[$field['name']]); ?>"><?php break;?>
-                                <?php case "string": ?><input type="text" class="text input-large" name="<?php echo ($field["name"]); ?>"
-                                           value="<?php echo ($data[$field['name']]); ?>"><?php break;?>
+                            <?php switch($field["type"]): case "num": ?><input type="text" class="text input-mid" name="<?php echo ($field["name"]); ?>" value="<?php echo ($field["value"]); ?>"><?php break;?>
+                                <?php case "string": ?><input type="text" class="text input-large" name="<?php echo ($field["name"]); ?>" value="<?php echo ($field["value"]); ?>"><?php break;?>
                                 <?php case "textarea": ?><label class="textarea input-large">
-                                        <textarea name="<?php echo ($field["name"]); ?>"><?php echo ($data[$field['name']]); ?></textarea>
+                                        <textarea name="<?php echo ($field["name"]); ?>"><?php echo ($field["value"]); ?></textarea>
                                     </label><?php break;?>
-                                <?php case "date": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date" <?php if($data[$field['name']] != 0): ?>value="<?php echo (date('Y-m-d',$data[$field['name']])); ?>"<?php endif; ?>
-                                           placeholder="请选择日期"/><?php break;?>
-                                <?php case "date_view_4": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date_view_4"  <?php if($data[$field['name']] != 0): ?>value="<?php echo (date('Y-m-d',$data[$field['name']])); ?>"<?php endif; ?>  placeholder="请选择日期" /><?php break;?>
-                                <?php case "date_3": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date_3" <?php if($data[$field['name']] != 0): ?>value="<?php echo (date('Y-m',$data[$field['name']])); ?>"<?php endif; ?> placeholder="请选择日期" /><?php break;?>
-                                <?php case "datetime": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid time" <if condition="$data[$field['name']] neq 0" >value="<?php echo (date('Y-m-d H:i',$data[$field['name']])); ?>"</i> placeholder="请选择时间"/><?php break;?>
+                                <?php case "date": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date" value="" placeholder="请选择日期" /><?php break;?>
+                                <?php case "date_view_4": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date_view_4" value="" placeholder="请选择日期" /><?php break;?>
+                                <?php case "date_3": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid date_3" value="" placeholder="请选择日期" /><?php break;?>
+                                <?php case "datetime": ?><input type="text" name="<?php echo ($field["name"]); ?>" class="text input-mid time" value="" placeholder="请选择时间" /><?php break;?>
                                 <?php case "bool": ?><select name="<?php echo ($field["name"]); ?>">
-                                        <?php $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>"
-                                            <?php if(($data[$field['name']]) == $key): ?>selected<?php endif; ?>
-                                            ><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" <?php if(($field["value"]) == $key): ?>selected<?php endif; ?>><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                     </select><?php break;?>
                                 <?php case "select": ?><select name="<?php echo ($field["name"]); ?>">
-                                        <?php $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>"
-                                            <?php if(($data[$field['name']]) == $key): ?>selected<?php endif; ?>
-                                            ><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" <?php if(($field["value"]) == $key): ?>selected<?php endif; ?>><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                     </select><?php break;?>
-                                <?php case "radio": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><label class="radio">
-                                            <input type="radio" class="ace" value="<?php echo ($key); ?>" name="<?php echo ($field["name"]); ?>"
-                                            <?php if(($data[$field['name']]) == $key): ?>checked="checked"<?php endif; ?>
-                                            ><?php echo ($vo); ?>
-                                        </label><?php endforeach; endif; else: echo "" ;endif; break;?>
-                                <?php case "checkbox": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input type="checkbox" value="<?php echo ($key); ?>" class="ace"
-                                                   name="<?php echo ($field["name"]); ?>[]"
-                                            <?php if(in_array(($key), is_array($data[$field['name']])?$data[$field['name']]:explode(',',$data[$field['name']]))): ?>checked="checked"<?php endif; ?>>
-                                            <span class="lbl"><?php echo ($vo); ?></span><?php endforeach; endif; else: echo "" ;endif; break;?>
+                                <?php case "radio": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input type="radio" value="<?php echo ($key); ?>" name="<?php echo ($field["name"]); ?>"><?php echo ($vo); endforeach; endif; else: echo "" ;endif; break;?>
+                                <?php case "checkbox": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input type="checkbox" value="<?php echo ($key); ?>" name="<?php echo ($field["name"]); ?>[]"><?php echo ($vo); endforeach; endif; else: echo "" ;endif; break;?>
                                 <?php case "editor": ?><div class="controls">
                                         <script id="<?php echo ($field["name"]); ?>" name="<?php echo ($field["name"]); ?>" type="text/plain">
-                                                      <?php echo (htmlspecialchars_decode($data[$field['name']])); ?>
+                                                      <?php echo ($data[$field['name']]); ?>
                                         </script>
                                     </div>
                                     <script>
                                         $(function(){
                                             !function(){
-                                                var ue = UE.getEditor('<?php echo ($field["name"]); ?>',{
+                                                UE.getEditor('<?php echo ($field["name"]); ?>',{
                                                     serverUrl :"<?php echo U('File/ueditor');?>"
                                                 });
                                             }();
@@ -285,33 +260,32 @@
                                     </script><?php break;?>
                                 <?php case "picture": ?><div class="controls">
                                         <div class="upload-img-box">
-                                            <?php if(!empty($data[$field['name']])): ?><div class="upload-pre-item"><img style="max-height:200px;max-width:200px"
-                                                        src="/xuegaobang<?php echo (get_cover($data[$field['name']],'path')); ?>"/></div><?php endif; ?>
+                                            <?php if(!empty($data[$field['name']])): ?><div class="upload-pre-item"><img style="max-height:200px;max-width:200px" src="<?php echo (get_cover($data[$field['name']],'path')); ?>"/></div><?php endif; ?>
                                         </div>
                                         <input type="file" id="upload_picture_<?php echo ($field["name"]); ?>">
-                                        <input type="hidden" name="<?php echo ($field["name"]); ?>" id="cover_id_<?php echo ($field["name"]); ?>"
-                                               value="<?php echo ($data[$field['name']]); ?>"/>
+                                        <input type="hidden" name="<?php echo ($field["name"]); ?>" id="cover_id_<?php echo ($field["name"]); ?>"/>
                                     </div>
                                     <script type="text/javascript">
                                         //上传图片
                                         /* 初始化上传插件 */
                                         $("#upload_picture_<?php echo ($field["name"]); ?>").uploadify({
-                                            "height": 30,
-                                            "swf": "/xuegaobang/Public/vendor/uploadify/uploadify.swf",
-                                            "fileObjName": "download",
-                                            "buttonText": "上传图片",
-                                            "uploader": "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
-                                            "width": 120,
-                                            'removeTimeout': 1,
-                                            'fileTypeExts': '*.jpg; *.png; *.gif;',
-                                            "onUploadSuccess": uploadPicture<?php echo ($field["name"]); ?>,
-                                        'onFallback':function () {
-                                            alert('未检测到兼容版本的Flash.');}}
-                                        );
+                                            "height"          : 30,
+                                            "swf"             : "/xuegaobang/Public/vendor/uploadify/uploadify.swf",
+                                            "fileObjName"     : "download",
+                                            "buttonText"      : "上传图片",
+                                            "uploader"        : "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
+                                            "width"           : 120,
+                                            'removeTimeout'	  : 1,
+                                            'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+                                            "onUploadSuccess" : uploadPicture<?php echo ($field["name"]); ?>,
+                                        'onFallback' : function() {
+                                            alert('未检测到兼容版本的Flash.');
+                                        }
+                                        });
                                         function uploadPicture<?php echo ($field["name"]); ?>(file, data){
                                             var data = $.parseJSON(data);
                                             var src = '';
-                                            if (data.status) {
+                                            if(data.status){
                                                 $("#cover_id_<?php echo ($field["name"]); ?>").val(data.id);
                                                 src = data.url || '/xuegaobang' + data.path;
                                                 $("#cover_id_<?php echo ($field["name"]); ?>").parent().find('.upload-img-box').html(
@@ -323,37 +297,34 @@
                                         }
                                     </script><?php break;?>
                                 <?php case "file": ?><div class="controls">
-                                        <input type="file" id="upload_file_<?php echo ($field["name"]); ?>">
-                                        <input type="hidden" name="<?php echo ($field["name"]); ?>"
-                                               value="<?php echo ($data[$field['name']]); ?>"/>
-
-                                        <div class="upload-img-box">
-
-                                            <?php if(isset($data[$field['name']])): ?><div class="upload-pre-file"><i class="icon-paper-clip"></i><span><?php echo (get_table_field($data[$field['name']],'id','name','File')); ?></span>
-                                                </div><?php endif; ?>
+                                        <input type="file" id="upload_file_<?php echo ($field["name"]); ?>" >
+                                        <input type="hidden" name="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>"/>
+                                        <div class="upload-box">
                                         </div>
                                     </div>
                                     <script type="text/javascript">
                                         //上传文件
                                         /* 初始化上传插件 */
                                         $("#upload_file_<?php echo ($field["name"]); ?>").uploadify({
-                                            "height": 30,
-                                            "swf": "/xuegaobang/Public/vendor/uploadify/uploadify.swf",
-                                            "fileObjName": "download",
-                                            "buttonText": "上传附件",
-                                            "uploader": "<?php echo U('File/upload',array('session_id'=>session_id()));?>",
-                                            "width": 120,
-                                            'removeTimeout': 1,
-                                            "onUploadSuccess": uploadFile<?php echo ($field["name"]); ?>,
-                                        'onFallback':function () {
-                                            alert('未检测到兼容版本的Flash.');}});
+                                            "height"          : 30,
+                                            "swf"             : "/xuegaobang/Public/vendor/uploadify/uploadify.swf",
+                                            "fileObjName"     : "download",
+                                            "buttonText"      : "上传附件",
+                                            "uploader"        : "<?php echo U('File/upload',array('session_id'=>session_id()));?>",
+                                            "width"           : 120,
+                                            'removeTimeout'	  : 1,
+                                            "onUploadSuccess" : uploadFile<?php echo ($field["name"]); ?>,
+                                        'onFallback' : function() {
+                                            alert('未检测到兼容版本的Flash.');
+                                        }
+                                        });
                                         function uploadFile<?php echo ($field["name"]); ?>(file, data){
                                             var data = $.parseJSON(data);
                                             if(data.status){
                                                 var name = "<?php echo ($field["name"]); ?>";
                                                 $("input[name="+name+"]").val(data.data);
                                                 $("input[name="+name+"]").parent().find('.upload-box').html(
-                                                        "<div class=\"upload-pre-file\"><i class=\"icon-paper-clip\"><span>" + data.msg + "</span></div>"
+                                                        "<div class=\"upload-pre-file\"><i class=\"icon-paper-clip\"></i><span>" + data.msg + "</span></div>"
                                                 );
                                             } else {
                                                 errorAlert(data.msg);
@@ -361,18 +332,20 @@
                                         }
                                     </script><?php break;?>
                                 <?php case "color": ?><select id="colorpicker-<?php echo ($field["name"]); ?>" name="<?php echo ($field["name"]); ?>" class="hide" style="display: none;">
-                                        <?php if(is_array(C("SYSTEM_COLOR"))): $i = 0; $__LIST__ = C("SYSTEM_COLOR");if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cc): $mod = ($i % 2 );++$i;?><option value="<?php echo ($cc); ?>" <?php if(($data[$field['name']]) == $cc): ?>checked="checked"<?php endif; ?>><?php echo ($cc); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                        <?php if(is_array(C("SYSTEM_COLOR"))): $i = 0; $__LIST__ = C("SYSTEM_COLOR");if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cc): $mod = ($i % 2 );++$i;?><option value="<?php echo ($cc); ?>"><?php echo ($cc); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                     </select>
+
                                     <div class="dropdown dropdown-colorpicker open">
                                         <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span
-                                                class="btn-colorpicker btn-colorpicker-<?php echo ($field["name"]); ?>" style="background-color:<?php echo ($data[$field['name']]); ?>"></span></a>
+                                            class="btn-colorpicker btn-colorpicker-<?php echo ($field["name"]); ?>" style="background-color:#555"></span></a>
                                         <ul class="dropdown-menu dropdown-caret">
-                                            <?php if(is_array(C("SYSTEM_COLOR"))): $i = 0; $__LIST__ = C("SYSTEM_COLOR");if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cc): $mod = ($i % 2 );++$i;?><li><a class="colorpick-btn colorpick-btn-<?php echo ($field["name"]); ?>  <?php if($data[$field['name']] == $cc): ?>selected<?php endif; ?>"  href="javascript:;" style="background-color:<?php echo ($cc); ?>;"
-                                                       data-color="<?php echo ($cc); ?>"></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                                            <?php if(is_array(C("SYSTEM_COLOR"))): $i = 0; $__LIST__ = C("SYSTEM_COLOR");if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cc): $mod = ($i % 2 );++$i;?><li><a class="colorpick-btn colorpick-btn-<?php echo ($field["name"]); ?>" href="javascript:;" style="background-color:<?php echo ($cc); ?>;"
+                                                   data-color="<?php echo ($cc); ?>"></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                                         </ul>
                                     </div>
                                     <script type="text/javascript">
                                         $(function(){
+                                            $('#simple-colorpicker-<?php echo ($field["name"]); ?>').ace_colorpicker();
                                             !function(){
                                                 $('.colorpick-btn-<?php echo ($field["name"]); ?>').click(function(){
                                                     var color = $(this).data('color');
@@ -390,12 +363,10 @@
                                         <div class="widget-body">
                                             <div class="widget-body-inner" style="display: block;">
                                                 <div class="widget-main">
-                                                    <div class="wysiwyg-editor" data-name="<?php echo ($field["name"]); ?>"  id="editor-<?php echo ($field["name"]); ?>" contenteditable="true">
-                                                        <?php echo (htmlspecialchars_decode($data[$field['name']])); ?>
-                                                    </div>
+                                                    <div class="wysiwyg-editor" data-name="<?php echo ($field["name"]); ?>"  id="editor-<?php echo ($field["name"]); ?>" contenteditable="true"></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                         </div>
                                     </div>
                                     <script type="text/javascript">
                                         $(function(){
@@ -418,11 +389,11 @@
                                                 speech_button:false
                                             });
                                         });
-                                    </script><?php break;?>
+                                      </script><?php break;?>
                                 <?php case "place": ?><div id="city_china_val" data-name="<?php echo ($field["name"]); ?>" class="city_field">
-                                        <select class="province cxselect" data-value="<?php echo (str2arr($data[$field['name']],',',0)); ?>" data-first-title="选择省"></select>
-                                        <select class="city cxselect"  data-value="<?php echo (str2arr($data[$field['name']],',',1)); ?>" data-first-title="选择市" ></select>
-                                        <select class="area cxselect" data-value="<?php echo (str2arr($data[$field['name']],',',2)); ?>"  data-first-title="选择地区" ></select>
+                                            <select class="province cxselect" data-first-title="选择省"></select>
+                                            <select class="city cxselect"  data-first-title="选择市" ></select>
+                                            <select class="area cxselect"  data-first-title="选择地区" ></select>
                                     </div>
                                     <script type="text/javascript">
                                         $(function(){
@@ -438,35 +409,35 @@
                                         });
                                     </script><?php break;?>
                                 <?php case "keyword": ?><div class="input-group col-xs-4"  style="padding:0">
-                                        <input class="form-control " type="text" name="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>"/>
-                                                                    <span class="input-group-btn">
-                                                                        <button class="btn btn-sm keyword-<?php echo ($field["name"]); ?> btn-primary" type="button">
-                                                                            提取
-                                                                        </button>
-                                                                    </span>
+                                        <input class="form-control " type="text" name="<?php echo ($field["name"]); ?>"/>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-sm keyword-<?php echo ($field["name"]); ?> btn-primary" type="button">
+                                                提取
+                                            </button>
+                                        </span>
                                     </div>
                                     <script type="text/javascript">
                                         $(function(){
                                             !function(){
                                                 $('.keyword-<?php echo ($field["name"]); ?>').click(function(){
-                                                    var title = $("input[name='title']").val();
-                                                    if(!title){
-                                                        errorAlert('标题不能为空!');
-                                                        return;
-                                                    }
-                                                    var des= $('#description').val();
+                                                   var title = $("input[name='title']").val();
+                                                   if(!title){
+                                                       errorAlert('标题不能为空!');
+                                                       return;
+                                                   }
+                                                   var des= $('#description').val();
                                                     if(!des){
                                                         errorAlert('描述不能为空!');
                                                         return;
                                                     }
                                                     $('.keyword-<?php echo ($field["name"]); ?>').addClass('disabled');
                                                     $.post("<?php echo U('tool/getKeyword');?>",{'title':title,'content':des},function(data){
-                                                        if(data.status){
-                                                            okAlert('获取成功!','',1500);
-                                                            $("input[name=<?php echo ($field["name"]); ?>]").val(data.data);
-                                                        }else{
-                                                            errorAlert(data.msg,'',1500);
-                                                        }
+                                                          if(data.status){
+                                                              okAlert('获取成功!','',1500);
+                                                              $("input[name=<?php echo ($field["name"]); ?>]").val(data.data);
+                                                          }else{
+                                                              errorAlert(data.msg,'',1500);
+                                                          }
                                                         $('.keyword-<?php echo ($field["name"]); ?>').removeClass('disabled');
                                                     });
                                                 });
@@ -476,7 +447,7 @@
                                 <?php case "autoImage": ?><span style="position: relative;top:-9px;margin-left: 10px">提取第</span>
                                     <div class="ace-spinner" style="width: 70px;">
                                         <div class="input-group">
-                                            <input type="text" class="input-mini" name="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>" id="<?php echo ($field["name"]); ?>" maxlength="2" />
+                                            <input type="text" class="input-mini" name="<?php echo ($field["name"]); ?>" value="0" id="<?php echo ($field["name"]); ?>" maxlength="2" />
                                         </div>
                                     </div>
                                     <span style="position: relative;top:-9px">张图片作为封面图片</span>
@@ -494,7 +465,7 @@
                                         });
                                     </script><?php break;?>
                                 <?php case "autoText": ?><label class="textarea input-large">
-                                        <textarea name="<?php echo ($field["name"]); ?>" id="<?php echo ($field["name"]); ?>"><?php echo ($data[$field['name']]); ?></textarea>
+                                        <textarea name="<?php echo ($field["name"]); ?>" id="<?php echo ($field["name"]); ?>"></textarea>
                                     </label>
                                     <script type="text/javascript">
                                         $(function(){
@@ -508,24 +479,15 @@
                                         });
                                     </script><?php break;?>
                                 <?php case "multiPicture": ?><div class="controls">
-                                        <?php $__IMAGES__ = json_decode(htmlspecialchars_decode($data[$field['name']]),true); ?>
                                         <div class="upload-img-box">
-                                            <?php if(is_array($__IMAGES__)): $i = 0; $__LIST__ = $__IMAGES__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$image): $mod = ($i % 2 );++$i;?><div class="upload-pre-item">
-                                                    <div class="tools tools-top" data-id="<?php echo ($image["id"]); ?>"><a class="cover " href="javascript:;" title="设置为封面"><i class="icon-link <?php if(($image["cover"]) == "true"): ?>red<?php else: ?>white<?php endif; ?>"></i></a><a class="del" href="javascript:;" title="删除"><i class="icon-remove red"></i></a></div>
-                                                    <img style="height:200px;width:300px" src="/xuegaobang<?php echo (get_cover($image["id"],'path')); ?>"/><div>
-                                                    <textarea  placeholder="请输入图片的文字说明"><?php echo ($image["text"]); ?></textarea></div>
-                                                </div><?php endforeach; endif; else: echo "" ;endif; ?>
+
                                         </div>
                                         <input type="file" id="upload_picture_<?php echo ($field["name"]); ?>">
-                                        <input type="hidden" name="<?php echo ($field["name"]); ?>" id="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>"/>
+                                        <input type="hidden" name="<?php echo ($field["name"]); ?>" id="<?php echo ($field["name"]); ?>"/>
                                     </div>
                                     <script type="text/javascript">
                                         $(function(){
                                             var datas = multiInputDatas(true);
-                                            var cvalue = JSON.parse($("#<?php echo ($field["name"]); ?>").val());
-                                            for(var i=0; i<cvalue.length;i++){
-                                                datas.put(cvalue[i].id,cvalue[i]);
-                                            }
                                             //上传图片
                                             /* 初始化上传插件 */
                                             $("#upload_picture_<?php echo ($field["name"]); ?>").uploadify({
@@ -538,80 +500,72 @@
                                                 'removeTimeout'	  : 1,
                                                 'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
                                                 "onUploadSuccess" : uploadPicture<?php echo ($field["name"]); ?>,
-                                            "onFallback" : function() {
-                                                alert('未检测到兼容版本的Flash.');
-                                            }});
-                                        eventInit();
-                                        function eventInit(){
-                                            $(".del").click(function(){
-                                                var id = $(this).parent().data('id');
-                                                console.info(id);
-                                                datas.remove(id);
-                                                $("#<?php echo ($field["name"]); ?>").val(datas.join());
-                                                $(this).parent().parent().detach();
-                                            });
-                                            $(".cover").click(function(){
-                                                var id = $(this).parent().data('id');
-                                                var ob = datas.get(id);
-                                                datas.setField('cover',false);
-                                                ob.cover = true;
-                                                $(".cover i").removeClass('red');
-                                                $(this).find('i').addClass('red');
-                                                $("#<?php echo ($field["name"]); ?>").val(datas.join());
-                                            });
+                                                "onFallback" : function() {
+                                                    alert('未检测到兼容版本的Flash.');
+                                                }});
 
-                                            $(".upload-pre-item ").hover(function(){
-                                                $(this).find('.tools').show();
-                                            },function(){
-                                                $(this).find('.tools').hide()
-                                            });
-                                            $(".upload-pre-item textarea").blur(function(){
-                                                var id = $(this).parent().parent().find(".tools").data('id');
-                                                var text = $(this).val();
-                                                datas.put(id,{'id':id,'text':text});
-                                                $("#<?php echo ($field["name"]); ?>").val(datas.join());
-                                            });
-                                        }
-                                        function uploadPicture<?php echo ($field["name"]); ?>(file, data){
-                                            var data = $.parseJSON(data);
-                                            var src = '';
-                                            if(data.status){
-                                                datas.put(data.id,{'id':data.id,'text':'','cover':false});
-                                                $("#<?php echo ($field["name"]); ?>").val(datas.join());
-                                                src = data.url || '/xuegaobang' + data.path;
-                                                $("#<?php echo ($field["name"]); ?>").parent().find('.upload-img-box').append(
-                                                        '<div class="upload-pre-item"><div class="tools tools-top" data-id="' +data.id+ '"><a class="cover" href="javascript:;" title="设置为封面"><i class="icon-link white"></i></a><a class="del" href="javascript:;" title="删除"><i class="icon-remove red"></i></a></div><img style="height:200px;width:300px" src="' + src + '"/><div><textarea  placeholder="请输入图片的文字说明"></textarea></div></div>'
-                                                );
-                                                eventInit();
-                                            } else {
-                                                errorAlert(data.msg);
+                                            function eventInit(){
+                                                $(".del").click(function(){
+                                                    var id = $(this).parent().data('id');
+                                                    console.info(id);
+                                                    datas.remove(id);
+                                                    $("#<?php echo ($field["name"]); ?>").val(datas.join());
+                                                    $(this).parent().parent().detach();
+                                                });
+                                                $(".cover").click(function(){
+                                                    var id = $(this).parent().data('id');
+                                                    var ob = datas.get(id);
+                                                    datas.setField('cover',false);
+                                                    ob.cover = true;
+                                                    $(".cover i").removeClass('red');
+                                                    $(this).find('i').addClass('red');
+                                                    $("#<?php echo ($field["name"]); ?>").val(datas.join());
+                                                });
+
+                                                $(".upload-pre-item ").hover(function(){
+                                                    $(this).find('.tools').show();
+                                                },function(){
+                                                    $(this).find('.tools').hide()
+                                                });
+                                                $(".upload-pre-item textarea").blur(function(){
+                                                    var id = $(this).parent().parent().find(".tools").data('id');
+                                                    var text = $(this).val();
+                                                    var ob = datas.get(id);
+                                                    ob.text = text;
+                                                    $("#<?php echo ($field["name"]); ?>").val(datas.join());
+                                                });
                                             }
-                                        }
+                                            function uploadPicture<?php echo ($field["name"]); ?>(file, data){
+                                                var data = $.parseJSON(data);
+                                                var src = '';
+                                                if(data.status){
+                                                    datas.put(data.id,{'id':data.id,'text':'','cover':false});
+                                                    $("#<?php echo ($field["name"]); ?>").val(datas.join());
+                                                    src = data.url || '/xuegaobang' + data.path;
+                                                    $("#<?php echo ($field["name"]); ?>").parent().find('.upload-img-box').append(
+                                                            '<div class="upload-pre-item"><div class="tools tools-top" data-id="' +data.id+ '"><a class="cover" href="javascript:;" title="设置为封面"><i class="icon-link white"></i></a><a class="del" href="javascript:;" title="删除"><i class="icon-remove red"></i></a></div><img style="height:200px;width:300px" src="' + src + '"/><div><textarea  placeholder="请输入图片的文字说明"></textarea></div></div>'
+                                                    );
+                                                    eventInit();
+                                                } else {
+                                                    errorAlert(data.msg);
+                                                }
+                                            }
 
                                         });
 
                                     </script><?php break;?>
-
                                 <?php default: ?>
-
-                                <input type="text" class="text " name="<?php echo ($field["name"]); ?>"
-                                       value="<?php echo ($data[$field['name']]); ?>"><?php endswitch;?>
+                                <input type="text" class="text" name="<?php echo ($field["name"]); ?>" value=""><?php endswitch;?>
                         </div>
                     </div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
     </div><?php endforeach; endif; else: echo "" ;endif; ?>
     <div class="form-group">
-        <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
-        <button class="btn btn-sm btn-primary ajax-post" type="submit"  target-form="form-horizontal">确 定</button>
+        <button class="btn btn-sm btn-primary  ajax-post " type="submit"  target-form="form-horizontal">确 定</button>
         <a class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</a>
     </div>
 </div>
-<<<<<<< HEAD
 </div>
     </form>
-=======
-</div>
-    </form>
->>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -683,11 +637,7 @@
 
 
 
-<<<<<<< HEAD
 
-=======
-
->>>>>>> origin/master
     <link href="/xuegaobang/Public/vendor/uploadify/uploadify.css" rel="stylesheet" type="text/css">
 <link href="/xuegaobang/Public/vendor/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/xuegaobang/Public/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
@@ -726,11 +676,7 @@
             autoclose:true
         });
     });
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> origin/master
 
 </body>
 </html>

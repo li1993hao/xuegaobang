@@ -209,6 +209,7 @@ function url_decode($num){
  * 当前url做标记
  */
 function MK(){
+    trace($_SERVER['REQUEST_URI']);
     Cookie('__forward__',$_SERVER['REQUEST_URI']);
 }
 
@@ -243,18 +244,19 @@ function  JDIRedirect($url){
  *  )
  *
  */
-function int_to_string(&$data,$map=array('status'=>array
-(1=>'<span class="label label-success ">正常</span>',
-    -1=>'删除',0=>'<span class="label label-danger ">禁用</span>',
-    2=>'<span class="label label-warning">未审核</span>',3=>'<span class="label">草稿</span>'))) {
-    if($data === false || $data === null ){
+function int_to_string(&$data, $map = array('status' => array
+    (1 => '<span class="label label-success ">正常</span>',
+        -1 => '删除', 0 => '<span class="label label-danger ">禁用</span>',
+        2 => '<span class="label label-warning">未审核</span>', 3 => '<span class="label">草稿</span>')))
+{
+    if ($data === false || $data === null) {
         return $data;
     }
     $data = (array)$data;
-    foreach ($data as $key => $row){
-        foreach ($map as $col=>$pair){
-            if(isset($row[$col]) && isset($pair[$row[$col]])){
-                $data[$key][$col.'_text'] = $pair[$row[$col]];
+    foreach ($data as $key => $row) {
+        foreach ($map as $col => $pair) {
+            if (isset($row[$col]) && isset($pair[$row[$col]])) {
+                $data[$key][$col . '_text'] = $pair[$row[$col]];
             }
         }
     }

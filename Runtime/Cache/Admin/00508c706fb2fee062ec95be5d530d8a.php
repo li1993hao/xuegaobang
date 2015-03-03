@@ -204,7 +204,12 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
+<<<<<<< HEAD
+    产品管理
+
+=======
                         
+>>>>>>> origin/master
                     </h1>
                 </div>
                 <!-- /.page-header -->
@@ -212,7 +217,135 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
+<<<<<<< HEAD
+    <!--"Modules://BaiBang@index/aa"-->
+    <div>
+        <!--<div class="btn-group">-->
+            <!--<a class="btn btn-sm btn-primary" href="<?php echo U('addCompetition');?>">新 增</a>-->
+            <!--<button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"-->
+                    <!--data-tip="确定要删除么?">删 除-->
+            <!--</button>-->
+        <!--</div>-->
+
+        <div class="pull-right">
+            <a href="#" id="adv_show">
+                <i class="icon-chevron-up"></i>
+            </a>
+            <span class="input-icon">
+                <input type="text" placeholder="搜索姓名.按回车搜索" autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+    <div class="panel panel-default" id="adv_search" style="display:none">
+        <form class="search-form" method="post" action="<?php echo _U('search');?>">
+            <div class="panel-body table-responsive">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tr>
+                            <td>名称：<input type="text" name="query_name" ></td>
+                            <td>厂家：<input type="text" name="query_vender" ></td>
+                            <!--<td>教练等级：-->
+                                <!--<select name="query_technicalGrade">-->
+                                    <!--<option value="__whatever__">不限</option>-->
+
+                                <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>运动项目：-->
+                                <!--<select name="query_sports">-->
+                                    <!--<option value="__whatever__">不限</option>-->
+
+                                <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>运动队：-->
+                                <!--<select name="query_team">-->
+                                    <!--<option value="__whatever__">不限</option>-->
+
+                                <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>队内职务：-->
+                                <!--<select name="query_job">-->
+                                    <!--<option value="__whatever__">不限</option>-->
+
+                                <!--</select>-->
+                            <!--</td>-->
+                            <td>每页显示数量：
+                                <select name="r">
+                                    <option value="10">10</option>
+                                    <option value="20">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="400">400</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-heading clearfix">
+                <div class="pull-right">
+                    <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>产品名称</th>
+                <th>厂家</th>
+                <th>产品发布者</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($menu["id"]); ?>">
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($vo["name"]); ?>" data-id="<?php echo ($vo["uid"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><?php echo ($com["vender"]); ?></td>
+                        <td><?php echo get_user_filed($com.uid,"username");?></td>
+                        <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("y-m-d H:i",$com["update_time"])); ?></td>
+                        <td>
+                            <?php echo ($com["status_text"]); ?>
+                        </td>
+                        <td>
+
+                            <a title="编辑" href="<?php echo U('addCompetition',array('id'=>$com['id']));?>">编辑</a>
+                            <a title="运动项目" href="<?php echo U('sports',array('id'=>$com['id']));?>">运动项目</a>
+                            <a class="confirm ajax-get" title="删除" href="<?php echo U('setStatus?status=-1&ids='.$com['id']);?>">删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php else: ?>
+                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+            </tbody>
+        </table>
+
+        <!-- 分页 -->
+        <div class="page">
+            <?php echo ($_page); ?>
+        </div>
+    </div>
+=======
     <a href="<?php echo _U('aa');?>">dsa</a>
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -225,6 +358,29 @@
     </div>
 </div><!-- /.main-container -->
 
+<<<<<<< HEAD
+    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" style="text-align:center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center">
+                        <i class="icon-spinner icon-spin orange bigger-300"></i>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
+                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+=======
+>>>>>>> origin/master
 
 
 <!-- /主体 -->
@@ -286,5 +442,57 @@
 
 
 
+<<<<<<< HEAD
+    <script>
+        $('#adv_show').click(function(){
+            var ele = $(this).find('i');
+            if($(ele).hasClass('icon-chevron-up')){
+                $("#adv_search").slideDown('fast');
+                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
+            }else{
+                $("#adv_search").slideUp('fast');
+                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
+            }
+        });
+        $('.info').click(function(){
+            lock = true;
+            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
+            $('#user_info').modal('show');
+            var uid = $(this).data('id')
+            var url = "<?php echo _U('info');?>";
+            alert(uid+"++++ "+ url);
+
+            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
+            $("#user_info .modal-body").empty().html(wait);
+            $("#print_single").data('id',uid);
+            $.post(url,{'id':uid},function(data){
+                alert(data);
+                lock = false;
+                $("#user_info .modal-body").empty().html(data);
+            });
+        });
+
+        $(function() {
+            //回车搜索
+            $("#search").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
+                    var query = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                    return false;
+                }
+            });
+        });
+        <?php if($where): ?>!function(){
+            $("#adv_search").show();
+            var ele = $("#adv_show").find('i');
+            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
+        }();<?php endif; ?>
+    </script>
+
+=======
+>>>>>>> origin/master
 </body>
 </html>

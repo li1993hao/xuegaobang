@@ -203,8 +203,13 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
+<<<<<<< HEAD
                         
     <h1>配置管理</h1>
+=======
+                        
+    <h1>配置管理</h1>
+>>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -212,6 +217,7 @@
 
                 <div class="row">
                     <div class="col-xs-12">
+<<<<<<< HEAD
                         
     <div>
         <div class="btn-group">
@@ -289,6 +295,85 @@
             <?php echo ($_page); ?>
         </div>
     </div>
+=======
+                        
+    <div>
+        <div class="btn-group">
+            <?php if(isset($_GET['group'])): if(is_array($group)): foreach($group as $key=>$vo): if(($group_id) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
+                            <span class="icon-caret-down icon-on-right"></span>
+                        </button><?php endif; endforeach; endif; ?>
+                <?php else: ?>
+                <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">全部
+                    <span class="icon-caret-down icon-on-right"></span>
+                </button><?php endif; ?>
+
+            <ul class="dropdown-menu dropdown-primary">
+                <?php if(isset($_GET['group'])): ?><li>
+                    <a href="<?php echo U('index');?>" >全部</a>
+                    </li><?php endif; ?>
+                <?php if(is_array($group)): foreach($group as $key=>$vo): ?><li>
+                        <?php if(($group_id) != $key): ?><a href="<?php echo U('index?group='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
+                    </li><?php endforeach; endif; ?>
+            </ul>
+            <a class="btn btn-sm btn-primary" href="<?php echo U('add');?>">新 增</a>
+            <a class="btn btn-sm btn-primary" href="javascript:;">删 除</a>
+            <button class="btn btn-sm btn-primary list_sort" url="<?php echo U('sort?group='.I('group'),'','');?>">排序</button>
+        </div>
+        <!-- 高级搜索 -->
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" placeholder="请输入配置名称..." value="<?php echo I('name');?>" autocomplete="off" id="search">
+                <i class="icon-search"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="text-center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>ID</th>
+                <th>名称</th>
+                <th>标题</th>
+                <th>分组</th>
+                <th>类型</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$config): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="text-center">
+                            <label>
+                                <input class="ids ace" type="checkbox" name="id[]" value="<?php echo ($config["id"]); ?>">
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><?php echo ($config["id"]); ?></td>
+                        <td><a href="<?php echo U('edit?id='.$config['id']);?>"><?php echo ($config["name"]); ?></a></td>
+                        <td><?php echo ($config["title"]); ?></td>
+                        <td><?php echo (get_config_group($config["group"])); ?></td>
+                        <td><?php echo (get_config_type($config["type"])); ?></td>
+                        <td>
+                            <a title="编辑" href="<?php echo U('edit?id='.$config['id']);?>">编辑</a>
+                            <a class="confirm ajax-get" title="删除" href="<?php echo U('del?id='.$config['id']);?>">删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php else: ?>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有内容!</td><?php endif; ?>
+            </tbody>
+        </table>
+        <!-- 分页 -->
+        <div class="page">
+            <?php echo ($_page); ?>
+        </div>
+    </div>
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -344,7 +429,11 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
+<<<<<<< HEAD
+            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
+=======
             "APP"    : "/xuegaobang", //当前项目地址
+>>>>>>> origin/master
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
@@ -360,6 +449,7 @@
 
 
 
+<<<<<<< HEAD
 
     <script type="text/javascript">
         $(function () {
@@ -393,6 +483,41 @@
             });
         });
     </script>
+=======
+
+    <script type="text/javascript">
+        $(function () {
+            //回车搜索
+            $("#search").keyup(function (e) {
+                if (e.keyCode === 13) {
+                    var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?name=PLACEHODLE');?>";
+                    var query = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                    return false;
+                }
+            });
+
+            //点击排序
+            $('.list_sort').click(function(){
+                var url = $(this).attr('url');
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }
+
+                if(url != undefined && url != ''){
+                    window.location.href = url + '/ids/' + param;
+                }
+            });
+        });
+    </script>
+>>>>>>> origin/master
 
 </body>
 </html>

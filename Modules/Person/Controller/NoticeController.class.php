@@ -23,7 +23,7 @@ class NoticeController extends ModuleController {
         )));
         $list = list_sort_by($list,'status');
         $this->assign('list', $list);
-        $this->meta_title = '通知列表';
+        $this->meta_title = '产品管理';
         $this->_display();
     }
 
