@@ -18,39 +18,10 @@
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
 =======
     <list default="true" id="a7b0f08f-ba8e-4e1c-9116-493f5fc0c3bf" name="Default" comment="init commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/tree.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/ApiDocAddon.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/adminlist.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/SiteStat/baibang.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/document.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/jquery.thinkkeyboard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/jquery.thinktree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/jquery.zclip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/lang-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/manage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/prettify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/js/prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/thinkeditorStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/ApiDoc/asset/css/thinktreeStyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Addons/SiteStat/user.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/AddonsBackController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/AddonsBackController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/AddonsController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/AddonsController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/DispatchController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/DispatchController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThinkPHP/Library/Think/Dispatcher.class.php" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Think/Dispatcher.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Modules/Person/Controller/IndexController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/ModuleController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/ModuleController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/Controller/ProductionController.class.php" afterPath="$PROJECT_DIR$/Modules/Person/Controller/ProductionController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Goods/Api/SampleApi.class.php" afterPath="$PROJECT_DIR$/Modules/Goods/Api/SampleApi.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/Api/SampleApi.class.php" afterPath="$PROJECT_DIR$/Modules/Person/Api/SampleApi.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Addons/SiteStat/SiteStatAddon.class.php" afterPath="$PROJECT_DIR$/Addons/SiteStat/SiteStatAddon.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThinkPHP/Library/Think/View.class.php" afterPath="$PROJECT_DIR$/ThinkPHP/Library/Think/View.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/AddonsBack/adminlist.html" afterPath="$PROJECT_DIR$/Application/Admin/View/AddonsBack/adminlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Common/function.php" afterPath="$PROJECT_DIR$/Application/Common/Common/function.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/Common/function.php" afterPath="$PROJECT_DIR$/Modules/Person/Common/function.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/menu.yml" afterPath="$PROJECT_DIR$/Modules/Person/menu.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/Cache/Admin/9b4f289ed133af78d3bf1df20584f47e.php" afterPath="$PROJECT_DIR$/Runtime/Cache/Admin/9b4f289ed133af78d3bf1df20584f47e.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php" afterPath="$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Modules/Person/View/notice/index.html" afterPath="$PROJECT_DIR$/Modules/Person/View/notice/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="xuegaobang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -103,6 +74,12 @@
         </entry>
       </file>
 <<<<<<< HEAD
+      <file leaf-file-name="ApiController.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Api/Controller/ApiController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.75" vertical-offset="210" max-vertical-offset="1410">
+=======
+<<<<<<< HEAD
       <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/UserController.class.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,11 +91,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="166" column="17" selection-start="5015" selection-end="5015" vertical-scroll-proportion="0.0" vertical-offset="2277" max-vertical-offset="4365">
 >>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="document.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Addons/ApiDoc/asset/js/document.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="21" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="4485">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="UserController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/BaiBang/Controller/UserController.class.php">
@@ -131,11 +115,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="8.75" vertical-offset="210" max-vertical-offset="1410">
 >>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="IndexController.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/IndexController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="5" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-23.5" vertical-offset="156" max-vertical-offset="825">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/BaiBang/Common/function.php">
@@ -148,11 +139,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="107" column="51" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.8597285" vertical-offset="1035" max-vertical-offset="4485">
 >>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="NoticeController.class.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="Template.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Think/Template.class.php">
@@ -165,14 +161,21 @@
 =======
       <file leaf-file-name="SampleApi.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Goods/Api/SampleApi.class.php">
+>>>>>>> origin/master
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
+            <state line="38" column="8" selection-start="993" selection-end="993" vertical-scroll-proportion="0.7009202" vertical-offset="83" max-vertical-offset="855">
               <folding />
 >>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Person/View/notice/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="53" selection-start="1690" selection-end="1690" vertical-scroll-proportion="-13.416667" vertical-offset="353" max-vertical-offset="1005">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="IndexController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/BaiBang/Controller/IndexController.class.php">
@@ -185,11 +188,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1125">
 >>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="MemberModel.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Model/MemberModel.class.php">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="ModuleController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Common/Controller/ModuleController.class.php">
@@ -202,14 +210,19 @@
 =======
       <file leaf-file-name="SiteStatAddon.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Addons/SiteStat/SiteStatAddon.class.php">
+>>>>>>> origin/master
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="101" selection-start="1994" selection-end="1994" vertical-scroll-proportion="-28.75" vertical-offset="0" max-vertical-offset="885">
+            <state line="338" column="26" selection-start="10087" selection-end="10096" vertical-scroll-proportion="-168.75" vertical-offset="930" max-vertical-offset="5850">
               <folding />
 >>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="NoticeModel.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Model/NoticeModel.class.php">
+=======
 <<<<<<< HEAD
       <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
@@ -219,26 +232,31 @@
 =======
       <file leaf-file-name="PublicController.class.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php">
+>>>>>>> origin/master
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="63" selection-start="2441" selection-end="2441" vertical-scroll-proportion="-10.916667" vertical-offset="728" max-vertical-offset="1650">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baibang.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Addons/SiteStat/baibang.html">
+      <file leaf-file-name="SampleApi.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modules/Goods/Api/SampleApi.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="58" selection-start="662" selection-end="662" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="480">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="225">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Addons/SiteStat/user.html">
+      <file leaf-file-name="IndexController.class.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Api/Controller/IndexController.class.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1125">
+=======
             <state line="15" column="52" selection-start="654" selection-end="654" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+>>>>>>> origin/master
 >>>>>>> origin/master
               <folding />
             </state>
@@ -294,8 +312,6 @@
         <option value="$PROJECT_DIR$/Modules/BaiBang/View/index/index.html" />
 =======
         <option value="$PROJECT_DIR$/Modules/Person/View/index/notice.html" />
-        <option value="$PROJECT_DIR$/Modules/Person/View/notice/index.html" />
-        <option value="$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php" />
         <option value="$PROJECT_DIR$/Application/Common/Model/NoticeModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Common/Model/CommentModel.class.php" />
         <option value="$PROJECT_DIR$/Modules/Person/View/production/index.html" />
@@ -344,6 +360,11 @@
         <option value="$PROJECT_DIR$/Addons/ApiDoc/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Modules/BaiBang/Api/SampleApi.class.php" />
         <option value="$PROJECT_DIR$/Addons/ApiDoc/asset/js/document.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Modules/Person/View/notice/index.html" />
+        <option value="$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php" />
+=======
+>>>>>>> origin/master
 >>>>>>> origin/master
       </list>
     </option>
@@ -437,6 +458,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="Modules" />
+=======
 <<<<<<< HEAD
               <option name="myItemId" value="Modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -564,12 +588,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="View" />
+>>>>>>> origin/master
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
 <<<<<<< HEAD
 =======
             <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
+              <option name="myItemId" value="Person" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
 >>>>>>> origin/master
@@ -589,6 +614,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Person" />
+=======
+<<<<<<< HEAD
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="BaiBang" />
 =======
               <option name="myItemId" value="Addons" />
@@ -596,6 +628,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ApiDoc" />
+>>>>>>> origin/master
 >>>>>>> origin/master
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -617,6 +650,9 @@
 <<<<<<< HEAD
               <option name="myItemId" value="Application" />
 =======
+<<<<<<< HEAD
+              <option name="myItemId" value="Application" />
+=======
               <option name="myItemId" value="Addons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -630,6 +666,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+>>>>>>> origin/master
 >>>>>>> origin/master
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -654,6 +691,8 @@
               <option name="myItemId" value="Addons" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
             <PATH_ELEMENT>
               <option name="myItemId" value="ApiDoc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -663,6 +702,7 @@
 >>>>>>> origin/master
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+>>>>>>> origin/master
           </PATH>
         </subPane>
       </pane>
@@ -1211,20 +1251,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1220" column="31" selection-start="31316" selection-end="31320" vertical-scroll-proportion="0.0" vertical-offset="18259" max-vertical-offset="20820">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/BaiBang/Api/SampleApi.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="9" selection-start="2134" selection-end="2134" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="4215">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Think/Model.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="25770">
@@ -1283,11 +1309,6 @@
         <state line="138" column="19" selection-start="6041" selection-end="6041" vertical-scroll-proportion="-9.833333" vertical-offset="1714" max-vertical-offset="4950">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.9583333" vertical-offset="23" max-vertical-offset="675" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ThinkPHP/Library/Think/View.class.php">
@@ -1398,13 +1419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="86" selection-start="659" selection-end="733" vertical-scroll-proportion="-7.875" vertical-offset="156" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Addons/SystemInfo/SystemInfoAddon.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
@@ -1429,13 +1443,6 @@
     <entry file="file://$PROJECT_DIR$/Addons/SiteStat/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Common/Model/MemberModel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="26" selection-start="10087" selection-end="10096" vertical-scroll-proportion="-144.375" vertical-offset="1515" max-vertical-offset="5850">
           <folding />
         </state>
       </provider>
@@ -1600,7 +1607,42 @@
 =======
     <entry file="file://$PROJECT_DIR$/Addons/ApiDoc/asset/js/document.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="51" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.8597285" vertical-offset="1035" max-vertical-offset="4485">
+        <state line="86" column="21" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="4485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Model/MemberModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="338" column="26" selection-start="10087" selection-end="10096" vertical-scroll-proportion="-168.75" vertical-offset="930" max-vertical-offset="5850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Model/NoticeModel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Person/View/notice/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="53" selection-start="1690" selection-end="1690" vertical-scroll-proportion="-13.416667" vertical-offset="353" max-vertical-offset="1005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="5" selection-start="1849" selection-end="1849" vertical-scroll-proportion="-23.5" vertical-offset="156" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Person/Controller/NoticeController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="8" selection-start="993" selection-end="993" vertical-scroll-proportion="0.7009202" vertical-offset="83" max-vertical-offset="855">
           <folding />
 >>>>>>> origin/master
         </state>
