@@ -5,7 +5,7 @@
 <block name="content">
     <notempty name="list">
         <div class="dialogs">
-            <voilist name="list" id="vo">
+            <volist name="list" id="vo">
                 <div class="itemdiv dialogdiv">
                     <div class="user">
                         <img alt="{:get_user_filed($vo['uid'],'nickname')}"
@@ -22,7 +22,7 @@
                         <div class="text">{$vo.content}</div>
                     </div>
                 </div>
-            </voilist>
+            </volist>
         </div>
         <else/>
         <h1 class="text-center">暂无评论!</h1>

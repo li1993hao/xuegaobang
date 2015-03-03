@@ -82,8 +82,13 @@
                 <span>您好:<?php echo session('user_auth.nickname');?></span>
             </li>
             <li class="menu_hide menu_hide2">
-                <a href="<?php echo U('MySpace/updatePassword');?>">
+                <a href="<?php echo U('index/updatePassword');?>">
                     修改密码
+                </a>
+            </li>
+            <li class="menu_hide menu_hide2">
+                <a href="<?php echo U('index/updateNickname');?>">
+                    修改昵称
                 </a>
             </li>
             <li class="menu_hide menu_hide3">
@@ -106,9 +111,14 @@
                     <li>
                         <span>您好:<?php echo session('user_auth.nickname');?></span>
                     </li>
-                    <li>
-                        <a href="<?php echo U('MySpace/updatePassword');?>">
+                    <li class="menu_hide menu_hide2">
+                        <a href="<?php echo U('index/updatePassword');?>">
                             修改密码
+                        </a>
+                    </li>
+                    <li class="menu_hide menu_hide2">
+                        <a href="<?php echo U('index/updateNickname');?>">
+                            修改昵称
                         </a>
                     </li>
                     <li>
@@ -311,7 +321,7 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
-            "APP"    : "/xuegaobang", //当前项目地址
+            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
@@ -337,6 +347,7 @@
                 $(this).css('line-height',height);
             });
         }
+        $('[data-rel=tooltip]').tooltip();
     </script>
 
 </body>

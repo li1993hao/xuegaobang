@@ -33,6 +33,20 @@ class NoticeController extends ModuleController {
     public function  del(){
         parent::editRow('Notice',array('status'=>-1),array('uid'=>UID));
     }
+
+    public  function  textAdd(){
+        $molde =  D('Comment');
+        for($i=0;$i<50;$i++){
+            $data['topic_table'] = "member";
+            $data['topic_id']= 1;
+            $data['content']= "nb";
+            $data['uid'] = 1;
+            $molde ->create($data);
+            echo $molde->add();
+        }
+
+    }
+
     /**
      *标志为以读
      */

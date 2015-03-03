@@ -214,8 +214,7 @@
                     <div class="col-xs-12">
                         
     <?php if(!empty($list)): ?><div class="dialogs">
-            <voilist name="list" id="vo">
-                <div class="itemdiv dialogdiv">
+            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="itemdiv dialogdiv">
                     <div class="user">
                         <img alt="<?php echo get_user_filed($vo['uid'],'nickname');?>"
                              src="<?php echo (get_user_image($vo["uid"])); ?>"/>
@@ -226,12 +225,16 @@
                             <span class="green"><?php echo formatTime($vo['create_time']);?></span>
                         </div>
                         <div class="name">
-                            <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
+                            <?php echo get_user_filed($vo['uid'],'nickname');?>
                         </div>
                         <div class="text"><?php echo ($vo["content"]); ?></div>
+                        <div class="tools">
+                            <a href="#" class="btn btn-minier btn-info">
+                                <i class="icon-only icon-share-alt"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </voilist>
+                </div><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
         <?php else: ?>
         <h1 class="text-center">暂无评论!</h1><?php endif; ?>

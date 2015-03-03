@@ -41,9 +41,9 @@
                         <td>{$vo.status_text}</td>
                         <td>{$vo.detail}</td>
                         <td>
-                            <a title="删除" class="confirm ajax-get"   href="{:U('del?id='.$vo['id'])}">删除</a>
+                            <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$vo['id'])}">删除</a>
                             <eq name="vo.status" value="0">
-                                <a title="已读" href="{:U('read?id='.$vo['id'])}">已读</a>
+                                <a title="已读" class="ajax-get" href="{:_U('read?id='.$vo['id'])}">已读</a>
                             </eq>
                         </td>
                     </tr>

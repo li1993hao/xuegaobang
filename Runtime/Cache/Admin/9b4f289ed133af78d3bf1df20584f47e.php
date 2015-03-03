@@ -249,8 +249,8 @@
                         <td><?php echo ($vo["status_text"]); ?></td>
                         <td><?php echo ($vo["detail"]); ?></td>
                         <td>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo U('del?id='.$vo['id']);?>">删除</a>
-                            <?php if(($vo["status"]) == "0"): ?><a title="已读" href="<?php echo U('read?id='.$vo['id']);?>">已读</a><?php endif; ?>
+                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>
+                            <?php if(($vo["status"]) == "0"): ?><a title="已读" class="ajax-get" href="<?php echo _U('read?id='.$vo['id']);?>">已读</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>

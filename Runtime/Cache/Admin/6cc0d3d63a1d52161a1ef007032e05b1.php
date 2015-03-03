@@ -258,8 +258,6 @@
                         <td><a href="<?php echo _U('comment?id='.$vo['id']);?>">点击查看</a></td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>
-                            <?php if($vo['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$vo['id']);?>">启用</a><?php endif; ?>
-                            <?php if($vo['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$vo['id']);?>">禁用</a><?php endif; ?>
                             <a title="编辑"    href="<?php echo _U('edit?id='.$vo['id']);?>">编辑</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>

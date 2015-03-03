@@ -148,7 +148,7 @@ class ThinkController extends AdminController {
         }
     }
 
-    public function edit($model, $id = 0,$title=''){
+    public function edit($model, $id = 0,$title='',$success="保存成功"){
 
         //获取模型信息
         if(is_numeric($model)){

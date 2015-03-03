@@ -16,22 +16,23 @@ class IndexController extends ModuleController {
         if(IS_POST){
             $res = M(parse_name("company",true))->where(array('uid'=>UID))->field('id')->find();
             if($res){//有基本信息了
-                parent::edit("company",$res['id']);
+                $_POST['status'] = 2;//更改信息,企业资质变为未审核
+                parent::edit("company",$res['id'],$success="修改成功!等待审核");
             }else{
                 $_POST['uid'] = UID;
                 parent::add("company");
             }
         }else{
-            MK();
             $res = M('Company')->where(array('uid'=>UID))->field('id,status')->find();
             if($res){ //有基本信息了
                 $method = I('method');
                 if($method == 'edit'){
                     parent::edit("company",$res['id'],'修改企业资料');
                 }else{
-                    $this->assign('_extend',' <a  href="'._U('index?method=edit').'" class="tooltip-success" data-placement="right" data-rel="tooltip"  data-original-title="点我可进行编辑哦"><i style="color:#6c9842" class="icon-edit icon-animated-vertical bigger-100"></i></a>');
+                    MK();
+                    $this->assign('_extend',' <a  href="'._U('index?method=edit').'" class="tooltip-success" data-placement="right" data-rel="tooltip"  data-original-title="点我可进行编辑,编辑成功后需要再次审核！"><i style="color:#6c9842" class="icon-edit icon-animated-vertical bigger-100"></i></a>');
                     if($res['status'] == 2){
-                        parent::info("company",$res['id'],'企业资料(未审核)');
+                        parent::info("company",$res['id'],'企业资料(待审核)');
                     }else{
                         parent::info("company",$res['id'],'企业资料(已审核)');
                     }
