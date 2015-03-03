@@ -1,0 +1,27 @@
+[ 2015-02-27T19:37:43+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004536s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+
+[ 2015-02-27T19:37:44+08:00 ] 127.0.0.1 /jdicms/dispatch/execute_addons/_addons/IPlistener/_controller/IPlistener/_action/updateIp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000114s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.002359s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/jdicms/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_addons` [ RunTime:0.001888s ]
+SQL: SELECT * FROM `jdi_addons` WHERE `name` = 'IPlistener' LIMIT 1   [ RunTime:0.000587s ]
+NOTIC: [2] file_get_contents(): php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/haoli/Desktop/www/jdicms/Addons/IPlistener/Controller/IPlistenerController.class.php 第 104 行.
+NOTIC: [2] file_get_contents(http://ip.taobao.com/service/getIpInfo.php?ip=127.0.0.1): failed to open stream: php_network_getaddresses: getaddrinfo failed: nodename nor servname provided, or not known /Users/haoli/Desktop/www/jdicms/Addons/IPlistener/Controller/IPlistenerController.class.php 第 104 行.
+NOTIC: [8] Trying to get property of non-object /Users/haoli/Desktop/www/jdicms/Addons/IPlistener/Controller/IPlistenerController.class.php 第 105 行.
+NOTIC: [8] Trying to get property of non-object /Users/haoli/Desktop/www/jdicms/Addons/IPlistener/Controller/IPlistenerController.class.php 第 108 行.
+SQL: SHOW COLUMNS FROM `jdi_iplistener` [ RunTime:0.003344s ]
+SQL: INSERT INTO `jdi_iplistener` (`ip`,`visit_time`,`visit_url`,`city`,`isp`) VALUES ('127.0.0.1',1425037063,'http://www.nb.com/','未知','未知') [ RunTime:0.001744s ]
+

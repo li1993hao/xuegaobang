@@ -38,12 +38,11 @@ class AddonsBackController extends AdminController {
                     $class = "";
                 }
                 $admin[] = array('title'=>$value['title'],'url'=>"AddonsBack/adminList?name={$value['name']}",
-                    'class'=>$class);
+                    'class'=>$class,'name'=>$value['name']);
             }
             if(!$flag && count($db_addons) >0){
-                $admin[0] = array('title'=>$value['title'],'url'=>"AddonsBack/adminList?name={$value['name']}",
-                    'class'=>'active');
-                $_GET['name'] = $value['name'];
+                $admin[0]['class']='active';
+                $_GET['name'] =$admin[0]['name'];
             }
         }else{
             $this->error('您还未安装带有后台的插件!');
@@ -64,12 +63,12 @@ class AddonsBackController extends AdminController {
         $addon = new $class();
         $this->assign('addon', $addon);
         $param = $addon->admin_list;
-        if(!$param)
-            $this->error('插件列表信息不正确');
+        if($param){
+            extract($param);
+            $this->assign($param);
+        }
         $this->meta_title = $addon->info['title'];
-        extract($param);
         $this->assign('title', $addon->info['title']);
-        $this->assign($param);
         if(!isset($fields))
             $fields = '*';
         if(!isset($search_key))
@@ -124,6 +123,9 @@ class AddonsBackController extends AdminController {
             }
             $this->assign('model', $model->model);
             $this->assign('list_grid', $list_grid);
+        }
+        if(method_exists($addon,'admin_before')){
+            $addon->admin_before($this->view); //
         }
         $this->assign('_list', $list);
         if($addon->custom_adminlist)

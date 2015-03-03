@@ -373,7 +373,7 @@ str;
         }
         $addonsModel    =   D('Addons');
         $data           =   $addonsModel->create($info);
-        if(is_array($addons->admin_list) && $addons->admin_list !== array()){
+        if((is_array($addons->admin_list) && $addons->admin_list !== array()) || $addons->has_admin){
             $data['has_adminlist'] = 1;
         }else{
             $data['has_adminlist'] = 0;

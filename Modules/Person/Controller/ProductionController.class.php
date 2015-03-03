@@ -9,6 +9,17 @@ use Think\Page;
  * @package Modules\Person\Controller
  */
 class ProductionController extends ModuleController {
+
+    public function _initialize(){
+        parent::_initialize();
+        $status = check_company_status();
+        if($status == -1){//未填写资料
+            $this->error('您尚未填写企业资料,不能使用改功能!');
+        }elseif($status == 2){ //未审核
+            $this->error('您的企业资料尚未通过审核,不能使用该功能!');
+        }
+    }
+
     public function  index(){
         MK();
         $map  = array('status' => array('gt',-1),'uid'=>UID);
