@@ -87,9 +87,9 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>产品名称</th>
-                <th>厂家</th>
-                <th>产品发布者</th>
+                <th>标题</th>
+                <th>发布人</th>
+                <th>相关评论</th>
                 <th>创建时间</th>
                 <th>更新时间</th>
                 <th>状态</th>
@@ -107,8 +107,8 @@
                             </label>
                         </td>
                         <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.name}</a></td>
-                        <td>{$com.vender}</td>
                         <td>{:get_user_filed($com.uid,"username")}</td>
+                        <td><a href="{:_U('comment?id='.$com['id'])}">点击查看</a></td>
                         <td>{$com.create_time|date="y-m-d H:i",###}</td>
                         <td>{$com.update_time|date="y-m-d H:i",###}</td>
                         <td>

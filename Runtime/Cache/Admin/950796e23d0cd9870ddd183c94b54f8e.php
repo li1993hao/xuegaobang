@@ -228,11 +228,6 @@
                             <?php echo get_user_filed($vo['uid'],'nickname');?>
                         </div>
                         <div class="text"><?php echo ($vo["content"]); ?></div>
-                        <div class="tools">
-                            <a href="#" class="btn btn-minier btn-info">
-                                <i class="icon-only icon-share-alt"></i>
-                            </a>
-                        </div>
                     </div>
                 </div><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>

@@ -147,6 +147,7 @@ class SampleApi {
 
         $model_name = ModelApi::get_model_by_id($model_id,'name');
         if(empty($model_name)){//模型不存在或者被禁用
+            api_msg('');
             return false;
         }
 

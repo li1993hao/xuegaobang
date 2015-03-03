@@ -1,15 +1,18 @@
 ---
 产品管理:
   - title: 产品管理
-    url: index/index
+    url: production/index
     children:
       - title: dd
         url: index/aa
-  - title: 产品审核
-    url: index/verify
+#  - title: 产品审核
+#    url: index/verify
 论坛管理:
   - title: 帖子管理
-    url: tieBa/index
+    url: tieba/index
+    children:
+        - title: 新增
+          url: tieba/add
 用户管理:
   - title: 用户管理
     url: user/index
