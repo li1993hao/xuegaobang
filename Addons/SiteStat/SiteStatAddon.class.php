@@ -41,14 +41,20 @@ class SiteStatAddon extends Addon{
         $config = $this->getConfig();
         $this->assign('addons_config', $config);
         if($config['display']){
-            $info['user']		=	M('Member')->count();
-            $info['addons']		=	M('Addons')->count();
-            $info['module'] = M('Module')->count();
-            $info['document']	=	M('Article')->count();
-            $info['category']	=	M('Node')->where(array('type'=>array('in','1,2,3')))->count();
-            $info['model']		=	M('Model')->count();
-            $this->assign('info',$info);
-            $this->display('info');
+            $type = session('user_auth.type');
+            if($type == 1){ //企业用户
+                $info['production'] = M('production')->where(array('uid'=>UID))->count();//产品数量
+                $info['comment'] = M('comment')->where(array('topic_table'=>'member','topic_id'=>UID))->count();//企业评论数量
+                $info['notice'] = M('notice')->where(array('uid'=>UID))->count();//通知
+            }elseif($type == 0){//管理员
+                $info['company']    =   M('Member')->where(array('type'=>1))->count(); //企业用户数量
+                $info['user']		=	M('Member')->where(array('type'=>2))->count(); //普通用户数量
+                $info['production'] =   M('production')->count(); //产品数量
+                $info['company_verify'] =   M('company')->where(array('status'=>2))->count(); //待审核企业
+                $this->assign('info',$info);
+                $this->display('baibang');
+            }
+
         }
     }
 }

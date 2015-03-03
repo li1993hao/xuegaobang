@@ -1218,7 +1218,7 @@ function list_url($list){
  * @param $fun 回调函数
  * @return mixed
  */
-function content_url($list,$fun){
+function content_url($list,$fun=null){
     if(!isset($list['id'])){//代表是二维数组
         foreach((array)$list as $k=>$v){
             if($v['cover']>0){//封面图片

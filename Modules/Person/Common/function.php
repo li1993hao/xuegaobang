@@ -6,20 +6,11 @@
  * Time: 下午3:33
  */
 
-/**
- * 必须实现返回后台菜单节点
- * array(
- *   'index'=>array('title'=>'商品管理','action'=>'index,edit,add')
- * );
- */
-function _MODULE_MENU(){
-    return array(
-        'SP'=>array(
-            array('title'=>'SP','url'=>'index/index','children'=>
-                array(
-                    array('title'=>'ooo','url'=>'index/aa')
-                )),
-            array('title'=>'dd','url'=>'index/ding')
-        )
-    );
+function check_company_status(){
+    $res = M('Company')->where(array('uid'=>UID))->field('id,status')->find();
+    if($res){
+        return $res['status'];
+    }else{
+        return -1;//资料未填写
+    }
 }

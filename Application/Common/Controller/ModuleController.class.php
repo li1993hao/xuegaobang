@@ -69,7 +69,6 @@ abstract class ModuleController extends ThinkController{
                 $s = __CURRENT_CONTROLLER__.'/'.$s;
             }
         }
-
         $this->display(T('Modules://'.__CURRENT_MODULE__.'@'.$s));
     }
 }

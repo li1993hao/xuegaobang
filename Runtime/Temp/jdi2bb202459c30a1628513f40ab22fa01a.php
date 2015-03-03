@@ -1,0 +1,3 @@
+<?php
+//000000000000a:1:{s:2:"u1";a:15:{s:2:"id";s:1:"1";s:8:"username";s:5:"admin";s:8:"password";s:40:"0fdcd401563560514b51347603c8929761a87973";s:6:"mobile";s:0:"";s:8:"reg_time";s:10:"1419563970";s:6:"reg_ip";s:1:"0";s:15:"last_login_time";s:10:"1425196877";s:13:"last_login_ip";s:10:"2130706433";s:11:"update_time";s:10:"1419563970";s:6:"status";s:1:"1";s:11:"login_times";s:3:"400";s:8:"nickname";s:6:"李浩";s:4:"type";s:1:"0";s:5:"score";s:1:"0";s:4:"head";s:0:"";}}
+?>

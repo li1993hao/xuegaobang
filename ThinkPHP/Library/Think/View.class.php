@@ -141,16 +141,18 @@ class View {
         if(is_file($template)) {
             return $template;
         }
+
         $depr       =   C('TMPL_FILE_DEPR');
         $template   =   str_replace(':', $depr, $template);
+
         // 获取当前主题名称
         $theme = $this->getTemplateTheme();
-
         // 获取当前模块
         $module   =  MODULE_NAME;
         if(strpos($template,'@')){ // 跨模块调用模版文件
             list($module,$template)  =   explode('@',$template);
         }
+
         // 获取当前主题的模版路径
         if(!defined('THEME_PATH')){
             if(C('VIEW_PATH')){ // 模块设置独立的视图目录
@@ -169,6 +171,7 @@ class View {
             $template = CONTROLLER_NAME . $depr . $template;
         }
         $file   =   THEME_PATH.$template.C('TMPL_TEMPLATE_SUFFIX');
+
         if(C('TMPL_LOAD_DEFAULTTHEME') && THEME_NAME != C('DEFAULT_THEME') && !is_file($file)){
             // 找不到当前主题模板的时候定位默认主题中的模板
             $file   =   dirname(THEME_PATH).'/'.C('DEFAULT_THEME').'/'.$template.C('TMPL_TEMPLATE_SUFFIX');

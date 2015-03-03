@@ -6,7 +6,7 @@
  * Time: 下午3:27
  */
 
-namespace Module\Person\Api;
+namespace Modules\Person\Api;
 
 class SampleApi {
     public static function aa(){

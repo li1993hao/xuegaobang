@@ -23,14 +23,18 @@ class IndexController extends ModuleController {
             }
         }else{
             MK();
-            $res = M(parse_name("company",true))->where(array('uid'=>UID))->field('id')->find();
+            $res = M('Company')->where(array('uid'=>UID))->field('id,status')->find();
             if($res){ //有基本信息了
                 $method = I('method');
                 if($method == 'edit'){
                     parent::edit("company",$res['id'],'修改企业资料');
                 }else{
                     $this->assign('_extend',' <a  href="'._U('index?method=edit').'" class="tooltip-success" data-placement="right" data-rel="tooltip"  data-original-title="点我可进行编辑哦"><i style="color:#6c9842" class="icon-edit icon-animated-vertical bigger-100"></i></a>');
-                    parent::info("company",$res['id'],'企业资料');
+                    if($res['status'] == 2){
+                        parent::info("company",$res['id'],'企业资料(未审核)');
+                    }else{
+                        parent::info("company",$res['id'],'企业资料(已审核)');
+                    }
                 }
             }else{
                 parent::add("company",'完善企业资料(您还未填写过企业资料,请尽快完善)');
