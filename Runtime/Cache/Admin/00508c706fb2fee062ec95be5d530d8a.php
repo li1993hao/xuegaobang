@@ -204,12 +204,8 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-<<<<<<< HEAD
     产品管理
 
-=======
-                        
->>>>>>> origin/master
                     </h1>
                 </div>
                 <!-- /.page-header -->
@@ -217,15 +213,14 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-<<<<<<< HEAD
     <!--"Modules://BaiBang@index/aa"-->
     <div>
-        <!--<div class="btn-group">-->
+        <div class="btn-group">
             <!--<a class="btn btn-sm btn-primary" href="<?php echo U('addCompetition');?>">新 增</a>-->
-            <!--<button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"-->
-                    <!--data-tip="确定要删除么?">删 除-->
-            <!--</button>-->
-        <!--</div>-->
+            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
+                    data-tip="确定要删除么?">删 除
+            </button>
+        </div>
 
         <div class="pull-right">
             <a href="#" id="adv_show">
@@ -269,6 +264,7 @@
 
                                 <!--</select>-->
                             <!--</td>-->
+
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -314,11 +310,11 @@
             <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
                         <td class="center">
                             <label>
-                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($menu["id"]); ?>">
+                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($vo["name"]); ?>" data-id="<?php echo ($vo["uid"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo ($com["vender"]); ?></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
                         <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
@@ -328,9 +324,9 @@
                         </td>
                         <td>
 
-                            <a title="编辑" href="<?php echo U('addCompetition',array('id'=>$com['id']));?>">编辑</a>
-                            <a title="运动项目" href="<?php echo U('sports',array('id'=>$com['id']));?>">运动项目</a>
-                            <a class="confirm ajax-get" title="删除" href="<?php echo U('setStatus?status=-1&ids='.$com['id']);?>">删除</a>
+                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
+                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
+                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -343,9 +339,6 @@
             <?php echo ($_page); ?>
         </div>
     </div>
-=======
-    <a href="<?php echo _U('aa');?>">dsa</a>
->>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -358,7 +351,6 @@
     </div>
 </div><!-- /.main-container -->
 
-<<<<<<< HEAD
     <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -379,8 +371,6 @@
             </div>
         </div>
     </div>
-=======
->>>>>>> origin/master
 
 
 <!-- /主体 -->
@@ -442,7 +432,6 @@
 
 
 
-<<<<<<< HEAD
     <script>
         $('#adv_show').click(function(){
             var ele = $(this).find('i');
@@ -455,19 +444,17 @@
             }
         });
         $('.info').click(function(){
-            lock = true;
             $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
             $('#user_info').modal('show');
-            var uid = $(this).data('id')
+            var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
-            alert(uid+"++++ "+ url);
+            console.log(id+"++++ "+ url);
 
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',uid);
-            $.post(url,{'id':uid},function(data){
-                alert(data);
-                lock = false;
+            $("#print_single").data('id',id);
+            $.post(url,{'id':id},function(data){
+                console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });
         });
@@ -488,11 +475,9 @@
             $("#adv_search").show();
             var ele = $("#adv_show").find('i');
             $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($com); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
         }();<?php endif; ?>
     </script>
 
-=======
->>>>>>> origin/master
 </body>
 </html>

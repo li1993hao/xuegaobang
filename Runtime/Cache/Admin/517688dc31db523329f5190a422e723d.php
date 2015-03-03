@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
     <?php echo ($title); ?>内容列表
-=======
-                        
-    <?php echo ($title); ?>内容列表
->>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -217,55 +212,6 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
-                        
-	<div>
-		<div class="btn-group">
-		<?php if(($model["extend"]) == "1"): ?><a class="btn btn-sm btn-primary" href="<?php echo U('edit',array('name'=>$name));?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post confirm" target-form="ids" url="<?php echo U('del?name='.$name);?>">删 除</button><?php endif; ?>
-		</div>
-        <!-- 高级搜索 -->
-        <div class="pull-right">
-            <span class="input-icon">
-                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
-                <i class="icon-search"></i>
-			</span>
-        </div>
-	</div>
-	<!-- 数据列表 -->
-		<?php if(empty($custom_adminlist)): ?><div class="table-responsive">
-            <!-- 数据列表 -->
-	        <table class="table table-striped table-bordered table-hover">
-				<thead>
-					<tr>
-                        <th class="center">
-                            <label>
-                                <input type="checkbox" class="ace check-all">
-                                <span class="lbl"></span>
-                            </label>
-                        </th>
-						<?php if(is_array($list_grid)): $i = 0; $__LIST__ = $list_grid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><th><?php echo ($vo["title"]); ?></th><?php endforeach; endif; else: echo "" ;endif; ?>
-					</tr>
-				</thead>
-				<tbody>
-					<?php if(is_array($_list)): $vo = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$lv): $mod = ($vo % 2 );++$vo;?><tr>
-                        <td class="center">
-                            <label>
-                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($lv["id"]); ?>">
-                            </label>
-                        </td>
-						<?php if(is_array($list_grid)): $i = 0; $__LIST__ = $list_grid;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$lk): $mod = ($i % 2 );++$i;?><td><?php echo get_addonlist_field($lv, $lk, $name);?></td><?php endforeach; endif; else: echo "" ;endif; ?>
-					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				</tbody>
-			</table>
-            </div>
-        <?php else: ?>
-			<?php if(isset($custom_adminlist)): echo ($custom_adminlist); endif; endif; ?>
-	<!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
-=======
                         
     <div>
         <?php if(($model["extend"]) == "1"): ?><div class="btn-group">
@@ -317,7 +263,6 @@
     <div class="page">
         <?php echo ($_page); ?>
     </div>
->>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -389,7 +334,6 @@
 
 
 
-<<<<<<< HEAD
 
     <script type="text/javascript">
         $(function() {
@@ -422,40 +366,6 @@
             });
         });
     </script>
-=======
-
-    <script type="text/javascript">
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?'.$search_key.'=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
-            //点击排序
-            $('.list_sort').click(function(){
-                var url = $(this).attr('url');
-                var ids = $('.ids:checked');
-                var param = '';
-                if(ids.length > 0){
-                    var str = new Array();
-                    ids.each(function(){
-                        str.push($(this).val());
-                    });
-                    param = str.join(',');
-                }
-
-                if(url != undefined && url != ''){
-                    window.location.href = url + '/ids/' + param;
-                }
-            });
-        });
-    </script>
->>>>>>> origin/master
 
 </body>
 </html>

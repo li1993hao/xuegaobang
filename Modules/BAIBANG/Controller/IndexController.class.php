@@ -8,6 +8,10 @@ use Think\Controller;
  * @package Modules\BaiBang\Controller
  */
 class IndexController extends ModuleController {
+
+    /**
+     * 搜索功能
+     */
     public function search(){
         $map = $this->searc_parse();
         $result = $this->p_lists('Production',$map,'',array(),true);
@@ -25,7 +29,6 @@ class IndexController extends ModuleController {
                 if(trim($_REQUEST[$k]) === ""){
                     continue;
                 }
-
                 if($kk[1] == 'name'){//模糊查询
                     $map[] = "BINARY `name` LIKE '%{$v}%'";
                     $team_map[$k] = $v;
@@ -36,11 +39,9 @@ class IndexController extends ModuleController {
                     $team_map[$k] = $v;
                     continue;
                 }
-
                 if($v == '__whatever__'){ //不限
                     continue;
                 }
-                dump($_REQUEST);
                 $map[$kk[1]] = $v;
                 $team_map[$k] = $v;
             }else{
@@ -54,19 +55,52 @@ class IndexController extends ModuleController {
         return $map;
     }
 
+
+    /**
+     * 删除数据
+     */
+    public function  del(){
+        parent::editRow('Production',array('status'=>-1),array('uid'=>UID));
+    }
+
+    /**
+     * 禁用数据
+     */
+    public function  forbid(){
+        parent::editRow('Production',array('status'=>0),array('uid'=>UID));
+    }
+
+    /**
+     * 恢复数据
+     */
+    public function  resume(){
+        parent::editRow('Production',array('status'=>1),array('uid'=>UID));
+    }
+    /**
+     * @param null $id
+     * @param string $method
+     */
+    public function info(){
+        $id= I('post.id');
+        if (is_numeric($id)) {
+            $user = M('Production')->find($id);
+            parent::info("Production", array('id' => $id), '','public/info');//, 'public/info'
+        } else {
+            $this->error('参数不合法!');
+        }
+    }
     /**
      * 产品管理
      */
     public function  index(){
         MK();
-        $map  = array('status' => array('gt',-1),'uid'=>UID);
+        $map  = array('status' => array('gt',-1));
         $list = $this->p_lists('Production',$map,'update_time');
         int_to_string($list);
         $list = list_sort_by($list,'status');
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();
-
     }
 
     /**
