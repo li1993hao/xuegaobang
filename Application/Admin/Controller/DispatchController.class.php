@@ -21,6 +21,7 @@ class DispatchController extends Controller {
         }
         $TMPL_PARSE_STRING = C('TMPL_PARSE_STRING');
         $TMPL_PARSE_STRING['__ADDONROOT__'] = __ROOT__ . "/Addons/{$_addons}";
+
         C('TMPL_PARSE_STRING', $TMPL_PARSE_STRING);
 
         if(!empty($_addons) && !empty($_controller) && !empty($_action)){
@@ -46,6 +47,7 @@ class DispatchController extends Controller {
         }
         $TMPL_PARSE_STRING = C('TMPL_PARSE_STRING');
         $TMPL_PARSE_STRING['__MODULEROOT__'] = __ROOT__ . "/Module/{$_module}";
+
         C('TMPL_PARSE_STRING', $TMPL_PARSE_STRING);
 
         if(!empty($_module) && !empty($_controller) && !empty($_action)){

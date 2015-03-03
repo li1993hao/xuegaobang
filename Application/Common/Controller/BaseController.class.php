@@ -11,8 +11,8 @@ namespace Common\Controller;
 use Think\Controller;
 
 /**
- *所有控制器都要继承他
- */
+*所有控制器都要继承他
+*/
 class BaseController extends Controller{
     protected   function _initialize(){
         /* 读取数据库中的配置 */
@@ -22,7 +22,7 @@ class BaseController extends Controller{
             S('DB_CONFIG_DATA',$config);
         }
         C($config); //添加配置
-	}
+    }
 
     protected function  J_J($status,$data,$msg){
         $datas['status'] = $status;
