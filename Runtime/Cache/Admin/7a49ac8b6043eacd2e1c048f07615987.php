@@ -1,9 +1,9 @@
 <?php if (!defined('THINK_PATH')) exit();?><div class="btn-group">
-    <a class="btn btn-sm btn-primary" onclick="$('#form').submit();">生成Api文档</a>
+    <a class="btn btn-sm btn-primary" onclick="$('#form').submit();">生成离线Api文档</a>
     <a class="btn btn-sm btn-primary" target="_blank" href="<?php echo addons_url('ApiDoc://index/apiOnline');?>">在线浏览</a>
 </div>
 <div class="table-responsive">
-    <form id="form" action="<?php echo addons_url('ApiDoc://ApiDoc/generate');?>" method="post">
+    <form id="form" action="<?php echo addons_url('ApiDoc://index/generate');?>" method="post">
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>

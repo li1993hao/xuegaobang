@@ -126,7 +126,7 @@ class FileModel extends Model{
      * @param  string   $args     回调函数参数
      * @return boolean            下载失败返回false
      */
-    private function downLocalFile($file, $callback = null, $args = null){
+    private  function downLocalFile($file, $callback = null, $args = null){
 
         if(is_file($file['rootpath'].$file['savepath'].$file['savename'])){
             /* 调用回调函数新增下载数 */

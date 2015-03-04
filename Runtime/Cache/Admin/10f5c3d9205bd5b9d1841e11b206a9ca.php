@@ -65,10 +65,10 @@
 <div id="loading"></div>
 <!--[if !IE]> -->
 
-<script type="text/javascript" src="/xuegaobang/Public/vendor/ace/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/jquery-2.0.3.min.js"></script>
 <!-- <![endif]-->
 <!--[if IE]>
-<script type="text/javascript" src="/xuegaobang/Public/vendor/ace/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/jquery-1.10.2.min.js"></script>
 <![endif]-->
 
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/jquery.thinktree.js"></script>

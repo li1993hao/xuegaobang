@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
     插件列表
-=======
-                        
-    插件列表
->>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -217,7 +212,6 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
 	<div class="btn-group">
 		<a href="<?php echo U('create');?>" class="btn btn-sm btn-primary">快速创建</a>
@@ -270,60 +264,6 @@
     <div class="page">
         <?php echo ($_page); ?>
     </div>
-=======
-                        
-	<div class="btn-group">
-		<a href="<?php echo U('create');?>" class="btn btn-sm btn-primary">快速创建</a>
-	</div>
-	<!-- 数据列表 -->
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>名称</th>
-					<th>标识</th>
-					<th>描述</th>
-					<th>状态</th>
-					<th>作者</th>
-					<th>版本</th>
-					<th>操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<td><?php echo ($vo["title"]); ?></td>
-					<td><?php echo ($vo["name"]); ?></td>
-					<td><?php echo ($vo["description"]); ?></td>
-					<td><?php echo ((isset($vo["status_text"]) && ($vo["status_text"] !== ""))?($vo["status_text"]):"未安装"); ?></td>
-					<td><?php echo ($vo["author"]); ?></td>
-					<td><?php echo ($vo["version"]); ?></td>
-					<td>
-						<?php if(empty($vo["uninstall"])): $class = get_addon_class($vo['name']); if(!class_exists($class)){ $has_config = 0; }else{ $addon = new $class(); $has_config = count($addon->getConfig()); } ?>
-							<?php if ($has_config): ?>
-								<a href="<?php echo U('config',array('id'=>$vo['id']));?>">设置</a>
-							<?php endif ?>
-						<?php if ($vo['status'] >=0): ?>
-							<?php if(($vo["status"]) == "0"): ?><a class="ajax-get" href="<?php echo U('enable',array('id'=>$vo['id']));?>">启用</a>
-							<?php else: ?>
-								<a class="ajax-get" href="<?php echo U('disable',array('id'=>$vo['id']));?>">禁用</a><?php endif; ?>
-						<?php endif ?>
-							
-								<a class="ajax-get confirm" href="<?php echo U('uninstall?id='.$vo['id']);?>">卸载</a>
-							
-						<?php else: ?>
-							<a class="ajax-get" href="<?php echo U('install?addon_name='.$vo['name']);?>">安装</a><?php endif; ?>
-					</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				<?php else: ?>
-				<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-			</tbody>
-		</table>
-	</div>
-	<!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
->>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>

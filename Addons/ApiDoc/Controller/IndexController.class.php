@@ -13,9 +13,47 @@ class IndexController extends AddonsController{
      public function generate(){
          $names = (array)I('post.names');
          $modules = M('Module')->where(array('status'=>1,'name'=>array('in',$names)))->select();
-         $this->get_list($modules);
-         //$this->assign('list',$list);
+         $this->assign('list',$this->get_list($modules));
+         $content = $this->fetch(T('Addons://ApiDoc@index/apiOnline'));
+         $content = str_replace(C('TMPL_PARSE_STRING.__ADDONROOT__').'/asset/','',$content);
+         $fileDir = JDICMS_ADDON_PATH.I('get._addons').'/asset';
+         $filePath =$fileDir.'/index.html';
+         file_put_contents($filePath,$content);
+
+         $zip=new \ZipArchive();
+
+         $zipPath = JDICMS_ADDON_PATH.I('get._addons').'/apiDoc.zip';
+         if($zip->open(JDICMS_ADDON_PATH.I('get._addons').'/apiDoc.zip', \ZipArchive::CREATE)=== TRUE){
+             $this->addFileToZip($fileDir, $zip); //调用方法，对要打包的根目录进行操作，并将ZipArchive的对象传递给方法
+             $zip->close(); //关闭处理的zip文件
+         }
+         header("Cache-Control: public");
+         header("Content-Description: File Transfer");
+         header('Content-disposition: attachment; filename='.'apiDoc'); //文件名
+         header("Content-Type: application/zip"); //zip格式的
+         header("Content-Transfer-Encoding: binary"); //告诉浏览器，这是二进制文件
+         header('Content-Length: '. filesize($zipPath)); //告诉浏览器，文件大小
+         readfile($zipPath);
+         unlink($zipPath);
+         unlink($filePath);
+         exit;
      }
+
+     private  function addFileToZip($path,$zip){
+        $handler=opendir($path); //打开当前文件夹由$path指定。
+        while(($filename=readdir($handler))!==false){
+            if($filename != "." && $filename != ".."){//文件夹文件名字为'.'和‘..’，不要对他们进行操作
+                if(is_dir($path."/".$filename)){// 如果读取的某个对象是文件夹，则递归
+                    $this->addFileToZip($path."/".$filename, $zip);
+                }else{ //将文件加入zip对象
+                    $zip->addFile($path."/".$filename);
+                }
+            }
+        }
+        @closedir($path);
+    }
+
+
 
     /**
      * @param $ms
