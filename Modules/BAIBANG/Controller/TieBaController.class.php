@@ -79,7 +79,6 @@ class TiebaController extends CommonController{
             $list = $this->p_lists('Comment',$map,'update_time');
             $this->assign('list',$list);
         }
-        trace($id);
         $this->_display();
     }
 

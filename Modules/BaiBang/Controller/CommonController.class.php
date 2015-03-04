@@ -22,21 +22,21 @@ class CommonController extends ModuleController{
      * 删除数据
      */
     public function  del(){
-        parent::editRow('member',array('status'=>-1),null);
+        parent::editRow(__CURRENT_CONTROLLER_,array('status'=>-1),null);
     }
 
     /**
      * 禁用数据
      */
     public function  forbid(){
-        parent::editRow('member',array('status'=>0),null);
+        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>0),null);
     }
 
     /**
      * 恢复数据
      */
     public function  resume(){
-        parent::editRow('member',array('status'=>1),null);
+        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>1),null);
     }
 
 }

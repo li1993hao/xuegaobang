@@ -116,6 +116,25 @@ class UserController extends CommonController
         $this->assign('where',$team_map);
         return $map;
     }
+    /**
+     * 删除数据
+     */
+    public function  del(){
+        parent::editRow("Member",array('status'=>-1),null);
+    }
 
+    /**
+     * 禁用数据
+     */
+    public function  forbid(){
+        parent::editRow("Member",array('status'=>0),null);
+    }
+
+    /**
+     * 恢复数据
+     */
+    public function  resume(){
+        parent::editRow("Member",array('status'=>1),null);
+    }
 
 }

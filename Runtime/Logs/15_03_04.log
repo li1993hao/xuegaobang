@@ -551,3 +551,416 @@ SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
 NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
 SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.000000s ]
 
+[ 2015-03-04T16:02:20+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456140&_hash=179f6b9012638cf8aba683395ebc2e990fdc8928
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.010000s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.001001s ]
+
+[ 2015-03-04T16:02:25+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456145&_hash=9f2089b1d4dc08d2521730f5d3fa4f9e64377796
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.001001s ]
+
+[ 2015-03-04T16:02:33+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456153&_hash=69b42f4ce51397ad9ea632fd0c118c1f999ef0ec
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.008001s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:02:37+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456157&_hash=38781f5aea06f61097bac5af8dd8b2c45429984b
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003001s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 20,20   [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:02:44+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456163&_hash=98bd30518ca276aab1f2da3534c870f67a69e044
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:13:47+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425456827&_hash=a64434bf6bb91d6095107bb925bb6d5e2a307fde
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:17+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456977&_hash=fd05b71cbaac6641bd606484e20fa3024f70844f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.138008s ]
+
+[ 2015-03-04T16:16:21+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456981&_hash=91c2eec1ccdc1cc4c9ea09332e147ac4c3b12218
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.010000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:22+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456982&_hash=b2142c400690a24f1fe6c6d8f418ed3dba13bc7a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:23+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456983&_hash=2462b088a7878308573f0fbcc92ccae9ed282681
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.009001s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:23+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456983&_hash=2462b088a7878308573f0fbcc92ccae9ed282681
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003001s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:16:24+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456984&_hash=00415b00f05bae0f39d9ae83cff6633b56fb2692
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:16:24+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456984&_hash=00415b00f05bae0f39d9ae83cff6633b56fb2692
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001001s ]
+
+[ 2015-03-04T16:16:24+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456984&_hash=00415b00f05bae0f39d9ae83cff6633b56fb2692
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.005000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:24+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456984&_hash=00415b00f05bae0f39d9ae83cff6633b56fb2692
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.005000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:16:25+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456985&_hash=eac006d512b99cf1097101e008c36a4f3b1dc670
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:36+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456996&_hash=5250417d8113fdaf078a2269c1bf9926057bfeb7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:16:36+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456996&_hash=5250417d8113fdaf078a2269c1bf9926057bfeb7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:16:37+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=delTiezi&_time=1425456997&_hash=442975bd56d89dc8abf05643fb370c872a3ceefd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: DELETE FROM `jdi_tieba` WHERE ( id=1 ) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:19:15+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457155&_hash=fddbb1de8ac3deecd2ab03f3f018d67ec53717de
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.011001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:20:42+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457242&_hash=9dc36c48b8b46eb44146fd4834ec68de08c619a8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.009001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001001s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: INSERT INTO `jdi_tieba` (`name`,`create_time`,`update_time`) VALUES ('123',1425457242,1425457242) [ RunTime:0.051003s ]
+
+[ 2015-03-04T16:23:33+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457413&_hash=fcf479c489c2fd0a7ec6cb75dffe35034c7bda4a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.009000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: INSERT INTO `jdi_tieba` (`name`,`create_time`,`update_time`) VALUES ('123',1425457413,1425457413) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:24:10+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457450&_hash=2c2fa1188f905953fc65f169143fbfbf98ec908e
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.010001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001001s ]
+SQL: INSERT INTO `jdi_tieba` (`name`,`create_time`,`update_time`) VALUES ('123',1425457450,1425457450) [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:24:40+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457480&_hash=99d28bbebcbec7020d1d11971b9b995b4df82a4b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_config` [ RunTime:0.003000s ]
+SQL: SELECT `type`,`name`,`value` FROM `jdi_config` WHERE `status` = 1  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+SQL: INSERT INTO `jdi_tieba` (`name`,`create_time`,`update_time`) VALUES ('123',1425457480,1425457480) [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:25:00+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457500&_hash=6e1f085e68dae08949b52e9122feb1e76a53f27f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.012000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:27:08+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457628&_hash=a1bf4b362ea673f6e36f0db1a438cdf6a90fa2ea
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.006000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: content D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Model.class.php 第 1157 行.
+
+[ 2015-03-04T16:27:26+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457646&_hash=b8bf9fff1003358b195d2a73ba601cfcf90f1c65
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.004000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: content D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Model.class.php 第 1157 行.
+
+[ 2015-03-04T16:27:36+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=addTiezi&_time=1425457656&_hash=784b36a07ac79a6f29848fa4cf6ee1e808fe9f58
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:32:01+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457921&_hash=d8c684e4b702fb6c256322ce8b7cb819344782f1
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: content D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Model.class.php 第 1157 行.
+
+[ 2015-03-04T16:32:07+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457927&_hash=ce590e6580a704259e132c742fb13a6cb38378e4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.011000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: content D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Model.class.php 第 1157 行.
+
+[ 2015-03-04T16:32:23+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457943&_hash=31907a3b2ef17ff44aad2a0bda81f8cbae72b5f6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001001s ]
+
+[ 2015-03-04T16:32:27+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457947&_hash=4b350da0ba1dae6b328efffcc5440d2f552e2b03
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.009001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:32:32+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457952&_hash=57066e59afcedf6992f6fea6308870651eadbcd8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:33:15+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457995&_hash=9e1170c2ae49f41a9869f70ffad97d6f3bbee7f8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.012001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.011000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: UPDATE `jdi_tieba` SET `name`='123123132123123',`content`='123123123123123123123123123123',`update_time`=1425457995 WHERE `id` = 1 [ RunTime:0.001000s ]
+
+[ 2015-03-04T16:33:16+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425457995&_hash=9e1170c2ae49f41a9869f70ffad97d6f3bbee7f8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: UPDATE `jdi_tieba` SET `name`='123123132123123',`content`='123123123123123123123123123123',`update_time`=1425457996 WHERE `id` = 1 [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:33:40+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=editTiezi&_time=1425458020&_hash=d28481f045b4db8b675ab175074c1c8e8d62838c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+SQL: UPDATE `jdi_tieba` SET `name`='123123132123123',`content`='123123123123123123123123123123',`update_time`=1425458020 WHERE `id` = 2 [ RunTime:0.000000s ]
+
+[ 2015-03-04T16:36:42+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425458202&_hash=117bc4a1d26b0b7da71967515e3b3d308bdcc8ab
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.001000s ]
+
+[ 2015-03-04T17:21:50+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425460910&_hash=316339be656f637613523c6088720d3a920bdbf0
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\ProductionApi.class.php 第 30 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.007000s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status` FROM `jdi_production` LIMIT 0,20   [ RunTime:0.000000s ]
+
+[ 2015-03-04T17:22:20+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=add&_time=1425460940&_hash=22feddb25ec96e0a5f6d63e7165fd259dd26049e
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+
+[ 2015-03-04T17:23:38+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=add&_time=1425461018&_hash=779ed6307af90385a6237b6ca066f65a7bccfcb6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.011000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+SQL: INSERT INTO `jdi_production` (`cover`,`create_time`,`update_time`) VALUES (123,1425461018,1425461018) [ RunTime:0.001000s ]
+
+[ 2015-03-04T17:24:44+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=add&_time=1425461084&_hash=3adb8a275c006e752bed66bd0ec08ae2fe968467
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003001s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'production' LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 33 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 33 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 33  [ RunTime:0.000000s ]
+SQL: INSERT INTO `jdi_production` (`cover`,`create_time`,`update_time`) VALUES (123,1425461084,1425461084) [ RunTime:0.000000s ]
+
+[ 2015-03-04T17:26:35+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=edit&_time=1425461194&_hash=2bdc5c1644092212472ae6dbf8af90565559a5da
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+SQL: UPDATE `jdi_production` SET `cover`=0,`update_time`=1425461195 WHERE `id` = 1 [ RunTime:0.001000s ]
+
+[ 2015-03-04T17:26:49+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=edit&_time=1425461209&_hash=f9f005553d4fba72c39b701fa27907677d8e68f2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: UPDATE `jdi_production` SET `cover`=0,`update_time`=1425461209 WHERE `id` = 4 [ RunTime:0.000000s ]
+
+[ 2015-03-04T17:27:07+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=edit&_time=1425461227&_hash=4454f5fc6b2c798ba5702d7ccaf3c3dce27f9d39
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000000s ]
+SQL: UPDATE `jdi_production` SET `cover`=123,`update_time`=1425461227 WHERE `id` = 4 [ RunTime:0.001000s ]
+
+[ 2015-03-04T17:27:14+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=edit&_time=1425461234&_hash=8264b4aeae49cee47a0c66d81e0c6998a474a3d5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1054:Champ 'extend' inconnu dans field list
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.001000s ]
+SQL: UPDATE `jdi_production` SET `cover`=123123123,`update_time`=1425461234 WHERE `id` = 4 [ RunTime:0.000000s ]
+
+[ 2015-03-04T17:27:27+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=del&_time=1425461247&_hash=ecdf14de1cfa756d72edf574a74c7b1fdc4bcfd6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.011001s ]
+SQL: DELETE FROM `jdi_production` WHERE ( id=4 ) [ RunTime:0.001000s ]
+
