@@ -267,3 +267,26 @@ NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be rem
 SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.003439s ]
 SQL: SELECT `username` FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000166s ]
 
+[ 2015-03-04T13:25:09+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=Document&_A=lists&_time=1425446708&_hash=c0bbedc3f84a21a7cb0ccd50ff79a4cac7b98a7d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.025002s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 4 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.018001s ]
+SQL: SELECT `name` FROM `jdi_model` WHERE `id` = 20 LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jdi_article` [ RunTime:0.043003s ]
+SQL: SELECT `id`,`title`,`uid`,`category_id`,`description`,`link`,`deadline`,`view`,`create_time`,`update_time`,`url`,`status`,`title_color`,`list_color`,`content`,`is_up`,`position`,`cover`,`extend`,`weight`,`keyword`,`auto_image` FROM `jdi_article` WHERE `status` = 1 AND `category_id` = 4 AND `create_time` < 1425446708 AND ( deadline <= 0 OR deadline > 1425446708 ) ORDER BY `weight` DESC, `update_time` DESC LIMIT 0,10   [ RunTime:0.039002s ]
+
+[ 2015-03-04T13:25:35+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=Document&_A=listCount&_time=1425446735&_hash=a6e11e7001c13025c0e62b99ad43d9a65c9a9dfa
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `name` FROM `jdi_model` WHERE `id` = 20 LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jdi_article` [ RunTime:0.003000s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `jdi_article` WHERE `status` = 1 AND `category_id` = 4 AND `create_time` < 1425446735 AND ( deadline <= 0 OR deadline > 1425446735 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2015-03-04T13:26:01+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=Document&_A=listCount&_time=1425446761&_hash=b3f452ca8f3befa1f9e033457992031138e8df1f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003000s ]
+SQL: SELECT `name` FROM `jdi_model` WHERE `id` = 20 LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jdi_article` [ RunTime:0.004001s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `jdi_article` WHERE `status` = 1 AND `category_id` = 4 AND `create_time` < 1425446761 AND ( deadline <= 0 OR deadline > 1425446761 ) LIMIT 1   [ RunTime:0.000000s ]
+

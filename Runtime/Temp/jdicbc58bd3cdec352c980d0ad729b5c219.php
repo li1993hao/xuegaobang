@@ -1,0 +1,3 @@
+<?php
+//000000000000a:1:{i:4;a:18:{s:2:"id";s:1:"4";s:4:"type";s:1:"1";s:4:"name";s:12:"案例展示";s:6:"symbol";s:3:"sui";s:3:"pid";s:1:"0";s:4:"sort";s:1:"1";s:8:"model_id";s:2:"20";s:11:"create_time";s:10:"1422006329";s:11:"update_time";s:10:"1422006329";s:11:"create_user";s:1:"0";s:13:"temp_category";s:13:"category.html";s:9:"temp_list";s:9:"list.html";s:12:"temp_content";s:12:"content.html";s:3:"url";s:0:"";s:8:"list_num";s:2:"10";s:10:"index_show";s:1:"1";s:6:"status";s:1:"1";s:6:"verify";s:1:"0";}}
+?>
