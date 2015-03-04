@@ -30,7 +30,7 @@ class UserApi {
     /**
      * 获取当前用户的信息
      * @param string $field 字段
-     * @return bool|int
+     * @return string 用户信息
      */
     public static function user_field($field){
         if(APP_MODE == 'api'){
@@ -51,7 +51,7 @@ class UserApi {
     }
 
     /**
-     * 检测当前用户是否为管理员
+     * @param int $uid 用户id
      * @return boolean true-管理员，false-非管理员
      */
     public static function is_administrator($uid = null){
@@ -74,9 +74,8 @@ class UserApi {
      * @param string $field 字段可不写
      * @return array|mixed 用户信息
      */
-    public static function get_user_field($uid,$field){
+    public static function get_user_field($uid=0,$field){
         static $list;
-
         if(!($uid && is_numeric($uid))){ //获取当前登录用户名
             $uid = UID;
         }
@@ -92,13 +91,13 @@ class UserApi {
             $User = $list[$key];
         } else { //调用接口获取用户信息
             $User = M('Member')->where(array('id'=>$uid))->find();
-            if($User && $User[$field]){
+            if($User){
                 $list[$key] = $User;
             } else {
                 $User = array();
             }
         }
-        return (isset($field)?$User[$field]:$User);
+        return !empty($field)?$User[$field]:$User;
     }
 
 

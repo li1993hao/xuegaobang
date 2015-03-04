@@ -40,7 +40,7 @@ class TempController extends AdminController {
     public function mobileUse($name){
         $data = D('Config')->where(array('name'=>'MOBILE_THEME'))->find();
         $data['value'] = $name;
-        if(D('Config')->save($data)){
+        if(D('Config')->save($data) !== false){
             S('DB_CONFIG_DATA',null);
             $this->success('设置成功');
         } else {
@@ -51,7 +51,7 @@ class TempController extends AdminController {
     public function webUse($name){
         $data = D('Config')->where(array('name'=>'JDI_THEME'))->find();
         $data['value'] = $name;
-        if(D('Config')->save($data)){
+        if(D('Config')->save($data)!==false){
             S('DB_CONFIG_DATA',null);
             $this->success('设置成功');
         } else {

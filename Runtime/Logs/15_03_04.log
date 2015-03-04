@@ -551,6 +551,7 @@ SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
 NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
 SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.000000s ]
 
+<<<<<<< Updated upstream
 [ 2015-03-04T16:02:20+08:00 ] 127.0.0.1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425456140&_hash=179f6b9012638cf8aba683395ebc2e990fdc8928
 NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
 NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
@@ -963,4 +964,1001 @@ SQL: UPDATE `jdi_production` SET `cover`=123123123,`update_time`=1425461234 WHER
 NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
 SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.011001s ]
 SQL: DELETE FROM `jdi_production` WHERE ( id=4 ) [ RunTime:0.001000s ]
+=======
+[ 2015-03-04T17:26:16+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425461176&_hash=71e2a7cac1000a1f6a70aa0b8e7eca211f40fd21
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001107s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('member',1,1,'haode',1425461176,1425461176) [ RunTime:0.000621s ]
+
+[ 2015-03-04T17:27:13+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=editComment&_time=1425461233&_hash=35e89093c94f06ac7e683f5344f3c78cc1b06e77
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002246s ]
+SQL: UPDATE `jdi_comment` SET `topic_table`='member',`topic_id`=1,`uid`=1,`content`='haode_hao',`update_time`=1425461233 WHERE `id` = '118' [ RunTime:0.000158s ]
+
+[ 2015-03-04T17:29:06+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461346&_hash=85510a093689298133718a780b2700c9662ea209
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001757s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001110s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000091s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000150s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000132s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000098s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000101s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+
+[ 2015-03-04T17:29:29+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461369&_hash=ccedf0b140327bceffbef196df2cec016c1987cc
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001810s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001130s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000146s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000107s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000185s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000169s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000501s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000363s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000364s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000149s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+
+[ 2015-03-04T17:29:52+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461392&_hash=08e44c54e0e5c9e785cf61902481d9a9f770504c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001753s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001566s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000464s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000244s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000092s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000140s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+
+[ 2015-03-04T17:30:15+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461414&_hash=6b98d92d817f50f348110286b7c80337381314a4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001849s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000250s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002843s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000101s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000098s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000098s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000097s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000104s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 36 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:34) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:33:27+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461607&_hash=2f01b2bfff337e27e3a5947c713cfab66ab768d5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001843s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000209s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001421s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000161s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:101) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:35:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461742&_hash=f5f317cd42b5e5c6d4c711487f96e5ef4d566746
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001732s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000282s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001374s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000426s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000097s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000097s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:101) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:36:06+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461766&_hash=4ad27e931c44cf2ad745c2796e876ee5b2fcb15c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002308s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000246s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002199s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000163s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000107s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000157s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000111s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:101) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:36:22+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461782&_hash=20dd4b4fbe67077036284f475bc820ede5f3cda5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001822s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000198s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001758s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000177s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 95 行.
+NOTIC: [8] Undefined index: username /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 34 行.
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 35 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:101) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:36:54+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461814&_hash=a68377e313c52e8c194a6a5b37c49102132d6b0c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001821s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000221s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001450s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000167s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+
+[ 2015-03-04T17:37:44+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461864&_hash=fcee9161351c1a613b2d9ef34211f4759ef14759
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001634s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000210s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001199s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000227s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 33 行.
+
+[ 2015-03-04T17:39:05+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461945&_hash=a82ed790473b7727c811114be22e53158a83c858
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002210s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000272s ]
+
+[ 2015-03-04T17:39:10+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425461950&_hash=527d8ee2e586ca2f120ef6e53d71ed2bafa93755
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002167s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000272s ]
+
+[ 2015-03-04T17:44:57+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462297&_hash=3e4bfc615b107c24e02bef80346c1a211b1db70c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001338s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000246s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:31) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:45:12+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462312&_hash=d8c5045a41a9f03f1a8f6996f96a31393bc045ce
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001747s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000271s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:32) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:45:50+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462350&_hash=d52a43f9131af997f9acdfb9ad8d1957aa457962
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002264s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000684s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:32) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:46:17+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462377&_hash=580f4440210155e9ac6203d29da99fd9f83ef10b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001770s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 190,10   [ RunTime:0.000263s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:32) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:47:05+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462425&_hash=a71a56557c8eb9b9f6af0d21995e57557763b29c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002416s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001245s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000157s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:32) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:47:23+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462443&_hash=db075a3c9e4112552196a3465ed18ec3746f6ee3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002381s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.000233s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001221s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 40 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:32) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T17:47:39+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425462459&_hash=3def3b08ee2f5082ea12c0e712724b8a63b1f26a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001903s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001415s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:26:15+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425464775&_hash=d647301a0a659be4ed323b723f67aba404fe570c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001211s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000195s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:26:55+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425464815&_hash=257ee66647e4fcc88c016629b28012d88ed415ee
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001880s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000571s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php:38) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:27:37+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425464857&_hash=6180bc196889c3e910bf4bddfb8a9cc2be11ed2c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002854s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000210s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:27:45+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425464865&_hash=5e3d358ac95c5fd105af5760df4a4d75a9152c50
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001801s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000208s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:28:06+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425464886&_hash=ded7ddd9b25182019db9dd80d1ca5c928920e4ad
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001842s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:31:16+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465076&_hash=e981e6693029f6c87cba695bd29bf94ff38ab454
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001734s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000186s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:31:50+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465110&_hash=d05bef6f255533d02902931f9bd9d9175be58c17
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:32:34+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465154&_hash=d0873792bff2df5a8fde0393c3c6ec846c03c328
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1188 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1187) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:32:52+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465172&_hash=91673c2738d9889b862d7040402cda422dac7d32
+NOTIC: [8] Undefined property: ReflectionParameter::$getName /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1187 行.
+
+[ 2015-03-04T18:33:33+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465213&_hash=349f1d2c20ed72dd019aa78fda0c8b5ee464a5ef
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001731s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000199s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:33:49+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465229&_hash=7ef1e956cb741d6eb0a09f252726ea1c7bce1793
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001818s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = '1' AND `topic_id` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000158s ]
+
+[ 2015-03-04T18:34:06+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465246&_hash=efbbe44ff6bfab80a9a5a464cba585648d3dfdeb
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001873s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = '1' AND `topic_id` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000148s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1190) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:34:31+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465271&_hash=c8102a1a4d3c8e40f0a8318422953bc952724e4d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001874s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000195s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:36:24+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465384&_hash=5e53545639de38b37fc1415b604e854e89543aa9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001760s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000200s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001277s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:36:28+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465388&_hash=3c19c6b9638e5898d5cd853f2e325588ffb862bf
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001680s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000193s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001039s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000142s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:38:00+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425465480&_hash=f2967a6af13853d524b263a2372281d5d716311c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001092s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001310s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 37 行.
+
+[ 2015-03-04T18:51:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466318&_hash=5802452df9305b641f1b750edf163d07c524ea61
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001186s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,20   [ RunTime:0.000208s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001300s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000169s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+
+[ 2015-03-04T18:52:54+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466374&_hash=56972b7263f49eb1f27dcc69a7bdb057929210e6
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:44) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:54:14+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466453&_hash=16a62f57e1cad29af192ec2391d789cacdbb7df1
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:44) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:54:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466498&_hash=583764ed52bdfd875c8f743577d608ab2b316c98
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:44) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:54:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466498&_hash=583764ed52bdfd875c8f743577d608ab2b316c98
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:44) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:55:59+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466559&_hash=f5d001d0ecf32b6c536ddbb483b2f58250cbe2d5
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:44) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:56:18+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466578&_hash=4885bfb028c6e0bd12e8d9951ca161cd0127401a
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:45) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T18:58:27+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466707&_hash=824bf26a1a2f8aa9b834ab4039b5e3f78b182dad
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:184) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T19:00:37+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466837&_hash=220ec2e98f2524ea8bbe1c065235b2b2caccac40
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001040s ]
+SQL: SELECT `content`,`uid` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 AND ( id>100 ) ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.000990s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000152s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+
+[ 2015-03-04T19:01:11+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466871&_hash=5a0fb2848dee6f582a66a9bd5ce64bc21b31bf91
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001736s ]
+SQL: SELECT `content`,`uid`,`id` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 AND ( id>100 ) ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000251s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001123s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000153s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+
+[ 2015-03-04T19:01:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425466902&_hash=339bb432dcddf4ef1d5c5d40f0595d424c1c967d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001129s ]
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = 'member' AND `topic_id` = 1 AND ( id>100 ) ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000245s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001329s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000174s ]
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+NOTIC: [8] Undefined index: uid /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/CommentApi.class.php 第 39 行.
+>>>>>>> Stashed changes
 

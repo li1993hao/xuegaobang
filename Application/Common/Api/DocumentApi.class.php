@@ -53,6 +53,7 @@ class DocumentApi {
     public static function lists($category,$page=1,$order = '`weight` DESC, `update_time` DESC', $status = 1){
         $map = DocumentApi::listMap($category, $status);
         $cat=  CategoryApi::get_category($category);
+
         $model_id = $cat['model_id'];
 
         if(empty($model_id)){//分类不存在或者被禁用
@@ -83,7 +84,7 @@ class DocumentApi {
      * @param int $status 搜索的文章状态
      * @return array|mixed|string 搜索结果
      */
-    public  static function  search($search,$page,$page_num,$order = '`weight` DESC, `update_time` DESC',$status=1){
+    public  static function  search($search,$page,$page_num=10,$order = '`weight` DESC, `update_time` DESC',$status=1){
         $map = DocumentApi::listMap(null, $status);
         $search_sql = arr2str($search,'%');
         $map[] ="BINARY `title` LIKE '%{$search_sql}%'";
@@ -137,9 +138,9 @@ class DocumentApi {
 
 
     /**
-     * 获取详情页数据
-     * @param  integer $id 文档ID
-     * @return array       详细数据
+     * @param int $category 栏目id
+     * @param int $id 记录id
+     * @return array|bool|mixed|string 文章详情
      */
     public static  function detail($category,$id){
         $model_id =  CategoryApi::get_category($category,'model_id');
@@ -169,11 +170,12 @@ class DocumentApi {
      * 一定要确保表市继承字基本内容模型的
      * 这里不做判断,调用者自行决定
      * 慎用！
+     * @ignore
      */
-    public static function record($category,$modelName,$id){
+    public static function record($category,$modelName,$id=''){
 
         $map = DocumentApi::listMap($category, 1);
-        if(isset($id)){
+        if(!empty($id)){
             $map['id']=$id;
         }
         $result =  M($modelName)->where($map)->find();
@@ -186,19 +188,21 @@ class DocumentApi {
     }
 
     /**
-     * 返回前一篇文档信息
-     * @param  array $info 当前文档信息
-     * @return array 前一个文档
+     * 获取上一条新闻
+     * @param int $id 当前文章id
+     * @param int $category_id 当前文章的栏目id
+     * @return array|bool|mixed|string 上一条新闻的详细信息
      */
-    public static function prev($info){
+    public static function prev($id,$category_id){
         $map = array(
-            'id'          => array('gt',$info['id']),
-            'category_id' => $info['category_id'],
+            'id'          => array('gt',$id),
+            'category_id' => $category_id,
             'status'      => 1,
             'create_time' => array('lt', NOW_TIME),
             '_string'     => 'deadline <= 0 OR deadline > ' . NOW_TIME,
         );
-        $model_id =  CategoryApi::get_category($info['category_id'],'model_id');
+
+        $model_id =  CategoryApi::get_category($category_id,'model_id');
 
         if(empty($model_id)){//分类不存在或者被禁用
             return false;
@@ -208,26 +212,27 @@ class DocumentApi {
         if(empty($model_name)){//模型不存在或者被禁用
             return false;
         }
-        $result = M($model_name)->field(true)->where($map)->order('`id` asc')->find();
 
+        $result = M($model_name)->field(true)->where($map)->order('`id` asc')->find();
         $result = content_url($result);
         return $result;
     }
 
     /**
-     * 获取下一篇文档基本信息
-     * @param  array    $info 当前文档信息
-     * @return array  下条新闻
+     * 获取下一条新闻
+     * @param int $id 当前文章id
+     * @param int $category_id 当前文章的栏目id
+     * @return array|bool|mixed|string 下一条新闻的详细信息
      */
-    public static function next($info){
+    public static function next($id,$category_id){
         $map = array(
-            'id'          => array('lt', $info['id']),
-            'category_id' => $info['category_id'],
+            'id'          => array('lt', $id),
+            'category_id' => $category_id,
             'status'      => 1,
             'create_time' => array('lt', NOW_TIME),
             '_string'     => 'deadline <= 0 OR deadline > ' . NOW_TIME,
         );
-        $model_id =  CategoryApi::get_category($info['category_id'],'model_id');
+        $model_id =  CategoryApi::get_category($category_id,'model_id');
         if(empty($model_id)){//分类不存在或者被禁用
             return false;
         }
@@ -246,7 +251,7 @@ class DocumentApi {
      * @param  number  $pos      推荐位 1:列表页推荐 2:频道页推荐 3:网站首页推荐
      * @param  number  $category 分类ID
      * @param  number  $limit    列表行数
-     * @param  boolean $filed    查询字段
+     * @param  boolean $field    查询字段
      * @return array             数据列表
      */
     public static  function position($pos, $category = null, $limit = null, $field = true){

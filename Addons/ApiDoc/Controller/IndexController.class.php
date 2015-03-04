@@ -81,6 +81,15 @@ class IndexController extends AddonsController{
                 foreach($methods as $kkk=>$method){
                     if($method->isPublic() && $method->isStatic()){
                         $method_comment = $method->getDocComment();
+                        if(strstr($method_comment,"@ignore")){ //忽略
+                            continue;
+                        }
+
+                        $real_param = $method->getParameters();
+                        $rel_param = array();
+                        for($i=0; $i<count($real_param);$i++){
+                            $rel_param[$real_param[$i]->getName()] = $real_param[$i];
+                        }
                         $api_method = array();
                         $api_method['name'] = $method->getName();
                         preg_match_all('/@param(.+)[\n\r]/',$method_comment,$matchs);
@@ -92,6 +101,14 @@ class IndexController extends AddonsController{
                         }
                         foreach($matchs[1] as $param){
                             $items = preg_split('/\s+/',trim($param),3); //变量和注释
+                            $param_name = substr($items[1],1);
+                            if($rel_param[$param_name]){
+                                if($rel_param[$param_name]->isDefaultValueAvailable()){//是否必填
+                                    $items[] = "<span style='color:#008000'>(可选,默认值为:".$rel_param[$param_name]->getDefaultValue().")</span>";
+                                }else{
+                                    $items[] = "<span style='color:red'>(必填)</span>";
+                                }
+                            }
                             $api_method['param'][] = $items;
                         }
                         preg_match('/@return(.+)[\n\r]/',$method_comment,$matchs); //返回值
@@ -118,6 +135,8 @@ class IndexController extends AddonsController{
         }
         return $list;
     }
+
+
 
     private function isComment($comment){
         foreach(IndexController::$tags as $v){
