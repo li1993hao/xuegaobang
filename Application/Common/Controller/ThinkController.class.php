@@ -161,7 +161,7 @@ class ThinkController extends AdminController {
         if(IS_POST){
             $Model  =   D(parse_name(get_table_name($model['id']),1));
             // 获取模型的字段信息
-            $Model  =   $this->checkAttr($Model,$model['id']);
+            $Model  =   checkAttr($Model,$model['id']);
             if($Model->create() && $Model->save()!==false){
                 $this->success('保存成功!',LK());
             } else {
@@ -194,7 +194,7 @@ class ThinkController extends AdminController {
         if(IS_POST || defined('FORCE_POST')){
             $Model  =   D(parse_name(get_table_name($model['id']),1));
             // 获取模型的字段信息
-            $Model  =   $this->checkAttr($Model,$model['id']);
+            $Model  =  checkAttr($Model,$model['id']);
             if($Model->create() ){
                 $result = $Model->add();
                 if($result){
@@ -228,6 +228,7 @@ class ThinkController extends AdminController {
         }
         $model || $this->error('模型不存在！');
         $fields     = get_model_attribute($model['id']);
+
         //获取数据
         $data       = M(parse_name(get_table_name($model['id'])))->where($map)->find();
         $data || $this->error('数据不存在！');
@@ -236,28 +237,5 @@ class ThinkController extends AdminController {
         $this->assign('data', $data);
         $this->meta_title = ($title?$title:$model['title']);
         $this->display((!empty($temp))?$temp:'Think/info');
-    }
-
-    protected function checkAttr($Model,$model_id){
-        $fields     =   get_model_attribute($model_id,false);
-        $validate   =   $auto   =   array();
-        foreach($fields as $key=>$attr){
-            if($attr['is_must']){// 必填字段
-                $validate[]  =  array($attr['name'],'require',$attr['title'].'必须!');
-            }
-            // 自动验证规则
-            if(!empty($attr['validate_rule'])) {
-                $validate[]  =  array($attr['name'],$attr['validate_rule'],$attr['error_info']?$attr['error_info']:$attr['title'].'验证错误',$attr['validate_condition'],$attr['validate_type'],$attr['validate_time']);
-            }
-            // 自动完成规则
-            if(!empty($attr['auto_rule'])) {
-                $auto[]  =  array($attr['name'],$attr['auto_rule'],$attr['auto_time'],$attr['auto_type']);
-            }elseif('checkbox'==$attr['type']){ // 多选型
-                $auto[] =   array($attr['name'],'arr2str',3,'function');
-            }elseif(preg_match("/^date.*/",$attr['type'])){ // 日期型
-                $auto[] =   array($attr['name'],'strtotime',3,'function');
-            }
-        }
-        return $Model->validate($validate)->auto($auto);
     }
 }

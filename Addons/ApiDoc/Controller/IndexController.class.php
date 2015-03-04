@@ -2,6 +2,7 @@
 
 namespace Addons\ApiDoc\Controller;
 use Common\Controller\AddonsController;
+use Think\Exception;
 
 /**
  * Class ApiDocController
@@ -128,12 +129,16 @@ class IndexController extends AddonsController{
     }
 
     public function apiOnline(){
+
         $modules = M('Module')->where(array('status'=>1))->field('name,title')->select();
         $modules[] = array('name'=>'Common','title'=>'系统api');
+
         $list =  $this->get_list($modules);
+
         $this->assign('list',$list);
 
         $class = "Addons\\ApiDoc\\ApiDocAddon";
+
         $addon = new $class;
 
         $config = $addon->getConfig();

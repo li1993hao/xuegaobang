@@ -514,3 +514,40 @@ SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 53 LIMIT 1   [ Ru
 NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/IndexController.class.php:28) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
 >>>>>>> origin/master
 
+[ 2015-03-04T15:18:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453521&_hash=a8fbb32857e5d68fe96015c7855406ea2cbc8ade
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.018001s ]
+
+[ 2015-03-04T15:18:45+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453525&_hash=ac78ca88c6a6af59cee2e5bfee2e1080b4eb5008
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.004000s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.001000s ]
+
+[ 2015-03-04T15:19:15+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453555&_hash=00e7021bb088d759b694d09bc2d83846c49c9891
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 10,10   [ RunTime:0.000000s ]
+
+[ 2015-03-04T15:21:36+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453696&_hash=ba0889820640997552f943b376e6d56abc4bb144
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.011000s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 10,10   [ RunTime:0.000000s ]
+
+[ 2015-03-04T15:21:44+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453704&_hash=f214357fb2e04f20778c80a11176ddeb0cd4bb0d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.067004s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 10,10   [ RunTime:0.002000s ]
+
+[ 2015-03-04T15:21:47+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453707&_hash=95c82b6680131e841b8dd5c597d1fb7194f0f8e4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 10,10   [ RunTime:0.000000s ]
+
+[ 2015-03-04T15:22:27+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=BaiBang&_A=TieZilists&_time=1425453747&_hash=688671e09cec362dad3c302f064d01b54ff4bd15
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\Program\wampserver\www\xuegaobang\Modules\BaiBang\Api\BaiBangApi.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: limit D:\Program\wampserver\www\xuegaobang\ThinkPHP\Library\Think\Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid` FROM `jdi_tieba` LIMIT 0,20   [ RunTime:0.000000s ]
+

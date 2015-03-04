@@ -161,7 +161,7 @@ class UserController extends AdminController {
             if(0 < $uid){ //注册成功
                 $this->success('用户添加成功！',U('index'));
             } else { //注册失败，显示错误信息
-                $this->error(MemberModel::showRegError($uid));
+                $this->error(\Common\Model\MemberModel::showRegError($uid));
             }
         } else {
             $this->meta_title = '新增用户';

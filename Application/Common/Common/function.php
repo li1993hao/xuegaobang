@@ -762,6 +762,28 @@ function UU($url,$param=array()){
     }
 }
 
+function checkAttr($Model,$model_name){
+    $fields     =   get_model_attribute($model_name,false);
+    $validate   =   $auto   =   array();
+    foreach($fields as $key=>$attr){
+        if($attr['is_must']){// 必填字段
+            $validate[]  =  array($attr['name'],'require',$attr['title'].'必须!');
+        }
+        // 自动验证规则
+        if(!empty($attr['validate_rule'])) {
+            $validate[]  =  array($attr['name'],$attr['validate_rule'],$attr['error_info']?$attr['error_info']:$attr['title'].'验证错误',$attr['validate_condition'],$attr['validate_type'],$attr['validate_time']);
+        }
+        // 自动完成规则
+        if(!empty($attr['auto_rule'])) {
+            $auto[]  =  array($attr['name'],$attr['auto_rule'],$attr['auto_time'],$attr['auto_type']);
+        }elseif('checkbox'==$attr['type']){ // 多选型
+            $auto[] =   array($attr['name'],'arr2str',3,'function');
+        }elseif(preg_match("/^date.*/",$attr['type'])){ // 日期型
+            $auto[] =   array($attr['name'],'strtotime',3,'function');
+        }
+    }
+    return $Model->validate($validate)->auto($auto);
+}
 
 /**
  * 插件显示内容里生成访问插件的url
@@ -1068,11 +1090,15 @@ function get_table_name($model_id = null){
  */
 function get_model_attribute($model_id, $group = true){
     static $list;
+    if(!is_numeric($model_id)){
+        $model_id = M('Model')->getFieldByName($model_id,'id');
+    }
 
     /* 非法ID */
     if(empty($model_id) || !is_numeric($model_id)){
         return '';
     }
+
 
     /* 读取缓存数据 */
     if(empty($list)){
@@ -1152,11 +1178,11 @@ function api($array,$vars=array()){
             return $reflect_method->invokeArgs($reflect_class,$vars);
         }else{
             api_msg("请求方法不存在!错误代码:105");
+            return false;
         }
     }catch (\ReflectionException $e){
-        var_dump($class);
-        exit;
         api_msg('请求方法不存在!错误代码:105');
+        return false;
     }
 }
 

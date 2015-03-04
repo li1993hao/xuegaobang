@@ -60,7 +60,7 @@
         <hr/>
         <div class="jdi-test" style="margin: 20px; margin-bottom: 100px">
             <h3>测试api</h3>
-            url:<input type="text" style="width: 100%"  id="test-url"/><br/>
+            url:<input type="text" style="width: 100%" disabled id="test-url"/><br/>
             参数:<input type="text" style="width: 100%"  id="test-param">
             <button id="test-button">测试</button>
             <h3>返回结果</h3>
@@ -85,7 +85,7 @@
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/prettify.js"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/lang-css.js"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/jquery.zclip.js"></script>
-<script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/document.js"></script>
+<script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/document.js" charset="utf-8"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/manage.js"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/sha1.min.js"></script>
 <script type="text/javascript">Article.init();/* 初始文档对象 */
