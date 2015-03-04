@@ -164,6 +164,18 @@
                         var result =JSON.stringify(data);
                         $("#test-result").html(result);
                         Article.method.testCache = {'url':url,'param':pm,'result':result};
+                        var blinkCount = 0;
+                        var timer = setInterval(function(){
+                            if ($("#test-result").hasClass('test-black')) {
+                                $("#test-result").removeClass('test-black').addClass('test-red');
+                            }else{
+                                $("#test-result").removeClass('test-red').addClass('test-black');
+                            }
+                            blinkCount++;
+                            if(blinkCount == 10){
+                                clearInterval(timer);
+                            }
+                        },100);
                     },'json');
                 });
 

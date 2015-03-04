@@ -64,7 +64,7 @@
             参数:<input type="text" style="width: 100%"  id="test-param">
             <button id="test-button">测试</button>
             <h3>返回结果</h3>
-            <div id="test-result"></div>
+            <div id="test-result" class="test-black"></div>
         </div>
     </div>
 </section>
