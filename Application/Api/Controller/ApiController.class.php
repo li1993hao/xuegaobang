@@ -29,6 +29,11 @@ class ApiController extends BaseController{
         //$this->success(NOW_TIME,"请求成功!");
     }
 
+    protected function unsetGetPost($key){
+        unset($_GET[$key]);
+        unset($_POST[$key]);
+        unset($_REQUEST[$key]);
+    }
     /**
      * 检测请求合法性
      */
@@ -36,9 +41,9 @@ class ApiController extends BaseController{
         if(isset($_REQUEST['_hash'])){//数据签名
             $time = $_REQUEST['_time'];//请求时间戳
             $hash = $_REQUEST['_hash'];//数据签名
-            unset($_REQUEST['_hash']);
+            $this->unsetGetPost('_hash');
             if($hash == api_auth_sign($_REQUEST,C('API_PRIVATE_KEY'))){ //签名认证
-                unset($_REQUEST['_time']);
+                $this->unsetGetPost('_time');
                 if((NOW_TIME - $time)  > C('API_OUT_TIME')){ //检测请求是否失效
                     $this->error("请求已经失效！");
                 }
@@ -53,7 +58,7 @@ class ApiController extends BaseController{
                         define('UID',session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0);
                     }
                 }
-                unset($_REQUEST['_sid']);
+                $this->unsetGetPost('_sid');
             }else{
                 $this->error("数据签名有误!错误代码:105");
             }

@@ -21,10 +21,10 @@ class IndexController extends ApiController{
         $_C = $_REQUEST['_C']; //接口类
         $_A = $_REQUEST['_A']; //接口
         if(!empty($_C) && !empty($_A)){
-            unset($_REQUEST['_R']);
-            unset($_REQUEST['_M']);
-            unset($_REQUEST['_C']);
-            unset($_REQUEST['_A']);
+            $this->unsetGetPost('_R');
+            $this->unsetGetPost('_M');
+            $this->unsetGetPost('_C');
+            $this->unsetGetPost('_A');
             if($_R != 'App'){
                 $result = api(array($_R,$_M,$_C,$_A),$_REQUEST);
             }else{
