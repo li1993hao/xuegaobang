@@ -21,7 +21,12 @@ class TieBaApi {
      * @return array 结果
      */
     public static function TieZilists($page=1,$page_size=10,$where=array(),$order = '`update_time` DESC'){
-        $map = array_merge($where,array('status'=>array('gt','0')));
+        $map['status'] = array('gt','0');
+        if(is_string($where)){
+            $map["_string"] = $where;
+        }else{
+            $map = array_merge($where,$map);
+        }
         $model = M('Tieba')->field(true)->where($map)->order($order);
         $model->page($page,$page_size);
         $result = $model->select();
@@ -36,11 +41,11 @@ class TieBaApi {
     /**
      * 添加帖子(<strong>需要传递参数!</strong>)<br/>
      * 需要传递的参数:<br/>
-     *状态 [status]
-     *发布者 [uid]
-     *创建时间 [create_time]
-     *名称 [name]
-     *内容 [content]
+     * status:状态 <br/>
+     * uid:发布者 <br/>
+     * create_time:创建时间 <br/>
+     * name:名称 <br/>
+     * content:内容 <br/>
      */
     public static function addTiezi(){
         $Model  =   checkAttr(D('Tieba'),"Tieba");
