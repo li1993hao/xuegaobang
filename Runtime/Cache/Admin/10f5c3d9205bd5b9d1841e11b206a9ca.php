@@ -57,6 +57,15 @@
         <hr/>
         <div class="jdi-url"  style="margin: 20px">
         </div>
+        <hr/>
+        <div class="jdi-test" style="margin: 20px; margin-bottom: 100px">
+            <h3>测试api</h3>
+            url:<input type="text" style="width: 100%"  id="test-url"/><br/>
+            参数:<input type="text" style="width: 100%"  id="test-param">
+            <button id="test-button">测试</button>
+            <h3>返回结果</h3>
+            <div id="test-result"></div>
+        </div>
     </div>
 </section>
 <footer class="layout">
@@ -78,8 +87,11 @@
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/jquery.zclip.js"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/document.js"></script>
 <script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/manage.js"></script>
+<script type="text/javascript" src="/xuegaobang/Addons/ApiDoc/asset/js/sha1.min.js"></script>
 <script type="text/javascript">Article.init();/* 初始文档对象 */
     var JDO_DOCUMENT = <?php echo json_encode($list);?>;
+    var api_key  = "<?php echo C('API_PRIVATE_KEY');?>";
+    var host_url = "<?php echo ($addons_config["url"]); ?>?";
 </script>
 </div>
 </body>

@@ -88,25 +88,32 @@
                 this.name        = $article.data("name");
                 this.loading     = $loading;
                 this.book        = $("title").data("book");
-
+                this.apiParam   = '';
+                this.method = null;
                 $(".apiDoc").click(function(){
                     if($(this).hasClass('jdi-init-doc')){ //说明文档
                         $('#introduce').show();
                         $('#apiDetail').hide();
                     }else{
                         $('#introduce').hide();
-                        console.info(JDO_DOCUMENT);
-
                         var index = $(this).data('index').split(',');
-                        var method = JDO_DOCUMENT[index[0]]['apiClass'][index[1]]['method'][index[2]-1];
+                        var method = JDO_DOCUMENT[index[0]]['apiClass'][index[1]]['method'][index[2]];
                         $("#apiDetail .title").empty().html(method.name);
                         $("#apiDetail .jdi-introduce").empty().html(method.introduce);
                         var params = '<h3>参数列表</h3><ul>';
+                        var str_params = "";
                         if(method.param){
                             for(var i=0; i<method.param.length; i++){
                                 params +='<li>';
                                 params += ((i+1)+"."+method.param[i][1]+", 类型:"+method.param[i][0]+", 说明:"+method.param[i][2]);
                                 params += '</li>';
+                                if(method.param[i][1]){
+                                    if(i==method.param.length-1){
+                                        str_params+=("\""+method.param[i][1].substring(1)+"\""+":\"\"");
+                                    }else{
+                                        str_params+=("\""+method.param[i][1].substring(1)+"\""+":\"\",");
+                                    }
+                                }
                             }
                         }else{
                             params +='<h4>无参数</h4>'
@@ -117,10 +124,49 @@
                         $("#apiDetail .jdi-params").empty().html(params);
                         $("#apiDetail .jdi-return").empty().html("<h3>返回值</h3>"+'类型:'+method.return[0]+",说明:"+method.return[1]);
                         $("#apiDetail .jdi-url").empty().html("<h3>访问地址</h3>"+method.url);
+
+                        if(method.testCache){
+                            $("#test-url").val(method.testCache.url);
+                            Article.apiParam = method.url;
+                            $("#test-param").val(method.testCache.param);
+                            $("#test-result").html(method.testCache.result);
+                        }else{
+                            $("#test-url").val(host_url+method.url);
+                            Article.apiParam = method.url;
+                            $("#test-param").val(str_params);
+                            $("#test-result").empty();
+                        }
+                        Article.method = method;
                         $('#apiDetail').show();
                     }
                    //alert('haode');
                 });
+
+                $("#test-button").click(function(){
+                    var url = $("#test-url").val();
+                    var pm = $("#test-param").val();
+                    var param = "{"+pm+"}";
+                    var o = JSON.parse(param);
+
+                    var request = "";
+                    if(pm){
+                        for(var p in o){
+                            request += (p+"="+o[p]+"&");
+                        }
+                    }
+                    request +=  Article.apiParam;
+                    var timestamp =  parseInt(new Date().getTime()/1000);
+                    request += ('&_time='+timestamp);//时间戳
+                    var hash = hex_sha1(request+api_key);
+                    request += ('&_hash='+hash);//数据签名
+                    var after = "&_time="+timestamp+"&_hash="+hash;
+                    $.post(host_url+Article.apiParam+after,o,function(data){
+                        var result =JSON.stringify(data);
+                        $("#test-result").html(result);
+                        Article.method.testCache = {'url':url,'param':pm,'result':result};
+                    },'json');
+                });
+
 
                 /* 初始化树形菜单，完成后高亮显示当前菜单 */
                 $menu.thinktree();

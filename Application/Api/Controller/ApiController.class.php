@@ -47,10 +47,10 @@ class ApiController extends BaseController{
                     define('UID',think_decrypt($access_key,C('UID_KEY')));
                 }else{//检测是否存储在session中,主要用于api方式的web应用
                     $user = session('user_auth');//是否存在session中
-                    if (empty($user)) {
-                        defined('UID',0);
+                    if (!$user) {
+                        define('UID',0);
                     } else {
-                        defined('UID',session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0);
+                        define('UID',session('user_auth_sign') == data_auth_sign($user) ? $user['uid'] : 0);
                     }
                 }
                 unset($_REQUEST['_sid']);

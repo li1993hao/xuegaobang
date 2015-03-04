@@ -117,7 +117,11 @@ class ModelApi {
         return $attr;
     }
 
-    // 分析属性的枚举类型字段值 格式 a:名称1,b:名称2 或者 :fun(var1,var)
+    /**
+     * 分析属性的枚举类型字段值 格式 a:名称1,b:名称2 或者 :fun(var1,var)
+     * @param $string
+     * @return array
+     */
     public static function parse_field_attr($string) {
         if(0 === strpos($string,':')){
             // 采用函数定义

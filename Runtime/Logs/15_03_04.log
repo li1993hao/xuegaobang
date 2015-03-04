@@ -1,0 +1,269 @@
+[ 2015-03-04T10:42:46+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&category=1&_time=1425436966&_hash=4c72d6dd4bc6c540131547c8bba5b6d74a3f30eb
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:37) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:43:50+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:36) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:44:04+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:36) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:47:33+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&_time=timestamp&_hash=937fdec526494a324625e7906ca3f72284f7f628
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:36) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:52:20+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&_time=1425437540&_hash=86b65e7b99efd10b03089b67f1f40152b894d2da
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:185) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:53:48+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&_time=1425437628&_hash=3a0e860b33c49144bf882dcc16ce184f87c9d4a5
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:185) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T10:55:01+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&_time=1425437701&_hash=6729b23c781533c6249acca0471b9c18b62e1c1e
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+
+[ 2015-03-04T11:04:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Sample&_A=listCount&_time=1425438282&_hash=5a1b5d33e79296c1246a8bcc409e13df74fba5c6
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+
+[ 2015-03-04T11:31:42+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_login&_time=1425439901&_hash=62b095272a79c15d4e902b0d095180d171ea4c5e
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+
+[ 2015-03-04T11:40:28+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440428&_hash=d8e238a52e3188fba90e8f4187c7af8a26ad87af
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002126s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000160s ]
+
+[ 2015-03-04T11:41:28+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440488&_hash=65d39569cc076e19e2baf61d2b6cd22b316e453d
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001656s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000152s ]
+
+[ 2015-03-04T11:42:22+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440542&_hash=11e391914a549130085009ad992f9149dae6668d
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.003311s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000248s ]
+
+[ 2015-03-04T11:43:28+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440608&_hash=5bf87e67f9fc084d8812c87f79d12371beb7f785
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001875s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000204s ]
+
+[ 2015-03-04T11:43:33+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440613&_hash=f4be21c1a91d974e85bbf6ac20c7aa67c6b469eb
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.003323s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.000212s ]
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 90 行.
+
+[ 2015-03-04T11:44:30+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440669&_hash=711a05abb735ad2478876c5e990cf721806cfe71
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002347s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.000197s ]
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:44:47+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440687&_hash=e2847e5271b680c9a5a373f94de38764499693f6
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002571s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.000460s ]
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:44:57+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440697&_hash=aafe600b3367e1fd3efa0ef48666c79b54e5ce9c
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002517s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.000133s ]
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:45:35+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440735&_hash=e15ce3290bd021e18d998ad30f9f5b703dde9179
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001664s ]
+ERR: Think\Model:findById方法不存在！
+
+[ 2015-03-04T11:46:27+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440787&_hash=db1b7c02656e5468d3aa7cdcc2b07cb9989e449c
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002577s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000149s ]
+
+[ 2015-03-04T11:46:48+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440808&_hash=fda83f833c979607133de4821edeb80b99fc8a09
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002386s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000171s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:47:07+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440827&_hash=8b3bbcdb5f224b1017a201f6c651d54ec058cf37
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002734s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000187s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:47:25+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440845&_hash=7e8456479481d5a576994cd295db4be2ddd082f7
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002613s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000294s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:84) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:47:52+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440872&_hash=87e86bf6940f3272c430be32eb2e11f65a6d84f1
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002196s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000322s ]
+
+[ 2015-03-04T11:47:57+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425440877&_hash=ce3372f81e39f5132d9224234450f0f1e7f29dc9
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.003150s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.000159s ]
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 90 行.
+
+[ 2015-03-04T11:50:27+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_login&_time=1425441026&_hash=6f07199dfc93a195ad05efaad28c8affa99aedb0
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+
+[ 2015-03-04T11:50:39+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_username&_time=1425441039&_hash=aeaa7023351af3894d795ea8738ecf77485f93c5
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001323s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000164s ]
+
+[ 2015-03-04T11:50:50+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_username&_time=1425441050&_hash=1333d7f7ccf27251803072c3b55b7740fb08edc2
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002352s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000159s ]
+
+[ 2015-03-04T11:51:02+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_user_field&_time=1425441062&_hash=81e44b389a9a214d316ec21ec8087f20231d0d29
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001828s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000160s ]
+
+[ 2015-03-04T11:51:07+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441067&_hash=3afc7039a947fbbdee8ed7e08719182e624f4e53
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+
+[ 2015-03-04T11:51:49+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441109&_hash=e6ed517b6e7fe94ed86b47c586482c396e78642c
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:54) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:52:19+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441139&_hash=dff10d44316e5dad2cde056c762d78f92d7d100c
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 54 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:54) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:52:37+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441157&_hash=311dcca1db55f290294c51db50c4f003cd495ac1
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:54) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:52:46+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441166&_hash=52a4dea5bd6af72007083bab11d4f3f76ee60ae2
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 53 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:54) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:53:57+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=is_administrator&_time=1425441237&_hash=8b91ceb30bce9d8c2cfe25ba34186c629157095e
+NOTIC: [2] defined() expects exactly 1 parameter, 2 given /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php 第 54 行.
+NOTIC: [8] Use of undefined constant UID - assumed 'UID' /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 20 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Api/Controller/ApiController.class.php:53) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:54:39+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=get_nickname&_time=1425441279&_hash=8e540fc3013871486fb7d60177ffa3676e7e0b84
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002042s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000157s ]
+
+[ 2015-03-04T11:54:45+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441285&_hash=0ed6d810a7d0d67e6d69cb45716acc022f1b01ee
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 30 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001956s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 33 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 34 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 34 行.
+
+[ 2015-03-04T11:55:37+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441337&_hash=41d76202a72f3120d65b1c09be3b779f1bd4ab6a
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 35 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001722s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 38 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000547s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+
+[ 2015-03-04T11:55:38+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441338&_hash=ade423651d4d9f63d7ef6fdbda5b5b575dd7d1fe
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 35 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001917s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 38 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+
+[ 2015-03-04T11:55:58+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441358&_hash=a885c4aca4efabb474eb07995df7075fc5b5e7ee
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 35 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002396s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000482s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:36) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:56:26+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441386&_hash=cd5871d521f849480a08e28e0529242aa97c25cb
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 35 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002294s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 38 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000155s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:39) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:56:57+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441417&_hash=1de09d383201ebe3a730587248296efb176cb62b
+NOTIC: [2] Missing argument 1 for Common\Api\UserApi::user_field() /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 35 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002119s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 38 行.
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000164s ]
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 39 行.
+NOTIC: [8] Undefined variable: field /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [8] Undefined index:  /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php 第 40 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php:39) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-04T11:57:16+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441436&_hash=0d4498dd194f311d439adf4812c4ad2dbc775a0c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001834s ]
+SQL: SELECT `name` FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000109s ]
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `name` FROM `jdi_member` WHERE `id` = 1 LIMIT 1  
+
+[ 2015-03-04T11:57:21+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441441&_hash=2f81d5157803b53763e6b2dc44a1cc56abe6bcaa
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002622s ]
+SQL: SELECT `username` FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000143s ]
+
+[ 2015-03-04T11:57:25+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441445&_hash=86ec42a0e5452c38a7388a042de7df41d1a3aa0f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001865s ]
+SQL: SELECT `name` FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000101s ]
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `name` FROM `jdi_member` WHERE `id` = 1 LIMIT 1  
+
+[ 2015-03-04T11:57:28+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=user_field&_time=1425441448&_hash=439e2f06ae4c0e2d85b7bac6f2789488b47f8177
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.003439s ]
+SQL: SELECT `username` FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000166s ]
+

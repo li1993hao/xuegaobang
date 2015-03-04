@@ -38,14 +38,11 @@ class SampleApi {
     }
 
     /**
-     * 获取文档列表dasdasdas
-     * @param  integer  $category 分类ID
-     * @param  string   $order    排序规则
-     * @parma  int 分页
-     * @param  integer  $status   状态
-     * @param  boolean  $count    是否返回总数
-     * @param  string   $field    字段 true-所有字段
-     * @return array              文档列表
+     * @param string|int $category 栏目名称或者id
+     * @param int $page 页数
+     * @param string $order 排序
+     * @param int $status 状态
+     * @return array|bool|mixed|string 结果
      */
     public static function lists($category,$page=1,$order = '`weight` DESC, `update_time` DESC', $status = 1){
         $map = DocumentApi::listMap($category, $status);
@@ -97,9 +94,9 @@ class SampleApi {
 
     /**
      * 搜索数量
-     * @param $search
-     * @param string $order
-     * @param int $status
+     * @param string $search 搜索关键字
+     * @param string $order 排序
+     * @param int $status 状态
      * @return mixed 搜索数量
      */
     public  static function  searchCount($search,$order = '`weight` DESC, `update_time` DESC',$status=1){
@@ -147,7 +144,6 @@ class SampleApi {
 
         $model_name = ModelApi::get_model_by_id($model_id,'name');
         if(empty($model_name)){//模型不存在或者被禁用
-            api_msg('');
             return false;
         }
 
@@ -162,26 +158,26 @@ class SampleApi {
         return $result;
     }
 
-//    /**
-//     * 找到对应模型下的某条记录
-//     * 一定要确保表市继承字基本内容模型的
-//     * 这里不做判断,调用者自行决定
-//     * 慎用！
-//     */
-//    public static function record($category,$modelName,$id){
-//
-//        $map = DocumentApi::listMap($category, 1);
-//        if(isset($id)){
-//            $map['id']=$id;
-//        }
-//        $result =  M($modelName)->where($map)->find();
-//        if($result){
-//            M($modelName)->where($map)->setInc('view'); //浏览数量＋1
-//        }
-//
-//        $result = content_url($result);
-//        return $result;
-//    }
+    /**
+     * 找到对应模型下的某条记录
+     * 一定要确保表市继承字基本内容模型的
+     * 这里不做判断,调用者自行决定
+     * 慎用！
+     */
+    public static function record($category,$modelName,$id){
+
+        $map = DocumentApi::listMap($category, 1);
+        if(isset($id)){
+            $map['id']=$id;
+        }
+        $result =  M($modelName)->where($map)->find();
+        if($result){
+            M($modelName)->where($map)->setInc('view'); //浏览数量＋1
+        }
+
+        $result = content_url($result);
+        return $result;
+    }
 
     /**
      * 返回前一篇文档信息
@@ -259,10 +255,10 @@ class SampleApi {
 
     /**
      * 获取热点新闻
-     * @param null $cate
-     * @param null $limit
-     * @param string $order
-     * @param bool $field
+     * @param int|string $cate 栏目
+     * @param int|string $limit 数量
+     * @param string $order 排序
+     * @param bool $field 要取的字段
      * @return array|mixed|string  热点新闻
      */
     public static function hot_list($cate='',$limit=8,$order='`view` DESC, `is_up` DESC',$field = true){

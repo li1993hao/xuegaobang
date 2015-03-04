@@ -49,14 +49,19 @@ class CategoryApi {
         return empty($field) ? $list[$id] : $list[$id][$field];
     }
 
-    /* 根据ID获取分类名称 */
+    /**
+     * 获取分类的名称
+     * @param int|string $id 分类id或者名称
+     * @return array|null|object|string|\WP_Error 名称
+     */
     public static function get_category_name($id){
         return get_category($id, 'name');
     }
 
-    /**获得指定栏目的子类
-     * @param $cid
-     * @return bool|mixed|string|\栏目列表
+    /**
+     * 获得指定栏目的子类
+     * @param $cid 分类id
+     * @return array 栏目列表
      */
     public static function get_children_category($cid){
         if(empty($cid)){
@@ -68,9 +73,10 @@ class CategoryApi {
         return $result;
     }
 
-    /**获得子级分类数量
-     * @param $cid
-     * @return bool
+    /**
+     * 获得子级分类数量
+     * @param int $cid 分类id
+     * @return int 子分类数量
      */
     public static function get_children_count($cid,$map=array()){
         if(empty($cid)){
@@ -84,8 +90,9 @@ class CategoryApi {
     }
 
     /**
-     * 获得顶级分类
-     * @return mixed
+     * 获取顶级分类
+     * @param array $map 筛选条件
+     * @return array  顶级分类
      */
     public static function get_top_category($map=array()){
         $map = array_merge($map,array('status'=>1,'type'=>array('in','1,2,3'),'pid'=>0));

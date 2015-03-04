@@ -63,6 +63,7 @@ class IndexController extends AddonsController{
         $list = array();
         foreach($ms as $k=>$v){
             $result = $this->getModuleApiClass($v['name']);
+
             $api_module = array('module'=>$v,'apiClass'=>array(),'index'=>$k);
             foreach($result as $kk=>$cls){
                 $reflect_class = new \ReflectionClass($cls['class']);
@@ -75,13 +76,13 @@ class IndexController extends AddonsController{
                 $api_class['name'] = $cls['name'];
                 $api_class['index'] = $k.','.$kk;
                 $methods = $reflect_class->getMethods();
+                $method_count = 0;
                 foreach($methods as $kkk=>$method){
                     if($method->isPublic() && $method->isStatic()){
                         $method_comment = $method->getDocComment();
                         $api_method = array();
                         $api_method['name'] = $method->getName();
                         preg_match_all('/@param(.+)[\n\r]/',$method_comment,$matchs);
-
 
                         if(!$this->isComment($method_comment)){//纯注释
                             $api_method['introduce'] = str_replace("*","",str_replace("*/","",str_replace("/**","",$method_comment)));
@@ -96,11 +97,17 @@ class IndexController extends AddonsController{
                         $api_method['return'] = preg_split('/\s+/',trim($matchs[1]),2);
                         preg_match('/@author(.+)\b/',$method_comment,$matchs); //作者
                         $api_method['author'] = trim($matchs[1]);
-                        $api_method['index'] = $k.','.$kk.','.$kkk;
+                        $api_method['index'] = $k.','.$kk.','.$method_count;
+                        $method_count++;
                         $M = $v['name'];
                         $C = substr($cls['name'],0,-3);
                         $A = $api_method['name'];
-                        $api_method['url'] = "_R=Modules&_M=$M&_C=$C&_A=$A";
+                        if($M != 'Common'){
+                            $api_method['url'] = "_R=Modules&_M=$M&_C=$C&_A=$A";
+                        }else{
+                            $api_method['url'] = "_R=App&_M=$M&_C=$C&_A=$A";
+                        }
+
                         $api_class['method'][]=$api_method;
                     }
                 }
@@ -122,13 +129,26 @@ class IndexController extends AddonsController{
 
     public function apiOnline(){
         $modules = M('Module')->where(array('status'=>1))->field('name,title')->select();
+        $modules[] = array('name'=>'Common','title'=>'系统api');
         $list =  $this->get_list($modules);
         $this->assign('list',$list);
+
+        $class = "Addons\\ApiDoc\\ApiDocAddon";
+        $addon = new $class;
+
+        $config = $addon->getConfig();
+        $this->assign('addons_config', $config);
         $this->display(T('Addons://ApiDoc@index/apiOnline'));
     }
 
     private function getModuleApiClass($module){
-        $dir = JDICMS_MOUDLE_PATH.$module.'/Api/';
+        if("Common"==$module){
+            $dir = APP_PATH.'Common/Api/';
+        }else{
+            $dir = JDICMS_MOUDLE_PATH.$module.'/Api/';
+        }
+
+
         $result = array();
         if(is_dir($dir)){
             $handler = opendir($dir);
@@ -136,7 +156,32 @@ class IndexController extends AddonsController{
                 if ($filename != "." && $filename != "..") {
                     if (is_file($dir . $filename)) {
                         $class_name= substr($filename,0,-10);
-                        $result[] = array('path'=>$dir . $filename,'class'=>'Modules\\'.$module.'\\Api\\'.$class_name,'name'=>$class_name);
+                        if("Common"==$module){
+                            $result[] = array('path'=>$dir . $filename,'class'=>'Common\\Api\\'.$class_name,'name'=>$class_name);
+                        }else{
+                            $result[] = array('path'=>$dir . $filename,'class'=>'Modules\\'.$module.'\\Api\\'.$class_name,'name'=>$class_name);
+                        }
+                    }
+                }
+            }
+            closedir($handler);
+        }
+        return $result;
+    }
+
+    /**
+     * 通用api
+     */
+    private function getCommApi(){
+        $dir = APP_PATH.'Common/Api/';
+        $result = array();
+        if(is_dir($dir)){
+            $handler = opendir($dir);
+            while (($filename = readdir($handler)) !== false) {
+                if ($filename != "." && $filename != "..") {
+                    if (is_file($dir . $filename)) {
+                        $class_name= substr($filename,0,-10);
+
                     }
                 }
             }

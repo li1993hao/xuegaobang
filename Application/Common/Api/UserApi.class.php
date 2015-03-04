@@ -27,6 +27,11 @@ class UserApi {
         }
     }
 
+    /**
+     * 获取当前用户的信息
+     * @param string $field 字段
+     * @return bool|int
+     */
     public static function user_field($field){
         if(APP_MODE == 'api'){
             if(UID){
@@ -60,9 +65,15 @@ class UserApi {
      * @return string       用户名
      */
     public static function get_username($uid = 0){
-        UserApi::get_user_field($uid,'username');
+        return UserApi::get_user_field($uid,'username');
     }
 
+    /**
+     * 获得指定用户的信息
+     * @param int $uid 用户id
+     * @param string $field 字段可不写
+     * @return array|mixed 用户信息
+     */
     public static function get_user_field($uid,$field){
         static $list;
 
@@ -80,7 +91,7 @@ class UserApi {
         if(isset($list[$key])){ //已缓存，直接使用
             $User = $list[$key];
         } else { //调用接口获取用户信息
-            $User = M('Member')->find($uid);
+            $User = M('Member')->where(array('id'=>$uid))->find();
             if($User && $User[$field]){
                 $list[$key] = $User;
             } else {
@@ -97,6 +108,6 @@ class UserApi {
      * @return string       用户昵称
      */
     public static function get_nickname($uid = 0){
-        UserApi::get_user_field($uid,'nickname');
+       return UserApi::get_user_field($uid,'nickname');
     }
 }

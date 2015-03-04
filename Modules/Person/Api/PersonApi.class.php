@@ -8,8 +8,11 @@
 
 namespace Modules\Person\Api;
 
-class SampleApi {
-    public static function aa(){
-        return "12334";
+class PersonApi {
+    /**
+     * @param $uid
+     */
+    function company($uid){
+
     }
 } 

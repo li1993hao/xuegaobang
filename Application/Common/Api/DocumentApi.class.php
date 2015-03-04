@@ -11,9 +11,8 @@
 
 namespace Common\Api;
 class DocumentApi {
-
     /**
-     * 设置where查询条件
+     * 设置where查询条件sdadsa
      * @param  number  $category 分类ID
      * @param  number  $pos      推荐位
      * @param  integer $status   状态
@@ -44,14 +43,12 @@ class DocumentApi {
     }
 
     /**
-     * 获取文档列表
-     * @param  integer  $category 分类ID
-     * @param  string   $order    排序规则
-     * @parma  int 分页
-     * @param  integer  $status   状态
-     * @param  boolean  $count    是否返回总数
-     * @param  string   $field    字段 true-所有字段
-     * @return array              文档列表
+     * 获取内容列表
+     * @param string|int $category 栏目名称或者id
+     * @param int $page 页数
+     * @param string $order 排序
+     * @param int $status 状态
+     * @return array|bool|mixed|string 结果
      */
     public static function lists($category,$page=1,$order = '`weight` DESC, `update_time` DESC', $status = 1){
         $map = DocumentApi::listMap($category, $status);
@@ -76,13 +73,15 @@ class DocumentApi {
         return $result;
     }
 
-    /**搜索
-     * @param $search 搜索的关键字
-     * @param $page 页码
-     * @param $page_num 分页大小
+
+    /**
+     * 搜索
+     * @param string $search 搜索的关键字
+     * @param int $page 页码
+     * @param int $page_num 分页大小
      * @param string $order 拍序
      * @param int $status 搜索的文章状态
-     * @return array|mixed|string
+     * @return array|mixed|string 搜索结果
      */
     public  static function  search($search,$page,$page_num,$order = '`weight` DESC, `update_time` DESC',$status=1){
         $map = DocumentApi::listMap(null, $status);
@@ -99,11 +98,12 @@ class DocumentApi {
         return $result;
     }
 
-    /**搜索数量
-     * @param $search
-     * @param string $order
-     * @param int $status
-     * @return mixed
+    /**
+     * 搜索数量
+     * @param string $search 搜索关键字
+     * @param string $order 排序
+     * @param int $status 状态
+     * @return mixed 搜索数量
      */
     public  static function  searchCount($search,$order = '`weight` DESC, `update_time` DESC',$status=1){
         $map = DocumentApi::listMap(null, $status);
@@ -188,7 +188,7 @@ class DocumentApi {
     /**
      * 返回前一篇文档信息
      * @param  array $info 当前文档信息
-     * @return array
+     * @return array 前一个文档
      */
     public static function prev($info){
         $map = array(
@@ -217,7 +217,7 @@ class DocumentApi {
     /**
      * 获取下一篇文档基本信息
      * @param  array    $info 当前文档信息
-     * @return array
+     * @return array  下条新闻
      */
     public static function next($info){
         $map = array(
@@ -259,12 +259,13 @@ class DocumentApi {
         return $result;
     }
 
-    /**获取热点新闻
-     * @param null $cate
-     * @param null $limit
-     * @param string $order
-     * @param bool $field
-     * @return array|mixed|string
+    /**
+     * 获取热点新闻
+     * @param int|string $cate 栏目
+     * @param int|string $limit 数量
+     * @param string $order 排序
+     * @param bool $field 要取的字段
+     * @return array|mixed|string  热点新闻
      */
     public static function hot_list($cate='',$limit=8,$order='`view` DESC, `is_up` DESC',$field = true){
         $map = DocumentApi::listMap($cate, 1);

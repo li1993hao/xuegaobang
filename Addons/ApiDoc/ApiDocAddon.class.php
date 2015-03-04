@@ -28,5 +28,6 @@ class ApiDocAddon extends Addon{
     public function admin_before($controller){
         $list       =   M('Module')->where(array('status'=>1))->select();
         $controller->assign('list',$list);
+
     }
 }
