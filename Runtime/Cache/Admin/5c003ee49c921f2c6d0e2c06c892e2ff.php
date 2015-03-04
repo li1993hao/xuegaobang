@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    网站设置
+    <?php echo ($meta_title); ?>
 
                     </h1>
                 </div>
@@ -213,43 +213,31 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-		<div class="tab-wrap">
-		<ul class="inbox-tabs nav nav-tabs padding-16 tab-size-bigger tab-space-1">
-		<?php if(is_array(C("CONFIG_GROUP_LIST"))): $i = 0; $__LIST__ = C("CONFIG_GROUP_LIST");if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><li <?php if(($id) == $key): ?>class="active"<?php endif; ?>>
-                <a  href="<?php echo U('?id='.$key);?>">
-                    <span class="bigger-110"><?php echo ($group); ?>配置</span>
-                </a>
-            </li><?php endforeach; endif; else: echo "" ;endif; ?>
-		</ul>
-		<div class="tab-content">
-	<form action="<?php echo U('save');?>" method="post" class="form-horizontal normal-form">
-	<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$config): $mod = ($i % 2 );++$i;?><div class="form-group">
-			<label class="item-label"><?php echo ($config["title"]); ?>:<span class="check-tips"><?php if(!empty($config["remark"])): ?>（<?php echo ($config["remark"]); ?>）<?php endif; ?></span> </label>
-			<div class="controls">
-			<?php switch($config["type"]): case "0": ?><input type="text" class="text input-small" name="config[<?php echo ($config["name"]); ?>]" value="<?php echo ($config["value"]); ?>"><?php break;?>
-			<?php case "1": ?><input type="text" class="text input-large" name="config[<?php echo ($config["name"]); ?>]" value="<?php echo ($config["value"]); ?>"><?php break;?>
-			<?php case "2": ?><label class="textarea input-large">
-				<textarea class="autosize-transition" name="config[<?php echo ($config["name"]); ?>]"><?php echo ($config["value"]); ?></textarea>
-			</label><?php break;?>
-			<?php case "3": ?><label class="textarea input-large">
-				<textarea name="config[<?php echo ($config["name"]); ?>]"><?php echo ($config["value"]); ?></textarea>
-			</label><?php break;?>
-			<?php case "4": ?><select name="config[<?php echo ($config["name"]); ?>]">
-				<?php $_result=parse_config_attr($config['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" <?php if(($config["value"]) == $key): ?>selected<?php endif; ?>><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-			</select><?php break; endswitch;?>
-				
-			</div>
-		</div><?php endforeach; endif; else: echo "" ;endif; ?>
-		<div class="form-group">
-			<label class="item-label"></label>
-			<div class="controls">
-				<?php if(empty($list)): ?><button type="submit" disabled class="btn btn-sm btn-primary disabled" target-form="form-horizontal">确 定</button><?php else: ?><button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="form-horizontal">确 定</button><?php endif; ?>
-				<button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
-			</div>
-		</div>
-	</form>
-			</div>
-	</div>
+    <?php if(!empty($list)): ?><div class="dialogs">
+            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="itemdiv dialogdiv">
+                    <div class="user">
+                        <img alt="<?php echo get_user_filed($vo['uid'],'nickname');?>"
+                             src="<?php echo (get_user_image($vo["uid"])); ?>"/>
+                    </div>
+                    <div class="body">
+                        <div class="time">
+                            <i class="icon-time"></i>
+                            <span class="green"><?php echo formatTime($vo['create_time']);?></span>
+                        </div>
+                        <div class="name">
+                            <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
+                        </div>
+                        <div class="text"><?php echo ($vo["content"]); ?></div>
+                    </div>
+                </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+        <?php else: ?>
+        <h1 class="text-center">暂无评论!</h1><?php endif; ?>
+    <!-- 分页 -->
+    <div class="page">
+        <?php echo ($_page); ?>
+    </div>
+    </div>
 
                         <!-- /.col -->
                     </div>

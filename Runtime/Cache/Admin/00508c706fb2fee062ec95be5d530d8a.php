@@ -204,7 +204,11 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
+<<<<<<< HEAD
     产品管理
+=======
+    佰帮管理
+>>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -213,6 +217,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
+<<<<<<< HEAD
     <!--"Modules://BaiBang@index/aa"-->
     <div>
         <!--<div class="btn-group">-->
@@ -338,6 +343,9 @@
             <?php echo ($_page); ?>
         </div>
     </div>
+=======
+
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -350,6 +358,7 @@
     </div>
 </div><!-- /.main-container -->
 
+<<<<<<< HEAD
     <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -370,6 +379,8 @@
             </div>
         </div>
     </div>
+=======
+>>>>>>> origin/master
 
 
 <!-- /主体 -->
@@ -431,6 +442,7 @@
 
 
 
+<<<<<<< HEAD
     <script>
         $('#adv_show').click(function(){
             var ele = $(this).find('i');
@@ -479,6 +491,8 @@
             <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
         }();<?php endif; ?>
     </script>
+=======
+>>>>>>> origin/master
 
 </body>
 </html>
