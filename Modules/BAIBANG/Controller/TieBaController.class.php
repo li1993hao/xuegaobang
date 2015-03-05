@@ -26,7 +26,7 @@ class TiebaController extends CommonController{
      */
     public function search(){
         $map = $this->searc_parse();
-        $result = $this->p_lists('',$map,'',array(),true);
+        $result = $this->p_lists('tieba',$map,'',array(),true);
         $this->assign('type',1);
         $this->assign('list',$result);
         $this->_display('index');

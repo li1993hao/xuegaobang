@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    用户管理
+    企业验证
 
                     </h1>
                 </div>
@@ -213,23 +213,19 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--"Modules://BaiBang@index/aa"-->
+    <!--include format "Modules://BaiBang@index/aa"-->
     <div>
-        <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
-            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
-                    data-tip="确定要删除么?">删 除
-            </button>
-        </div>
-
+    <!--<div class="btn-group">-->
+        <!--<button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"-->
+                <!--data-tip="确定要删除么?">删 除-->
+        <!--</button>-->
+    <!--</div>-->
         <div class="pull-right">
             <a href="#" id="adv_show">
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索姓名.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -240,25 +236,32 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
-                            <td>用户类型：
-                                <select name="query_type">
-                                    <option value="">不限</option>
-                                    <option value="1">企业用户</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </td>
-                            <td>状态：
-                                <select name="query_status">
-                                    <option value="">不限</option>
-                                    <option value="0">禁用</option>
-                                    <option value="1">正常</option>
-                                    <option value="2">待审核</option>
-                                    <option value="3">未通过</option>
+                            <td>名称：<input type="text" name="query_name" ></td>
+                            <td>类型：<input type="text" name="query_vender" ></td>
+                            <!--<td>教练等级：-->
+                            <!--<select name="query_technicalGrade">-->
+                            <!--<option value="__whatever__">不限</option>-->
 
-                                </select>
-                            </td>
+                            <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>运动项目：-->
+                            <!--<select name="query_sports">-->
+                            <!--<option value="__whatever__">不限</option>-->
+
+                            <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>运动队：-->
+                            <!--<select name="query_team">-->
+                            <!--<option value="__whatever__">不限</option>-->
+
+                            <!--</select>-->
+                            <!--</td>-->
+                            <!--<td>队内职务：-->
+                            <!--<select name="query_job">-->
+                            <!--<option value="__whatever__">不限</option>-->
+
+                            <!--</select>-->
+                            <!--</td>-->
 
                             <td>每页显示数量：
                                 <select name="r">
@@ -292,10 +295,10 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>昵称</th>
-                <th>登录次数</th>
+                <th>企业名称</th>
                 <th>类别</th>
-                <th>最后登录时间</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
                 <th>状态</th>
                 <th>操作</th>
             </tr>
@@ -308,18 +311,15 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["nickname"]); ?></td>
-                        <td><?php echo ($com["login_times"]); ?></td>
-                        <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
-                        <td><?php echo (date("y-m-d h:i",$com["last_login_time"])); ?></td>
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
+                        <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
+                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -441,12 +441,11 @@
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
-            console.log(id+"++++ "+ url);
 
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
-            $.post(url,{'id':id},function(data){
+            $.post(url,{'id':id,'controller':'company'},function(data){
                 $("#user_info .modal-body").empty().html(data);
             });
         });
@@ -467,7 +466,7 @@
             $("#adv_search").show();
             var ele = $("#adv_show").find('i');
             $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','');<?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($com); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
         }();<?php endif; ?>
     </script>
 

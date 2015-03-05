@@ -1,6 +1,6 @@
 <extend name="Common@Base/base"/>
 <block name="title">
-    贴子管理
+    用户管理
 </block>
 <block name="content">
     <!--"Modules://BaiBang@index/aa"-->
@@ -109,12 +109,12 @@
                         </td>
                         <td>
 
-                            <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$com['id'])}">删除</a>
+                            <a title="删除" class="confirm ajax-get"   href="{:_U('del',array('id'=>$com['id'],'controller'=>'member'))}">删除</a>
                             <if condition="$com['status'] eq 0">
-                                <a title="启用" class="ajax-get"   href="{:_U('resume?id='.$com['id'])}">启用</a>
+                                <a title="启用" class="ajax-get"   href="{:_U('resume',array('id'=>$com['id'],'controller'=>'member'))}">启用</a>
                             </if>
                             <if condition="$com['status'] eq 1">
-                                <a title="禁用" class="ajax-get"   href="{:_U('forbid?id='.$com['id'])}">禁用</a>
+                                <a title="禁用" class="ajax-get"   href="{:_U('forbid',array('id'=>$com['id'],'controller'=>'member'))}">禁用</a>
                             </if>
                         </td>
                     </tr>
@@ -178,7 +178,6 @@
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
             $.post(url,{'id':id},function(data){
-                console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });
         });

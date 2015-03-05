@@ -8,7 +8,7 @@ class CommonController extends ModuleController{
      * @param string $method
      */
     public function info($name=null){
-        $name = empty($name)? __CURRENT_CONTROLLER__ : $name;
+        $name = $this->isType();
 
         $id= I('post.id');
         if (is_numeric($id)) {
@@ -22,21 +22,25 @@ class CommonController extends ModuleController{
      * 删除数据
      */
     public function  del(){
-        parent::editRow(__CURRENT_CONTROLLER_,array('status'=>-1),null);
+        $str = $this->isType();
+        parent::editRow($str,array('status'=>-1),null);
     }
-
     /**
      * 禁用数据
      */
     public function  forbid(){
-        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>0),null);
+        $str = $this->isType();
+        parent::editRow($str,array('status'=>0),null);
     }
-
     /**
      * 恢复数据
      */
-    public function  resume(){
-        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>1),null);
+    public function resume(){
+        $str = $this->isType();
+        parent::editRow($str,array('status'=>1),null);
     }
 
+    private function isType(){
+        return I("controller")==''?__CURRENT_CONTROLLER__ : I("controller");
+    }
 }

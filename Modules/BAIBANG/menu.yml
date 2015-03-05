@@ -16,7 +16,7 @@
 用户管理:
   - title: 用户管理
     url: user/index
-  - title: 用户审核
+  - title: 公司审核
     url: user/verify
 
 
