@@ -91,7 +91,6 @@ class PersonApi {
             api_msg('参数非法!');
             return false;
         }
-
         $_POST['status'] = -1;
         if(D('Notice')->update() !== false){
             api_msg("操作成功!");
@@ -100,5 +99,13 @@ class PersonApi {
             api_msg("操作失败!");
             return false;
         }
+    }
+
+    public static function getProductionCategory(){
+        return C("PRODUCTION_CATEGORY");
+    }
+
+    public static function getCompanyCategory(){
+        return C("COMPANY_CATEGORY");
     }
 } 

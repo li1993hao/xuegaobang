@@ -228,6 +228,18 @@ function  JDIRedirect($url){
 }
 
 /**
+ * 发送通知
+ * @param $uid 通知用户
+ * @param $title 通知标题
+ * @param $detail 通知详情
+ */
+function notice($uid,$title,$detail=''){
+    $data['uid'] = $uid;
+    $data['title'] = $title;
+    $data['detail'] = $detail;
+    return D('Notice')->update($data);
+}
+/**
  * select返回的数组进行整数映射转换
  *
  * @param array $map  映射关系二维数组  array(
