@@ -105,7 +105,7 @@
                         if(method.param){
                             for(var i=0; i<method.param.length; i++){
                                 params +='<li>';
-                                params += ((i+1)+"."+method.param[i][1]+", 类型:"+method.param[i][0]+", 说明:"+method.param[i][2]);
+                                params += ((i+1)+"."+method.param[i][1]+method.param[i][3]+", 类型:"+method.param[i][0]+", 说明:"+method.param[i][2]);
                                 params += '</li>';
                                 if(method.param[i][1]){
                                     if(i==method.param.length-1){
@@ -157,7 +157,7 @@
                     request +=  Article.apiParam;
                     var timestamp =  parseInt(new Date().getTime()/1000);
                     request += ('&_time='+timestamp);//时间戳
-                    var hash = hex_sha1(request+api_key);
+                    var hash = hex_sha1(encodeURI(request)+api_key);
                     request += ('&_hash='+hash);//数据签名
                     var after = "&_time="+timestamp+"&_hash="+hash;
                     $.post(host_url+Article.apiParam+after,o,function(data){

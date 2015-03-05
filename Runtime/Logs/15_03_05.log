@@ -1,0 +1,17 @@
+[ 2015-03-05T09:55:37+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=login&_time=1425520537&_hash=2597471e3ac2e40fdcc34720bfa6ff8c95740974
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001544s ]
+SQL: SELECT * FROM `jdi_member` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.000168s ]
+SQL: UPDATE `jdi_member` SET `login_times`=`login_times`+1,`last_login_time`=1425520537,`last_login_ip`=0 WHERE `id` = 1 [ RunTime:0.000524s ]
+
+[ 2015-03-05T09:57:27+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=login&_time=1425520647&_hash=05ecca60cfc89da1f06fd76957d0de755949ff26
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001895s ]
+SQL: SELECT * FROM `jdi_member` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.000150s ]
+SQL: UPDATE `jdi_member` SET `login_times`=`login_times`+1,`last_login_time`=1425520647,`last_login_ip`=0 WHERE `id` = 1 [ RunTime:0.000126s ]
+
+[ 2015-03-05T10:08:21+08:00 ] ::1 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=login&_time=1425521301&_hash=0a832cbab85224de2296cd8edee61450de093076
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_notice` [ RunTime:0.003007s ]
+SQL: INSERT INTO `jdi_notice` (`uid`,`title`,`detail`,`create_time`,`update_time`) VALUES (1,'12','21',1425521301,1425521301) [ RunTime:0.005171s ]
+

@@ -15,7 +15,7 @@ class ModelApi {
      * 获取文档模型信息
      * @param  integer $id    模型ID
      * @param  string  $field 模型字段
-     * @return array
+     * @return array 结果
      */
     public static function get_document_model($id = null, $field = null){
         static $list;
@@ -50,16 +50,21 @@ class ModelApi {
         }
     }
 
-    // 获取模型名称
-    public static function get_model_by_id($id,$filed='title'){
-        return $model = M('Model')->getFieldById($id,$filed);
+    /**
+     * 获取模型名称
+     * @param int $id 模型id
+     * @param  string $filed 字段
+     * @return array 结果
+     */
+    public static function get_model_by_id($id,$field='title'){
+        return M('Model')->getFieldById($id,$field);
     }
 
     /**
-     * 获取属性信息并缓存
-     * @param  integer $id    属性ID
-     * @param  string  $field 要获取的字段名
-     * @return string         属性信息
+     * 获取模型属性
+     * @param int $model_id 模型id
+     * @param bool $group 是否分组
+     * @return array|mixed|\stdClass|string 结果
      */
     public static function get_model_attribute($model_id, $group = true){
         static $list;
@@ -119,8 +124,8 @@ class ModelApi {
 
     /**
      * 分析属性的枚举类型字段值 格式 a:名称1,b:名称2 或者 :fun(var1,var)
-     * @param $string
-     * @return array
+     * @param string $string 分析字符串
+     * @return array 结果
      */
     public static function parse_field_attr($string) {
         if(0 === strpos($string,':')){

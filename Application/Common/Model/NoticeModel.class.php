@@ -8,8 +8,12 @@ class NoticeModel extends Model{
       array('update_time',NOW_TIME,self::MODEL_BOTH)
     );
 
-    public function update(){
-        $data = $this->create();
+    public function update($post=null){
+        if(is_null($post)){
+            $data = $this->create();
+        }else{
+            $data = $this->create($post);
+        }
         if(!$data){
             return false;
         }

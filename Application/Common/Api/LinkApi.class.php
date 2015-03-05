@@ -13,9 +13,9 @@ namespace Common\Api;
 class LinkApi {
     /**
      * 获得外部链接
-     * @param $group 组别
-     * @param $what 如果是数字则取组别下面的纪录,如果是’count‘则取组别的链接数量
-     * @return int|string
+     * @param string $group 组别
+     * @param  mix $what 如果是数字则取组别下面的纪录,如果是’count‘则取组别的链接数量
+     * @return int|string 链接集合
      */
     public static function get_link($group,$what){
         static $list;

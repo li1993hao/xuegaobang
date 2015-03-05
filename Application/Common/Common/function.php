@@ -135,7 +135,7 @@ function user_field($field){
  * @param $field
  * @return mixed
  */
-function get_user_filed($uid,$field){
+function get_user_filed($uid,$field=''){
     return api('User/get_user_field',array('uid'=>$uid,'field'=>$field));
 }
 /**获得制定id的用户昵称
@@ -227,6 +227,18 @@ function  JDIRedirect($url){
     exit;
 }
 
+/**
+ * 发送通知
+ * @param $uid 通知用户
+ * @param $title 通知标题
+ * @param $detail 通知详情
+ */
+function notice($uid,$title,$detail=''){
+    $data['uid'] = $uid;
+    $data['title'] = $title;
+    $data['detail'] = $detail;
+    return D('Notice')->update($data);
+}
 /**
  * select返回的数组进行整数映射转换
  *
@@ -601,7 +613,7 @@ function get_cover($cover_id, $field = null){
  */
 function get_cover_path($cover_id){
     if(empty($cover_id)){
-        return false;
+        return "";
     }
     return __ROOT__.get_cover($cover_id,'path');
 }
@@ -1161,7 +1173,7 @@ function api($array,$vars=array()){
     }
 
     $method    = array_pop($array);
-    $classname = array_pop($array);
+    $class_name = array_pop($array);
     $module    = $array? array_pop($array) : 'Common';
 
     $component = array_pop($array);
@@ -1169,13 +1181,26 @@ function api($array,$vars=array()){
         $module = $component.'\\'.$module;
     }
 
-    $class = $module.'\\Api\\'.$classname.'Api';
+    $class = $module.'\\Api\\'.$class_name.'Api';
 
     try{
         $reflect_class = new ReflectionClass($class);
         if($reflect_class->hasMethod($method)){
             $reflect_method = $reflect_class->getMethod($method);
-            return $reflect_method->invokeArgs($reflect_class,$vars);
+            $params =  $reflect_method->getParameters();
+            $real_vars = array();
+            foreach ($params as $param){
+                $name = $param->getName();
+                if(isset($vars[$name])){
+                    $real_vars[] = $vars[$name];
+                }elseif($param->isDefaultValueAvailable()){
+                    $real_vars[] = $param->getDefaultValue();
+                }else{
+                    api_msg("参数".$param->getName()."必须填写");
+                    return false;
+                }
+            }
+            return $reflect_method->invokeArgs($reflect_class,$real_vars);
         }else{
             api_msg("请求方法不存在!错误代码:105");
             return false;

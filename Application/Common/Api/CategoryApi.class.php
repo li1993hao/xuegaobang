@@ -17,7 +17,7 @@ class CategoryApi {
      * @param  string  $field 要获取的字段名
      * @return string         分类信息
      */
-    public static function get_category($id, $field = null){
+    public static function get_category($id, $field = ''){
         static $list;
 
         /* 非法分类ID */
@@ -60,7 +60,7 @@ class CategoryApi {
 
     /**
      * 获得指定栏目的子类
-     * @param $cid 分类id
+     * @param  int|string $cid 分类id
      * @return array 栏目列表
      */
     public static function get_children_category($cid){
@@ -78,14 +78,19 @@ class CategoryApi {
      * @param int $cid 分类id
      * @return int 子分类数量
      */
-    public static function get_children_count($cid,$map=array()){
+    public static function get_children_count($cid,$where=array()){
         if(empty($cid)){
             return false;
         }
-        $pid = self::get_category($cid,'id');
-        $map = array_merge(array('pid'=>$pid,'status'=>1,'type'=>array('in','1,2,3')),$map);
-        $result =  M('node')->where($map)->count();
 
+        $pid = self::get_category($cid,'id');
+        $map =array('pid'=>$pid,'status'=>1,'type'=>array('in','1,2,3'));
+        if(is_string($where)){ //字符串查询
+            $map["_string"] = $where;
+        }else{
+            $map = array_merge($map,$where);
+        }
+        $result =  M('node')->where($map)->count();
         return $result;
     }
 
@@ -94,8 +99,13 @@ class CategoryApi {
      * @param array $map 筛选条件
      * @return array  顶级分类
      */
-    public static function get_top_category($map=array()){
-        $map = array_merge($map,array('status'=>1,'type'=>array('in','1,2,3'),'pid'=>0));
+    public static function get_top_category($where=array()){
+        $map =array('status'=>1,'type'=>array('in','1,2,3'),'pid'=>0);
+        if(is_string($where)){ //字符串查询
+            $map["_string"] = $where;
+        }else{
+            $map = array_merge($map,$where);
+        }
         $list = M('node')->where($map)->order('sort')->select();
         return list_url($list);
     }

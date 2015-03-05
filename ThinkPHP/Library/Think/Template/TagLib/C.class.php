@@ -112,14 +112,14 @@ class C extends  TagLib{
     public  function  _prev($tag,$content){
         $info   = $this->autoBuildVar($tag['cur']);
         $result   = !empty($tag['result'])?$tag['result']:'prev';
-        $parse = '<?php $'.$result.' = api(\'Document/prev\',array(\'info\'=>'.$info.'))?>';
+        $parse = '<?php $'.$result.' = api(\'Document/prev\',array(\'id\'=>$info[\'id\'],\'category_id\'=>$info[\'category_id\']))?>';
         return $parse;
     }
 
     public  function  _next($tag,$content){
         $info   = $this->autoBuildVar($tag['cur']);
         $result   = !empty($tag['result'])?$tag['result']:'next';
-        $parse = '<?php $'.$result.' = api(\'Document/next\',array(\'info\'=>'.$info.'))?>';
+        $parse = '<?php $'.$result.' = api(\'Document/next\',array(\'id\'=>$info[\'id\'],\'category_id\'=>$info[\'category_id\']))?>';
         return $parse;
     }
 } 

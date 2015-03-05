@@ -71,8 +71,8 @@ class IndexController extends HomeController {
                     $this->display($temp);
                 }
             }else{//渲染列表页模版
-                $list =  api('Document/lists',array('id'=>$cate,'page'=>$p));
-                $total = api('Document/listCount',array('id'=>$cate));
+                $list =  api('Document/lists',array('category'=>$cate,'page'=>$p));
+                $total = api('Document/listCount',array('category'=>$cate));
                 $page = new Page($total,$Category['list_num'],array('id'=>$cate));
                 if($total>$Category['list_num']){
                     $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
@@ -92,11 +92,11 @@ class IndexController extends HomeController {
             }
         }elseif($Category['type']==2){
             //单页面
-            $model_id =  api('Category/get_category',array('id'=>$cate,'filed'=>'model_id'));
+            $model_id =  api('Category/get_category',array('id'=>$cate,'field'=>'model_id'));
             if(empty($model_id)){//分类不存在或者被禁用
                 $this->error('分类不存在或者被禁用!');
             }
-            $model_name = api('Model/get_model_by_id',array('model_id'=>$model_id,'filed'=>'name'));
+            $model_name = api('Model/get_model_by_id',array('id'=>$model_id,'field'=>'name'));
 
 
             if(empty($model_name)){//模型不存在或者被禁用
@@ -180,7 +180,7 @@ class IndexController extends HomeController {
         if(empty($model_id)){//分类不存在或者被禁用
             $this->error('分类不存在或者被禁用!');
         }
-        $model_name = api('Model/get_model_by_id',array('model_id'=>$model_id,'filed'=>'name'));
+        $model_name = api('Model/get_model_by_id',array('id'=>$model_id,'field'=>'name'));
         if(empty($model_name)){//模型不存在或者被禁用
             $this->error('模型不存在或者被禁用!');
         }

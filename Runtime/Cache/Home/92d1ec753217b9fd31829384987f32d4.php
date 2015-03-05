@@ -12,24 +12,24 @@
 <meta name="author" content="">
 <meta name="renderer" content="webkit">
 <!-- CSS Global Compulsory-->
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/plugins/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/style.css">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/headers/header1.css">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/responsive.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/plugins/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/style.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/headers/header1.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/responsive.css">
 <!--<link rel="shortcut icon" href="favicon.ico">        -->
 <!-- CSS Implementing Plugins -->
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/plugins/font-awesome/css/font-awesome.css">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/plugins/flexslider/flexslider.css">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/plugins/parallax-slider/css/parallax-slider.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/plugins/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/plugins/flexslider/flexslider.css">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/plugins/parallax-slider/css/parallax-slider.css">
 <!-- CSS Theme -->
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/themes/default.css" id="style_color">
-<link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/plugins.css" >
-<link rel="stylesheet" href="/jdicms/Template/default/asset/css/am.min.css" />
-<link rel="stylesheet" href="/jdicms/Template/default/asset/css/home.css" />
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/themes/default.css" id="style_color">
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/plugins.css" >
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/css/am.min.css" />
+<link rel="stylesheet" href="/xuegaobang/Template/default/asset/css/home.css" />
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/jquery-1.10.2.min.js"></script>
 
     
-    <link rel="stylesheet" href="/jdicms/Template/default/asset/unify/css/pages/blog.css">
+    <link rel="stylesheet" href="/xuegaobang/Template/default/asset/unify/css/pages/blog.css">
 
     <style>
         /*扩展*/
@@ -144,8 +144,8 @@
                     </div>
                     <section><?php echo (htmlspecialchars_decode($info["content"])); ?></section>
                     <?php echo plugin('SocialButton');?>
-                    <?php $prev = api('Document/prev',array('info'=>$info))?>
-<?php $next = api('Document/next',array('info'=>$info))?>
+                    <?php $prev = api('Document/prev',array('id'=>$info['id'],'category_id'=>$info['category_id']))?>
+<?php $next = api('Document/next',array('id'=>$info['id'],'category_id'=>$info['category_id']))?>
 <hr/>
 <div class="blog_footer clearfix">
     <div class="blog_prev">
@@ -175,17 +175,17 @@
 <!-- 底部 -->
 <div class="margin-bottom-40"></div>
 <!-- JS Global Compulsory -->
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/hover-dropdown.min.js"></script>
-<!--<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/back-to-top.js"></script>-->
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/hover-dropdown.min.js"></script>
+<!--<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/back-to-top.js"></script>-->
 <!-- JS Implementing Plugins -->
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/parallax-slider/js/modernizr.js"></script>
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/plugins/parallax-slider/js/jquery.cslider.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/parallax-slider/js/modernizr.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/plugins/parallax-slider/js/jquery.cslider.js"></script>
 <!-- JS Page Level -->
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/js/app.js"></script>
-<script type="text/javascript" src="/jdicms/Template/default/asset/unify/js/pages/index.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/js/app.js"></script>
+<script type="text/javascript" src="/xuegaobang/Template/default/asset/unify/js/pages/index.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
@@ -224,7 +224,7 @@
 </script>
 
 <!--[if lt IE 9]>
-<script src="/jdicms/Template/default/asset/unify/plugins/respond.js"></script>
+<script src="/xuegaobang/Template/default/asset/unify/plugins/respond.js"></script>
 <![endif]-->
 <?php echo hook('pageFooter');?>
 
