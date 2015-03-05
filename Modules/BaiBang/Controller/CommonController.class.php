@@ -8,8 +8,8 @@ class CommonController extends ModuleController{
      * @param string $method
      */
     public function info($name=null){
-        $name = $this->isType();
-
+        if(empty($name))
+            $name = $this->isType();
         $id= I('post.id');
         if (is_numeric($id)) {
             $user = M($name)->find($id);

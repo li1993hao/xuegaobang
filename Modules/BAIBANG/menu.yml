@@ -1,10 +1,10 @@
 ---
 产品管理:
   - title: 产品管理
-    url: production/index
+    url: index/index
     children:
       - title: 搜索
-        url: production/search
+        url: index/search
 #  - title: 产品审核
 #    url: index/verify
 论坛管理:
