@@ -9,8 +9,8 @@
 
 namespace Admin\Controller;
 use Common\Controller\AdminController;
-use Admin\Model\AuthRuleModel;
-use Admin\Model\AuthGroupModel;
+use Common\Model\AuthRuleModel;
+use Common\Model\AuthGroupModel;
 
 /**
  * 权限管理控制器

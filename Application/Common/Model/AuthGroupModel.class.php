@@ -7,7 +7,7 @@
 // | Author: huajie <banhuajie@163.com>
 // +----------------------------------------------------------------------
 
-namespace Admin\Model;
+namespace Common\Model;
 use Think\Model;
 
 /**

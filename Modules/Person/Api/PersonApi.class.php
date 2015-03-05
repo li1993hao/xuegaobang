@@ -64,7 +64,8 @@ class PersonApi {
 
     /**
      * 把通知设为已读
-     * @param int $id 通知id
+     * @param int $id 通知id、
+     * @return bool
      */
     public static function readNotice($id){
         if(!is_numeric($id)){
@@ -85,6 +86,7 @@ class PersonApi {
     /**
      * 把通知删除
      * @param int $id 通知id
+     * @return bool
      */
     public static function deleteNotice($id){
         if(!is_numeric($id)){
@@ -101,10 +103,18 @@ class PersonApi {
         }
     }
 
+    /**
+     * 获得所有产品类别
+     * @return array  类似{"1":"xxx","2":"xx","3":"xx"} 客户端根据自身语言特性转化为特定的对象
+     */
     public static function getProductionCategory(){
         return C("PRODUCTION_CATEGORY");
     }
 
+    /**
+     * 获得所有公司类别
+     * @return array 类似{"1":"xxx","2":"xx","3":"xx"} 客户端根据自身语言特性转化为特定的对象
+     */
     public static function getCompanyCategory(){
         return C("COMPANY_CATEGORY");
     }

@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    分类列表
+    用户列表
 
                     </h1>
                 </div>
@@ -213,47 +213,75 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
+	<div>
+        <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="<?php echo U('User/add');?>">新 增</a>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="id">启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'forbidUser'));?>" target-form="id">禁 用</button>
+        <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="id">删 除</button>
+        </div>
+        <!-- 高级搜索 -->
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+    <!-- 数据列表 -->
     <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
+        <form class="ids">
+	<table class="table table-striped table-bordered table-hover">
+    <thead>
         <tr>
-            <th>排序</th>
-            <th>ID</th>
-            <th>分类名称</th>
-            <th>类型</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr>
-                    <td><?php echo ($node["sort"]); ?></td>
-                    <td><?php echo ($node["id"]); ?></td>
-                    <td>
-                        <?php $__FOR_START_2063691729__=0;$__FOR_END_2063691729__=$node["level"];for($i=$__FOR_START_2063691729__;$i < $__FOR_END_2063691729__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
-                                    <?php else: ?>
-                                    |--<?php endif; ?>
-                                <?php else: ?>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
-                        <?php echo ($node["name"]); ?>
-                    </td>
-                    <td>
-                        <?php switch($node["type"]): case "1": ?>分类<?php break;?>
-                            <?php case "2": ?>单页面<?php break;?>
-                            <?php case "3": ?>外部链接<?php break;?>
-                            <?php default: ?>
-                            栏目<?php endswitch;?>
-                    </td>
-                    <td>
-                        <?php if($node['type'] == 1): ?><a href="<?php echo U('add?category_id='.$node['id']);?>">添加内容</a>|
-                            <a href="<?php echo U('news?category_id='.$node['id']);?>">查看</a><?php endif; ?>
-                        <?php if($node['type'] == 2): ?><a href="<?php echo U('edit?category_id='.$node['id']);?>">修改</a><?php endif; ?>
-                        </switch></td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            <?php else: ?>
-            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
-
-        </tbody>
+            <th class="center">
+                <label>
+                    <input type="checkbox" class="ace check-all">
+                    <span class="lbl"></span>
+                </label>
+            </th>
+		<th>UID</th>
+		<th>昵称</th>
+		<!--<th class="">积分</th>-->
+		<th>登录次数</th>
+		<th>最后登录时间</th>
+		<th>最后登录IP</th>
+        <th>用户组</th>
+		<th>状态</th>
+		<th>操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td class="center">
+                <label>
+                    <input class="ids ace" type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>" />
+                    <span class="lbl"></span>
+                </label>
+            </td>
+			<td><?php echo ($vo["id"]); ?> </td>
+			<td><?php echo ($vo["nickname"]); ?></td>
+			<!--<td><?php echo ($vo["score"]); ?></td>-->
+			<td><?php echo ($vo["login_times"]); ?></td>
+			<td><span><?php echo (time_format($vo["last_login_time"])); ?></span></td>
+			<td><span><?php echo long2ip($vo['last_login_ip']);?></span></td>
+            <td><?php echo ((isset($vo["groups"]) && ($vo["groups"] !== ""))?($vo["groups"]):'-'); ?></td>
+			<td><?php echo ($vo["status_text"]); ?></td>
+			<td><?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('User/changeStatus?method=forbidUser&id='.$vo['id']);?>" class="ajax-get">禁用</a>
+				<?php else: ?>
+				<a href="<?php echo U('User/changeStatus?method=resumeUser&id='.$vo['id']);?>" class="ajax-get">启用</a><?php endif; ?>
+				<a href="<?php echo U('User/changeStatus?method=deleteuser?id='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                <a href="javascript:;" class="group-set" data-id="<?php echo ($vo['groups_id']); ?>" data-uid="<?php echo ($vo["id"]); ?>">设置用户组</a>
+            </td>
+		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		<?php else: ?>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+	</tbody>
     </table>
+       </form>
+	</div>
+    <div class="page">
+        <?php echo ($_page); ?>
     </div>
 
                         <!-- /.col -->
@@ -267,6 +295,30 @@
     </div>
 </div><!-- /.main-container -->
 
+    <div id="group_check" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" style="text-align:center">设置用户组</h4>
+                </div>
+                <div class="modal-body">
+                      <form class="group_ids">
+                       <?php if(is_array($group)): $i = 0; $__LIST__ = $group;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$g): $mod = ($i % 2 );++$i;?><label>
+                               <input type="checkbox" class=" group_check group_check_<?php echo ($g["id"]); ?>" name="groups_id[]" value="<?php echo ($g["id"]); ?>">
+                               <span class="lbl"><?php echo ($g["title"]); ?></span>
+                           </label><?php endforeach; endif; else: echo "" ;endif; ?>
+                          <input type="hidden" name="uid"/>
+                       </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm ajax-post " url="<?php echo U('User/setUserGroup');?>" target-form="group_ids">设置</button>
+                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <!-- /主体 -->
@@ -327,6 +379,36 @@
 
 
 
+	<script type="text/javascript">
+        var uid;
+        //回车搜索
+        $("#search").keyup(function(e) {
+            if (e.keyCode === 13) {
+                var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?nickname=PLACEHODLE');?>";
+                var query = $('#search').val();
+                url = url.replace('PLACEHODLE',query);
+                window.location.href = url;
+                return false;
+            }
+        });
+
+        $(".group-set").click(function(){
+            $('.group_check').prop('checked',false);
+            uid = $(this).data('uid');
+            $("input[name='uid']").val(uid);
+            var cg = ($(this).data('id')+'').split(',');
+
+            for(var i=0; i<cg.length; i++){
+                var cl = '.group_check_'+cg[i];
+                $(cl).prop('checked',true);
+            }
+            $("#group_check").modal('show');
+        });
+        function group_set(){
+
+        }
+
+	</script>
 
 </body>
 </html>

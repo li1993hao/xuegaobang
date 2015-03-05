@@ -31,7 +31,7 @@ class PublicController extends \Think\Controller {
             }
 
             $Member = D('Member');
-            $uid = $Member->checkLogin($username, $password,1,false);
+            $uid = $Member->checkLogin($username, $password,1);
             if(0 < $uid){
                 /* 登录用户 */
                 if($Member->login($uid)){ //登录用户
@@ -91,7 +91,6 @@ class PublicController extends \Think\Controller {
     /* 退出登录 */
     public function logout(){
         if(is_login()){
-            D('Member')->logout();
             session('[destroy]');
             $this->success('退出成功！', U('login'));
         } else {

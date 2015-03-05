@@ -41,8 +41,21 @@
 </nav>
 </aside>
 <section class="layout">
-    <div id="introduce">
-        <h1>API说明文档</h1>
+    <div id="introduce" style="margin: 20px">
+        <h1>API说明</h1>
+        <p>本文档为JDICMS系统api文档和测试工具,包括了系统和模块的对外api借口,以及测试界面.</p>
+        <p style="color: #008000">
+            文档树都是三级结构分别对应代码的,模块 － 类 － 方法<br/>
+            通用接口的get参数有：
+            <ul style="color: #008000">
+                <li>1._R:对应资源目录,可选的有Addons(插件接口),App(系统接口),Modules(模块接口)</li>
+                <li>2._M:对应子模块目录,对应文档树的第一级,文档树只是显示子模块的中文名称</li>
+                <li>3._C:对应接口类,对应文档树的第二级</li>
+                <li>4._A:对应接口方法,对应文档树的第三级</li>
+                <li>5.隐含参数:_time(时间戳),_hash(数据签名),_sid(可选,用户登陆标识)</li>
+            </ul>
+        </p>
+        <br/>
     </div>
     <div id="apiDetail" style="display: none">
         <h1 class="title" style="margin: 20px"></h1>
@@ -60,7 +73,7 @@
         <hr/>
         <div class="jdi-test" style="margin: 20px; margin-bottom: 100px">
             <h3>测试api</h3>
-            url:<input type="text" style="width: 100%" disabled id="test-url"/><br/>
+            url:<input type="text" style="width: 100%"  id="test-url"/><br/>
             参数:<input type="text" style="width: 100%"  id="test-param">
             <button id="test-button">测试</button>
             <h3>返回结果</h3>

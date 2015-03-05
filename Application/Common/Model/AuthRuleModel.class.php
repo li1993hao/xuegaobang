@@ -7,7 +7,7 @@
 // | Author: zhuyajie <xcoolcc@gmail.com>
 // +----------------------------------------------------------------------
 
-namespace Admin\Model;
+namespace Common\Model;
 use Think\Model;
 /**
  * 权限规则模型

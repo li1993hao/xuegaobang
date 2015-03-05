@@ -211,7 +211,7 @@ class MemberModel extends \Think\Model{
         return false;
     }
 
-    public function apiLogin($username, $password, $type = 1, $checkType=true){
+    public function apiLogin($username, $password, $type = 1, $checkType=false){
         $map = array();
         switch ($type) {
             case 1:

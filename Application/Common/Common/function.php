@@ -180,8 +180,12 @@ function api_auth_sign($data,$key){
     if(!is_array($data)){
         $data = (array)$data;
     }
-    $code = http_build_query($data); //url编码并生成query字符串
-    $sign = sha1($code.$key); //生成签名
+    $str = "";
+    foreach($data  as $k=>$v){
+        $str .="$k=$v&";
+    }
+    $str = substr($str,0,-1); //去除末尾&符号
+    $sign = sha1($str.$key); //生成签名
     return $sign;
 }
 
@@ -1202,11 +1206,11 @@ function api($array,$vars=array()){
             }
             return $reflect_method->invokeArgs($reflect_class,$real_vars);
         }else{
-            api_msg("请求方法不存在!错误代码:105");
+            api_msg("请求方法不存在!错误代码:107");
             return false;
         }
     }catch (\ReflectionException $e){
-        api_msg('请求方法不存在!错误代码:105');
+        api_msg('请求类不存在!错误代码:106');
         return false;
     }
 }

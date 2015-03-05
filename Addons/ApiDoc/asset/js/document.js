@@ -127,19 +127,16 @@
 
                         if(method.testCache){
                             $("#test-url").val(method.testCache.url);
-                            Article.apiParam = method.url;
                             $("#test-param").val(method.testCache.param);
                             $("#test-result").html(method.testCache.result);
                         }else{
                             $("#test-url").val(host_url+method.url);
-                            Article.apiParam = method.url;
                             $("#test-param").val(str_params);
                             $("#test-result").empty();
                         }
                         Article.method = method;
                         $('#apiDetail').show();
                     }
-                   //alert('haode');
                 });
 
                 $("#test-button").click(function(){
@@ -154,13 +151,18 @@
                             request += (p+"="+o[p]+"&");
                         }
                     }
-                    request +=  Article.apiParam;
+                    var strs = url.split("?");
+                    if(strs.length !== 2){
+                        alert("url格式不正确!");
+                        return;
+                    }
+                    request +=  strs[1];
                     var timestamp =  parseInt(new Date().getTime()/1000);
                     request += ('&_time='+timestamp);//时间戳
-                    var hash = hex_sha1(encodeURI(request)+api_key);
+                    var hash = hex_sha1(request+api_key);
                     request += ('&_hash='+hash);//数据签名
                     var after = "&_time="+timestamp+"&_hash="+hash;
-                    $.post(host_url+Article.apiParam+after,o,function(data){
+                    $.post(url+after,o,function(data){
                         var result =JSON.stringify(data);
                         $("#test-result").html(result);
                         Article.method.testCache = {'url':url,'param':pm,'result':result};

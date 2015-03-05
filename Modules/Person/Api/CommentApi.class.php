@@ -84,14 +84,12 @@ class CommentApi {
 
     /**
      * 得到某个主题的评论数 <br/>
-     * topic_table 评论表 如果是评论企业的话为member,如果是产品为production,帖子为tiba<br/>
-     * topic_id 评论记录id  如果是评论企业的话为企业用户的uid,如果是产品为产品id,帖子的话为帖子id<br/>
-     * @param $table
-     * @param $topic_id
+     * @param string $topic_table  评论表 如果是评论企业的话为member,如果是产品为production,帖子为tiba
+     * @param int $topic_id 评论记录id 如果是评论企业的话为企业用户的uid,如果是产品为产品id,帖子的话为帖子id
      * @return mixed
      */
-    public function commentNum($table,$topic_id){
-        $map['topic_table'] = $table;
+     static  public function commentNum($topic_table,$topic_id){
+        $map['topic_table'] = $topic_table;
         $map['topic_id'] = $topic_id;
         return D('Comment')->where($map)->count(); //评论数量,不包括回复数量
     }

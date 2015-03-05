@@ -10,6 +10,8 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+use Common\Model\MemberModel;
+
 class UserApi {
     /**
      * 检测用户是否登录
@@ -132,7 +134,7 @@ class UserApi {
             $data['nickname'] = $result['nickname'];
             $data['username'] = $result['username'];
             $data['type'] = $result['type'];
-            $data['uid'] = $result['uid'];
+            $data['uid'] = $result['id'];
             $data['head'] = get_cover_path($result['head']);
             api_msg("登陆成功!");
             return $data;
@@ -154,6 +156,57 @@ class UserApi {
                     $msg= '未知错误!';
             }
             api_msg($msg);
+            return false;
+        }
+    }
+
+    /**
+     *等出只是简单的销毁session,如果是用sid方式,则不做任何事情.<br/>
+     * 这时候登陆登出由客户端自己控制
+     */
+    public static function loginOut(){
+        session('[destroy]');
+        return true;
+    }
+
+    /**
+     * 企业用户注册
+     * @param string $email 邮箱
+     * @param string $username 用户名
+     * @param string $nickname 昵称
+     * @param string $password 密码
+     * @param string $re_password 重复密码
+     * @return string 结果
+     */
+    public static  function register($email,$username,$nickname,$password,$re_password){
+        if($email && $username && $nickname && $password && $re_password){
+            if(!regex($email,'email')){
+                api_msg('邮箱格式不正确！');
+                return false;
+            }
+            /* 检测密码 */
+            if($password != $re_password){
+                api_msg('密码和重复密码不一致！');
+                return false;
+            }
+            $member = D('Member');
+            $uid    =   $member->register($username, $password,$nickname,1,$status=1,$email); //添加企业
+            if(0 < $uid){ //注册成功
+                D('AuthGroup')->addToGroup($uid,13);//添加分组权限
+                if($member->login($uid)){ //登录
+                    //TODO:跳转到登录前页面
+                    api_msg('注册成功！');
+                    return false;
+                } else {
+                    api_msg('注册成功！');
+                    return false;
+                }
+            } else { //注册失败，显示错误信息
+                api_msg(MemberModel::showRegError($uid));
+                return false;
+            }
+        }else{
+            api_msg("填写信息不全");
             return false;
         }
     }
