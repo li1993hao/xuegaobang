@@ -14,3 +14,7 @@ function check_company_status(){
         return -1;//资料未填写
     }
 }
+function get_company_name(){
+    $company = M("company")->where("uid=".UID)->field("name")->find();
+    return $company['name'];
+}

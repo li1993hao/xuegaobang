@@ -229,7 +229,7 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索姓名.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -237,6 +237,11 @@
     <div class="panel panel-default" id="adv_search" style="display:none">
         <form class="search-form" method="post" action="<?php echo _U('search');?>">
             <div class="panel-body table-responsive">
+                <div class="panel-heading clearfix">
+                    <div class="pull-right">
+                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
@@ -274,11 +279,7 @@
                     </table>
                 </div>
             </div>
-            <div class="panel-heading clearfix">
-                <div class="pull-right">
-                    <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                </div>
-            </div>
+
 
         </form>
     </div>
@@ -467,7 +468,7 @@
             $("#adv_search").show();
             var ele = $("#adv_show").find('i');
             $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','');<?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
         }();<?php endif; ?>
     </script>
 

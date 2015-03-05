@@ -17,7 +17,7 @@
                 <!--<i class="icon-chevron-up"></i>-->
             <!--</a>-->
             <span class="input-icon">
-                <input type="text" placeholder="搜索姓名.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -25,6 +25,7 @@
     <!--<div class="panel panel-default" id="adv_search" style="display:none">-->
         <!--<form class="search-form" method="post" action="{:_U('search')}">-->
             <!--<div class="panel-body table-responsive">-->
+
                 <!--<div class="table-responsive">-->
                     <!--<table class="table table-striped table-bordered table-hover">-->
                         <!--<tr>-->
@@ -69,11 +70,7 @@
                     <!--</table>-->
                 <!--</div>-->
             <!--</div>-->
-            <!--<div class="panel-heading clearfix">-->
-                <!--<div class="pull-right">-->
-                    <!--<Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>-->
-                <!--</div>-->
-            <!--</div>-->
+
 
         <!--</form>-->
     <!--</div>-->
@@ -208,7 +205,7 @@
             var ele = $("#adv_show").find('i');
             $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
             <volist name='where' id='vo'>
-            Think.setValue('{$key}','{$com}');
+            Think.setValue('{$key}','{$vo}');
             </volist>
         }();
         </if>

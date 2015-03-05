@@ -33,7 +33,7 @@ class ProductionController extends CommonController {
                     continue;
                 }
                 if($kk[1] == "vender"){
-                    $map[] = "BINARY 'vender' LIKE '%{$v}%'";
+                    $map[] = "vender LIKE '%{$v}%'";
                     $team_map[$k] = $v;
                     continue;
                 }

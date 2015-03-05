@@ -3,8 +3,8 @@
   - title: 产品管理
     url: production/index
     children:
-      - title: dd
-        url: index/aa
+      - title: 搜索
+        url: production/search
 #  - title: 产品审核
 #    url: index/verify
 论坛管理:
