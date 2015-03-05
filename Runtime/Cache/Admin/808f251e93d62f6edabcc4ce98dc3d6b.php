@@ -223,70 +223,67 @@
         </div>
 
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
+            <!--<a href="#" id="adv_show">-->
+                <!--<i class="icon-chevron-up"></i>-->
+            <!--</a>-->
             <span class="input-icon">
-                <input type="text" placeholder="搜索姓名.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
     </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_name" ></td>
-                            <td>厂家：<input type="text" name="query_vender" ></td>
-                            <!--<td>教练等级：-->
-                            <!--<select name="query_technicalGrade">-->
-                            <!--<option value="__whatever__">不限</option>-->
+    <!--<div class="panel panel-default" id="adv_search" style="display:none">-->
+        <!--<form class="search-form" method="post" action="<?php echo _U('search');?>">-->
+            <!--<div class="panel-body table-responsive">-->
 
-                            <!--</select>-->
+                <!--<div class="table-responsive">-->
+                    <!--<table class="table table-striped table-bordered table-hover">-->
+                        <!--<tr>-->
+                            <!--<td>名称：<input type="text" name="query_name" ></td>-->
+                            <!--<td>发布人：<input type="text" name="query_uid" ></td>-->
+                            <!--&lt;!&ndash;<td>教练等级：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_technicalGrade">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>运动项目：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_sports">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>运动队：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_team">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>队内职务：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_job">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+
+                            <!--<td>每页显示数量：-->
+                                <!--<select name="r">-->
+                                    <!--<option value="10">10</option>-->
+                                    <!--<option value="20">25</option>-->
+                                    <!--<option value="50">50</option>-->
+                                    <!--<option value="100">100</option>-->
+                                    <!--<option value="200">200</option>-->
+                                    <!--<option value="400">400</option>-->
+                                <!--</select>-->
                             <!--</td>-->
-                            <!--<td>运动项目：-->
-                            <!--<select name="query_sports">-->
-                            <!--<option value="__whatever__">不限</option>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+            <!--</div>-->
 
-                            <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>运动队：-->
-                            <!--<select name="query_team">-->
-                            <!--<option value="__whatever__">不限</option>-->
 
-                            <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>队内职务：-->
-                            <!--<select name="query_job">-->
-                            <!--<option value="__whatever__">不限</option>-->
-
-                            <!--</select>-->
-                            <!--</td>-->
-
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="panel-heading clearfix">
-                <div class="pull-right">
-                    <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                </div>
-            </div>
-
-        </form>
-    </div>
+        <!--</form>-->
+    <!--</div>-->
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -475,7 +472,7 @@
             $("#adv_search").show();
             var ele = $("#adv_show").find('i');
             $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($com); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
         }();<?php endif; ?>
     </script>
 
