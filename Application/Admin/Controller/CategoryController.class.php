@@ -1,7 +1,6 @@
 <?php
 namespace Admin\Controller;
 use Common\Controller\AdminController;
-use Admin\Model\AuthGroupModel;
 
 /**
  *

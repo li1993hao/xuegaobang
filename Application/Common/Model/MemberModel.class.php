@@ -8,7 +8,6 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Model;
-use Admin\Model\AuthGroupModel;
 /**
  * 用户模型
  * @author 麦当苗儿 <zuojiazi@vip.qq.com>

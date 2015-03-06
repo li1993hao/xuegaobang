@@ -1,6 +1,6 @@
 <?php
 namespace Admin\Controller;
-use Admin\Model\AuthGroupModel;
+use Common\Model\AuthGroupModel;
 use Common\Controller\ThinkController;
 /**内容管理模块
  * Class ContentController

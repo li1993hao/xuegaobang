@@ -7,7 +7,7 @@
  */
 namespace Common\Controller;
 use Think\Controller;
-use Admin\Model\AuthGroupModel;
+use Common\Model\AuthGroupModel;
 class AdminController extends DataBaseController {
     /**
      * 后台控制器初始化

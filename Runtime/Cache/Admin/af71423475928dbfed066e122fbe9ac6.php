@@ -427,7 +427,7 @@
                                         });
                                     </script><?php break;?>
                                 <?php case "point": ?><input type="text" class="text" name="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>">
-                                    (<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">拾取坐标</a>,输入您的地址点击百度一下,找到地图您公司的位置点击,复制右上角的坐标即可)<?php break;?>
+                                    (<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank">点击拾取坐标</a>,进入拾取坐标页面,输入您的地址点击百度一下,找到地图您公司的位置点击,复制右上角的坐标即可)<?php break;?>
                                 <?php case "keyword": ?><div class="input-group col-xs-4"  style="padding:0">
                                         <input class="form-control " type="text" name="<?php echo ($field["name"]); ?>" value="<?php echo ($data[$field['name']]); ?>"/>
                                                                     <span class="input-group-btn">

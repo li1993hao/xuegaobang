@@ -1,6 +1,5 @@
 <?php
 namespace Admin\Controller;
-use Admin\Model\AuthGroupModel;
 use Common\Controller\AdminController;
 /**
  * 模型管理控制器
