@@ -111,7 +111,7 @@
                         </td>
                         <td>
                             <eq name="com.type" value="1">
-                                <a title="查看评论"    href="{:_U('comment?table=member&name='.$com['nickname'].'&id='.$com['uid'])}">相关评论 </a>
+                                <a title="查看评论"    href="{:_U('comment?table=company&name='.$com['nickname'].'&id='.get_company_id($com['id']))}">相关评论 </a>
                             </eq>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del',array('id'=>$com['id'],'controller'=>'member'))}">删除</a>
                             <if condition="$com['status'] eq 0">

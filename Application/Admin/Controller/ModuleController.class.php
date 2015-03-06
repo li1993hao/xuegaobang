@@ -118,12 +118,23 @@ class ModuleController extends AdminController {
         if($moduleModel->add($data)){
             $config         =   array('config'=>json_encode($module->getConfig()));
             if($config){
+                if(!empty($module->enter_controller)){
+                    $enter_controller = $module->enter_controller;
+                }else{
+                    $enter_controller = "index";
+                }
+                if(!empty($module->enter_action)){
+                    $enter_action = $module->enter_action;
+                }else{
+                    $enter_action = "index";
+                }
+
                 $moduleModel->where("name='{$module_name}'")->save($config);
                 $Menu = D('Menu');
                 $menu_data['title'] = $info['title'];
                 $menu_data['pid'] = 0;
                 $menu_data['url'] = 'dispatch/execute_module?_module='.$info['name']
-                                    .'&_controller=index&_action=index';
+                                    .'&_controller='.$enter_controller.'&_action='.$enter_action;
                 $menu_data['module'] = $module_name;
                 if($Menu->add($menu_data)){
                     $this->success('安装成功!');

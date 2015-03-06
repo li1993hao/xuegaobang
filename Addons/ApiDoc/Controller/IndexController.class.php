@@ -148,21 +148,23 @@ class IndexController extends AddonsController{
     }
 
     public function apiOnline(){
-
         $modules = M('Module')->where(array('status'=>1))->field('name,title')->select();
         $modules[] = array('name'=>'Common','title'=>'系统api');
+        try{
+            $list =  $this->get_list($modules);
 
-        $list =  $this->get_list($modules);
+            $this->assign('list',$list);
 
-        $this->assign('list',$list);
+            $class = "Addons\\ApiDoc\\ApiDocAddon";
 
-        $class = "Addons\\ApiDoc\\ApiDocAddon";
+            $addon = new $class;
 
-        $addon = new $class;
-
-        $config = $addon->getConfig();
-        $this->assign('addons_config', $config);
-        $this->display(T('Addons://ApiDoc@index/apiOnline'));
+            $config = $addon->getConfig();
+            $this->assign('addons_config', $config);
+            $this->display(T('Addons://ApiDoc@index/apiOnline'));
+        }catch (\Exception $e){
+            var_dump($e);
+        }
     }
 
     private function getModuleApiClass($module){

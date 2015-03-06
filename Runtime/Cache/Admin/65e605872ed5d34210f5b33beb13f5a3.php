@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    用户管理
+    用户列表
 
                     </h1>
                 </div>
@@ -213,126 +213,75 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--"Modules://BaiBang@index/aa"-->
-    <div>
+	<div>
         <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
-            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
-                    data-tip="确定要删除么?">删 除
-            </button>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('User/add');?>">新 增</a>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="id">启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'forbidUser'));?>" target-form="id">禁 用</button>
+        <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="id">删 除</button>
         </div>
-
+        <!-- 高级搜索 -->
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
     </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="panel-heading clearfix">
-                    <div class="pull-right">
-                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
-                            <td>用户类型：
-                                <select name="query_type">
-                                    <option value="">不限</option>
-                                    <option value="1">企业用户</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </td>
-                            <td>状态：
-                                <select name="query_status">
-                                    <option value="">不限</option>
-                                    <option value="0">禁用</option>
-                                    <option value="1">正常</option>
-                                    <option value="2">待审核</option>
-                                    <option value="3">未通过</option>
-                                </select>
-                            </td>
-
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
+    <!-- 数据列表 -->
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th class="center">
-                    <label>
-                        <input type="checkbox" class="ace check-all">
-                        <span class="lbl"></span>
-                    </label>
-                </th>
-                <th>用户名</th>
-                <th>昵称</th>
-                <th>登录次数</th>
-                <th>类别</th>
-                <th>最后登录时间</th>
-                <th>状态</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="center">
-                            <label>
-                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
-                                <span class="lbl"></span>
-                            </label>
-                        </td>
-                        <td><?php echo ($com["username"]); ?></td>
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a></td>
-                        <td><?php echo ($com["login_times"]); ?></td>
-                        <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
-                        <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
-                        </td>
-                        <td>
-                            <?php if(($com["type"]) == "1"): ?><a title="查看评论"    href="<?php echo _U('comment?table=company&name='.$com['nickname'].'&id='.get_company_id($com['id']));?>">相关评论 </a><?php endif; ?>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-            </tbody>
-        </table>
-
-        <!-- 分页 -->
-        <div class="page">
-            <?php echo ($_page); ?>
-        </div>
+        <form class="ids">
+	<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label>
+                    <input type="checkbox" class="ace check-all">
+                    <span class="lbl"></span>
+                </label>
+            </th>
+		<th>UID</th>
+		<th>昵称</th>
+		<!--<th class="">积分</th>-->
+		<th>登录次数</th>
+		<th>最后登录时间</th>
+		<th>最后登录IP</th>
+        <th>用户组</th>
+		<th>状态</th>
+		<th>操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td class="center">
+                <label>
+                    <input class="ids ace" type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>" />
+                    <span class="lbl"></span>
+                </label>
+            </td>
+			<td><?php echo ($vo["id"]); ?> </td>
+			<td><?php echo ($vo["nickname"]); ?></td>
+			<!--<td><?php echo ($vo["score"]); ?></td>-->
+			<td><?php echo ($vo["login_times"]); ?></td>
+			<td><span><?php echo (time_format($vo["last_login_time"])); ?></span></td>
+			<td><span><?php echo long2ip($vo['last_login_ip']);?></span></td>
+            <td><?php echo ((isset($vo["groups"]) && ($vo["groups"] !== ""))?($vo["groups"]):'-'); ?></td>
+			<td><?php echo ($vo["status_text"]); ?></td>
+			<td><?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('User/changeStatus?method=forbidUser&id='.$vo['id']);?>" class="ajax-get">禁用</a>
+				<?php else: ?>
+				<a href="<?php echo U('User/changeStatus?method=resumeUser&id='.$vo['id']);?>" class="ajax-get">启用</a><?php endif; ?>
+				<a href="<?php echo U('User/changeStatus?method=deleteuser?id='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                <a href="javascript:;" class="group-set" data-id="<?php echo ($vo['groups_id']); ?>" data-uid="<?php echo ($vo["id"]); ?>">设置用户组</a>
+            </td>
+		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		<?php else: ?>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+	</tbody>
+    </table>
+       </form>
+	</div>
+    <div class="page">
+        <?php echo ($_page); ?>
     </div>
 
                         <!-- /.col -->
@@ -346,20 +295,25 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
+    <div id="group_check" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
+                    <h4 class="modal-title" style="text-align:center">设置用户组</h4>
                 </div>
                 <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
+                      <form class="group_ids">
+                       <?php if(is_array($group)): $i = 0; $__LIST__ = $group;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$g): $mod = ($i % 2 );++$i;?><label>
+                               <input type="checkbox" class=" group_check group_check_<?php echo ($g["id"]); ?>" name="groups_id[]" value="<?php echo ($g["id"]); ?>">
+                               <span class="lbl"><?php echo ($g["title"]); ?></span>
+                           </label><?php endforeach; endif; else: echo "" ;endif; ?>
+                          <input type="hidden" name="uid"/>
+                       </form>
                 </div>
                 <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm ajax-post " url="<?php echo U('User/setUserGroup');?>" target-form="group_ids">设置</button>
                     <button class="btn btn-sm" data-dismiss="modal">取消</button>
                 </div>
             </div>
@@ -425,53 +379,36 @@
 
 
 
-
-    <script>
-        $('#adv_show').click(function(){
-            var ele = $(this).find('i');
-            if($(ele).hasClass('icon-chevron-up')){
-                $("#adv_search").slideDown('fast');
-                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            }else{
-                $("#adv_search").slideUp('fast');
-                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
+	<script type="text/javascript">
+        var uid;
+        //回车搜索
+        $("#search").keyup(function(e) {
+            if (e.keyCode === 13) {
+                var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?nickname=PLACEHODLE');?>";
+                var query = $('#search').val();
+                url = url.replace('PLACEHODLE',query);
+                window.location.href = url;
+                return false;
             }
         });
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-            console.log(id+"++++ "+ url);
 
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id},function(data){
-                console.log(data);
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
+        $(".group-set").click(function(){
+            $('.group_check').prop('checked',false);
+            uid = $(this).data('uid');
+            $("input[name='uid']").val(uid);
+            var cg = ($(this).data('id')+'').split(',');
 
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
+            for(var i=0; i<cg.length; i++){
+                var cl = '.group_check_'+cg[i];
+                $(cl).prop('checked',true);
+            }
+            $("#group_check").modal('show');
         });
-        <?php if($where): ?>!function(){
-            $("#adv_search").show();
-            var ele = $("#adv_show").find('i');
-            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
-        }();<?php endif; ?>
-    </script>
+        function group_set(){
+
+        }
+
+	</script>
 
 </body>
 </html>

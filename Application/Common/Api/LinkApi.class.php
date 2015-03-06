@@ -52,7 +52,12 @@ class LinkApi {
                 return $list[$group][$what];
             }
         }else{
-            return $list[$group];
+            //关联数组 转成 索引数组
+            $real_list = array();
+            foreach($list[$group] as $k=>$v){
+                $real_list[] =$v;
+            }
+            return $real_list;
         }
     }
 }

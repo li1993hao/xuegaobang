@@ -695,6 +695,13 @@ function is_mobile(){
     }
 }
 
+/**
+ * 获得特定用户事务数量
+ */
+function get_staff_num($topic_table,$topic_id,$action){
+    return M($topic_table)->where(array("topic_id"=>$topic_id,"action"=>$action))->count();
+}
+
 /**模板路径
  * @return string
  */

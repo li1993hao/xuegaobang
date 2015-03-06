@@ -76,7 +76,7 @@ class TiebaController extends CommonController{
     public function index(){
         MK();
         $map  = array('status' => array('gt',-1));
-        $list = $this->p_lists('tieba',$map,'update_time');
+        $list = $this->p_lists('tieba',$map,'is_top desc,create_time desc');
         int_to_string($list);
         $list = list_sort_by($list,'status');
         $this->assign('list', $list);
