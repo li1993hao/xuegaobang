@@ -341,7 +341,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
                     <button class="btn btn-sm" data-dismiss="modal">取消</button>
                 </div>
             </div>

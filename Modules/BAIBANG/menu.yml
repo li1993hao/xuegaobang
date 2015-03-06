@@ -17,9 +17,16 @@
           url: tieba/search
         - title: 新增
           url: tieba/add
+<<<<<<< HEAD
         - title: 评论
           url: tieba/comment
 用户:
+=======
+    children:
+        - title: 查看资料
+          url: tieba/comment
+用户管理:
+>>>>>>> origin/master
   - title: 用户管理
     url: user/index
   - title: 公司审核

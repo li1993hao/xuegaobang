@@ -228,9 +228,12 @@
                             <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
                         </div>
                         <div class="text"><?php echo ($vo["content"]); ?></div>
+<<<<<<< HEAD
                         <div class="tools">
                             <a href="<?php echo _U('delComment?id='.$vo['id']);?>" class="ajax-get" title="删除"><i class="red icon-trash bigger-150"></i></a>
                         </div>
+=======
+>>>>>>> origin/master
                     </div>
                 </div><?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
