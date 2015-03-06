@@ -309,12 +309,8 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-<<<<<<< HEAD
                         <td><?php echo ($com["username"]); ?></td>
-                        <td><?php echo ($com["nickname"]); ?></td>
-=======
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a></td>
->>>>>>> origin/master
                         <td><?php echo ($com["login_times"]); ?></td>
                         <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
                         <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>

@@ -91,7 +91,7 @@
                             {$com.status_text}
                         </td>
                         <td>
-                            <a title="查看评论"    href="{:_U('comment?table=production&name='.$com['name'].'id='.$com['id'])}">查看相关评论</a>
+                            <a title="查看评论"    href="{:_U('comment?table=production&name='.$com['name'].'&id='.$com['id'])}">相关评论</a>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$com['id'])}">删除</a>
                             <if condition="$com['status'] eq 0">
                                 <a title="启用" class="ajax-get"   href="{:_U('resume?id='.$com['id'])}">启用</a>
