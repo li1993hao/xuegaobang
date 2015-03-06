@@ -27,7 +27,7 @@ class HotMapController extends ModuleController
         // 记录当前列表页的cookie
         MK();
         $this->assign('list', $list);
-        $this->meta_title = '链接管理';
+        $this->meta_title = '焦点图管理';
         $this->_display();
     }
 
@@ -55,7 +55,8 @@ class HotMapController extends ModuleController
         }
     }
 
-    public function edit($id = 0){
+    public function edit(){
+        $id = I('get.id');
         if(IS_POST){
             $Menu = D('Link');
             $data = $Menu->create();
@@ -88,7 +89,8 @@ class HotMapController extends ModuleController
      * 链接状态修改
      * @author 朱亚杰 <zhuyajie@topthink.net>
      */
-    public function changeStatus($method=null){
+    public function changeStatus(){
+        $method = I('get.method');
         $id = array_unique((array)I('ids',0));
         $id = is_array($id) ? implode(',',$id) : $id;
 

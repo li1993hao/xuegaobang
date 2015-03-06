@@ -255,3 +255,33 @@ ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
 SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.008157s ]
 SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.003357s ]
 
+[ 2015-03-06T12:39:34+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425616773&_hash=b5c26db598bc98ed26d3058659cea5d362953ed0
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.019019s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.004017s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015644s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.003623s ]
+
+[ 2015-03-06T12:39:34+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425616774&_hash=9a80d896d63f38fd6d62e39352cbfff9b7a8125c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.018946s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.004115s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.018439s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.006840s ]
+
+[ 2015-03-06T12:39:36+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425616776&_hash=2e250e21988afefacab7b277a75383e4c8eb0957
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.012236s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.005120s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.011856s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.003540s ]
+
