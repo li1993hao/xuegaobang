@@ -1,5 +1,6 @@
 <?php
 namespace Modules\BaiBang\Controller;
+use Common\Controller\ThinkController;
 
 /**产品管理页面
  * Class ProductionController
@@ -53,7 +54,17 @@ class IndexController extends CommonController {
         return $map;
     }
     public function info(){
-        parent::info("Production", array('id' => I("id")), '','public/info');
+        $company_name = I("company");
+        $id = I("id");
+        $name = "production";
+        if(!empty($company_name)){
+            $name = 'company';
+            $company = M("company")->where("name = '$company_name'")->find();
+            $id = $company['id'];
+        }
+//        $modelType = I("controller");
+//        $name = empty($modelType) ? "production" : $modelType;
+        ThinkController::info($name, $id, '','public/info');
     }
 
     /**

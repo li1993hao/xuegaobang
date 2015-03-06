@@ -10,12 +10,12 @@ class CommonController extends ModuleController{
     public function info($name=null){
         if(empty($name))
             $name = $this->isType();
-        $id= I('post.id');
-        if (is_numeric($id)) {
-            $user = M($name)->find($id);
-            parent::info($name, array('id' => $id), '','public/info');//, 'public/info'
+        $_id= I('post.id');
+        if (is_numeric($_id)) {
+            $user = M($name)->find($_id);
+            parent::info($name, array('id' => $_id), '','public/info');//, 'public/info'
         } else {
-            $this->error('参数不合法!');
+            $this->error('param error!');
         }
     }
     /**

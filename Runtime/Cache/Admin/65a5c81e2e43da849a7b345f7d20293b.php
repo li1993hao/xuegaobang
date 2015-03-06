@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
-    链接排序
-=======
-                        
-    链接排序
->>>>>>> origin/master
+    数据备份
 
                     </h1>
                 </div>
@@ -217,53 +212,50 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
-		<form action="<?php echo U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
-=======
-                        
-		<form action="<?php echo _U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
->>>>>>> origin/master
+    <div class="btn-group">
+        <a id="export"  class="btn btn-primary btn-sm"   href="javascript:;">立即备份</a>
+        <a class="btn btn-primary btn-sm ajax-post " target-form="ids" href="<?php echo U('optimize');?>">优化表</a>
+        <a class="btn btn-primary btn-sm ajax-post" target-form="ids" href="<?php echo U('repair');?>">修复表</a>
+    </div>
+    <div class="table-responsive" >
+        <form id="export-form" action="<?php echo U('export');?>">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        <label>
+                        <input class="check-all" checked="true" type="checkbox">
+                        </label>
+                    </th>
+                    <th>表名</th>
+                    <th>数据量</th>
+                    <th>数据大小</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$table): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="text-center">
+                            <label>
+                            <input class="ids ace" checked="chedked" type="checkbox" name="tables[]" value="<?php echo ($table["name"]); ?>">
+                            <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><?php echo ($table["name"]); ?></td>
+                        <td><?php echo ($table["rows"]); ?></td>
+                        <td><?php echo (format_bytes($table["data_length"])); ?></td>
+                        <td><?php echo ($table["create_time"]); ?></td>
+                        <td class="action">
+                            <a class="ajax-get no-refresh" href="<?php echo U('optimize?tables='.$table['name']);?>">优化表</a>&nbsp;
+                            <a class="ajax-get no-refresh" href="<?php echo U('repair?tables='.$table['name']);?>">修复表</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            </tbody>
+        </table>
+        </form>
+    </div>
 
                         <!-- /.col -->
                     </div>
@@ -335,145 +327,55 @@
 
 
 
-<<<<<<< HEAD
 
-	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
+    <script type="text/javascript">
+        !function (){
+            var $export_form = $("#export-form");
+            var tables;
+            var rate = 0;
+            $("#export").click(function(){
+                showLoading('正在准备备份!请不要关闭此页面');
+                $.post(
+                    $($export_form).attr("action"),
+                    $($export_form).serialize(),
+                    function(data){
+                        removeLoading();
+                        if(data.status){
+                            tables = data.tables;
+                            showProgress('备份'+tables[0]+"(剩于"+(tables.length-1)+"张表)",1);
+                            backup(data.tab,false);
+                            window.onbeforeunload = function(){ return "正在备份数据库，请不要关闭！" }
+                        } else {
+                            errorAlert(data.msg);
+                        }
+                    },
+                    "json"
+                );
+                return false;
+            });
 
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
-
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
-	</script>
-=======
-
-	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
-
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
-
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
-	</script>
->>>>>>> origin/master
+            function backup(tab, status){
+                //是否进入下个数据表的备份
+                status && changeProgress(rate,'备份'+tables[tab.id]+"(剩于"+(tables.length-tab.id-1)+"张表)");
+                $.get($export_form.attr("action"), tab, function(data){
+                    if(data.status){
+                        if(!$.isPlainObject(data.tab)){
+                            removeProgress();
+                            okAlert('备份完成!');
+                            window.onbeforeunload = function(){ return null }
+                            return;
+                        }else{
+                            rate = data.rate; // 更新进度
+                        }
+                        backup(data.tab, tab.id != data.tab.id);
+                    } else {
+                        removeProgress();
+                        errorAlert(data.msg);
+                    }
+                }, "json");
+            }
+        }();
+    </script>
 
 </body>
 </html>

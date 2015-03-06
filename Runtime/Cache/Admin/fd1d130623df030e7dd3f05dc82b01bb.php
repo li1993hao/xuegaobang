@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
-    链接排序
-=======
-                        
-    链接排序
->>>>>>> origin/master
+    <?php echo ($meta_title); ?>
 
                     </h1>
                 </div>
@@ -217,53 +212,35 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
-		<form action="<?php echo U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
-=======
-                        
-		<form action="<?php echo _U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
->>>>>>> origin/master
+    <?php if(!empty($list)): ?><div class="dialogs">
+            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="itemdiv dialogdiv">
+                    <div class="user">
+                        <img alt="<?php echo get_user_filed($vo['uid'],'nickname');?>"
+                             src="<?php echo (get_user_image($vo["uid"])); ?>"/>
+                    </div>
+                    <div class="body">
+                        <div class="time">
+                            <i class="icon-time"></i>
+                            <span class="green"><?php echo formatTime($vo['create_time']);?></span>
+                        </div>
+                        <div class="name">
+                            <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
+                        </div>
+                        <div class="text"><?php echo ($vo["content"]); ?></div>
+                        <div class="tools">
+                            <a href="<?php echo _U('delComment?id='.$vo['id']);?>" class="ajax-get" title="删除"><i class="red icon-trash bigger-150"></i></a>
+                        </div>
+                    </div>
+                </div><?php endforeach; endif; else: echo "" ;endif; ?>
+        </div>
+        <?php else: ?>
+        <h1 class="text-center">暂无评论!</h1><?php endif; ?>
+    <!-- 分页 -->
+    <div class="page">
+        <?php echo ($_page); ?>
+    </div>
+    </div>
 
                         <!-- /.col -->
                     </div>
@@ -335,145 +312,7 @@
 
 
 
-<<<<<<< HEAD
 
-	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
-
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
-
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
-	</script>
-=======
-
-	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
-
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
-
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
-	</script>
->>>>>>> origin/master
 
 </body>
 </html>

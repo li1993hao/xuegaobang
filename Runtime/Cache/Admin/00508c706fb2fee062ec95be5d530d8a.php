@@ -273,7 +273,10 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
+<<<<<<< HEAD
                 <th>产品id</th>
+=======
+>>>>>>> origin/master
                 <th>产品名称</th>
                 <th>公司名称</th>
                 <th>产品发布者</th>
@@ -291,9 +294,14 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
+<<<<<<< HEAD
                         <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo ($com["vender"]); ?></td>
+=======
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["vender"]); ?>"><?php echo ($com["vender"]); ?></a></td>
+>>>>>>> origin/master
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
                         <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
@@ -425,12 +433,19 @@
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
+<<<<<<< HEAD
             console.log(id+"++++ "+ url);
+=======
+>>>>>>> origin/master
 
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
+<<<<<<< HEAD
             $.post(url,{'id':id},function(data){
+=======
+            $.post(url,{'id':id,'controller':$(this).data("controller"),"company":$(this).data("company")},function(data){
+>>>>>>> origin/master
                 console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });

@@ -203,13 +203,8 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
-<<<<<<< HEAD
                         
-    链接排序
-=======
-                        
-    链接排序
->>>>>>> origin/master
+    用户列表
 
                     </h1>
                 </div>
@@ -217,53 +212,77 @@
 
                 <div class="row">
                     <div class="col-xs-12">
-<<<<<<< HEAD
                         
-		<form action="<?php echo U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
-=======
-                        
-		<form action="<?php echo _U('sort');?>" method="post">
-			<div class="sort_center clearfix">
-				<div class="sort_option">
-					<select value="" size="8">
-						<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option class="ids" title="<?php echo ($vo["name"]); ?>" value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-					</select>
-				</div>
-				<div class="sort-op">
-
-					<button class="top btn btn-sm btn-primary" type="button">第 一</button>
-					<button class="up  btn btn-sm btn-primary" type="button">上 移</button>
-					<button class="down btn btn-sm btn-primary" type="button">下 移</button>
-					<button class="bottom btn btn-sm btn-primary" type="button">最 后</button>
-				</div>
-			</div>
-			<div class="btn-group">
-				<input type="hidden" name="ids">
-				<button class="sort_confirm btn btn-sm btn-primary" type="button">确 定</button>
-				<a class="sort_cancel btn btn-sm"  href="<?php echo (cookie('__forward__')); ?>">返 回</a>
-			</div>
-		</form>
->>>>>>> origin/master
+	<div>
+        <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="<?php echo U('User/add');?>">新 增</a>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'resumeUser'));?>" target-form="id">启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('User/changeStatus',array('method'=>'forbidUser'));?>" target-form="id">禁 用</button>
+        <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo U('User/changeStatus',array('method'=>'deleteUser'));?>" target-form="id">删 除</button>
+        </div>
+        <!-- 高级搜索 -->
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+    <!-- 数据列表 -->
+    <div class="table-responsive">
+        <form class="ids">
+	<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="center">
+                <label>
+                    <input type="checkbox" class="ace check-all">
+                    <span class="lbl"></span>
+                </label>
+            </th>
+		<th>UID</th>
+		<th>昵称</th>
+		<!--<th class="">积分</th>-->
+		<th>登录次数</th>
+		<th>最后登录时间</th>
+		<th>最后登录IP</th>
+        <th>用户组</th>
+		<th>状态</th>
+		<th>操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td class="center">
+                <label>
+                    <input class="ids ace" type="checkbox" name="id[]" value="<?php echo ($vo["id"]); ?>" />
+                    <span class="lbl"></span>
+                </label>
+            </td>
+			<td><?php echo ($vo["id"]); ?> </td>
+			<td><?php echo ($vo["nickname"]); ?></td>
+			<!--<td><?php echo ($vo["score"]); ?></td>-->
+			<td><?php echo ($vo["login_times"]); ?></td>
+			<td><span><?php echo (time_format($vo["last_login_time"])); ?></span></td>
+			<td><span><?php echo long2ip($vo['last_login_ip']);?></span></td>
+            <td><?php echo ((isset($vo["groups"]) && ($vo["groups"] !== ""))?($vo["groups"]):'-'); ?></td>
+			<td><?php echo ($vo["status_text"]); ?></td>
+			<td><?php if(($vo["status"]) == "1"): ?><a href="<?php echo U('User/changeStatus?method=forbidUser&id='.$vo['id']);?>" class="ajax-get">禁用</a>
+				<?php else: ?>
+				<a href="<?php echo U('User/changeStatus?method=resumeUser&id='.$vo['id']);?>" class="ajax-get">启用</a><?php endif; ?>
+				<a href="<?php echo U('User/changeStatus?method=deleteuser?id='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                <a href="javascript:;" class="group-set" data-id="<?php echo ($vo['groups_id']); ?>" data-uid="<?php echo ($vo["id"]); ?>">设置用户组</a>
+            </td>
+		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+		<?php else: ?>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+	</tbody>
+    </table>
+       </form>
+	</div>
+    <div class="page">
+        <?php echo ($_page); ?>
+    </div>
 
                         <!-- /.col -->
                     </div>
@@ -276,6 +295,30 @@
     </div>
 </div><!-- /.main-container -->
 
+    <div id="group_check" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" style="text-align:center">设置用户组</h4>
+                </div>
+                <div class="modal-body">
+                      <form class="group_ids">
+                       <?php if(is_array($group)): $i = 0; $__LIST__ = $group;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$g): $mod = ($i % 2 );++$i;?><label>
+                               <input type="checkbox" class=" group_check group_check_<?php echo ($g["id"]); ?>" name="groups_id[]" value="<?php echo ($g["id"]); ?>">
+                               <span class="lbl"><?php echo ($g["title"]); ?></span>
+                           </label><?php endforeach; endif; else: echo "" ;endif; ?>
+                          <input type="hidden" name="uid"/>
+                       </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm ajax-post " url="<?php echo U('User/setUserGroup');?>" target-form="group_ids">设置</button>
+                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <!-- /主体 -->
@@ -335,145 +378,37 @@
 
 
 
-<<<<<<< HEAD
 
 	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
+        var uid;
+        //回车搜索
+        $("#search").keyup(function(e) {
+            if (e.keyCode === 13) {
+                var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?nickname=PLACEHODLE');?>";
+                var query = $('#search').val();
+                url = url.replace('PLACEHODLE',query);
+                window.location.href = url;
+                return false;
+            }
+        });
 
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
+        $(".group-set").click(function(){
+            $('.group_check').prop('checked',false);
+            uid = $(this).data('uid');
+            $("input[name='uid']").val(uid);
+            var cg = ($(this).data('id')+'').split(',');
 
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
+            for(var i=0; i<cg.length; i++){
+                var cl = '.group_check_'+cg[i];
+                $(cl).prop('checked',true);
+            }
+            $("#group_check").modal('show');
+        });
+        function group_set(){
+
+        }
+
 	</script>
-=======
-
-	<script type="text/javascript">
-		$(function(){
-			sort();
-			$(".top").click(function(){
-				rest();
-				$("option:selected").prependTo("select");
-				sort();
-			})
-			$(".bottom").click(function(){
-				rest();
-				$("option:selected").appendTo("select");
-				sort();
-			})
-			$(".up").click(function(){
-				rest();
-				$("option:selected").after($("option:selected").prev());
-				sort();
-			})
-			$(".down").click(function(){
-				rest();
-				$("option:selected").before($("option:selected").next());
-				sort();
-			})
-			$(".search").click(function(){
-				var v = $("input").val();
-				$("option:contains("+v+")").attr('selected','selected');
-			})
-			function sort(){
-				$('option').text(function(){return ($(this).index()+1)+'.'+$(this).text()});
-			}
-
-			//重置所有option文字。
-			function rest(){
-				$('option').text(function(){
-					return $(this).text().split('.')[1]
-				});
-			}
-
-			//获取排序并提交
-			$('.sort_confirm').click(function(){
-				var arr = new Array();
-				$('.ids').each(function(){
-					arr.push($(this).val());
-				});
-				$('input[name=ids]').val(arr.join(','));
-				$.post(
-					$('form').attr('action'),
-					{
-					'ids' :  arr.join(',')
-					},
-					function(data){
-						if (data.status) {
-	                        okAlert(data.msg);
-                            setTimeout(function(){
-                                if (data.status) {
-                                    $('.sort_cancel').click();
-                                }
-                            },1500);
-	                    }else{
-	                        errorAlert(data.msg);
-	                    }
-					},
-					'json'
-				);
-			});
-		})
-	</script>
->>>>>>> origin/master
 
 </body>
 </html>
