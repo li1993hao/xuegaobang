@@ -30,6 +30,9 @@ class UserController extends CommonController
     public function info() {
         $id = I("id");
         if (is_numeric($id)) {
+            if(I("controller")){
+                parent::info("company");
+            }
             $user = M("member")->find($id);
             switch($user['type']){
                 case  0:
