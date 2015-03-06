@@ -13,6 +13,9 @@
     children:
         - title: 新增
           url: tieba/add
+    children:
+        - title: 查看资料
+          url: tieba/comment
 用户管理:
   - title: 用户管理
     url: user/index

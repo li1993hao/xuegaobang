@@ -309,7 +309,7 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["nickname"]); ?></td>
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a></td>
                         <td><?php echo ($com["login_times"]); ?></td>
                         <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
                         <td><?php echo (date("y-m-d h:i",$com["last_login_time"])); ?></td>
@@ -359,7 +359,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
                     <button class="btn btn-sm" data-dismiss="modal">取消</button>
                 </div>
             </div>
@@ -448,6 +447,7 @@
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
             $.post(url,{'id':id},function(data){
+                console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });
         });

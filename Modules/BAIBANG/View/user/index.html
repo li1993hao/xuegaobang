@@ -101,7 +101,7 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td>{$com.nickname}</td>
+                        <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.nickname}</a></td>
                         <td>{$com.login_times}</td>
                         <td>{$com.groups|default='-'}</td>
                         <td>{$com.last_login_time|date="y-m-d h:i",###}</td>
@@ -148,7 +148,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
                     <button class="btn btn-sm" data-dismiss="modal">取消</button>
                 </div>
             </div>
@@ -179,6 +178,7 @@
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
             $.post(url,{'id':id},function(data){
+                console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });
         });
