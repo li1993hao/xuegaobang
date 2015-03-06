@@ -102,7 +102,14 @@
                             </label>
                         </td>
                         <td>{$com.username}</td>
-                        <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.nickname}</a></td>
+                        <td>
+                            <if condition="$com.type eq 1">
+                                <a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.nickname}</a>
+                                <else/>
+                                {$com.nickname}
+                            </if>
+                        </td>
+
                         <td>{$com.login_times}</td>
                         <td>{$com.groups|default='-'}</td>
                         <td>{$com.last_login_time|date="Y-m-d h:i",###}</td>
@@ -180,7 +187,7 @@
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
-            $.post(url,{'id':id},function(data){
+            $.post(url,{'id':id,'controller':"company"},function(data){
                 console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });

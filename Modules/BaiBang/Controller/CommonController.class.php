@@ -14,6 +14,7 @@ class CommonController extends ModuleController{
         if (is_numeric($_id)) {
             $user = M($name)->find($_id);
             parent::info($name, array('id' => $_id), '','public/info');//, 'public/info'
+            return;
         } else {
             $this->error('param error!');
         }

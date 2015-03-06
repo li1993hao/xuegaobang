@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    用户管理
+    贴子管理
 
                     </h1>
                 </div>
@@ -216,72 +216,74 @@
     <!--"Modules://BaiBang@index/aa"-->
     <div>
         <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
+            <!--<a class="btn btn-sm btn-primary" href="<?php echo U('addCompetition');?>">新 增</a>-->
             <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
                     data-tip="确定要删除么?">删 除
             </button>
         </div>
 
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
+            <!--<a href="#" id="adv_show">-->
+                <!--<i class="icon-chevron-up"></i>-->
+            <!--</a>-->
             <span class="input-icon">
-                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
     </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="panel-heading clearfix">
-                    <div class="pull-right">
-                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
-                            <td>用户类型：
-                                <select name="query_type">
-                                    <option value="">不限</option>
-                                    <option value="1">企业用户</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </td>
-                            <td>状态：
-                                <select name="query_status">
-                                    <option value="">不限</option>
-                                    <option value="0">禁用</option>
-                                    <option value="1">正常</option>
-                                    <option value="2">待审核</option>
-                                    <option value="3">未通过</option>
-                                </select>
-                            </td>
+    <!--<div class="panel panel-default" id="adv_search" style="display:none">-->
+        <!--<form class="search-form" method="post" action="<?php echo _U('search');?>">-->
+            <!--<div class="panel-body table-responsive">-->
 
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+                <!--<div class="table-responsive">-->
+                    <!--<table class="table table-striped table-bordered table-hover">-->
+                        <!--<tr>-->
+                            <!--<td>名称：<input type="text" name="query_name" ></td>-->
+                            <!--<td>发布人：<input type="text" name="query_uid" ></td>-->
+                            <!--&lt;!&ndash;<td>教练等级：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_technicalGrade">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>运动项目：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_sports">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>运动队：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_team">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<td>队内职务：&ndash;&gt;-->
+                            <!--&lt;!&ndash;<select name="query_job">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<option value="__whatever__">不限</option>&ndash;&gt;-->
+
+                            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</td>&ndash;&gt;-->
+
+                            <!--<td>每页显示数量：-->
+                                <!--<select name="r">-->
+                                    <!--<option value="10">10</option>-->
+                                    <!--<option value="20">25</option>-->
+                                    <!--<option value="50">50</option>-->
+                                    <!--<option value="100">100</option>-->
+                                    <!--<option value="200">200</option>-->
+                                    <!--<option value="400">400</option>-->
+                                <!--</select>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+            <!--</div>-->
 
 
-        </form>
-    </div>
+        <!--</form>-->
+    <!--</div>-->
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -292,11 +294,11 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>用户名</th>
-                <th>昵称</th>
-                <th>登录次数</th>
-                <th>类别</th>
-                <th>最后登录时间</th>
+                <th>标题</th>
+                <th>发布人</th>
+                <th>相关评论</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
                 <th>状态</th>
                 <th>操作</th>
             </tr>
@@ -309,24 +311,19 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["username"]); ?></td>
-                        <td>
-                            <?php if($com["type"] == 1): ?><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a>
-                                <?php else: ?>
-                                <?php echo ($com["nickname"]); endif; ?>
-                        </td>
-
-                        <td><?php echo ($com["login_times"]); ?></td>
-                        <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
-                        <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
+                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><?php echo get_user_filed($com.uid,"username");?></td>
+                        <td><a title="查看评论"    href="<?php echo _U('comment?table=tieba&name='.$com['name'].'id='.$com['id']);?>">点击查看</a></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-                            <?php if(($com["type"]) == "1"): ?><a title="查看评论"    href="<?php echo _U('comment?table=member&name='.$com['nickname'].'&id='.$com['uid']);?>">相关评论 </a><?php endif; ?>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
+
+                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
+                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
+                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -452,7 +449,7 @@
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':"company"},function(data){
+            $.post(url,{'id':id},function(data){
                 console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });

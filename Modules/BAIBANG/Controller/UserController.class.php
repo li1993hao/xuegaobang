@@ -1,5 +1,6 @@
 <?php
 namespace Modules\BaiBang\Controller;
+use Common\Controller\ThinkController;
 
 
 /**用户管理页面
@@ -27,32 +28,35 @@ class UserController extends CommonController
         $this->_display();
     }
 
+//    public function info() {
+//        $id = I("id");
+//        if (is_numeric($id)) {
+//            if(I("controller")){
+//                parent::info("company");
+//                return;
+//            }
+//            $user = M("member")->find($id);
+//            switch($user['type']){
+//                case  0:
+//                $user['type_text'] = '<span class="label label-warning ">佰帮</span>';
+//                break;
+//                case  1:
+//                $user['type_text'] = '<span class="label label-warning ">企业用户</span>';
+//                break;
+//                case  2:
+//                $user['type_text'] = '<span class="label label-warning ">普通用户</span>';
+//                break;
+//            }
+//            $this->assign("user", $user);
+//            $this->_display();
+//        } else {
+//            $this->error('参数不合法!');
+//        }
+//    }
     public function info() {
         $id = I("id");
-        if (is_numeric($id)) {
-            if(I("controller")){
-                parent::info("company");
-                return;
-            }
-            $user = M("member")->find($id);
-            switch($user['type']){
-                case  0:
-                $user['type_text'] = '<span class="label label-warning ">佰帮</span>';
-                break;
-                case  1:
-                $user['type_text'] = '<span class="label label-warning ">企业用户</span>';
-                break;
-                case  2:
-                $user['type_text'] = '<span class="label label-warning ">普通用户</span>';
-                break;
-            } 
-            $this->assign("user", $user);
-            $this->_display();
-        } else {
-            $this->error('参数不合法!');
-        }
+        ThinkController::info('company',array("uid"=>$id),'','public/info');
     }
-
     /**
      * 添加或者修改
      */
