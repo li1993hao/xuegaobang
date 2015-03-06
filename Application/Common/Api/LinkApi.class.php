@@ -14,10 +14,10 @@ class LinkApi {
     /**
      * 获得外部链接
      * @param string $group 组别
-     * @param  mix $what 如果是数字则取组别下面的纪录,如果是’count‘则取组别的链接数量
+     * @param  mix $what 如果是数字则取组别下面的纪录,如果是’count‘则取组别的链接数量,如果不填的话就获取改组别所有链接
      * @return int|string 链接集合
      */
-    public static function get_link($group,$what){
+    public static function get_link($group,$what=''){
         static $list;
 
         /* 非法分类ID */
@@ -45,7 +45,7 @@ class LinkApi {
             }
             S('sys_link_list', $list); //更新缓存
         }
-        if(isset($what)){
+        if(!empty($what)){
             if($what=='count'){
                 return count($list[$group]);
             }else{

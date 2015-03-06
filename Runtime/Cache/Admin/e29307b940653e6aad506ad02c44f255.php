@@ -240,14 +240,14 @@
                       
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
-                        <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("y-m-d H:i",$com["update_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
                             <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
-                                <a title="设为不通过" class="ajax-get"   href="<?php echo _U('verifyNot',array('id'=>$com['id']));?>">审核不通过</a><?php endif; ?>
+                                <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -353,6 +353,39 @@
 
 
     <script>
+        $(".verifyNot").click(function() {
+            var url =  $(this).data('url');
+            var uid = $(this).data("uid");
+            var id = $(this).data("id");
+            bootbox.prompt("请输入未通过原因", function(result) {
+                if(result !== null){
+                    if (result) {
+                        $.post(
+                                url
+                                ,
+                                {
+                                    'reason' : result,
+                                    'uid' : uid,
+                                    'id':id
+                                },
+                                function(data){
+                                    if (data.status) {
+                                        okAlert(data.msg);
+                                        setTimeout(function(){
+                                            location.reload();
+                                        },1500);
+                                    }else{
+                                        errorAlert(data.msg);
+                                    }
+                                },
+                                'json'
+                        );
+                    } else {
+                        alert("您必须说明原因才能继续操作!");
+                    }
+                }
+            });
+        });
 
         $('.info').click(function(){
             $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");

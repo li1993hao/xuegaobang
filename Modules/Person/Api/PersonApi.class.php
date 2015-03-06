@@ -34,6 +34,37 @@ class PersonApi {
     }
 
     /**
+     * 公司列表
+     * @param int $page 页码
+     * @param int $page_size 页面大小
+     * @param array $where
+     * @param string $order
+     * @return bool
+     */
+    public static function companylist($page=1,$page_size=10,$where=array(),$order = ''){
+        $map['status'] = 1;
+        if(is_string($where)){
+            $map["_string"] = $where;
+        }else{
+            $map = array_merge($where,$map);
+        }
+        $model = M('Company')->field(true)->where($map)->order($order);
+        $model->page($page,$page_size);
+        $result = $model->select();
+
+        for($i=0;$i<count($result);$i++){
+            $result[$i]['logo'] = get_cover_path($result[$i]['logo']);
+        }
+
+        if(!$result){
+            api_msg("暂无结果!!");
+            return false;
+        }else{
+            return $result;
+        }
+    }
+
+    /**
      * 获取指定用户的通知信息<br/>
      * <hr/>
      * <h5>返回结果说明:</h5>

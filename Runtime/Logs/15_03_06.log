@@ -335,3 +335,484 @@ NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be rem
 SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.010901s ]
 SQL: SELECT * FROM `jdi_company` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.005557s ]
 
+[ 2015-03-06T12:49:38+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617378&_hash=241d678073edb99d7ea7bce5363aa6aa6854a89d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.025864s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.004592s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:17+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617416&_hash=c883c78cf979d6206b6e2f6d95b3917bbc8c507c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015601s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.003520s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:18+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617417&_hash=9194f613495f40f8314d9290de0dc0646689669f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.018484s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.003643s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:18+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617418&_hash=b004d9889b9d0b9c3dcf8496ca0a63a9fc50e5d6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016192s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.002794s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:18+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617418&_hash=b004d9889b9d0b9c3dcf8496ca0a63a9fc50e5d6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.014839s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.003034s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:18+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617418&_hash=b004d9889b9d0b9c3dcf8496ca0a63a9fc50e5d6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016114s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.003469s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:18+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617418&_hash=b004d9889b9d0b9c3dcf8496ca0a63a9fc50e5d6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.022997s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.006197s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:19+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617418&_hash=b004d9889b9d0b9c3dcf8496ca0a63a9fc50e5d6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.034092s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.004432s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617427&_hash=058d67074bb441a0991dbc7b5fb8f632bf0777f2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.019168s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.025550s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617427&_hash=058d67074bb441a0991dbc7b5fb8f632bf0777f2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016995s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.003962s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:28+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617428&_hash=a1c46d3f6076c03fb921db14150bb020cb2c14d3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017621s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.005797s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:50:29+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617429&_hash=0a8fad3adc464292ddafe784a00d396a2cd6b7a7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.036857s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.011471s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:51:18+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617478&_hash=eb31152836e97491c114fb501daf118700b4cebb
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016059s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004050s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.014436s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.003602s ]
+
+[ 2015-03-06T12:51:38+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617498&_hash=a8011912ff947ecc71ef4678163c57c7e218c533
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016854s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,20   [ RunTime:0.005388s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:51:45+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617505&_hash=0ee2cb687f5a368ba1f840ab085a4324fb5716f0
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017448s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,20   [ RunTime:0.004442s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,20  
+
+[ 2015-03-06T12:52:02+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617522&_hash=b66c5fa36bfa1c6eb1abd80a307ffe276b888d77
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.027389s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,10   [ RunTime:0.017884s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,10' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,10  
+
+[ 2015-03-06T12:52:03+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617522&_hash=b66c5fa36bfa1c6eb1abd80a307ffe276b888d77
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.054712s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,10   [ RunTime:0.003225s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,10' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 AND (  ) LIMIT 0,10  
+
+[ 2015-03-06T12:52:13+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425617533&_hash=d1b96b0d1b5b666324f1f8cbe55ee8bcf9e16057
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.034520s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.006735s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.014966s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.003232s ]
+
+[ 2015-03-06T13:04:00+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425618240&_hash=6870c227ff616feddb32ae0d49722c47ef168bbc
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.017814s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.002746s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.014722s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.015407s ]
+
+[ 2015-03-06T13:04:12+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425618252&_hash=b9c471f0a345dbb27282c9b5dcf0eda78278b0e6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.015818s ]
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,10   [ RunTime:0.010067s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,10' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,10  
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015291s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = null LIMIT 1   [ RunTime:0.006315s ]
+
+[ 2015-03-06T13:04:22+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425618262&_hash=3407c1dd32bda9241080343b2e02c58e7812e2d8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.019830s ]
+SQL: SELECT `id`,`uid`,`name`,`vender`,`introduce`,`like`,`collect`,`cover`,`create_time`,`update_time`,`status`,`category`,`burdening` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004830s ]
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016186s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.003228s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.014335s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.003630s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = 0 LIMIT 1   [ RunTime:0.002500s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.004471s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.004770s ]
+SQL: SELECT `logo`,`name`,`point` FROM `jdi_company` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.003309s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.004818s ]
+
+[ 2015-03-06T13:06:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425618387&_hash=b8f285af493cefe18e6903743a61805eddce46a9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.014938s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004173s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.015159s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.003600s ]
+
+[ 2015-03-06T13:06:28+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425618387&_hash=b8f285af493cefe18e6903743a61805eddce46a9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.027182s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.006314s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.014536s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 55 LIMIT 1   [ RunTime:0.003366s ]
+
+[ 2015-03-06T13:23:16+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619395&_hash=82b941ff94f3ae009944274edfb88782de5ac682
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015175s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.006631s ]
+ERR: 1064:Erreur de syntaxe près de ') LIMIT 0,20' à la ligne 1
+ [ SQL语句 ] : SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.010646s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.005170s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 37 行.
+
+[ 2015-03-06T13:23:20+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619400&_hash=3a030f38a3e65d2470c4f1f901aac2b19dfee669
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015071s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,20   [ RunTime:0.005393s ]
+
+[ 2015-03-06T13:23:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619406&_hash=dd46d3106374e7b13ac066864fa3d9f761406d48
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.018558s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.006665s ]
+
+[ 2015-03-06T13:23:28+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619408&_hash=d7b28f3c9b2e6a6253d230a0c75b26abae06a13d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.012721s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.010087s ]
+
+[ 2015-03-06T13:23:45+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619425&_hash=6e53ec21a3c222c36b789e17dcec655b53a376dc
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016940s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.011165s ]
+
+[ 2015-03-06T13:23:46+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619426&_hash=d38872e33b23e3f98fffe515a915f60c5ff4ea0d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.023796s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004830s ]
+
+[ 2015-03-06T13:23:46+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619426&_hash=d38872e33b23e3f98fffe515a915f60c5ff4ea0d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.018695s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.003687s ]
+
+[ 2015-03-06T13:23:46+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619426&_hash=d38872e33b23e3f98fffe515a915f60c5ff4ea0d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.019234s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005790s ]
+
+[ 2015-03-06T13:23:47+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619427&_hash=47beca978ff2b631735cfda7e4663a6893f18d07
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.017353s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004029s ]
+
+[ 2015-03-06T13:23:47+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619427&_hash=47beca978ff2b631735cfda7e4663a6893f18d07
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.020316s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004885s ]
+
+[ 2015-03-06T13:23:47+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619427&_hash=47beca978ff2b631735cfda7e4663a6893f18d07
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015001s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.003143s ]
+
+[ 2015-03-06T13:23:47+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619427&_hash=47beca978ff2b631735cfda7e4663a6893f18d07
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.011925s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.002592s ]
+
+[ 2015-03-06T13:24:26+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619466&_hash=5937de4ad70683d0cc1c4b41f8f1a222a3367c27
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015933s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.035271s ]
+
+[ 2015-03-06T13:24:26+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619466&_hash=5937de4ad70683d0cc1c4b41f8f1a222a3367c27
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.019813s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.008794s ]
+
+[ 2015-03-06T13:24:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619467&_hash=878ee5bb986c268f5b717aca88167470ee11e60a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.018537s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005167s ]
+
+[ 2015-03-06T13:24:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619467&_hash=878ee5bb986c268f5b717aca88167470ee11e60a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016682s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005148s ]
+
+[ 2015-03-06T13:24:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619467&_hash=878ee5bb986c268f5b717aca88167470ee11e60a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015610s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.003754s ]
+
+[ 2015-03-06T13:24:27+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619467&_hash=878ee5bb986c268f5b717aca88167470ee11e60a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016934s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005444s ]
+
+[ 2015-03-06T13:24:35+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619475&_hash=5a246ceb65fc9787847594094a144b2d36577a81
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016814s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005325s ]
+
+[ 2015-03-06T13:24:35+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619475&_hash=5a246ceb65fc9787847594094a144b2d36577a81
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.022975s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.006701s ]
+
+[ 2015-03-06T13:24:35+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619475&_hash=5a246ceb65fc9787847594094a144b2d36577a81
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.017517s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.003711s ]
+
+[ 2015-03-06T13:24:38+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619478&_hash=39f8b2e46d8ebdb1a5d707de3a4cf59ba43e3e7a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.030176s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.008710s ]
+
+[ 2015-03-06T13:24:41+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619481&_hash=2d0649666450abc8d8120094974158dcb6143fac
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016435s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.006344s ]
+
+[ 2015-03-06T13:24:42+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619481&_hash=2d0649666450abc8d8120094974158dcb6143fac
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.015345s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.005669s ]
+
+[ 2015-03-06T13:24:43+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619483&_hash=6038e84072cd94afb38032a31aed6f7ff0578724
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.018226s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004213s ]
+
+[ 2015-03-06T13:24:56+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619496&_hash=f5c95541d2d2588a6e06d1878406830a47695e03
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016101s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.003519s ]
+
+[ 2015-03-06T13:25:09+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425619509&_hash=82be6385e970b14f46e334b76c40290f7414c068
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.016034s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.004831s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.015450s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.006717s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 37 行.
+
+[ 2015-03-06T13:37:33+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620253&_hash=911e0f94d5374ab11f11d73cbab13ef3784e6697
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016072s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004745s ]
+
+[ 2015-03-06T13:37:37+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620256&_hash=9c5a9f71fc84cc2fec146f94e0719f2a54a49237
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017042s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.005707s ]
+
+[ 2015-03-06T13:38:14+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620294&_hash=8cbb741df9cc529744c54a57377703ec529c2588
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015428s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.003556s ]
+
+[ 2015-03-06T13:38:24+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620303&_hash=33bb2993eda3fa063805ee9992e40f007d30bba2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.095402s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.073193s ]
+
+[ 2015-03-06T13:38:35+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620314&_hash=76de2c4649cbd076cd970b24e6c29cb61559bc6d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015190s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004137s ]
+
+[ 2015-03-06T13:38:38+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620317&_hash=808e5b99a409d7c000cc08f90a1ac22cdda39404
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017566s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.007222s ]
+
+[ 2015-03-06T13:39:00+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620340&_hash=6c2d47e438d936a6c936755d2324a902d6cd1eec
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.075120s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.014187s ]
+
+[ 2015-03-06T13:39:01+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620341&_hash=77a7ff85e0bbcf3cec9c1ea784858bf8146ff149
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.023587s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.003588s ]
+
+[ 2015-03-06T13:39:08+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620348&_hash=2353b7c4100ab94e53c96a66f573428a714d9e4a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016765s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.003410s ]
+
+[ 2015-03-06T13:41:50+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620510&_hash=d0191843284003188e9f310f35eba8c7aaabde8b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016412s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.012062s ]
+
+[ 2015-03-06T13:41:51+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620511&_hash=4a21eee8981261058b095e287edee10107265613
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.019490s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.019714s ]
+
+[ 2015-03-06T13:41:51+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620511&_hash=af141efe7925996531206a2b0d5efbdc302d7d29
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.011764s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004254s ]
+
+[ 2015-03-06T13:43:50+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620630&_hash=079d0e4425925aa792228a75a36f95a208371d92
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017739s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.004512s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php:59) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-06T13:43:55+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620635&_hash=a5d285112bc719b4c05e27507e571a7503dcaa25
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015729s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.003788s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php:59) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-06T13:45:28+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620728&_hash=fbc33b527273df903d96087078e40e6cc7db0a3d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017170s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.006482s ]
+
+[ 2015-03-06T13:45:51+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620751&_hash=9e06973e1b99749ab4d9b83245999c35eed3de0c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.017291s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.005359s ]
+
+[ 2015-03-06T13:46:00+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620759&_hash=09980dd270a8b8b04ebee0f8ab70cbe5df40c3a9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016456s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.003769s ]
+
+[ 2015-03-06T13:46:00+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620760&_hash=b9be2519569d623192469f9dae760e368070d57d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.016370s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.006752s ]
+
+[ 2015-03-06T13:46:01+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companylist&_time=1425620761&_hash=28c8948ff4eba0b87e0b9e92d352aefb5d0cc3a7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.015085s ]
+SQL: SELECT `id`,`logo`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.006833s ]
+
+[ 2015-03-06T14:28:48+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623327&_hash=9cf34d79b8888462680971b6bab45a9d69750b13
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.017265s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = '1' ORDER BY sort asc,id asc  [ RunTime:0.006472s ]
+
+[ 2015-03-06T14:29:24+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623364&_hash=6846d3420e8ed546880b1b9f1af9195b1471c6c7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.016828s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = '1' ORDER BY sort asc,id asc  [ RunTime:0.008564s ]
+
+[ 2015-03-06T14:29:25+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623364&_hash=6846d3420e8ed546880b1b9f1af9195b1471c6c7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.018187s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = '1' ORDER BY sort asc,id asc  [ RunTime:0.005605s ]
+
+[ 2015-03-06T14:29:54+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623390&_hash=d8484eba549f90c15b130636bbb5b57fa3c17f8d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.020314s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'p-1' ORDER BY sort asc,id asc  [ RunTime:0.017052s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.015237s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 53 LIMIT 1   [ RunTime:0.005151s ]
+
+[ 2015-03-06T14:29:54+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623391&_hash=a7fd8663443caa5ddc3949c3b472c55cc610c014
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.016204s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'p-1' ORDER BY sort asc,id asc  [ RunTime:0.010090s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.016358s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 53 LIMIT 1   [ RunTime:0.014467s ]
+
+[ 2015-03-06T14:33:43+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623622&_hash=47f94fbd013ef66d9312349b90f4294a411da131
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.015230s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'p-1' ORDER BY sort asc,id asc  [ RunTime:0.004690s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.021425s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 53 LIMIT 1   [ RunTime:0.009313s ]
+
+[ 2015-03-06T14:33:47+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623627&_hash=83bf689ef75510305c13cc2dc5650605d5bb5f67
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.016870s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'p-2' ORDER BY sort asc,id asc  [ RunTime:0.004697s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.016546s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 57 LIMIT 1   [ RunTime:0.007142s ]
+
+[ 2015-03-06T14:38:01+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=App&_M=Common&_C=Link&_A=get_link&_time=1425623881&_hash=d47aa36d47c84793487b3b80ea96d5d8b4996b45
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.017735s ]
+SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'p-1' ORDER BY sort asc,id asc  [ RunTime:0.003538s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.020271s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 53 LIMIT 1   [ RunTime:0.003583s ]
+

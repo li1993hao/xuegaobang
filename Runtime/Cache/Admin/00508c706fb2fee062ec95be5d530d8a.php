@@ -273,6 +273,7 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
+                <th>产品id</th>
                 <th>产品名称</th>
                 <th>公司名称</th>
                 <th>产品发布者</th>
@@ -290,6 +291,7 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
+                        <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["vender"]); ?>"><?php echo ($com["vender"]); ?></a></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>

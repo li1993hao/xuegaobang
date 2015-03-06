@@ -33,8 +33,10 @@ class IndexController extends ModuleController {
                     $this->assign('_extend',' <a  href="'._U('index?method=edit').'" class="tooltip-success" data-placement="right" data-rel="tooltip"  data-original-title="点我可进行编辑,编辑成功后需要再次审核！"><i style="color:#6c9842" class="icon-edit icon-animated-vertical bigger-100"></i></a>');
                     if($res['status'] == 2){
                         parent::info("company",$res['id'],'企业资料(待审核)');
+                    }elseif($res['status'] == 3){
+                        parent::info("company",$res['id'],'企业资料(审核未通过)');
                     }else{
-                        parent::info("company",$res['id'],'企业资料(已审核)');
+                        parent::info("company",$res['id'],'企业资料(正常)');
                     }
                 }
             }else{

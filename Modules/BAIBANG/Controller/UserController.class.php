@@ -188,6 +188,9 @@ class UserController extends CommonController
      * @return mixed|null|string
      */
     public function verifyNot(){
+        $uid = I("post.uid");
+        $reason = I("post.reason");
+        notice($uid,"您的企业资料未通过审核,原因见详情",$reason);
         parent::editRow("Company",array('status'=>3));
     }
 }

@@ -63,6 +63,7 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
+                <th>产品id</th>
                 <th>产品名称</th>
                 <th>公司名称</th>
                 <th>产品发布者</th>
@@ -82,6 +83,7 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
+                        <td>{$com.id}</td>
                         <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.name}</a></td>
                         <td><a href="javascript:void(0);" class="info" data-uid = "{$com.uid}" data-name="{$com.name}" data-id="{$com.id}" data-company="{$com.vender}">{$com.vender}</a></td>
                         <td>{:get_user_filed($com.uid,"username")}</td>

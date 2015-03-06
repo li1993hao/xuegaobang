@@ -203,8 +203,13 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1 class="page-header-title">
+<<<<<<< HEAD
                         
    <?php echo ($meta_title); ?>
+=======
+                        
+   <?php echo ($meta_title); ?>
+>>>>>>> origin/master
 
                     </h1>
                 </div>
@@ -212,9 +217,15 @@
 
                 <div class="row">
                     <div class="col-xs-12">
+<<<<<<< HEAD
                         
     <script type="text/javascript" src="/xuegaobang/Public/vendor/uploadify/jquery.uploadify.min.js"></script>
     <form class="form-horizontal " action="<?php echo UU(REAL_ACTION_NAME.'?model='.$model['name']);?>" method="post">
+=======
+                        
+    <script type="text/javascript" src="/xuegaobang/Public/vendor/uploadify/jquery.uploadify.min.js"></script>
+    <form class="form-horizontal " action="<?php echo UU(REAL_ACTION_NAME.'?model='.$model['name']);?>" method="post">
+>>>>>>> origin/master
         <!-- 标签页导航 -->
 <div class="tabbable">
     <ul class="nav nav-tabs padding-16 tab-size-bigger tab-space-1">
@@ -596,8 +607,13 @@
         <a class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</a>
     </div>
 </div>
+<<<<<<< HEAD
 </div>
     </form>
+=======
+</div>
+    </form>
+>>>>>>> origin/master
 
                         <!-- /.col -->
                     </div>
@@ -669,7 +685,11 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> origin/master
     <link href="/xuegaobang/Public/vendor/uploadify/uploadify.css" rel="stylesheet" type="text/css">
 <link href="/xuegaobang/Public/vendor/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/xuegaobang/Public/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
@@ -708,7 +728,11 @@
             autoclose:true
         });
     });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> origin/master
 
 </body>
 </html>
