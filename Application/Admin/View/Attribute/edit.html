@@ -89,17 +89,28 @@
 						<label class="item-label">验证方式<span class="check-tips"></span></label>
 						<div class="controls">
 							<select name="validate_type">
-								<option value="regex">正则验证</option>
-								<option value="function">函数验证</option>
-								<option value="unique">唯一验证</option>
-								<option value="length">长度验证</option>
-                                <option value="in">验证在范围内</option>
-                                <option value="notin">验证不在范围内</option>
-                                <option value="between">区间验证</option>
-                                <option value="notbetween">不在区间验证</option>
+								<option value="regex">正则验证(regex)</option>
+								<option value="function">函数验证(function)</option>
+								<option value="unique">唯一验证(unique)</option>
+								<option value="length">长度验证(length)</option>
+                                <option value="in">验证在范围内(in)</option>
+                                <option value="notin">验证不在范围内(notin)</option>
+                                <option value="between">区间验证(between)</option>
+                                <option value="notbetween">不在区间验证(notbetween)</option>
 							</select>
 						</div>
 					</div>
+                    <div class="form-group">
+                        <label class="item-label">正则选项<span class="check-tips"></span></label>
+                        <div class="controls">
+                            <select id="regex" onchange="$('input[name=validate_rule]').val($(this).val());">
+                                <option value="">--请选择--</option>
+                                <volist name=":regex()" id="vo">
+                                         <option value="{$vo.rule}">{$vo.name}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
 					<div class="form-group">
 						<label class="item-label">验证规则<span class="check-tips">（根据验证方式定义相关验证规则）</span></label>
 						<div class="controls">

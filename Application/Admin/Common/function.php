@@ -225,6 +225,7 @@ function get_attribute_type($type=''){
         'file'      =>  array('上传附件','int(10) UNSIGNED NOT NULL'),
         'color'      =>  array('颜色','char(10)  NOT NULL'),
         'place'     =>array('地址','char(255)  NOT NULL'),
+        'point'     =>array('坐标','char(80)  NOT NULL'),
         'keyword'  =>array('关键字(默认取title和content字段作为提取对象)','varchar(255) NOT NULL'),
         'autoImage' =>array('自动提取图片(默认取content字段作为提取对象)','mediumint(8) UNSIGNED  NOT NULL'),
         'autoText' =>array('自动完成内容(默认取content字段作为提取对象)','varchar(255)  NOT NULL')

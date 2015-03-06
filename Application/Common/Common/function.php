@@ -1373,21 +1373,28 @@ function content_url($list,$fun=null){
  * @param $rule
  * @return bool
  */
-function regex($value,$rule) {
+function regex($value='',$rule='') {
     $validate = array(
-        'require'   =>  '/\S+/',
-        'email'     =>  '/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/',
-        'url'       =>  '/^http(s?):\/\/(?:[A-za-z0-9-]+\.)+[A-za-z]{2,4}(?:[\/\?#][\/=\?%\-&~`@[\]\':+!\.#\w]*)?$/',
-        'currency'  =>  '/^\d+(\.\d+)?$/',
-        'number'    =>  '/^\d+$/',
-        'zip'       =>  '/^\d{6}$/',
-        'integer'   =>  '/^[-\+]?\d+$/',
-        'double'    =>  '/^[-\+]?\d+(\.\d+)?$/',
-        'english'   =>  '/^[A-Za-z]+$/',
+        'require'   =>  array('rule'=>'/\S+/','name'=>'必填'),
+        'email'     =>  array('rule'=>'/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/','name'=>'邮箱'),
+        'url'       =>  array('rule'=>'/^http(s?):\/\/(?:[A-za-z0-9-]+\.)+[A-za-z]{2,4}(?:[\/\?#][\/=\?%\-&~`@[\]\':+!\.#\w]*)?$/','name'=>'url'),
+        'currency'  =>  array('rule'=>'/^\d+(\.\d+)?$/','name'=>'货币(正实数)'),
+        'number'    =>  array('rule'=>'/^\d+$/','name'=>'数字') ,
+        'zip'       =>  array('rule'=>'/^\d{6}$/','name'=>'长度为6的整数'),
+        'integer'   =>  array('rule'=>'/^[-\+]?\d+$/','name'=>'带符号的整数'),
+        'double'    =>  array('rule'=>'/^[-\+]?\d+(\.\d+)?$/','name'=>'带符号的实数'),
+        'english'   =>  array('rule'=>'/^[A-Za-z]+$/','name'=>'纯英文'),
+        'point'   =>  array('rule'=>'/^\d+\.\d+\,\d+\.\d+\$/','name'=>'坐标')
     );
+
+    if(empty($value) && empty($rule)){
+        return $validate;
+    }
+
     // 检查是否有内置的正则表达式
-    if(isset($validate[strtolower($rule)]))
-        $rule       =   $validate[strtolower($rule)];
+    if(isset($validate[strtolower($rule)])){
+        $rule       =   $validate[strtolower($rule)]['rule'];
+    }
     return preg_match($rule,$value)===1;
 }
 
