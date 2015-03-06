@@ -313,9 +313,9 @@
                         </td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
-                        <td><a href="<?php echo _U('comment?id='.$com['id']);?>">点击查看</a></td>
-                        <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("y-m-d H:i",$com["update_time"])); ?></td>
+                        <td><a title="查看评论"    href="<?php echo _U('comment?table=tieba&name='.$com['name'].'id='.$com['id']);?>">点击查看</a></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>

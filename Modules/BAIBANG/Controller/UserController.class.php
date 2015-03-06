@@ -155,4 +155,13 @@ class UserController extends CommonController
         $this->meta_title = '用户信息';
         $this->_display();
     }
+
+
+    /**
+     * 审核不通过
+     * @return mixed|null|string
+     */
+    public function verifyNot(){
+        parent::editRow("Company",array('status'=>3));
+    }
 }

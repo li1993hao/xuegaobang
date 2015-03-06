@@ -36,6 +36,14 @@ class ProductionApi {
         $model = M('Production')->field(true)->where($map)->order($order);
         $model->page($page,$page_size);
         $result = $model->select();
+
+        for($i=0;$i<count($result);$i++){
+            $company = M('Company')->where(array('uid'=>$result[$i]['uid']))->field("logo,name,point")->find();
+            $result[$i]['company_logo'] = get_cover_path($company['logo']);
+            $result[$i]['company_name'] = $company['name'];
+            $result[$i]['company_point'] = $company['point'];
+        }
+
         if(!$result){
             api_msg("没有产品!");
             return false;

@@ -20,6 +20,9 @@
                             <a href="#">{:get_user_filed($vo['uid'],'nickname')}</a>
                         </div>
                         <div class="text">{$vo.content}</div>
+                        <div class="tools">
+                            <a href="{:_U('delComment?id='.$vo['id'])}" class="ajax-get" title="删除"><i class="red icon-trash bigger-150"></i></a>
+                        </div>
                     </div>
                 </div>
             </volist>

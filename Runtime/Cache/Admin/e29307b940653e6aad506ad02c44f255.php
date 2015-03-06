@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    企业验证
+    公司审核
 
                     </h1>
                 </div>
@@ -215,86 +215,18 @@
                         
     <!--include format "Modules://BaiBang@index/aa"-->
     <div>
-    <!--<div class="btn-group">-->
-        <!--<button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"-->
-                <!--data-tip="确定要删除么?">删 除-->
-        <!--</button>-->
-    <!--</div>-->
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
             <span class="input-icon">
-                <input type="text" placeholder="按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
-    </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_name" ></td>
-                            <td>类型：<input type="text" name="query_vender" ></td>
-                            <!--<td>教练等级：-->
-                            <!--<select name="query_technicalGrade">-->
-                            <!--<option value="__whatever__">不限</option>-->
-
-                            <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>运动项目：-->
-                            <!--<select name="query_sports">-->
-                            <!--<option value="__whatever__">不限</option>-->
-
-                            <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>运动队：-->
-                            <!--<select name="query_team">-->
-                            <!--<option value="__whatever__">不限</option>-->
-
-                            <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>队内职务：-->
-                            <!--<select name="query_job">-->
-                            <!--<option value="__whatever__">不限</option>-->
-
-                            <!--</select>-->
-                            <!--</td>-->
-
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="panel-heading clearfix">
-                <div class="pull-right">
-                    <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                </div>
-            </div>
-
-        </form>
     </div>
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th class="center">
-                    <label>
-                        <input type="checkbox" class="ace check-all">
-                        <span class="lbl"></span>
-                    </label>
-                </th>
+
                 <th>企业名称</th>
                 <th>类别</th>
                 <th>创建时间</th>
@@ -305,12 +237,7 @@
             </thead>
             <tbody>
             <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="center">
-                            <label>
-                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
-                                <span class="lbl"></span>
-                            </label>
-                        </td>
+                      
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
                         <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
@@ -319,7 +246,8 @@
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a><?php endif; ?>
+                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
+                                <a title="设为不通过" class="ajax-get"   href="<?php echo _U('verifyNot',array('id'=>$com['id']));?>">审核不通过</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -424,18 +352,8 @@
 
 
 
-
     <script>
-        $('#adv_show').click(function(){
-            var ele = $(this).find('i');
-            if($(ele).hasClass('icon-chevron-up')){
-                $("#adv_search").slideDown('fast');
-                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            }else{
-                $("#adv_search").slideUp('fast');
-                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
-            }
-        });
+
         $('.info').click(function(){
             $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
             $('#user_info').modal('show');
@@ -462,12 +380,6 @@
                 }
             });
         });
-        <?php if($where): ?>!function(){
-            $("#adv_search").show();
-            var ele = $("#adv_show").find('i');
-            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($com); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
-        }();<?php endif; ?>
     </script>
 
 </body>

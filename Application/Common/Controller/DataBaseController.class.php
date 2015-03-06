@@ -141,7 +141,7 @@ class DataBaseController extends BaseController{
      *
      * @author 朱亚杰  <zhuyajie@topthink.net>
      */
-    final protected function editRow ( $model ,$data, $where , $msg=array()){
+    final protected function editRow ( $model ,$data, $where=array(), $msg=array()){
         $id    = array_unique((array)I('id',0));
         $id    = is_array($id) ? implode(',',$id) : $id;
         $where = array_merge( array('id' => array('in', $id )) ,(array)$where );

@@ -1,6 +1,6 @@
 <extend name="Common@Base/base"/>
 <block name="title">
-    {:isset($info['id'])?'编辑':'新增'}链接
+    {:isset($info['id'])?'编辑':'新增'}焦点图
 </block>
 <block name="content">
         <div class="form-group">
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group">
-            <label>链接<span class="check-tips">（U函数解析的URL或者外链,不对链接的合法性做检测,请准确填写,外链一定要是http://开头）</span></label>
+            <label>链接<span class="check-tips">（如果没有链接的话请用###代替）</span></label>
             <div>
                 <input type="text" id="url" class="text input-large" name="url" value="{$info.url|default=''}">
             </div>
@@ -39,9 +39,7 @@
             <div >
                 <select name="group" id="group">
                     <volist name="groups" id="vo">
-                        <if condition="$vo  eq $info['group']">
-                            <option value="{$key}" selected>{$vo}</option>
-                        </if>
+                        <option value="{$key}" >{$vo}</option>
                     </volist>
                 </select>
             </div>
@@ -55,7 +53,7 @@
 <block name="js">
     <script type="text/javascript" src="__VENDOR__/uploadify/jquery.uploadify.min.js?ver={:time()}"></script>
     <script type="text/javascript">
-        Think.setValue("group", "{$info.group|default = 't-1'}");
+        Think.setValue("group", "{$info.group|default = 'p-1'}");
         //上传文件
         /* 初始化上传插件 */
         $("#upload_file").uploadify({
@@ -143,7 +141,7 @@
             if(group_type != 1){
                 data.picture_id=file;
             }
-            $.post("{:U('')}",data,function(datas){
+            $.post("{:_U(__CURRENT_ACTION__)}",data,function(datas){
                 if(datas.status){
                     okAlert(datas.msg);
                     setTimeout(function(){

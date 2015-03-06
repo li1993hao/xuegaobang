@@ -55,7 +55,11 @@
 }
 
 
-
+.uploadify{
+    background-color:#428bca!important;
+    color: #ffffff;
+    text-align: center;
+}
 .form_field_sort{
     min-height: 200px;
 }

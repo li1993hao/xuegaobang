@@ -227,7 +227,7 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索产品名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -244,32 +244,7 @@
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
                             <td>名称：<input type="text" name="query_name" ></td>
-                            <td>厂家：<input type="text" name="query_vender" ></td>
-                            <!--<td>教练等级：-->
-                                <!--<select name="query_technicalGrade">-->
-                                    <!--<option value="__whatever__">不限</option>-->
-
-                                <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>运动项目：-->
-                                <!--<select name="query_sports">-->
-                                    <!--<option value="__whatever__">不限</option>-->
-
-                                <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>运动队：-->
-                                <!--<select name="query_team">-->
-                                    <!--<option value="__whatever__">不限</option>-->
-
-                                <!--</select>-->
-                            <!--</td>-->
-                            <!--<td>队内职务：-->
-                                <!--<select name="query_job">-->
-                                    <!--<option value="__whatever__">不限</option>-->
-
-                                <!--</select>-->
-                            <!--</td>-->
-
+                            <td>公司名称：<input type="text" name="query_vender" ></td>
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -299,7 +274,7 @@
                     </label>
                 </th>
                 <th>产品名称</th>
-                <th>厂家</th>
+                <th>公司名称</th>
                 <th>产品发布者</th>
                 <th>创建时间</th>
                 <th>更新时间</th>
@@ -318,13 +293,13 @@
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo ($com["vender"]); ?></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
-                        <td><?php echo (date("y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("y-m-d H:i",$com["update_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-
+                            <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'id='.$com['id']);?>">查看相关评论</a>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
                             <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
                             <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>

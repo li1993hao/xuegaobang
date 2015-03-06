@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    用户管理
+    链接列表
 
                     </h1>
                 </div>
@@ -213,75 +213,42 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--"Modules://BaiBang@index/aa"-->
     <div>
         <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
-            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
-                    data-tip="确定要删除么?">删 除
-            </button>
+            <?php if(isset($current_group)): if(is_array($groups)): foreach($groups as $key=>$vo): if(($current_group) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
+                            <span class="icon-caret-down icon-on-right"></span>
+                        </button><?php endif; endforeach; endif; ?>
+                <?php else: ?>
+                <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">全部
+                    <span class="icon-caret-down icon-on-right"></span>
+                </button><?php endif; ?>
+            <ul class="dropdown-menu dropdown-primary">
+                <?php if(isset($current_group)): ?><li>
+                        <a href="<?php echo U('index');?>" >全部</a>
+                    </li>
+                    <?php if(is_array($groups)): foreach($groups as $key=>$vo): ?><li>
+                            <?php if(($current_group) != $key): ?><a href="<?php echo U('index?group='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
+                        </li><?php endforeach; endif; ?>
+                    <?php else: ?>
+                    <?php if(is_array($groups)): foreach($groups as $key=>$vo): ?><li>
+                            <a href="<?php echo U('index?group='.$key);?>"><?php echo ($vo); ?></a>
+                        </li><?php endforeach; endif; endif; ?>
+            </ul>
+            <a class="btn btn-sm btn-primary" href="<?php echo U('add');?>">新 增</a>
+            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('changeStatus',array('method'=>'resume'));?>" target-form="ids">启 用</button>
+            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo U('changeStatus',array('method'=>'forbid'));?>" target-form="ids">禁 用</button>
+            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo U('del');?>" target-form="ids" data-tip="确定要删除所选链接么?">删 除</button>
+            <button class="btn list_sort btn-sm btn-primary" >排序</button>
         </div>
-
+        <!-- 高级搜索 -->
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
     </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="panel-heading clearfix">
-                    <div class="pull-right">
-                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
-                            <td>用户类型：
-                                <select name="query_type">
-                                    <option value="">不限</option>
-                                    <option value="1">企业用户</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </td>
-                            <td>状态：
-                                <select name="query_status">
-                                    <option value="">不限</option>
-                                    <option value="0">禁用</option>
-                                    <option value="1">正常</option>
-                                    <option value="2">待审核</option>
-                                    <option value="3">未通过</option>
-                                </select>
-                            </td>
 
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
@@ -292,43 +259,47 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>用户名</th>
-                <th>昵称</th>
-                <th>登录次数</th>
-                <th>类别</th>
-                <th>最后登录时间</th>
-                <th>状态</th>
+                <th>ID</th>
+                <th>排序</th>
+                <th>名称</th>
+                <th>URL</th>
+                <th>图片</th>
+                <th>分组</th>
+                <th>分组id</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
+            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$link): $mod = ($i % 2 );++$i;?><tr>
                         <td class="center">
                             <label>
-                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
+                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($link["id"]); ?>">
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["username"]); ?></td>
-                        <td><?php echo ($com["nickname"]); ?></td>
-                        <td><?php echo ($com["login_times"]); ?></td>
-                        <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
-                        <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
+                        <td><?php echo ($link["id"]); ?></td>
+                        <td><?php echo ($link["sort"]); ?></td>
                         <td>
-                            <?php echo ($com["status_text"]); ?>
+                            <?php echo ($link["name"]); ?>
                         </td>
-                        <td>
-                            <?php if(($com["type"]) == "1"): ?><a title="查看评论"    href="<?php echo _U('comment?table=member&name='.$com['nickname'].'&id='.$com['uid']);?>">相关评论 </a><?php endif; ?>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
+                        <td><?php echo ($link["url"]); ?></td>
+                        <td class="center">
+                        <?php if($link["picture_id"] != 0): ?><img src="<?php echo get_cover_path($link['picture_id']);?>" width="100px" height="50px"/>
+                            <?php else: ?>
+                            -<?php endif; ?></td>
+                        <td><?php echo get_link_group($link['group']);?></td>
+                        <td><?php echo ($link["group"]); ?></td>
+                        <td><?php if(($link["status"]) == "1"): ?><a href="<?php echo U('changeStatus?method=forbid&ids='.$link['id']);?>" class="ajax-get">禁用</a>
+                            <?php else: ?>
+                            <a href="<?php echo U('changeStatus?method=resume&ids='.$link['id']);?>" class="ajax-get">启用</a><?php endif; ?>
+                            <a class="confirm ajax-get" title="删除" href="<?php echo U('del?ids='.$link['id']);?>">删除</a>
+                            <a title="编辑" href="<?php echo U('edit?id='.$link['id']);?>">编辑</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
             </tbody>
         </table>
-
         <!-- 分页 -->
         <div class="page">
             <?php echo ($_page); ?>
@@ -346,26 +317,6 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
-                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- /主体 -->
@@ -426,51 +377,33 @@
 
 
 
-
-    <script>
-        $('#adv_show').click(function(){
-            var ele = $(this).find('i');
-            if($(ele).hasClass('icon-chevron-up')){
-                $("#adv_search").slideDown('fast');
-                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            }else{
-                $("#adv_search").slideUp('fast');
-                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
-            }
-        });
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-            console.log(id+"++++ "+ url);
-
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id},function(data){
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
-
+    <script type="text/javascript">
         $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
+            //点击排序
+            $('.list_sort').click(function(){
+                var url ="<?php echo U('sort?ids=PLACEHODLE');?>";
+                var ids = $('.ids:checked');
+                var param = '';
+                if(ids.length == 0){
+                    ids = $('.ids'); //默认选中全部
+                }
+
+                if(ids.length > 0){
+                    var str = new Array();
+                    ids.each(function(){
+                        str.push($(this).val());
+                    });
+                    param = str.join(',');
+                }else{
+                    errorAlert('请选中要操作的数据');
+                    return;
+                }
+
+                if(url != undefined && url != ''){
+                    window.location.href = url.replace('PLACEHODLE',param);
                 }
             });
         });
-        <?php if($where): ?>!function(){
-            $("#adv_search").show();
-            var ele = $("#adv_show").find('i');
-            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
-        }();<?php endif; ?>
     </script>
 
 </body>

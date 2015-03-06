@@ -105,9 +105,9 @@
                         </td>
                         <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.name}</a></td>
                         <td>{:get_user_filed($com.uid,"username")}</td>
-                        <td><a href="{:_U('comment?id='.$com['id'])}">点击查看</a></td>
-                        <td>{$com.create_time|date="y-m-d H:i",###}</td>
-                        <td>{$com.update_time|date="y-m-d H:i",###}</td>
+                        <td><a title="查看评论"    href="{:_U('comment?table=tieba&name='.$com['name'].'id='.$com['id'])}">点击查看</a></td>
+                        <td>{$com.create_time|date="Y-m-d H:i",###}</td>
+                        <td>{$com.update_time|date="Y-m-d H:i",###}</td>
                         <td>
                             {$com.status_text}
                         </td>

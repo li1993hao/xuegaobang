@@ -30,6 +30,12 @@ class TieBaApi {
         $model = M('Tieba')->field(true)->where($map)->order($order);
         $model->page($page,$page_size);
         $result = $model->select();
+
+        for($i=0;$i<count($result);$i++){
+            $user = get_user_filed($result[$i]['uid']);
+            $result[$i]['user_head'] = $user['head'];
+            $result[$i]['user_nickname'] = $user['nickname'];
+        }
         if(!$result){
             api_msg("暂无帖子!");
             return false;
@@ -78,14 +84,4 @@ class TieBaApi {
     public static function delTiezi($id=-1) {
         return $result = M("tieba")->where("id=".$id)->delete();
     }
-//
-//    public static function getComment($id=-1,$page=1,$page_size=10,$order = '`update_time` DESC'){
-//        $result = M('Comment')
-//            ->field(true)
-//            ->where(array('topic_table'=>'tieba',"topic_id",$id))
-//            ->order($order)
-//            ->page($page,$page_size)
-//            ->select();
-//        return $result;
-//    }
 }

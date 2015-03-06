@@ -19,7 +19,7 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索名称.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -51,7 +51,6 @@
                                     <option value="1">正常</option>
                                     <option value="2">待审核</option>
                                     <option value="3">未通过</option>
-
                                 </select>
                             </td>
 
@@ -83,6 +82,7 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
+                <th>用户名</th>
                 <th>昵称</th>
                 <th>登录次数</th>
                 <th>类别</th>
@@ -101,15 +101,18 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
+                        <td>{$com.username}</td>
                         <td>{$com.nickname}</td>
                         <td>{$com.login_times}</td>
                         <td>{$com.groups|default='-'}</td>
-                        <td>{$com.last_login_time|date="y-m-d h:i",###}</td>
+                        <td>{$com.last_login_time|date="Y-m-d h:i",###}</td>
                         <td>
                             {$com.status_text}
                         </td>
                         <td>
-
+                            <eq name="com.type" value="1">
+                                <a title="查看评论"    href="{:_U('comment?table=member&name='.$com['nickname'].'&id='.$com['uid'])}">相关评论 </a>
+                            </eq>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del',array('id'=>$com['id'],'controller'=>'member'))}">删除</a>
                             <if condition="$com['status'] eq 0">
                                 <a title="启用" class="ajax-get"   href="{:_U('resume',array('id'=>$com['id'],'controller'=>'member'))}">启用</a>

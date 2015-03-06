@@ -67,20 +67,8 @@ class TiebaController extends CommonController{
         $this->assign('where',$team_map);
         return $map;
     }
-    /**
-     * 查看产品相关评论
-     */
-    public function comment(){
-        $id = I('get.id');
-        $data = M('tieba')->where(array('id'=>$id))->field('name')->find();
-        if($data){
-            $this->assign('meta_title',$data['name'].'的相关评论');
-            $map  = array('topic_table'=>'tieba','topic_id'=>$id);
-            $list = $this->p_lists('Comment',$map,'update_time');
-            $this->assign('list',$list);
-        }
-        $this->_display();
-    }
+
+
 
     /**
      * shouye

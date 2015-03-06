@@ -1,23 +1,46 @@
 ---
-产品管理:
+产品:
   - title: 产品管理
     url: index/index
     children:
       - title: 搜索
         url: index/search
+      - title: 评论
+        url: user/comment
 #  - title: 产品审核
 #    url: index/verify
-论坛管理:
+论坛:
   - title: 帖子管理
     url: tieba/index
     children:
+        - title: 搜索
+          url: tieba/search
         - title: 新增
           url: tieba/add
-用户管理:
+        - title: 评论
+          url: tieba/comment
+用户:
   - title: 用户管理
     url: user/index
   - title: 公司审核
     url: user/verify
+    children:
+        - title: 搜索
+          url: user/search
+        - title: 评论
+          url: user/comment
+焦点图:
+  - title: 焦点图管理
+    url: hotMap/index
+    children:
+      - title: 新增
+              url: hotMap/add
+      - title: 编辑
+              url: hotMap/edit
+      - title: 排序
+              url: hotMap/sort
+
+
 
 
 
