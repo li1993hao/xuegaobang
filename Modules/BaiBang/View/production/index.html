@@ -34,7 +34,7 @@
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
                             <td>名称：<input type="text" name="query_name" ></td>
-                            <td>公司名称：<input type="text" name="query_vender" ></td>
+                            <td>公司名称：<input type="text" name="query_company" ></td>
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -67,9 +67,12 @@
                 <th>产品名称</th>
                 <th>公司名称</th>
                 <th>产品发布者</th>
+                <th>点赞数量</th>
+                <th>收藏数量</th>
                 <th>创建时间</th>
-                <th>更新时间</th>
                 <th>状态</th>
+                <th>置顶</th>
+                <th>推荐</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -85,13 +88,28 @@
                         </td>
                         <td>{$com.id}</td>
                         <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.name}</a></td>
-                        <td><a href="javascript:void(0);" class="info" data-uid = "{$com.uid}" data-name="{$com.name}" data-id="{$com.id}" data-company="{$com.vender}">{$com.vender}</a></td>
+                        <td><a href="javascript:void(0);" class="info" data-uid = "{$com.uid}" data-name="{$com.name}" data-id="{$com.id}" data-company="{$com.company}">{$com.company}</a></td>
                         <td>{:get_user_filed($com.uid,"username")}</td>
+                        <td>{$com.like}</td>
+                        <td>{$com.collect_num}</td>
                         <td>{$com.create_time|date="Y-m-d H:i",###}</td>
-                        <td>{$com.update_time|date="Y-m-d H:i",###}</td>
                         <td>
                             {$com.status_text}
                         </td>
+                        <th>
+                            <if condition="$com['is_top'] eq 0">
+                                <a title="置顶" class="ajax-get"   href="{:_U('top?status=1&id='.$com['id'])}">置顶</a>
+                                <else/>
+                                <a title="取消置顶" class="ajax-get"   href="{:_U('top?status=0&id='.$com['id'])}">取消置顶</a>
+                            </if>
+                        </th>
+                        <th>
+                            <if condition="$com['recommend'] eq 0">
+                                <a title="推荐" class="ajax-get"   href="{:_U('recommend?status=1&id='.$com['id'])}">推荐</a>
+                                <else/>
+                                <a title="取消推荐" class="ajax-get"   href="{:_U('recommend?status=0&id='.$com['id'])}">取消推荐</a>
+                            </if>
+                        </th>
                         <td>
                             <a title="查看评论"    href="{:_U('comment?table=production&name='.$com['name'].'&id='.$com['id'])}">相关评论</a>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$com['id'])}">删除</a>
@@ -160,8 +178,7 @@
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':$(this).data("controller"),"company":$(this).data("company")},function(data){
-                console.log(data);
+            $.post(url,{'id':id,"company":$(this).data("company")},function(data){
                 $("#user_info .modal-body").empty().html(data);
             });
         });

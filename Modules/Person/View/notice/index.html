@@ -23,6 +23,7 @@
                 </th>
                 <th>标题</th>
                 <th>状态</th>
+                <th>时间</th>
                 <th>详情</th>
                 <th>操作</th>
             </tr>
@@ -39,6 +40,7 @@
                         </td>
                         <td>{$vo.title}</td>
                         <td>{$vo.status_text}</td>
+                        <th>{$vo.create_time|date="Y-m-d",###}</th>
                         <td>{$vo.detail}</td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$vo['id'])}">删除</a>

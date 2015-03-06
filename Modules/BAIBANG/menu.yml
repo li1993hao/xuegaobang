@@ -1,14 +1,14 @@
 ---
 产品:
   - title: 产品管理
-    url: index/index
+    url: production/index
     children:
       - title: 搜索
-        url: index/search
+        url: production/search
       - title: 评论
-        url: index/comment
+        url: production/comment
 #  - title: 产品审核
-#    url: index/verify
+#    url: production/verify
 论坛:
   - title: 帖子管理
     url: tieba/index

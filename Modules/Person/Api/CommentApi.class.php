@@ -11,8 +11,8 @@ namespace Modules\Person\Api;
 class CommentApi {
     /**
      * 获取评论
-     * @param string $topic_table  评论表 如果是评论企业的话为member,如果是产品为production,帖子为tiba
-     * @param int $topic_id 评论记录id 如果是评论企业的话为企业用户的uid,如果是产品为产品id,帖子的话为帖子id
+     * @param string $topic_table  评论表 如果是评论企业的话为company,如果是产品为production,帖子为tiba
+     * @param int $topic_id 评论记录id 如果是评论企业的话为企业资料的id,如果是产品为产品id,帖子的话为帖子id
      * @param int $page 页数
      * @param int $page_size 页面大小
      * @param array $where 筛选条件
@@ -47,8 +47,8 @@ class CommentApi {
     /**
      * 添加评论(<strong style="color:red">需要传递参数!</strong>)<br/>
      * 需要传递的参数:<br/>
-     * topic_table 要评论的表 如果是评论企业的话为member,如果是产品为production,帖子为tiba<br/>
-     * topic_id 要评论的记录id  如果是评论企业的话为企业用户的uid,如果是产品为产品id,帖子的话为帖子id<br/>
+     * topic_table 要评论的表 如果是评论企业的话为company,如果是产品为production,帖子为tiba<br/>
+     * topic_id 要评论的记录id  如果是评论企业的话为企业资料的id,如果是产品为产品id,帖子的话为帖子id<br/>
      * uid 评论人的id<br/>
      * content 评论内容<br/>
      * @return bool true为成功 false为失败
@@ -84,8 +84,8 @@ class CommentApi {
 
     /**
      * 得到某个主题的评论数 <br/>
-     * @param string $topic_table  评论表 如果是评论企业的话为member,如果是产品为production,帖子为tiba
-     * @param int $topic_id 评论记录id 如果是评论企业的话为企业用户的uid,如果是产品为产品id,帖子的话为帖子id
+     * @param string $topic_table  评论表 如果是评论企业的话为company,如果是产品为production,帖子为tiba
+     * @param int $topic_id 评论记录id 如果是评论企业的话为企业资料的id,如果是产品为产品id,帖子的话为帖子id
      * @return mixed
      */
      static  public function commentNum($topic_table,$topic_id){

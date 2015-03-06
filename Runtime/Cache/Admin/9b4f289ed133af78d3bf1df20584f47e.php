@@ -233,6 +233,10 @@
                 </th>
                 <th>标题</th>
                 <th>状态</th>
+<<<<<<< HEAD
+=======
+                <th>时间</th>
+>>>>>>> origin/master
                 <th>详情</th>
                 <th>操作</th>
             </tr>
@@ -247,6 +251,10 @@
                         </td>
                         <td><?php echo ($vo["title"]); ?></td>
                         <td><?php echo ($vo["status_text"]); ?></td>
+<<<<<<< HEAD
+=======
+                        <th><?php echo (date("Y-m-d",$vo["create_time"])); ?></th>
+>>>>>>> origin/master
                         <td><?php echo ($vo["detail"]); ?></td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>

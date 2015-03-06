@@ -15,6 +15,8 @@ class BaiBangModule extends Module{
         'author'=>'tp',
         'version'=>'0.1'
     );
+    public $enter_controller = "Production"; //入口控制器
+    public $enter_action = "index";//入口方法
 
     public function install(){
         return true;

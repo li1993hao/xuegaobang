@@ -14,6 +14,7 @@ use Think\Controller;
  * 模块控制器
  */
 abstract class ModuleController extends ThinkController{
+
     protected   function _initialize(){
         parent::_initialize();
         $menu_path = JDICMS_MOUDLE_PATH.__CURRENT_MODULE__.'/menu.yml';

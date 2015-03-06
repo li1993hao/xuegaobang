@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    用户管理
+    <?php echo ($info['id']?'编辑':'新增'); ?> [<?php echo get_model_by_id($info['model_id']);?>] 属性
 
                     </h1>
                 </div>
@@ -213,131 +213,181 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--"Modules://BaiBang@index/aa"-->
-    <div>
-        <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
-            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
-                    data-tip="确定要删除么?">删 除
-            </button>
-        </div>
+    <div class="tabbable">
+        <form class="form-horizontal"  action="<?php echo U('update');?>" method="post">
 
-        <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
-            <span class="input-icon">
-                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
-                <i class="icon-search"></i>
-			</span>
-        </div>
-    </div>
-    <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
-            <div class="panel-body table-responsive">
-                <div class="panel-heading clearfix">
-                    <div class="pull-right">
-                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
+        <ul class="nav nav-tabs padding-16 tab-size-bigger tab-space-1">
+            <li class="active"><a data-toggle="tab"  href="#tab1">基 础</a></li>
+            <li ><a data-toggle="tab"  href="#tab2">高 级</a></li>
+        </ul>
+        <div class="tab-content no-border padding-24">
+            <!-- 基础 -->
+				<div id="tab1" class="tab-pane in active">
+					<div class="form-group">
+						<label class="item-label">字段名<span class="check-tips">（请输入字段名 英文字母开头，长度不超过30）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="name" value="<?php echo ($info["name"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">字段标题<span class="check-tips">（请输入字段标题，用于表单显示）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="title" value="<?php echo ($info["title"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">字段类型<span class="check-tips">（用于表单中的展示方式）</span></label>
+						<div class="controls">
+							<select name="type" id="data-type">
+								<option value="">----请选择----</option>
+								<?php $_result=get_attribute_type();if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$type): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" rule="<?php echo ($type[1]); ?>"><?php echo ($type[0]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">字段定义<span class="check-tips">（字段属性的sql表示）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="field" value="<?php echo ($info["field"]); ?>" id="data-field">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">参数<span class="check-tips">（布尔、枚举、多选字段类型的定义数据）</span></label>
+						<div class="controls">
+							<label class="textarea input-large">
+								<textarea name="extra"><?php echo ($info["extra"]); ?></textarea>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">默认值<span class="check-tips">（字段的默认值）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="value" value="<?php echo ($info["value"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">字段备注<span class="check-tips">(用于表单中的提示)</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="remark" value="<?php echo ($info["remark"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">是否显示<span class="check-tips">（是否显示在表单中）</span></label>
+						<div class="controls">
+							<select name="is_show">
+								<option value="1">始终显示</option>
+								<option value="2">新增显示</option>
+								<option value="3">编辑显示</option>
+								<option value="0">不显示</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">是否必填<span class="check-tips">（用于自动验证）</span></label>
+						<div class="controls">
+							<select name="is_must">
+								<option value="0">否</option>
+								<option value="1">是</option>
+							</select>
+						</div>
+					</div>
                     </div>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
-                            <td>用户类型：
-                                <select name="query_type">
-                                    <option value="">不限</option>
-                                    <option value="1">企业用户</option>
-                                    <option value="2">普通用户</option>
-                                </select>
-                            </td>
-                            <td>状态：
-                                <select name="query_status">
-                                    <option value="">不限</option>
-                                    <option value="0">禁用</option>
-                                    <option value="1">正常</option>
-                                    <option value="2">待审核</option>
-                                    <option value="3">未通过</option>
-                                </select>
-                            </td>
+                <div id="tab2" class="tab-pane tab2">
+					<div class="form-group">
+						<label class="item-label">验证方式<span class="check-tips"></span></label>
+						<div class="controls">
+							<select name="validate_type">
+								<option value="regex">正则验证(regex)</option>
+								<option value="function">函数验证(function)</option>
+								<option value="unique">唯一验证(unique)</option>
+								<option value="length">长度验证(length)</option>
+                                <option value="in">验证在范围内(in)</option>
+                                <option value="notin">验证不在范围内(notin)</option>
+                                <option value="between">区间验证(between)</option>
+                                <option value="notbetween">不在区间验证(notbetween)</option>
+							</select>
+						</div>
+					</div>
+                    <div class="form-group">
+                        <label class="item-label">正则选项<span class="check-tips"></span></label>
+                        <div class="controls">
+                            <select id="regex" onchange="$('input[name=validate_rule]').val($(this).val());">
+                                <option value="">--请选择--</option>
+                                <?php $_result=regex();if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["rule"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                            </select>
+                        </div>
+                    </div>
+					<div class="form-group">
+						<label class="item-label">验证规则<span class="check-tips">（根据验证方式定义相关验证规则）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="validate_rule" value="<?php echo ($info["validate_rule"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">出错提示<span class="check-tips"></span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="error_info" value="<?php echo ($info["error_info"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">验证时间<span class="check-tips"></span></label>
+						<div class="controls">
+							<select name="validate_time">
+                                <option value="3">始 终</option>
+								<option value="1">新 增</option>
+								<option value="2">编 辑</option>
+								</select>
+						</div>
+					</div>
+                    <div class="form-group">
+                        <label class="item-label">验证条件<span class="check-tips">(如果字段不是必填项而且有验证条件的话请选择值不为空时验证)</span></label>
+                        <div class="controls">
+                            <select name="validate_condition">
+                                <option value="0">存在字段就验证</option>
+                                <option value="1">必须验证</option>
+                                <option value="2">值不为空的时候验证</option>
+                            </select>
+                        </div>
+                    </div>
+					<div class="form-group">
+						<label class="item-label">自动完成方式<span class="check-tips"></span></label>
+						<div class="controls">
+							<select name="auto_type">
+								<option value="function">函数</option>
+								<option value="field">字段</option>
+								<option value="string">字符串</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">自动完成规则<span class="check-tips">（根据完成方式订阅相关规则）</span></label>
+						<div class="controls">
+							<input type="text" class="text input-large" name="auto_rule" value="<?php echo ($info["auto_rule"]); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="item-label">自动完成时间<span class="check-tips"></span></label>
+						<div class="controls">
+							<select name="auto_time">
+								<option value="3">始 终</option>
+								<option value="1">新 增</option>
+								<option value="2">编 辑</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
-                            <td>每页显示数量：
-                                <select name="r">
-                                    <option value="10">10</option>
-                                    <option value="20">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                    <option value="200">200</option>
-                                    <option value="400">400</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-
-        </form>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
-                <th class="center">
-                    <label>
-                        <input type="checkbox" class="ace check-all">
-                        <span class="lbl"></span>
-                    </label>
-                </th>
-                <th>用户名</th>
-                <th>昵称</th>
-                <th>登录次数</th>
-                <th>类别</th>
-                <th>最后登录时间</th>
-                <th>状态</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="center">
-                            <label>
-                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
-                                <span class="lbl"></span>
-                            </label>
-                        </td>
-                        <td><?php echo ($com["username"]); ?></td>
-                        <td>
-                            <?php if($com["type"] == 1): ?><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a>
-                                <?php else: ?>
-                                <?php echo ($com["nickname"]); endif; ?>
-                        </td>
-
-                        <td><?php echo ($com["login_times"]); ?></td>
-                        <td><?php echo ((isset($com["groups"]) && ($com["groups"] !== ""))?($com["groups"]):'-'); ?></td>
-                        <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
-                        </td>
-                        <td>
-                            <?php if(($com["type"]) == "1"): ?><a title="查看评论"    href="<?php echo _U('comment?table=company&name='.$com['nickname'].'&id='.get_company_id($com['id']));?>">相关评论 </a><?php endif; ?>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-            </tbody>
-        </table>
-
-        <!-- 分页 -->
-        <div class="page">
-            <?php echo ($_page); ?>
+				<!-- 按钮 -->
+				<div class="form-group">
+					<label class="item-label"></label>
+					<div class="controls">
+						<input type="hidden" name="id" value="<?php echo ($info['id']); ?>"/>
+						<input type="hidden" name="model_id" value="<?php echo ($info['model_id']); ?>"/>
+						<button class="btn btn-sm btn-primary ajax-post no-refresh" type="submit" target-form="form-horizontal">确 定</button>
+						<button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+					</div>
+				</div>
         </div>
+        </form>
     </div>
 
                         <!-- /.col -->
@@ -351,25 +401,6 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- /主体 -->
@@ -430,53 +461,20 @@
 
 
 
-
-    <script>
-        $('#adv_show').click(function(){
-            var ele = $(this).find('i');
-            if($(ele).hasClass('icon-chevron-up')){
-                $("#adv_search").slideDown('fast');
-                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            }else{
-                $("#adv_search").slideUp('fast');
-                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
-            }
-        });
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-            console.log(id+"++++ "+ url);
-
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':"company"},function(data){
-                console.log(data);
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
-
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
-        });
-        <?php if($where): ?>!function(){
-            $("#adv_search").show();
-            var ele = $("#adv_show").find('i');
-            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
-            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
-        }();<?php endif; ?>
-    </script>
+<script type="text/javascript" charset="utf-8">
+Think.setValue('type', "<?php echo ((isset($info["type"]) && ($info["type"] !== ""))?($info["type"]):''); ?>");
+Think.setValue('is_show', "<?php echo ((isset($info["is_show"]) && ($info["is_show"] !== ""))?($info["is_show"]):1); ?>");
+Think.setValue('is_must', "<?php echo ((isset($info["is_must"]) && ($info["is_must"] !== ""))?($info["is_must"]):0); ?>");
+Think.setValue('validate_time', "<?php echo ((isset($info["validate_time"]) && ($info["validate_time"] !== ""))?($info["validate_time"]):3); ?>");
+Think.setValue('auto_time', "<?php echo ((isset($info["auto_time"]) && ($info["auto_time"] !== ""))?($info["auto_time"]):3); ?>");
+Think.setValue('validate_type', "<?php echo ((isset($info["validate_type"]) && ($info["validate_type"] !== ""))?($info["validate_type"]):'regex'); ?>");
+Think.setValue('auto_type', "<?php echo ((isset($info["auto_type"]) && ($info["auto_type"] !== ""))?($info["auto_type"]):'function'); ?>");
+$(function(){
+	$('#data-type').change(function(){
+		$('#data-field').val($(this).find('option:selected').attr('rule'));
+	});
+})
+</script>
 
 </body>
 </html>

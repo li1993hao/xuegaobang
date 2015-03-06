@@ -12,7 +12,7 @@ class CommonController extends ModuleController{
             $name = $this->isType();
         $_id= I('post.id');
         if (is_numeric($_id)) {
-            $user = M($name)->find($_id);
+            //$user = M($name)->find($_id);
             parent::info($name, array('id' => $_id), '','public/info');//, 'public/info'
             return;
         } else {
@@ -23,25 +23,44 @@ class CommonController extends ModuleController{
      * 删除数据
      */
     public function  del(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>-1),null);
+        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>-1),null);
     }
     /**
      * 禁用数据
      */
     public function  forbid(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>0),null);
+        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>0),null);
     }
     /**
      * 恢复数据
      */
     public function resume(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>1),null);
+        parent::editRow(__CURRENT_CONTROLLER__,array('status'=>1),null);
     }
 
+    /**
+     * 置顶
+     */
+    public function  top(){
+        $status = I("get.status");
+        parent::editRow(__CURRENT_CONTROLLER__,array('is_top'=>$status),null);
+    }
 
+    /**
+     * 推荐
+     */
+    public function recommend(){
+        $status = I("get.status");
+        parent::editRow(__CURRENT_CONTROLLER__,array('recommend'=>$status),null);
+    }
+
+    /**
+     * 设精
+     */
+    public function excellent(){
+        $status = I("get.status");
+        parent::editRow(__CURRENT_CONTROLLER__,array('excellent'=>$status),null);
+    }
 
     /**
      * 删除评论
@@ -69,10 +88,5 @@ class CommonController extends ModuleController{
         $list = $this->p_lists('Comment',$map,'update_time');
         $this->assign('list',$list);
         $this->_display("common/comment");
-    }
-
-
-    private function isType(){
-        return I("controller")==''?__CURRENT_CONTROLLER__ : I("controller");
     }
 }

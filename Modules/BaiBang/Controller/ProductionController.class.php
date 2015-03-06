@@ -6,8 +6,7 @@ use Common\Controller\ThinkController;
  * Class ProductionController
  * @package Modules\BaiBang\Controller
  */
-class IndexController extends CommonController {
-
+class ProductionController extends CommonController {
     /**
      * 搜索功能
      */
@@ -73,9 +72,18 @@ class IndexController extends CommonController {
     public function  index(){
         MK();
         $map  = array('status' => array('gt',-1));
-        $list = $this->p_lists('Production',$map,'update_time');
+        $list = $this->p_lists('Production',$map,'is_top desc,create_time desc');
         int_to_string($list);
         $list = list_sort_by($list,'status');
+
+        //点赞和喜欢数量
+        for($i=0;$i<count($list);$i++){
+            $list[$i]['like']= M('UserStaff')->where(array("topic_table"=>"production",
+            "topic_id"=>$list[$i]['id'],"action"=>"like"))->count();
+            $list[$i]['collect_num']= M('UserStaff')->where(array("topic_table"=>"production",
+                "topic_id"=>$list[$i]['id'],"action"=>"collect"))->count();
+        }
+
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();
