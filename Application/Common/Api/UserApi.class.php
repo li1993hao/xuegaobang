@@ -210,4 +210,85 @@ class UserApi {
             return false;
         }
     }
+
+
+    /**
+     * 当前用户的昵称
+     * @author huajie <banhuajie@163.com>
+     */
+    public static function updateNickname($nickname,$password){
+        if(UID <=0){
+            api_msg("用户未登录");
+            return false;
+        }
+        $Member =   D('Member');
+        //密码验证
+        $uid    =   $Member->checkLogin(UID, $password, 4);
+        if($uid == -2){
+            api_msg("密码不正确");
+            return false;
+        }
+        $data   =   $Member->create(array('nickname'=>$nickname,'password'=>$password));
+        if(!$data){
+            api_msg($Member->getError());
+        }
+
+        $res = $Member->where(array('id'=>$uid))->save($data);
+
+        if($res){
+            api_msg("修改昵称成功");
+            return true;
+        }else{
+            api_msg("修改昵称失败!");
+            return false;
+        }
+    }
+
+    /**
+     * 修改密码初始化
+     * @author huajie <banhuajie@163.com>
+     */
+    public static function updatePassword($old,$password){
+        if(UID <=0){
+            api_msg("用户未登录");
+            return false;
+        }
+        //获取参数
+        $data['password'] = $password;
+        $member = D('Member');
+        $res    =   $member->updateInfo(UID, $old, $data);
+        if($res['status']){
+            api_msg("修改昵称成功");
+            return true;
+        }else{
+            api_msg($res['info']);
+            return false;
+        }
+    }
+
+    /**
+     * 更新当前用户的头像
+     * 图片上传
+     */
+    public static function updateHead(){
+        if(UID <=0){
+            api_msg("用户未登录");
+            return false;
+        }
+        $result = upload_image();
+        if($result['status']==0){
+            api_msg($result['msg']);
+            return false;
+        }else{
+            $data['head'] = $result['id'];
+            if(M('Member')->where(array('id'=>UID))->save($data)!==false){
+                 api_msg("更改成功!");
+                 return $result['path'];
+            }else{
+                api_msg("更改失败!未知错误");
+                return $result['path'];
+            }
+
+        }
+    }
 }

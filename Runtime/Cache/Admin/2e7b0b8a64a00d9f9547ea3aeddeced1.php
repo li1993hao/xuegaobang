@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    公司审核
+    <?php echo ($meta_title); echo ($_extend); ?>
 
                     </h1>
                 </div>
@@ -213,53 +213,59 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--include format "Modules://BaiBang@index/aa"-->
-    <div>
-        <div class="pull-right">
-            <span class="input-icon">
-                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
-                <i class="icon-search"></i>
-			</span>
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
+     <!-- 标签页导航 -->
+<div class="tabbable">
+<ul class="nav nav-tabs padding-16 tab-size-bigger tab-space-1">
+    <?php $_result=parse_config_attr($model['field_group']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><li <?php if(($key) == "1"): ?>class="active"<?php endif; ?>><a data-toggle="tab" href="#tab<?php echo ($key); ?>"><?php echo ($group); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+</ul>
+<div class="tab-content no-border padding-24">
+<!-- 表单 -->
+<?php $_result=parse_config_attr($model['field_group']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$group): $mod = ($i % 2 );++$i;?><div id="tab<?php echo ($key); ?>" class="tab-pane <?php if(($key) == "1"): ?>in active<?php endif; ?> tab<?php echo ($key); ?>">
+    <div class="profile-user-info profile-user-info-striped">
+    <?php if(is_array($fields[$key])): $i = 0; $__LIST__ = $fields[$key];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$field): $mod = ($i % 2 );++$i; if($field['is_show'] == 1 || $field['is_show'] == 3): ?><div class="profile-info-row">
+        <?php if($field['type'] == 'picture'): ?><div class="profile-info-name">
+                <div picture="__title__-<?php echo ($field['name']); ?>"><?php echo ($field['title']); ?></div>
+            </div>
+        <?php else: ?>
+            <div class="profile-info-name">
+                <?php echo ($field['title']); ?>
+            </div><?php endif; ?>
+        <div class="profile-info-value">
+        <?php switch($field["type"]): case "num": echo ($data[$field['name']]); break;?>
+<?php case "string": ?><div style="word-wrap: break-word;word-break:break-all;">
+    <?php echo ($data[$field['name']]); ?>
+        </div><?php break;?>
+<?php case "textarea": ?><div style="word-wrap: break-word;word-break:break-all;"> <?php echo ($data[$field['name']]); ?></div><?php break;?>
+<?php case "date": echo (date('Y-m-d',$data[$field['name']])); break;?>
+<?php case "datetime": echo (date('Y-m-d H:i',$data[$field['name']])); break;?>
+<?php case "date_view_4": echo (date('Y-m-d',$data[$field['name']])); break;?>
+<?php case "date_3": echo (date('Y-m',$data[$field['name']])); break;?>
+<?php case "bool": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($data[$field['name']]) == $key): echo ($vo); endif; endforeach; endif; else: echo "" ;endif; break;?>
+<?php case "select": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($data[$field['name']]) == $key): echo ($vo); endif; endforeach; endif; else: echo "" ;endif; break;?>
+<?php case "radio": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($data[$field['name']]) == $key): echo ($vo); endif; endforeach; endif; else: echo "" ;endif; break;?>
+<?php case "checkbox": $_result=parse_field_attr($field['extra']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><label class="checkbox">
+                <?php if(in_array(($key), is_array($data[$field['name']])?$data[$field['name']]:explode(',',$data[$field['name']]))): echo ($vo); endif; ?>
+            </label><?php endforeach; endif; else: echo "" ;endif; break;?>
+<?php case "editor": ?><section > <?php echo (htmlspecialchars_decode($data[$field['name']])); ?>
+         </section><?php break;?>
+<?php case "picture": if(!empty($data[$field['name']])): ?><img style="max-height:200px;max-width:200px" picture="__picture__-<?php echo ($field['name']); ?>"  src="/xuegaobang<?php echo (get_cover($data[$field['name']],'path')); ?>"/><?php endif; break;?>
+<?php case "file": if(isset($data[$field['name']])): ?><div class="upload-pre-file"><i class="icon-paper-clip"></i><span><?php echo (get_table_field($data[$field['name']],'id','name','File')); ?></span>
+            </div><?php endif; break;?>
+<?php case "color": ?><a><span class="btn-colorpicker btn-colorpicker-<?php echo ($field["name"]); ?>" style="background-color:<?php echo ($data[$field['name']]); ?>"></span></a><?php break;?>
+<?php case "simpleEditor": echo (htmlspecialchars_decode($data[$field['name']])); break;?>
+<?php case "place": ?><i class="icon-map-marker light-orange bigger-110"></i>
+    <span>
+        <?php echo ($data[$field['name']]); ?>
+    </span><?php break;?>
 
-                <th>企业名称</th>
-                <th>类别</th>
-                <th>创建时间</th>
-                <th>更新时间</th>
-                <th>状态</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                      
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
-                        </td>
-                        <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
-                                <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-            </tbody>
-        </table>
-
-        <!-- 分页 -->
-        <div class="page">
-            <?php echo ($_page); ?>
-        </div>
-    </div>
+<?php default: ?>
+<?php echo ($data[$field['name']]); endswitch;?>
+</div>
+</div><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+</div>
+</div><?php endforeach; endif; else: echo "" ;endif; ?>
+</div>
+</div>
 
                         <!-- /.col -->
                     </div>
@@ -272,26 +278,6 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
-                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- /主体 -->
@@ -352,67 +338,16 @@
 
 
 
-    <script>
-        $(".verifyNot").click(function() {
-            var url =  $(this).data('url');
-            var uid = $(this).data("uid");
-            var id = $(this).data("id");
-            bootbox.prompt("请输入未通过原因", function(result) {
-                if(result !== null){
-                    if (result) {
-                        $.post(
-                                url
-                                ,
-                                {
-                                    'reason' : result,
-                                    'uid' : uid,
-                                    'id':id
-                                },
-                                function(data){
-                                    if (data.status) {
-                                        okAlert(data.msg);
-                                        setTimeout(function(){
-                                            location.reload();
-                                        },1500);
-                                    }else{
-                                        errorAlert(data.msg);
-                                    }
-                                },
-                                'json'
-                        );
-                    } else {
-                        alert("您必须说明原因才能继续操作!");
-                    }
-                }
+    <script type="text/javascript">
+        window.onload=function(){ //让图片说明文字居中
+            $("[picture^='__title__']").each(function(){
+                var tp = $(this).attr('picture');
+                var pp  = tp.replace('__title__','__picture__');
+                var height = $("[picture="+pp+"]").css('height');
+                $(this).css('line-height',height);
             });
-        });
-
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':'company'},function(data){
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
-
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
-        });
+        }
+        $('[data-rel=tooltip]').tooltip();
     </script>
 
 </body>

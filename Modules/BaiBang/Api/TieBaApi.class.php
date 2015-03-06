@@ -47,9 +47,7 @@ class TieBaApi {
     /**
      * 添加帖子(<strong>需要传递参数!</strong>)<br/>
      * 需要传递的参数:<br/>
-     * status:状态 <br/>
      * uid:发布者 <br/>
-     * create_time:创建时间 <br/>
      * name:名称 <br/>
      * content:内容 <br/>
      */
@@ -64,7 +62,8 @@ class TieBaApi {
     }
 
     /**
-     * 添加帖子
+     * 编辑帖子
+     *
      */
     public static function editTiezi(){
         $Model  =   checkAttr(D('Tieba'),"Tieba");

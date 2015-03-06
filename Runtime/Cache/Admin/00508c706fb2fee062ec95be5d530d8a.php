@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    公司审核
+    产品管理
 
                     </h1>
                 </div>
@@ -213,22 +213,70 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--include format "Modules://BaiBang@index/aa"-->
+    <!--"Modules://BaiBang@index/aa"-->
     <div>
+        <div class="btn-group">
+            <!--<a class="btn btn-sm btn-primary" href="<?php echo U('addCompetition');?>">新 增</a>-->
+            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
+                    data-tip="确定要删除么?">删 除
+            </button>
+        </div>
+
         <div class="pull-right">
+            <a href="#" id="adv_show">
+                <i class="icon-chevron-up"></i>
+            </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索产品名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
+    </div>
+    <div class="panel panel-default" id="adv_search" style="display:none">
+        <form class="search-form" method="post" action="<?php echo _U('search');?>">
+            <div class="panel-body table-responsive">
+                <div class="panel-heading clearfix">
+                    <div class="pull-right">
+                        <Button class="btn btn-sm btn-primary" type="submit" target-form="search-form">搜索</Button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tr>
+                            <td>名称：<input type="text" name="query_name" ></td>
+                            <td>公司名称：<input type="text" name="query_vender" ></td>
+                            <td>每页显示数量：
+                                <select name="r">
+                                    <option value="10">10</option>
+                                    <option value="20">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="200">200</option>
+                                    <option value="400">400</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+        </form>
     </div>
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-
-                <th>企业名称</th>
-                <th>类别</th>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>产品id</th>
+                <th>产品名称</th>
+                <th>公司名称</th>
+                <th>产品发布者</th>
                 <th>创建时间</th>
                 <th>更新时间</th>
                 <th>状态</th>
@@ -237,17 +285,26 @@
             </thead>
             <tbody>
             <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                      
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ids ace" name="id[]" value="<?php echo ($com["id"]); ?>">
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
+                        <td><?php echo ($com["vender"]); ?></td>
+                        <td><?php echo get_user_filed($com.uid,"username");?></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
                         <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
-                                <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
+                            <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>">相关评论</a>
+                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
+                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
+                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -286,7 +343,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
                     <button class="btn btn-sm" data-dismiss="modal">取消</button>
                 </div>
             </div>
@@ -352,51 +408,30 @@
 
 
 
-    <script>
-        $(".verifyNot").click(function() {
-            var url =  $(this).data('url');
-            var uid = $(this).data("uid");
-            var id = $(this).data("id");
-            bootbox.prompt("请输入未通过原因", function(result) {
-                if(result !== null){
-                    if (result) {
-                        $.post(
-                                url
-                                ,
-                                {
-                                    'reason' : result,
-                                    'uid' : uid,
-                                    'id':id
-                                },
-                                function(data){
-                                    if (data.status) {
-                                        okAlert(data.msg);
-                                        setTimeout(function(){
-                                            location.reload();
-                                        },1500);
-                                    }else{
-                                        errorAlert(data.msg);
-                                    }
-                                },
-                                'json'
-                        );
-                    } else {
-                        alert("您必须说明原因才能继续操作!");
-                    }
-                }
-            });
-        });
 
+    <script>
+        $('#adv_show').click(function(){
+            var ele = $(this).find('i');
+            if($(ele).hasClass('icon-chevron-up')){
+                $("#adv_search").slideDown('fast');
+                $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
+            }else{
+                $("#adv_search").slideUp('fast');
+                $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
+            }
+        });
         $('.info').click(function(){
             $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
+            console.log(id+"++++ "+ url);
 
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':'company'},function(data){
+            $.post(url,{'id':id},function(data){
+                console.log(data);
                 $("#user_info .modal-body").empty().html(data);
             });
         });
@@ -413,6 +448,12 @@
                 }
             });
         });
+        <?php if($where): ?>!function(){
+            $("#adv_search").show();
+            var ele = $("#adv_show").find('i');
+            $(ele).removeClass('icon-chevron-up').addClass('icon-chevron-down');
+            <?php if(is_array($where)): $i = 0; $__LIST__ = $where;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>Think.setValue('<?php echo ($key); ?>','<?php echo ($vo); ?>');<?php endforeach; endif; else: echo "" ;endif; ?>
+        }();<?php endif; ?>
     </script>
 
 </body>

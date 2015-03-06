@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    公司审核
+    模型列表
 
                     </h1>
                 </div>
@@ -213,52 +213,83 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--include format "Modules://BaiBang@index/aa"-->
-    <div>
-        <div class="pull-right">
-            <span class="input-icon">
-                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
-                <i class="icon-search"></i>
-			</span>
-        </div>
+    <div class="btn-group">
+        <?php if(isset($current_type)): if(is_array($types)): foreach($types as $key=>$vo): if(($current_type) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
+                        <span class="icon-caret-down icon-on-right"></span>
+                    </button><?php endif; endforeach; endif; ?>
+            <?php else: ?>
+            <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">全部
+                <span class="icon-caret-down icon-on-right"></span>
+            </button><?php endif; ?>
+
+        <ul class="dropdown-menu dropdown-primary">
+            <?php if(isset($current_type)): ?><li>
+                    <a href="<?php echo U('index');?>" >全部</a>
+                </li>
+                <?php if(is_array($types)): foreach($types as $key=>$vo): ?><li>
+                        <?php if(($current_type) != $key): ?><a href="<?php echo U('index?type='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
+                    </li><?php endforeach; endif; ?>
+                <?php else: ?>
+                <?php if(is_array($types)): foreach($types as $key=>$vo): ?><li>
+                        <a href="<?php echo U('index?type='.$key);?>"><?php echo ($vo); ?></a>
+                    </li><?php endforeach; endif; endif; ?>
+        </ul>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('Model/add');?>">新 增</a>
+        <button class="btn btn-sm btn-primary  ajax-post" target-form="ids" url="<?php echo U('Model/setStatus',array('status'=>1));?>">启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" target-form="ids" url="<?php echo U('Model/setStatus',array('status'=>0));?>">禁 用</button>
+        <a class="btn btn-sm btn-primary" href="<?php echo U('Model/generate');?>">生 成</a>
     </div>
+
+    <!-- 数据列表 -->
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-
-                <th>企业名称</th>
-                <th>类别</th>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>编号</th>
+                <th>标识</th>
+                <th>名称</th>
                 <th>创建时间</th>
-                <th>更新时间</th>
                 <th>状态</th>
+                <th>组别</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                      
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
+            <?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="center">
+                            <label>
+                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($vo["id"]); ?>">
+                                <span class="lbl"></span>
+                            </label>
                         </td>
+                        <td><?php echo ($vo["id"]); ?></td>
+                        <td><?php echo ($vo["name"]); ?></td>
+                        <td><a data-id="<?php echo ($vo["id"]); ?>" href="<?php echo U('model/edit?id='.$vo['id']);?>"><?php echo ($vo["title"]); ?></a></td>
+                        <td><span><?php echo (time_format($vo["create_time"])); ?></span></td>
+                        <td><?php echo ($vo["status_text"]); ?></td>
+                        <td><?php echo (get_model_type($vo["type"])); ?></td>
                         <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
-                                <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
+                            <a href="<?php echo U('think/lists?model='.$vo['name']);?>">数据</a>
+                            <a href="<?php echo U('model/setstatus?ids='.$vo['id'].'&status='.abs(1-$vo['status']));?>"
+                               class="ajax-get"><?php echo (show_status_op($vo["status"])); ?></a>
+                            <a href="<?php echo U('model/edit?id='.$vo['id']);?>">编辑</a>
+                            <a href="<?php echo U('model/del?ids='.$vo['id']);?>" class="confirm ajax-get">删除</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+                <td colspan="8" class="text-center"> aOh! 暂时还没有内容!</td><?php endif; ?>
             </tbody>
         </table>
 
-        <!-- 分页 -->
-        <div class="page">
-            <?php echo ($_page); ?>
-        </div>
+    </div>
+    <div class="page">
+        <?php echo ($_page); ?>
     </div>
 
                         <!-- /.col -->
@@ -272,26 +303,6 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
-                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- /主体 -->
@@ -352,68 +363,6 @@
 
 
 
-    <script>
-        $(".verifyNot").click(function() {
-            var url =  $(this).data('url');
-            var uid = $(this).data("uid");
-            var id = $(this).data("id");
-            bootbox.prompt("请输入未通过原因", function(result) {
-                if(result !== null){
-                    if (result) {
-                        $.post(
-                                url
-                                ,
-                                {
-                                    'reason' : result,
-                                    'uid' : uid,
-                                    'id':id
-                                },
-                                function(data){
-                                    if (data.status) {
-                                        okAlert(data.msg);
-                                        setTimeout(function(){
-                                            location.reload();
-                                        },1500);
-                                    }else{
-                                        errorAlert(data.msg);
-                                    }
-                                },
-                                'json'
-                        );
-                    } else {
-                        alert("您必须说明原因才能继续操作!");
-                    }
-                }
-            });
-        });
-
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':'company'},function(data){
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
-
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>

@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    公司审核
+    <?php if(ACTION_NAME == 'add'): ?>新增<?php else: ?>编辑<?php endif; ?>模型
 
                     </h1>
                 </div>
@@ -213,53 +213,161 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!--include format "Modules://BaiBang@index/aa"-->
-    <div>
-        <div class="pull-right">
-            <span class="input-icon">
-                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
-                <i class="icon-search"></i>
-			</span>
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-            <thead>
-            <tr>
+<div class="tabbable">
+    <ul class="nav nav-tabs padding-16 tab-size-bigger tab-space-1">
+        <li class="active"><a data-toggle="tab"  href="#tab1">基 础</a></li>
+        <li ><a data-toggle="tab"  href="#tab2">设 计</a></li>
+        <li ><a data-toggle="tab"  href="#tab3">高 级</a></li>
+    </ul>
+    <form  action="<?php echo U('update');?>"  class="form-horizontal">
+    <div class="tab-content no-border padding-24">
+            <div id="tab1" class="tab-pane in active">
+                <div class="form-group">
+                    <label class="item-label">父模型<span class="check-tips"><?php echo (get_model_by_id($info["pid"])); ?></span></label>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">模型标识<span class="check-tips">（请输入文档模型标识）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text " name="name" value="<?php echo ($info["name"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">模型名称<span class="check-tips">（请输入模型的名称）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text " name="title" value="<?php echo ($info["title"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">模型组别<span class="check-tips">（模型组别）</span></label>
+                    <div class="controls">
+                        <select name="type">
+                            <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i; if($key == $info['type']): ?><option value="<?php echo ($key); ?>" selected><?php echo ($t); ?></option>
+                                    <?php else: ?>
+                                    <option value="<?php echo ($key); ?>"><?php echo ($t); ?></option><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="tab2" class="tab-pane">
+                <div class="form-group">
+                        <div>
+                            <label class="item-label">字段管理<span class="check-tips">(有字段才会创建数据表)</span></label>
+                        </div>
+                        <div class="widget-box col-xs-3">
+                            <div class="widget-header widget-header-flat">
+                                <h5>字段列表</h5>
+                                <div class="widget-toolbar">
+                                    <a href="<?php echo U('Attribute/add?model_id='.$info['id']);?>" target="_balnk">新增</a>
+                                    <a href="<?php echo U('Attribute/index?model_id='.$info['id']);?>" target="_balnk">管理</a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main form_field_sort">
+                                    <ul>
+                                        <?php if(is_array($fields)): foreach($fields as $k=>$field): ?><li >
+                                                <label>
+                                                    <a href="<?php echo U('Attribute/edit?id='.$field['id']);?>" target="_blank"><?php echo ($field['title']); ?> [<?php echo ($field['name']); ?>]</a>
+                                                </label>
+                                            </li><?php endforeach; endif; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">字段别名定义<span class="check-tips">（用于表单显示的名称）</span></label>
+                    <div class="controls">
+                        <label class="textarea input-large">
+                            <textarea name="attribute_alias"><?php echo ($info["attribute_alias"]); ?></textarea>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">表单显示分组<span class="check-tips">（用于表单显示的分组，以及设置该模型表单排序的显示）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="field_group" value="<?php echo ($info["field_group"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label class="item-label">表单显示排序<span class="check-tips">（直接拖动进行排序）</span></label>
+                    </div>
+                    <?php $_result=parse_field_attr($info['field_group']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="widget-box col-xs-3">
+                            <div class="widget-header widget-header-flat">
+                                <h5><?php echo ($vo); ?></h5>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main  form_field_sort">
+                                    <ul class="dragsort needdragsort" data-group="<?php echo ($key); ?>">
+                                        <?php if(is_array($fields)): foreach($fields as $k=>$field): if((($field['group'] == $key) or($i == 1 and !isset($field['group']))) and ($field['is_show'] != 0)): ?><li class="getSort">
+                                                    <em data="<?php echo ($field['id']); ?>"><?php echo ($field['title']); ?> [<?php echo ($field['name']); ?>]</em>
+                                                    <input type="hidden" name="field_sort[<?php echo ($key); ?>][]" value="<?php echo ($field['id']); ?>"/>
+                                                </li><?php endif; endforeach; endif; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><?php endforeach; endif; else: echo "" ;endif; ?>
+                </div>
 
-                <th>企业名称</th>
-                <th>类别</th>
-                <th>创建时间</th>
-                <th>更新时间</th>
-                <th>状态</th>
-                <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$com): $mod = ($i % 2 );++$i;?><tr>
-                      
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><?php echo C("PRODUCTION_CATEGORY.".$com['category']);?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
-                        </td>
-                        <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
-                                <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
-                        </td>
-                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                <?php else: ?>
-                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-            </tbody>
-        </table>
+                <div class="form-group">
+                    <label class="item-label">列表定义<span class="check-tips">（默认列表模板的展示规则）</span></label>
+                    <div class="controls">
+                        <label class="textarea input-large">
+                            <textarea name="list_grid"><?php echo ($info["list_grid"]); ?></textarea>
+                        </label>
+                    </div>
+                </div>
 
-        <!-- 分页 -->
-        <div class="page">
-            <?php echo ($_page); ?>
-        </div>
+                <div class="form-group">
+                    <label class="item-label">默认搜索字段<span class="check-tips">（默认列表模板的默认搜索项）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="search_key" value="<?php echo ($info["search_key"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">高级搜索字段<span class="check-tips">（默认列表模板的高级搜索项）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="search_list" value="<?php echo ($info["search_list"]); ?>">
+                    </div>
+                </div>
+            </div>
+            <div id="tab3"  class="tab-pane">
+                <div class="form-group">
+                    <label class="item-label">列表模板<span class="check-tips">（自定义的列表模板，放在对应控制器view文件夹的下面，不写则使用默认模板）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="template_list" value="<?php echo ($info["template_list"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">新增模板<span class="check-tips">（自定义的新增模板，放在对应控制器view文件夹的下面，不写则使用默认模板）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="template_add" value="<?php echo ($info["template_add"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">编辑模板<span class="check-tips">（自定义的编辑模板，放在对应控制器view文件夹的下面，不写则使用默认模板）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-large" name="template_edit" value="<?php echo ($info["template_edit"]); ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="item-label">列表数据大小<span class="check-tips">（默认列表模板的分页属性）</span></label>
+                    <div class="controls">
+                        <input type="text" class="text input-small" name="list_row" value="<?php echo ($info["list_row"]); ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="item-label"></label>
+                <div class="controls">
+                    <input type="hidden" name="id" value="<?php echo ($info['id']); ?>"/>
+                    <button class="btn btn-sm btn-primary ajax-post no-refresh" type="submit" target-form="form-horizontal">确 定</button>
+                    <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
     </div>
+    </form>
+</div>
 
                         <!-- /.col -->
                     </div>
@@ -272,26 +380,6 @@
     </div>
 </div><!-- /.main-container -->
 
-    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" style="text-align:center"></h4>
-                </div>
-                <div class="modal-body">
-                    <div style="text-align: center">
-                        <i class="icon-spinner icon-spin orange bigger-300"></i>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary btn-sm ajax-post " id="print_single">打印</button>
-                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- /主体 -->
@@ -352,68 +440,21 @@
 
 
 
-    <script>
-        $(".verifyNot").click(function() {
-            var url =  $(this).data('url');
-            var uid = $(this).data("uid");
-            var id = $(this).data("id");
-            bootbox.prompt("请输入未通过原因", function(result) {
-                if(result !== null){
-                    if (result) {
-                        $.post(
-                                url
-                                ,
-                                {
-                                    'reason' : result,
-                                    'uid' : uid,
-                                    'id':id
-                                },
-                                function(data){
-                                    if (data.status) {
-                                        okAlert(data.msg);
-                                        setTimeout(function(){
-                                            location.reload();
-                                        },1500);
-                                    }else{
-                                        errorAlert(data.msg);
-                                    }
-                                },
-                                'json'
-                        );
-                    } else {
-                        alert("您必须说明原因才能继续操作!");
-                    }
-                }
-            });
-        });
-
-        $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
-            $('#user_info').modal('show');
-            var id = $(this).data('id')
-            var url = "<?php echo _U('info');?>";
-
-            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
-            $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
-            $.post(url,{'id':id,'controller':'company'},function(data){
-                $("#user_info .modal-body").empty().html(data);
-            });
-        });
-
-        $(function() {
-            //回车搜索
-            $("#search").keyup(function(e) {
-                if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
-                    var query = $('#search').val();
-                    url = url.replace('PLACEHODLE',query);
-                    window.location.href = url;
-                    return false;
-                }
-            });
-        });
-    </script>
+<script type="text/javascript" src="/xuegaobang/Public/vendor/jquery.dragsort-0.5.2.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+//拖曳插件初始化
+$(function(){
+	$(".needdragsort").dragsort({
+	     dragSelector:'li',
+	     placeHolderTemplate: '<li class="draging-place">&nbsp;</li>',
+	     dragBetween:true,	//允许拖动到任意地方
+	     dragEnd:function(){
+	    	 var self = $(this);
+	    	 self.find('input').attr('name', 'field_sort[' + self.closest('ul').data('group') + '][]');
+	     }
+	 });
+})
+</script>
 
 </body>
 </html>
