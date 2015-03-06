@@ -272,7 +272,6 @@ function int_to_string(&$data, $map = array('status' => array
     foreach ($data as $key => $row) {
         foreach ($map as $col => $pair) {
             if (isset($row[$col]) && isset($pair[$row[$col]])) {
-                trace($data[$key][$col . '_text']);
                 $data[$key][$col . '_text'] = $pair[$row[$col]];
             }
         }

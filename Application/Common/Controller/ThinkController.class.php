@@ -231,7 +231,7 @@ class ThinkController extends AdminController {
 
         //获取数据
         $data       = M(parse_name(get_table_name($model['id'])))->where($map)->find();
-        $data || $this->error('数据不存在！');
+        $data || $this->error('model not exist！');
         $this->assign('model', $model);
         $this->assign('fields', $fields);
         $this->assign('data', $data);
