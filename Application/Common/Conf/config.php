@@ -22,7 +22,7 @@ return array(
     'USER_ADMINISTRATOR' => 1, //管理员用户ID
     // 添加数据库配置信息
     'DB_TYPE' => 'mysql', // 数据库类型
-    'DB_HOST' => '192.168.0.112', // 服务器地址
+    'DB_HOST' => 'localhost', // 服务器地址
     'DB_NAME' => 'baibang', // 数据库名
     'DB_USER' => 'root', // 用户名
     'DB_PWD' => 'tiptimes', // 密码
@@ -54,7 +54,7 @@ return array(
     /* 图片上传相关配置 */
     'PICTURE_UPLOAD' => array(
         'mimes' => '', //允许上传的文件MiMe类型
-        'maxSize' => 2 * 1024 * 1024, //上传的文件大小限制 (0-不做限制)
+        'maxSize' =>250 * 1024, //上传的文件大小限制 (0-不做限制)
         'exts' => 'jpg,gif,png,jpeg', //允许上传的文件后缀
         'autoSub' => true, //自动子目录保存文件
         'subName' => array('date', 'Y-m-d'), //子目录创建方式，[0]-函数名，[1]-参数，多个参数使用数组
@@ -84,5 +84,17 @@ return array(
 
     //评论也每页显示数量
     'COMMENT_LIST'=>10,
+
+    //邮件配置
+    'THINK_EMAIL' => array(
+        'SMTP_HOST'   => 'smtp.qq.com', //SMTP服务器
+        'SMTP_PORT'   => '25', //SMTP服务器端口
+        'SMTP_USER'   => '953445224@qq.com', //SMTP服务器用户名
+        'SMTP_PASS'   => 'lihao2656360', //SMTP服务器密码
+        'FROM_EMAIL'  => '953445224@qq.com', //发件人EMAIL
+        'FROM_NAME'   => '佰邦科技', //发件人名称
+        'REPLY_EMAIL' => '', //回复EMAIL（留空则为发件人EMAIL）
+        'REPLY_NAME'  => '', //回复名称（留空则为发件人名称）
+    ),
 
 );

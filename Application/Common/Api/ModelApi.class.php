@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class ModelApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:57:15
+ */
 class ModelApi {
     /**
      * 获取文档模型信息

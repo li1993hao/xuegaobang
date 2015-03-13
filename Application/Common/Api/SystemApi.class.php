@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class SystemApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:57:37
+ */
 class SystemApi {
 
 }

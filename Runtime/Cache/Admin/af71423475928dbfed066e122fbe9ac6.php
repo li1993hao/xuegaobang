@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -291,6 +291,8 @@
                                             "buttonText": "上传图片",
                                             "uploader": "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
                                             "width": 120,
+                                            "fileSizeLimit"   :250,
+                                            'sizeLimit' 	 : 250*1024,
                                             'removeTimeout': 1,
                                             'fileTypeExts': '*.jpg; *.png; *.gif;',
                                             "onUploadSuccess": uploadPicture<?php echo ($field["name"]); ?>,
@@ -332,6 +334,8 @@
                                             "buttonText": "上传附件",
                                             "uploader": "<?php echo U('File/upload',array('session_id'=>session_id()));?>",
                                             "width": 120,
+                                            "fileSizeLimit"   :250,
+                                            'sizeLimit' 	 : 250*1024,
                                             'removeTimeout': 1,
                                             "onUploadSuccess": uploadFile<?php echo ($field["name"]); ?>,
                                         'onFallback':function () {

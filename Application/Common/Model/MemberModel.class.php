@@ -210,7 +210,7 @@ class MemberModel extends \Think\Model{
         return false;
     }
 
-    public function apiLogin($username, $password, $type = 1, $checkType=false){
+    public function apiLogin($username, $password, $type = 1, $checkType=""){
         $map = array();
         switch ($type) {
             case 1:
@@ -233,8 +233,9 @@ class MemberModel extends \Think\Model{
         $user = $this->where($map)->find();
         if(is_array($user) && $user['status']){
             if($checkType){
-                if($user['type']!=0){
-                    return -3;//不是管理员
+                $types = str2arr($checkType,',');
+                if(!in_array($user['type'],$types)){
+                    return -3;
                 }
             }
             /* 验证用户密码 */

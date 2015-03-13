@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -279,6 +279,7 @@
                 <th>产品发布者</th>
                 <th>点赞数量</th>
                 <th>收藏数量</th>
+                <th>评论数量</th>
                 <th>创建时间</th>
                 <th>状态</th>
                 <th>置顶</th>
@@ -298,8 +299,9 @@
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
-                        <td><?php echo ($com["like"]); ?></td>
+                        <td><?php echo ($com["like_num"]); ?></td>
                         <td><?php echo ($com["collect_num"]); ?></td>
+                        <td><?php echo ($com["comment_num"]); ?></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>

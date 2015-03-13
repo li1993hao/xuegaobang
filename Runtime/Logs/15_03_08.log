@@ -1,0 +1,8 @@
+[ 2015-03-08T21:24:39+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425821079&_hash=e12cb13d36766a9d3cfd0471e585196a58c9c562
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001128s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = '' AND `topic_id` = 0 AND (  ) LIMIT 0,20   [ RunTime:0.000085s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,20' at line 1
+ [ SQL语句 ] : SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = '' AND `topic_id` = 0 AND (  ) LIMIT 0,20  
+

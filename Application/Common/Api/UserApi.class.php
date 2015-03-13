@@ -12,6 +12,12 @@
 namespace Common\Api;
 use Common\Model\MemberModel;
 
+/**
+ * Class UserApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:57:48
+ */
 class UserApi {
     /**
      * 检测用户是否登录
@@ -128,7 +134,7 @@ class UserApi {
      * @retrun array
      */
     public static  function login($u,$p){
-        $result = D('Member')->apiLogin($u,$p);
+        $result = D('Member')->apiLogin($u,$p,'1,2');
         if(is_array($result)){//登陆成功返回accesskey
             $data['sid'] =  think_encrypt($result['id'],C('UID_KEY'));
             $data['nickname'] = $result['nickname'];
@@ -170,7 +176,7 @@ class UserApi {
     }
 
     /**
-     * 企业用户注册
+     * 普通用户注册
      * @param string $email 邮箱
      * @param string $username 用户名
      * @param string $nickname 昵称
@@ -178,25 +184,21 @@ class UserApi {
      * @param string $re_password 重复密码
      * @return string 结果
      */
-    public static  function register($email,$username,$nickname,$password,$re_password){
-        if($email && $username && $nickname && $password && $re_password){
-            if(!regex($email,'email')){
-                api_msg('邮箱格式不正确！');
-                return false;
-            }
+    public static  function register($phone,$username,$nickname,$password,$re_password){
+        if($phone && $username && $nickname && $password && $re_password){
             /* 检测密码 */
             if($password != $re_password){
                 api_msg('密码和重复密码不一致！');
                 return false;
             }
             $member = D('Member');
-            $uid    =   $member->register($username, $password,$nickname,1,$status=1,$email); //添加企业
+            $uid    =   $member->register($username, $password,$nickname,2,$status=1,'',$phone); //添加
             if(0 < $uid){ //注册成功
                 D('AuthGroup')->addToGroup($uid,13);//添加分组权限
                 if($member->login($uid)){ //登录
                     //TODO:跳转到登录前页面
                     api_msg('注册成功！');
-                    return false;
+                    return true;
                 } else {
                     api_msg('注册成功！');
                     return false;
@@ -211,6 +213,25 @@ class UserApi {
         }
     }
 
+    public static function verifyPhoneRegister($phoneNum){
+         $verify = rand(10000,50000);
+        if(send_sms($phoneNum,array($verify),14478)){
+           return $verify;
+        }else{
+            api_msg("验证码获取出错!");
+            return false;
+        }
+    }
+
+    public static function verifyPhoneForgerPassword($phoneNum){
+        $verify = rand(10000,50000);
+        if(send_sms($phoneNum,array($verify),14524)){
+            return $verify;
+        }else{
+            api_msg("验证码获取出错!");
+            return false;
+        }
+    }
 
     /**
      * 当前用户的昵称
@@ -221,47 +242,54 @@ class UserApi {
             api_msg("用户未登录");
             return false;
         }
-        $Member =   D('Member');
-        //密码验证
-        $uid    =   $Member->checkLogin(UID, $password, 4);
-        if($uid == -2){
-            api_msg("密码不正确");
-            return false;
-        }
-        $data   =   $Member->create(array('nickname'=>$nickname,'password'=>$password));
-        if(!$data){
-            api_msg($Member->getError());
-        }
-
-        $res = $Member->where(array('id'=>$uid))->save($data);
-
-        if($res){
-            api_msg("修改昵称成功");
+        $data['nickname'] = $nickname;
+        $member = D('Member');
+        $res    =   $member->updateInfo(UID, $password, $data);
+        if($res['status']){
+            api_msg("修改密码成功");
             return true;
         }else{
-            api_msg("修改昵称失败!");
+            api_msg($res['info']);
             return false;
         }
     }
 
-    /**
-     * 修改密码初始化
-     * @author huajie <banhuajie@163.com>
-     */
-    public static function updatePassword($old,$password){
+    public static function updatePasswordWithOldPassword($password,$oldPassword){
         if(UID <=0){
             api_msg("用户未登录");
             return false;
         }
-        //获取参数
         $data['password'] = $password;
         $member = D('Member');
-        $res    =   $member->updateInfo(UID, $old, $data);
+        $res    =   $member->updateInfo(UID, $oldPassword, $data);
         if($res['status']){
-            api_msg("修改昵称成功");
+            api_msg("修改密码成功");
             return true;
         }else{
             api_msg($res['info']);
+            return false;
+        }
+    }
+    /**
+     * 修改密码初始化
+     *
+     */
+    public static function updatePasswordWithPhone($password,$phone){
+        $data['password'] = $password;
+        $member = D('Member');
+        $user = $member->where(array("mobile"=>$phone))->field('id')->find();
+        if($user){
+            $uid = $user['id'];
+            $data['id'] = $uid;
+        }else{
+            api_msg("该手机未注册!");
+            return false;
+        }
+        if($member->create($data) && $member->save()!==false){
+            api_msg("修改密码成功");
+            return true;
+        }else{
+            api_msg($member->getError());
             return false;
         }
     }
@@ -280,13 +308,14 @@ class UserApi {
             api_msg($result['msg']);
             return false;
         }else{
-            $data['head'] = $result['id'];
+            $data['head'] = $result['data'][0]['id'];
             if(M('Member')->where(array('id'=>UID))->save($data)!==false){
                  api_msg("更改成功!");
-                 return $result['path'];
+                 $result['data'][0]['path'] = __ROOT__.$result['data'][0]['path'];
+                 return $result['data'];
             }else{
                 api_msg("更改失败!未知错误");
-                return $result['path'];
+                return false;
             }
 
         }

@@ -1,6 +1,8 @@
 <?php
 namespace Modules\Person\Controller;
 use Common\Controller\ModuleController;
+use Modules\Person\Api\CommentApi;
+use Modules\Person\Api\StaffApi;
 use Think\Controller;
 use Think\Page;
 
@@ -26,6 +28,11 @@ class ProductionController extends ModuleController {
         $list = $this->p_lists('Production',$map,'update_time');
         int_to_string($list);
         $list = list_sort_by($list,'status');
+        for($i=0;$i<count($list);$i++){
+            $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
+            $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
+            $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
+        }
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();

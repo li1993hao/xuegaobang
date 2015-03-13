@@ -93,13 +93,22 @@
                 $(".apiDoc").click(function(){
                     if($(this).hasClass('jdi-init-doc')){ //说明文档
                         $('#introduce').show();
+                        $('#apiClass').hide();
                         $('#apiDetail').hide();
-                    }else{
+                    }else if($(this).hasClass('jdi-class-doc')){//类说明文档
+                        var index = $(this).data('index').split(',');
+                        var $class = JDO_DOCUMENT[index[0]]['apiClass'][index[1]];
+                        $("#apiClass .title").empty().html($class.name);
+                        $("#apiClass .jdi-package").empty().html("<h3>包名</h3>"+$class.package);
+                        $("#apiClass .jdi-introduce").empty().html('<h3>说明</h3>'+$class.introduce);
+                        $("#apiClass .jdi-author").empty().html("<h3>作者</h3>"+$class.author);
                         $('#introduce').hide();
+                        $('#apiDetail').hide();
+                        $('#apiClass').show();
+                    }else{
                         var index = $(this).data('index').split(',');
                         var method = JDO_DOCUMENT[index[0]]['apiClass'][index[1]]['method'][index[2]];
                         $("#apiDetail .title").empty().html(method.name);
-                        $("#apiDetail .jdi-introduce").empty().html(method.introduce);
                         var params = '<h3>参数列表</h3><ul>';
                         var str_params = "";
                         if(method.param){
@@ -135,6 +144,8 @@
                             $("#test-result").empty();
                         }
                         Article.method = method;
+                        $('#introduce').hide();
+                        $('#apiClass').hide();
                         $('#apiDetail').show();
                     }
                 });

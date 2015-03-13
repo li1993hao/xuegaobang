@@ -102,9 +102,78 @@ class PublicController extends \Think\Controller {
         $verify = new \Think\Verify();
         $verify->entry(1);
     }
-//
-//
-//    function text(){
-//        echo user_encrypt('123456');
-//    }
+
+    /**
+     * 找回密码
+     */
+    public function getPasswordBack(){
+        $email = I('post.email');
+        if(empty($email)){
+            $this->error("邮箱不能为空!");
+        }
+        if(!regex($email,'email')){
+            $this->error("邮箱格式不对!");
+        }
+        $model = M("Member");
+        $user = $model->where(array("email"=>$email))->find();
+        if(!$user){
+            $this->error("该邮箱还未注册!");
+        }else{
+            $token = think_encrypt($user['id'].','.$user['password'].','.NOW_TIME); //token
+            $url  =U('resetPassword?token='.$token,'',true, true);
+            $body  = "<h1>佰邦科技</h1>"."您提交了找回密码请求。请点击下面的链接重置密码
+（按钮1分钟内有效）。<br/><a href='".$url."'target='_blank'>".$url."</a>";
+            if(jdi_send_mail($email,$user['nickname'],"[佰邦科技]找回密码",$body)){
+                $this->success("找回密码邮件已经发送,请注意查收！");
+            }else{
+                $this->error("操作失败!未知错误");
+            }
+        }
+    }
+
+    public function resetPassword($token){
+        $param = str2arr(think_decrypt($token));
+        $user = null;
+        $model = D("Member");
+        if(count($param) != 3){
+            exit('illegal request');
+        }else{
+            $uid = $param[0];
+            $password = $param[1];
+            $time = $param[2];
+            if(NOW_TIME - $time > 6000){ // 超过一分钟
+                exit('request failure(cause time out)');
+            }else{
+                $user = $model->where(array("id"=>$uid,"password"=>$password))->find();
+                if(!$user){
+                    exit('User does not exist');
+                }
+            }
+        }
+        if(IS_POST){
+            $password = I('post.password');
+            $re_password = I('post.re_password');
+            if(empty($password)){
+                $this->error('数据不能为空!');
+            }
+            if($password != $re_password){
+                $this->error('密码和重复密码不一致！');
+            }
+            $data['password'] = $password;
+            $data['id'] = $user['id'];
+            if($model->create($data) && $model->save() !== false){
+                $this->success("修改成功!",U("index/index"));
+            }else{
+                $this->error(MemberModel::showRegError($model->getError()));
+            }
+
+        }else{
+            if(empty($token)){
+                $this->display("404!");
+            }else{
+                $this->assign("token",$token);
+                $this->display("password_back");
+            }
+        }
+    }
 }

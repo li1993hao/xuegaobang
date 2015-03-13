@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    <?php echo ($meta_title); ?>
+    <?php if(isset($data)): ?>编辑<?php else: ?>新增<?php endif; ?>钩子
 
                     </h1>
                 </div>
@@ -213,31 +213,68 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <?php if(!empty($list)): ?><div class="dialogs">
-            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="itemdiv dialogdiv">
-                    <div class="user">
-                        <img alt="<?php echo get_user_filed($vo['uid'],'nickname');?>"
-                             src="<?php echo (get_user_image($vo["uid"])); ?>"/>
-                    </div>
-                    <div class="body">
-                        <div class="time">
-                            <i class="icon-time"></i>
-                            <span class="green"><?php echo formatTime($vo['create_time']);?></span>
-                        </div>
-                        <div class="name">
-                            <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
-                        </div>
-                        <div class="text"><?php echo ($vo["content"]); ?></div>
-                    </div>
-                </div><?php endforeach; endif; else: echo "" ;endif; ?>
-        </div>
-        <?php else: ?>
-        <h1 class="text-center">暂无评论!</h1><?php endif; ?>
-    <!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
-    </div>
+	<!-- 修改密码表单 -->
+	<form action="<?php echo U('updateHook');?>" method="post" class="form-horizontal normal-form">
+		<div class="form-group cf">
+			<label class="item-label">钩子名称<span class="check-tips">（需要在程序中先添加钩子，否则无效）</span></label>
+			<div class="controls">
+				<input type="text" value="<?php echo ($data["name"]); ?>" name="name" class="text input-large">
+			</div>
+		</div>
+		<div class="form-group cf">
+			<label class="item-label">钩子描述<span class="check-tips">（钩子的描述信息）</span></label>
+			<div class="controls">
+				<label class="textarea input-large"><textarea name="description" ><?php echo ($data["description"]); ?></textarea></label>
+			</div>
+		</div>
+		<div class="form-group cf">
+			<label class="item-label">钩子类型<span class="check-tips">（区分钩子的主要用途）</span></label>
+			<div class="controls">
+				<select name="type">
+					<?php $_result=C('HOOKS_TYPE');if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" <?php if(($data["type"]) == $key): ?>selected<?php endif; ?>><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+				</select>
+			</div>
+		</div>
+		<?php if(isset($data)): ?><div class="form-group cf">
+				<label class="item-label">钩子挂载的插件排序<span class="check-tips">（拖动后保存顺序，影响同一个钩子挂载的插件执行先后顺序）</span></label>
+				<div class="controls">
+					<input type="hidden" name="addons" value="<?php echo ($data["addons"]); ?>" readonly>
+					<?php if(empty($data["addons"])): ?>暂无插件，无法排序
+					<?php else: ?>
+					<ul id="sortUl" class="dragsort ">
+						<?php $_result=explode(',',$data['addons']);if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$addons_vo): $mod = ($i % 2 );++$i;?><li class="getSort"><em><?php echo ($addons_vo); ?></em>&nbsp;&nbsp;<b style="color: red">&times;</b></li><?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+					<script type="text/javascript">
+						$(function(){
+							$("#sortUl").dragsort({
+	                            dragSelector:'li',
+	                            placeHolderTemplate: '<li class="draging-place">&nbsp;</li>',
+	                            dragEnd:function(){
+	                            	updateVal();
+	                            }
+	                        });
+
+							$('#sortUl li b').click(function(){
+                            	$(this).parent().remove();
+                            	updateVal();
+                            });
+
+							// 更新排序后的隐藏域的值
+	                        function updateVal() {
+	                        	var sortVal = [];
+                            	$('#sortUl li').each(function(){
+                            		sortVal.push($('em',this).text());
+                            	});
+                                $("input[name='addons']").val(sortVal.join(','));
+	                        }
+						})
+					</script><?php endif; ?>
+				</div>
+			</div><?php endif; ?>
+		<input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
+		<button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="form-horizontal">确 定</button>
+		<button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+	</form>
 
                         <!-- /.col -->
                     </div>
@@ -310,6 +347,12 @@
 
 
 
+	<?php if(isset($data)): ?><script type="text/javascript" src="/xuegaobang/Public/vendor/jquery.dragsort-0.5.2.min.js"></script><?php endif; ?>
+	<script type="text/javascript">
+		$(function(){
+			//导航高亮
+		})
+	</script>
 
 </body>
 </html>

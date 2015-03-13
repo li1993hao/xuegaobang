@@ -13,6 +13,7 @@ class IndexController extends ModuleController {
      * 企业资料
      */
     public function  index(){
+        MK();
         if(IS_POST){
             $res = M(parse_name("company",true))->where(array('uid'=>UID))->field('id')->find();
             if($res){//有基本信息了
@@ -20,6 +21,7 @@ class IndexController extends ModuleController {
                 parent::edit("company",$res['id'],$success="修改成功!等待审核");
             }else{
                 $_POST['uid'] = UID;
+                $_POST['status'] = 2;
                 parent::add("company");
             }
         }else{

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -229,7 +229,7 @@
                     <td><?php echo ($node["sort"]); ?></td>
                     <td><?php echo ($node["id"]); ?></td>
                     <td>
-                        <?php $__FOR_START_4292__=0;$__FOR_END_4292__=$node["level"];for($i=$__FOR_START_4292__;$i < $__FOR_END_4292__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
+                        <?php $__FOR_START_1506978738__=0;$__FOR_END_1506978738__=$node["level"];for($i=$__FOR_START_1506978738__;$i < $__FOR_END_1506978738__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
                                     <?php else: ?>
                                     |--<?php endif; ?>
                                 <?php else: ?>

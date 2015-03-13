@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class ConfigApi
+ * @package Common\Api
+ * @author lh
+ * @time  2015-03-07 09:56:44
+ */
 class ConfigApi {
     /**
      * 获取数据库中的配置列表

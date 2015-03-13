@@ -29,7 +29,7 @@
           url: user/search
         - title: 评论
           url: user/comment
-焦点图:
+焦点:
   - title: 焦点图管理
     url: hotMap/index
     children:

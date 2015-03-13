@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    模块列表
+    行为列表
 
                     </h1>
                 </div>
@@ -213,54 +213,59 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
+    <div class="btn-group">
+        <a class="btn btn-sm btn-primary"  href="<?php echo U('user/addaction');?>">新 增</a>
+        <button class="btn btn-sm btn-primary ajax-post" target-form="ids" url="<?php echo U('setstatus',array('Model'=>'action','status'=>1));?>" >启 用</button>
+        <button class="btn btn-sm btn-primary ajax-post" target-form="ids" url="<?php echo U('setstatus',array('Model'=>'action','status'=>0));?>">禁 用</button>
+        <button class="btn btn-sm btn-primary ajax-post confirm" target-form="ids" url="<?php echo U('setStatus',array('Model'=>'action','status'=>-1));?>">删 除</button>
+    </div>
 	<!-- 数据列表 -->
-    <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>名称</th>
-					<th>标识</th>
-					<th >描述</th>
-					<th >状态</th>
-					<th>作者</th>
-					<th >版本</th>
-					<th >操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php if(!empty($_list)): if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-					<td><?php echo ($vo["title"]); ?></td>
-					<td><?php echo ($vo["name"]); ?></td>
-					<td><?php echo ($vo["description"]); ?></td>
-					<td><?php echo ((isset($vo["status_text"]) && ($vo["status_text"] !== ""))?($vo["status_text"]):"未安装"); ?></td>
-					<td><?php echo ($vo["author"]); ?></a></td>
-					<td><?php echo ($vo["version"]); ?></td>
-					<td>
-						<?php if(empty($vo["uninstall"])): $class = get_module_class($vo['name']); if(!class_exists($class)){ $has_config = 0; }else{ $module = new $class(); $has_config = count($module->getConfig()); } ?>
-							<?php if ($has_config): ?>
-								<a href="<?php echo U('config',array('id'=>$vo['id']));?>">设置</a>
-							<?php endif ?>
-						<?php if ($vo['status'] >=0): ?>
-							<?php if(($vo["status"]) == "0"): ?><a class="ajax-get" href="<?php echo U('enable',array('id'=>$vo['id']));?>">启用</a>
-							<?php else: ?>
-								<a class="ajax-get" href="<?php echo U('disable',array('id'=>$vo['id']));?>">禁用</a><?php endif; ?>
-						<?php endif ?>
-							
-								<a class="ajax-get confirm" href="<?php echo U('uninstall?id='.$vo['id']);?>">卸载</a>
-							
-						<?php else: ?>
-							<a class="ajax-get " href="<?php echo U('install?module_name='.$vo['name']);?>">安装</a><?php endif; ?>
-					</td>
-				</tr><?php endforeach; endif; else: echo "" ;endif; ?>
-				<?php else: ?>
-				<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
-			</tbody>
-		</table>
+	<div class="table-responsive">
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+		<th class="text-center">
+            <label>
+                <input class="check-all ace" type="checkbox"/>
+                <span class="lbl"></span>
+            </label>
+        </th>
+		<th class="">编号</th>
+		<th class="">标识</th>
+		<th class="">名称</th>
+		<th class="">类型</th>
+		<th class="">规则</th>
+		<th class="">状态</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<?php if(is_array($_list)): $i = 0; $__LIST__ = $_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+            <td class="text-center">
+            <label>
+                <input class="ids ace" type="checkbox" name="ids[]" value="<?php echo ($vo["id"]); ?>" />
+                <span class="lbl"></span>
+            </label>
+            </td>
+			<td><?php echo ($vo["id"]); ?> </td>
+			<td><?php echo ($vo["name"]); ?></td>
+			<td><a href="<?php echo U('editAction?id='.$vo['id']);?>"><?php echo ($vo["title"]); ?></a></td>
+			<td><span><?php echo get_action_type($vo['type']);?></span></td>
+			<td><?php echo ($vo["remark"]); ?></td>
+			<td><?php echo ($vo["status_text"]); ?></td>
+			<td><a href="<?php echo U('User/editAction?id='.$vo['id']);?>">编辑</a>
+				<a href="<?php echo U('User/setStatus?Model=action&ids='.$vo['id'].'&status='.abs(1-$vo['status']));?>" class="ajax-get"><?php echo (show_status_op($vo["status"])); ?></a>
+				<a href="<?php echo U('User/setStatus?Model=action&status=-1&ids='.$vo['id']);?>" class="confirm ajax-get">删除</a>
+                </td>
+		</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+	</tbody>
+    </table>
+
 	</div>
 	<!-- 分页 -->
-    <div class="page">
-        <?php echo ($_page); ?>
-    </div>
+	<div class="page"><?php echo ($_page); ?></div>
+	<!-- /分页 -->
+
 
                         <!-- /.col -->
                     </div>

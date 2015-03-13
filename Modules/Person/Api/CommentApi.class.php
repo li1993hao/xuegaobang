@@ -7,7 +7,12 @@
  */
 
 namespace Modules\Person\Api;
-
+/**
+ * 评论接口文档
+ * @package Modules\Person\Api
+ * @author lh
+ * @time 2015-03-07 09:49:10
+ */
 class CommentApi {
     /**
      * 获取评论
@@ -36,9 +41,10 @@ class CommentApi {
             return false;
         }else{
             for($i=0;$i<count($result);$i++){
-                $user = get_user_filed($result['uid']);
-                $result[$i]['user_name'] = $user['username'];
+                $user = get_user_filed($result[$i]['uid']);
+                $result[$i]['user_name'] = $user['nickname'];
                 $result[$i]['user_head'] = get_cover_path($user['head']);
+                $result[$i]['create_time'] = formatTime($result[$i]['create_time']);
             }
             return $result;
         }
@@ -57,6 +63,7 @@ class CommentApi {
         $model = D('Comment');
         if($model->create() && $model->add()!==false){
             api_msg("评论成功!");
+            M($_POST['topic_table'])->where(array('id'=>$_POST['topic_id']))->setInc('comment_num');
             return true;
         }else{
             api_msg($model->getError());

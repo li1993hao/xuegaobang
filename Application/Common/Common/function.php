@@ -265,7 +265,6 @@ function upload_image(){
     //TODO: 用户登录检测
     /* 返回标准数据 */
     $return  = array('status' => 1, 'msg' => '上传成功', 'data' => '');
-
     /* 调用文件上传组件上传文件 */
     $Picture = D('Picture');
     $pic_driver = C('PICTURE_UPLOAD_DRIVER');
@@ -279,7 +278,11 @@ function upload_image(){
     /* 记录图片信息 */
     if($info){
         $return['status'] = 1;
-        $return = array_merge($info['download'], $return);
+        if(APP_MODE =="api"){
+            $return['data'] = $info;
+        }else{
+            $return = array_merge($info['download'], $return);
+        }
     } else {
         $return['status'] = 0;
         $return['msg']   = $Picture->getError();
@@ -421,6 +424,7 @@ function tree_to_list_first($tree,$child_key,&$list=array(),$level=0,$remove=0){
         }
     }
 }
+
 /**
  * 字符串转换为数组，主要用于把分隔符调整到第二个参数
  * @param  string $str  要分割的字符串
@@ -623,7 +627,7 @@ function thumb($path, $width, $height, $type = 3){
         $path = substr($path,strlen(__ROOT__.'/'));
     }
     if(!is_file($path)){
-        return $path;
+        return "";
     }
     $imgInfo = pathinfo($path);
     $newImg = $imgInfo['dirname'].'/thum_'.$width.'_'.$height.'_'.$imgInfo["basename"];
@@ -633,10 +637,14 @@ function thumb($path, $width, $height, $type = 3){
         $image->open($path);
         $image->thumb($width, $height,$type)->save($newImgDir);
     }
+    if(!$newImg){
+        return "";
+    }
     if($root){ //还原根目录
         return __ROOT__.'/'.$newImg;
+    }else{
+        return $newImg;
     }
-    return $newImg;
 }
 
 /**
@@ -673,7 +681,7 @@ function get_cover($cover_id, $field = null){
  * @return bool|string
  */
 function get_cover_path($cover_id){
-    if(empty($cover_id)){
+    if(!$cover_id){
         return "";
     }
     return __ROOT__.get_cover($cover_id,'path');
@@ -712,7 +720,94 @@ function temp_path(){
         return C('TEMP_PATH').'/'.C('JDI_THEME');
     }
 }
+/**
+ * 系统邮件发送函数
+ * @param string $to    接收邮件者邮箱
+ * @param string $name  接收邮件者名称
+ * @param string $subject 邮件主题
+ * @param string $body    邮件内容
+ * @param string $attachment 附件列表
+ * @return boolean
+ */
+function jdi_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
+    $config = C('THINK_EMAIL');
+    $mail             = new \Org\Util\PHPMailer(); //PHPMailer对象
+    $mail->CharSet    = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
+    $mail->IsSMTP();  // 设定使用SMTP服务
+    $mail->SMTPDebug  = 0;                     // 关闭SMTP调试功能
+    // 1 = errors and messages
+    // 2 = messages only
+    $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
+ //   $mail->SMTPSecure = 'ssl';                 // 使用安全协议
+    $mail->Host       = $config['SMTP_HOST'];  // SMTP 服务器
+    $mail->Port       = $config['SMTP_PORT'];  // SMTP服务器的端口号
+    $mail->Username   = $config['SMTP_USER'];  // SMTP服务器用户名
+    $mail->Password   = $config['SMTP_PASS'];  // SMTP服务器密码
+    $mail->SetFrom($config['FROM_EMAIL'], $config['FROM_NAME']);
+    $replyEmail       = $config['REPLY_EMAIL']?$config['REPLY_EMAIL']:$config['FROM_EMAIL'];
+    $replyName        = $config['REPLY_NAME']?$config['REPLY_NAME']:$config['FROM_NAME'];
+    $mail->AddReplyTo($replyEmail, $replyName);
+    $mail->Subject    = $subject;
+    $mail->MsgHTML($body);
+    $mail->AddAddress($to, $name);
+    if(is_array($attachment)){ // 添加附件
+        foreach ($attachment as $file){
+            is_file($file) && $mail->AddAttachment($file);
+        }
+    }
+    return $mail->Send() ? true : $mail->ErrorInfo;
+}
 
+/**
+ *给手机发送验证码
+ *@param $to  要发送的手机
+ *@param $datas  要发送的数据(数组)
+ *@param $tempId  短信模版id
+ *@return  发送成功返回true,失败返回false
+ */
+function send_sms($to,$datas,$tempId){
+    //主帐号
+    $accountSid= '8a48b551473976010147629ee8431226';
+
+    //主帐号Token
+    $accountToken= 'b162c78411454b99948096ca78a11c77';
+
+    //应用Id
+    $appId='aaf98f894bfd8efd014c02b93a990386';
+
+    //请求地址，格式如下，不需要写https://
+    $serverIP='sandboxapp.cloopen.com';
+
+    //请求端口
+    $serverPort='8883';
+
+    //REST版本号
+    $softVersion='2013-12-26';
+
+    $rest = new \Org\Util\CCPRestSDK($serverIP,$serverPort,$softVersion);
+    $rest->setAccount($accountSid,$accountToken);
+    $rest->setAppId($appId);
+
+    $result = $rest->sendTemplateSMS($to,$datas,$tempId);
+    if($result == NULL ) {
+        // echo "result error!";
+        return false;
+    }
+    if($result->statusCode!=0) {
+       // echo "error code :" . $result->statusCode . "<br>";
+        // echo "error msg :" . $result->statusMsg . "<br>";
+        //TODO 添加错误处理逻辑
+        return false;
+    }else{
+        // echo "Sendind TemplateSMS success!<br/>";
+        // // 获取返回信息
+        // $smsmessage = $result->TemplateSMS;
+        // echo "dateCreated:".$smsmessage->dateCreated."<br/>";
+        // echo "smsMessageSid:".$smsmessage->smsMessageSid."<br/>";
+        //TODO 添加成功处理逻辑
+        return true;
+    }
+}
 /**********************************工具相关****************************************************/
 
 

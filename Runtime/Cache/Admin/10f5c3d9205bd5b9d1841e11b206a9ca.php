@@ -27,9 +27,12 @@
         <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$module): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($module['index']); ?>" data-name="<?php echo ($module['module']['title']); ?>" class="closed">
                 <div><a href="javascript:;"><?php echo ($module['module']['title']); ?></a></div>
                 <ul>
-                    <?php if(is_array($module["apiClass"])): $i = 0; $__LIST__ = $module["apiClass"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$apiClass): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($apiClass['index']); ?>" data-name="<?php echo ($apiClass['name']); ?>">
+                    <?php if(is_array($module["apiClass"])): $i = 0; $__LIST__ = $module["apiClass"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$apiClass): $mod = ($i % 2 );++$i;?><li data-index="<?php echo ($apiClass['index']); ?>" data-name="<?php echo ($apiClass['name']); ?>">
                             <div><a href="javascript:;"><?php echo ($apiClass['name']); ?></a></div>
                             <ul>
+                                <li data-id="3" data-name="preface" class="active">
+                                    <div><a class="apiDoc jdi-class-doc" data-index="<?php echo ($apiClass["index"]); ?>"  href="javascript:;">说明</a></div>
+                                </li>
                                 <?php if(is_array($apiClass["method"])): $i = 0; $__LIST__ = $apiClass["method"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$method): $mod = ($i % 2 );++$i;?><li data-name="<?php echo ($method["name"]); ?>">
                                         <div><a class="apiDoc" data-index="<?php echo ($method["index"]); ?>" href="javascript:;"><?php echo ($method["name"]); ?></a></div>
                                     </li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -56,6 +59,13 @@
             </ul>
         </p>
         <br/>
+    </div>
+    <div id="apiClass" style="display: none">
+        <h1 class="title" style="margin: 20px"></h1>
+        <div class="jdi-package"  style="margin: 20px"></div>
+        <div class="jdi-introduce"  style="margin: 20px"></div>
+        <div class="jdi-author"  style="margin: 20px"></div>
+        <div class="jdi-time"  style="margin: 20px"></div>
     </div>
     <div id="apiDetail" style="display: none">
         <h1 class="title" style="margin: 20px"></h1>

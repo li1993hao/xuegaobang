@@ -1,6 +1,8 @@
 <?php
 namespace Modules\BaiBang\Controller;
 use Common\Controller\ThinkController;
+use Modules\Person\Api\CommentApi;
+use Modules\Person\Api\StaffApi;
 
 /**产品管理页面
  * Class ProductionController
@@ -76,12 +78,10 @@ class ProductionController extends CommonController {
         int_to_string($list);
         $list = list_sort_by($list,'status');
 
-        //点赞和喜欢数量
         for($i=0;$i<count($list);$i++){
-            $list[$i]['like']= M('UserStaff')->where(array("topic_table"=>"production",
-            "topic_id"=>$list[$i]['id'],"action"=>"like"))->count();
-            $list[$i]['collect_num']= M('UserStaff')->where(array("topic_table"=>"production",
-                "topic_id"=>$list[$i]['id'],"action"=>"collect"))->count();
+            $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
+            $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
+            $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
         }
 
         $this->assign('list', $list);

@@ -1,0 +1,1073 @@
+[ 2015-03-09T09:25:31+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_category&_time=1425864331&_hash=1498808fce143cc404f867be4375cde96b2719c7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.003278s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 1 LIMIT 1   [ RunTime:0.001244s ]
+
+[ 2015-03-09T09:26:02+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_children_category&_time=1425864362&_hash=6d0e7fff3274147fc6210edbfac9d80a118e542b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.003075s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 1 LIMIT 1   [ RunTime:0.000166s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `pid` = 0 AND `type` IN ('1','2','3') ORDER BY sort  [ RunTime:0.000408s ]
+
+[ 2015-03-09T09:26:15+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_children_category&_time=1425864375&_hash=9976b8f76e4b6126a7c0cd185ae28e4345994059
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.002158s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 2 LIMIT 1   [ RunTime:0.000159s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `pid` = 0 AND `type` IN ('1','2','3') ORDER BY sort  [ RunTime:0.000146s ]
+
+[ 2015-03-09T09:26:20+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_children_category&_time=1425864380&_hash=bd7b69a6553e848ade385b3e2c81b924658e9312
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.002003s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `pid` = 3 AND `type` IN ('1','2','3') ORDER BY sort  [ RunTime:0.000197s ]
+
+[ 2015-03-09T09:26:40+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_category&_time=1425864400&_hash=93fd6ace63709fd36034405b7a80dba8404b16b3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.001908s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 1 LIMIT 1   [ RunTime:0.000167s ]
+
+[ 2015-03-09T09:26:44+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=Category&_A=get_category&_time=1425864404&_hash=177adcc31f2d0efc393d9158633f2fef9672f525
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_node` [ RunTime:0.001904s ]
+SQL: SELECT * FROM `jdi_node` WHERE `status` = 1 AND `type` IN ('1','2','3') AND `id` = 2 LIMIT 1   [ RunTime:0.000148s ]
+
+[ 2015-03-09T09:31:29+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1425864689&_hash=007cec56ec73d607821beea46c23201fb624c225
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002189s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.000153s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000927s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 3 LIMIT 1   [ RunTime:0.000155s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000955s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000213s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000910s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 69 LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 7 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000096s ]
+
+[ 2015-03-09T09:31:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1425864700&_hash=f5e432745614089e9ab76c90df3988c38dbefd60
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003426s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time` FROM `jdi_company` WHERE `status` = 1 AND ( id=3 ) LIMIT 0,10   [ RunTime:0.000173s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 3 LIMIT 1   [ RunTime:0.000142s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000819s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000104s ]
+
+[ 2015-03-09T09:35:35+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1425864935&_hash=abf628c851c22ec6e8d09bc21d3c5f9ce3ac0fa3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.004167s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time` FROM `jdi_company` WHERE `status` = 1 AND ( id=3 ) LIMIT 0,10   [ RunTime:0.000747s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001127s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 3 LIMIT 1   [ RunTime:0.000140s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000882s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000121s ]
+
+[ 2015-03-09T09:35:43+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1425864943&_hash=d5e2cbbc071dc56aa6c384a13f8c027ad2af0847
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001819s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.000143s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 3 LIMIT 1   [ RunTime:0.000156s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000870s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000184s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000102s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000886s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 69 LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [2] Missing argument 2 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [2] Missing argument 3 for thumb(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/Person/Api/PersonApi.class.php on line 69 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 616 行.
+NOTIC: [8] Undefined variable: width /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 618 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 7 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000101s ]
+
+[ 2015-03-09T10:23:02+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425867783&_hash=3180d4b0a8144e70a051de7ac83269df9d3f9e5c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001828s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.000128s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,20' at line 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000961s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'collect' LIMIT 1   [ RunTime:0.000184s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 49 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'like' LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 50 行.
+
+[ 2015-03-09T10:23:09+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425867789&_hash=7c7baccf0e1aa4f6df87d7cd04f4ef04c7c1d6a6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002691s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.002641s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000732s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000806s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001202s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000230s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000171s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000221s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000297s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000391s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000459s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000462s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000168s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000134s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000123s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000577s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000444s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000426s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000585s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000704s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000186s ]
+
+[ 2015-03-09T10:24:21+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425867861&_hash=0b8c00310c832852565776772a509c578abadad8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002995s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000708s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.003376s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000898s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000931s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000192s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000409s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000369s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000675s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000218s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000123s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.001019s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000217s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.001084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000810s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000465s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000568s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000208s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000123s ]
+
+[ 2015-03-09T10:33:24+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425868405&_hash=bc8cc63c9d595b7fae7b2fb87372cad5ec90445b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001668s ]
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = 'production' AND `topic_id` = 17 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000164s ]
+
+[ 2015-03-09T10:33:35+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425868415&_hash=365857796cd6942a1d2bbd4d46de83bf0cd62ea5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001728s ]
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 1 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001123s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.000136s ]
+
+[ 2015-03-09T10:42:21+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425868941&_hash=87b7d140297989624f7d849483bc75600ebbc3bf
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001016s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('company',7,44,'1231231',1425868941,1425868941) [ RunTime:0.000132s ]
+
+[ 2015-03-09T10:42:26+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425868947&_hash=138196b5eaf81f7b79f117e8b95f649b86275396
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001664s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('company',7,44,'skmasdma',1425868946,1425868946) [ RunTime:0.000126s ]
+
+[ 2015-03-09T10:42:30+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425868951&_hash=0f20111776557c1f448be40f5bc7760ed3bd4943
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001791s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('company',7,44,'aslkmdalskmda',1425868950,1425868950) [ RunTime:0.000134s ]
+
+[ 2015-03-09T11:05:10+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425870310&_hash=ded5aef9d72cfb0e18ec0db4e723b42f47f6f130
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001802s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000162s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002262s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000964s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000207s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'like' LIMIT 1   [ RunTime:0.000126s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001133s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000162s ]
+
+[ 2015-03-09T11:12:23+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=addTiezi&_time=1425870744&_hash=9811d9665617fbf48799e9732ecbd6c7e7bc2e83
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.002072s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.003785s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000760s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000340s ]
+ERR: 1054:Unknown column 'extend' in 'field list'
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.003434s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000818s ]
+SQL: INSERT INTO `jdi_tieba` (`uid`,`name`,`content`,`create_time`,`update_time`) VALUES (44,'TEST','TEST CONTENT',1425870743,1425870743) [ RunTime:0.000276s ]
+
+[ 2015-03-09T11:12:29+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=addTiezi&_time=1425870750&_hash=d05ebd74181ccbe04b2541fe5a3ed33b393429b8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001916s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.001513s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000164s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000082s ]
+ERR: 1054:Unknown column 'extend' in 'field list'
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.001366s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000213s ]
+SQL: INSERT INTO `jdi_tieba` (`uid`,`name`,`content`,`create_time`,`update_time`) VALUES (44,'TEST1','TEST CONTENT1',1425870749,1425870749) [ RunTime:0.000112s ]
+
+[ 2015-03-09T11:12:36+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=addTiezi&_time=1425870756&_hash=c93b03534debf7141b3d0cc28a65039211d4cf77
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001848s ]
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.001266s ]
+SQL: SELECT `id` FROM `jdi_model` WHERE `name` = 'Tieba' LIMIT 1   [ RunTime:0.000168s ]
+SQL: SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1   [ RunTime:0.000134s ]
+ERR: 1054:Unknown column 'extend' in 'field list'
+ [ SQL语句 ] : SELECT `extend` FROM `jdi_model` WHERE `id` = 37 LIMIT 1  
+SQL: SHOW COLUMNS FROM `jdi_attribute` [ RunTime:0.001453s ]
+SQL: SELECT * FROM `jdi_attribute` WHERE `model_id` = 37  [ RunTime:0.000202s ]
+SQL: INSERT INTO `jdi_tieba` (`uid`,`name`,`content`,`create_time`,`update_time`) VALUES (44,'TEST2','TEST CONTENT2',1425870756,1425870756) [ RunTime:0.000110s ]
+
+[ 2015-03-09T11:48:52+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425872932&_hash=fd4a7ee86206201fa0f0b2cb2343109f3110492d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001536s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001411s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001448s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000432s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000265s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001385s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000383s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'like' LIMIT 1   [ RunTime:0.000198s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000177s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'like' LIMIT 1   [ RunTime:0.000225s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'like' LIMIT 1   [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000191s ]
+
+[ 2015-03-09T11:49:13+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425872953&_hash=a15ccd222d7b5fb50d2f1876ccbf93229dbb7ba5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001763s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.000093s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,20' at line 1
+ [ SQL语句 ] : SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001115s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.000138s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 41 行.
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = null AND `action` = 'collect' LIMIT 1   [ RunTime:0.000230s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = null AND `action` = 'like' LIMIT 1   [ RunTime:0.000130s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000985s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000135s ]
+
+[ 2015-03-09T11:49:17+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425872957&_hash=1a03b4879787b7314f71069052bc27fcb26a963e
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.002559s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000176s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001085s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000160s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000194s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000973s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000149s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'like' LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000196s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'like' LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.000093s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 41 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000095s ]
+
+[ 2015-03-09T12:21:27+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1425874887&_hash=62fde2bc0eb638446e37bd373d1b75ff182f45b4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001088s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.000423s ]
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000998s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 3 LIMIT 1   [ RunTime:0.000455s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001052s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000267s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 3 AND `action` = 'collect' AND `uid` = 44 LIMIT 1   [ RunTime:0.000117s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000859s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 69 LIMIT 1   [ RunTime:0.000444s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'company' AND `topic_id` = 7 LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' AND `uid` = 44 LIMIT 1   [ RunTime:0.000119s ]
+
+[ 2015-03-09T13:16:15+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425878175&_hash=a5f04bc0f059b58a14444c6a237ccde2768afa60
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001737s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.000098s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,20' at line 1
+ [ SQL语句 ] : SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001145s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.000134s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 41 行.
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000923s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = null AND `action` = 'collect' LIMIT 1   [ RunTime:0.000202s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 43 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = null AND `action` = 'like' LIMIT 1   [ RunTime:0.000228s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000940s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000162s ]
+
+[ 2015-03-09T13:16:19+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425878179&_hash=1742cf8cae651e2a6e041672fcaff54f582a24f1
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.002264s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `is_top` DESC, `update_time` DESC LIMIT 0,10   [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001128s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000146s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000887s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000187s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.000990s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'like' LIMIT 1   [ RunTime:0.000094s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'like' LIMIT 1   [ RunTime:0.000212s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.000087s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 41 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000212s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'like' LIMIT 1   [ RunTime:0.000177s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000179s ]
+
+[ 2015-03-09T13:17:20+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425878240&_hash=64658813c100b230238e4452c1f433da0aa97795
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.002433s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('tiba',9,44,'111212121',1425878240,1425878240) [ RunTime:0.000371s ]
+
+[ 2015-03-09T13:17:24+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425878244&_hash=e3bcc50cf31625963808dc02f524b87d85b10aac
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001698s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('tiba',9,44,'4444',1425878244,1425878244) [ RunTime:0.000118s ]
+
+[ 2015-03-09T13:17:28+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=addComment&_time=1425878248&_hash=99229d3cd59c9f0f0f0b6a7846c2839779501bd8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001693s ]
+SQL: INSERT INTO `jdi_comment` (`topic_table`,`topic_id`,`uid`,`content`,`create_time`,`update_time`) VALUES ('tiba',9,44,'11112122',1425878248,1425878248) [ RunTime:0.000131s ]
+
+[ 2015-03-09T13:17:54+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425878274&_hash=bab3a0dd497c361f81723995f93b171447599fd8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001107s ]
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = 'tiba' AND `topic_id` = 9 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001235s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000892s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000166s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000107s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000096s ]
+
+[ 2015-03-09T13:20:20+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Comment&_A=comments&_time=1425878420&_hash=d6eec120e6b8bd35cb12b07a0338eebbd49782c3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001663s ]
+SQL: SELECT `content`,`uid`,`id`,`create_time` FROM `jdi_comment` WHERE `topic_table` = 'tiba' AND `topic_id` = 9 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001347s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001239s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000089s ]
+
+[ 2015-03-09T14:23:10+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=register&_time=1425882190&_hash=eedfb6a1e1bdf709f5e601a635b293905c17c4d5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001164s ]
+NOTIC: [2] Missing argument 7 for Common\Model\MemberModel::register(), called in /Users/haoli/Desktop/www/xuegaobang/Application/Common/Api/UserApi.class.php on line 199 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/MemberModel.class.php 第 118 行.
+NOTIC: [8] Undefined variable: mobile /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/MemberModel.class.php 第 125 行.
+SQL: SELECT * FROM `jdi_member` WHERE `username` = 'testuser' LIMIT 1   [ RunTime:0.000135s ]
+SQL: INSERT INTO `jdi_member` (`username`,`nickname`,`password`,`type`,`status`,`reg_time`,`reg_ip`,`update_time`) VALUES ('testuser','testnick','644bdda02dff64f25b94f5a656a9966578d3d0e9',2,1,1425882190,'3232235624',1425882190) [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `jdi_auth_group` [ RunTime:0.001022s ]
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/AuthGroupModel.class.php on line 54 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 431 行.
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/AuthGroupModel.class.php on line 55 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 431 行.
+SQL: SHOW COLUMNS FROM `jdi_auth_group_access` [ RunTime:0.000783s ]
+NOTIC: [8] Undefined variable: del /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/AuthGroupModel.class.php 第 64 行.
+SQL: INSERT INTO `jdi_auth_group_access` (`group_id`,`uid`) VALUES (13,45) [ RunTime:0.000774s ]
+SQL: SELECT `id`,`username`,`password`,`mobile`,`reg_time`,`reg_ip`,`last_login_time`,`last_login_ip`,`update_time`,`status`,`login_times`,`nickname`,`type`,`score`,`head` FROM `jdi_member` WHERE `id` = 45 LIMIT 1   [ RunTime:0.000157s ]
+SQL: SHOW COLUMNS FROM `jdi_action` [ RunTime:0.001015s ]
+SQL: SELECT * FROM `jdi_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.000432s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001197s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 45 LIMIT 1   [ RunTime:0.000144s ]
+SQL: SHOW COLUMNS FROM `jdi_action_log` [ RunTime:0.000905s ]
+SQL: INSERT INTO `jdi_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (1,45,3232235624,'member',45,1425882190,'testnick在2015-03-09 14:23登录了后台') [ RunTime:0.001492s ]
+SQL: SELECT * FROM `jdi_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.000127s ]
+NOTIC: [8] Undefined offset: 1 /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1060 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 1060 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_action_log` WHERE `action_id` = 1 AND `user_id` = 45 AND `create_time` > 1425795790 LIMIT 1   [ RunTime:0.000140s ]
+SQL: UPDATE `jdi_member` SET `score`=score+10 WHERE ( uid=45 AND status>-1 ) [ RunTime:0.000085s ]
+ERR: 1054:Unknown column 'uid' in 'where clause'
+ [ SQL语句 ] : UPDATE `jdi_member` SET `score`=score+10 WHERE ( uid=45 AND status>-1 )
+SQL: UPDATE `jdi_member` SET `login_times`=`login_times`+1,`last_login_time`=1425882190,`last_login_ip`='3232235624' WHERE `id` = 45 [ RunTime:0.000116s ]
+NOTIC: [8] Undefined index: jdi_ /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/functions.php 第 899 行.
+
+[ 2015-03-09T14:23:34+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=App&_M=Common&_C=User&_A=login&_time=1425882213&_hash=6420cf44c488f84f87cd5ead86922ad27ad3daf3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.002014s ]
+SQL: SELECT * FROM `jdi_member` WHERE `username` = 'testuser' LIMIT 1   [ RunTime:0.000151s ]
+SQL: UPDATE `jdi_member` SET `login_times`=`login_times`+1,`last_login_time`=1425882214,`last_login_ip`='3232235624' WHERE `id` = 45 [ RunTime:0.000117s ]
+
+[ 2015-03-09T17:08:38+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=staffs&_time=1425892116&_hash=74757d5fa180d93433169e5ed0cff5b6b4bef46a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001964s ]
+SQL: SELECT `topic_table`,`topic_id`,`id`,`create_time` FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `action` = 'like' AND `topic_id` = 19 AND `uid` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000297s ]
+
+[ 2015-03-09T17:08:38+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=staffs&_time=1425892117&_hash=b7cc82c5610fcf3f3c8bca6bbaf6a86f10a491e9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001033s ]
+SQL: SELECT `topic_table`,`topic_id`,`id`,`create_time` FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `action` = 'like' AND `topic_id` = 19 AND `uid` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000198s ]
+
+[ 2015-03-09T17:08:38+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=staffs&_time=1425892117&_hash=b7cc82c5610fcf3f3c8bca6bbaf6a86f10a491e9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000971s ]
+SQL: SELECT `topic_table`,`topic_id`,`id`,`create_time` FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `action` = 'like' AND `topic_id` = 19 AND `uid` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000190s ]
+
+[ 2015-03-09T17:08:38+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=staffs&_time=1425892117&_hash=b7cc82c5610fcf3f3c8bca6bbaf6a86f10a491e9
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001078s ]
+SQL: SELECT `topic_table`,`topic_id`,`id`,`create_time` FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `action` = 'like' AND `topic_id` = 19 AND `uid` = 0 ORDER BY create_time DESC LIMIT 0,10   [ RunTime:0.000177s ]
+
+[ 2015-03-09T17:09:09+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1425892149&_hash=89ba7dec53a010423782d4f1da3def422b205076
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001736s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `is_top` DESC, `update_time` DESC LIMIT 0,10   [ RunTime:0.000171s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001151s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000150s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000870s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000211s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000109s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `jdi_comment` [ RunTime:0.001229s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000197s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 8 AND `action` = 'like' LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 7 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 0 LIMIT 1   [ RunTime:0.000086s ]
+NOTIC: [8] Undefined index: head /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 40 行.
+NOTIC: [8] Undefined index: nickname /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 41 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'tieba' AND `topic_id` = 2 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php 第 44 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_comment` WHERE `topic_table` = 'tieba' AND `topic_id` = null LIMIT 1   [ RunTime:0.000094s ]
+
+[ 2015-03-09T17:15:24+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425892523&_hash=12ed1617b670e6512f7f300c57362b2884c04d89
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001653s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`uid`,`create_time`,`update_time`) VALUES ('production',1,0,1425892523,1425892523) [ RunTime:0.002202s ]
+
+[ 2015-03-09T17:16:57+08:00 ] 192.168.0.104 //xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425892617&_hash=25e7673fb6b07b014f6e81b0ea2bb9134281fcfe
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.002191s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'collect',0,1425892617,1425892617) [ RunTime:0.000670s ]
+
+[ 2015-03-09T17:43:10+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894190&_hash=4033343c6201126cbf9f63974435276048df136d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001781s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001925s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000903s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001337s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000188s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000084s ]
+
+[ 2015-03-09T17:43:23+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894202&_hash=13f3ab2fb085b339e8bfe8602cadc1c681190529
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001799s ]
+NOTIC: [8] Undefined index: limit /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db.class.php 第 788 行.
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20   [ RunTime:0.000090s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 0,20' at line 1
+ [ SQL语句 ] : SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' AND (  ) LIMIT 0,20  
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000895s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'collect' LIMIT 1   [ RunTime:0.000169s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 51 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'like' LIMIT 1   [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 52 行.
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 57 行.
+
+[ 2015-03-09T17:43:25+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894205&_hash=7a1e22d858c2f5589e99cccdfc6466904142b3af
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001746s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000174s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000926s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000946s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000251s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000123s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000087s ]
+
+[ 2015-03-09T17:44:54+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894293&_hash=e1d96a9268eb1e2c8f2c17acdcfc018cbc1fe6f2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001640s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000231s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.002343s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000201s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000128s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000947s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000185s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.001103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000329s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000142s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000085s ]
+
+[ 2015-03-09T17:44:55+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894295&_hash=b533fa63062b9d3b53f8ad9308a175389871758f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002574s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.003240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000543s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.004118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000397s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.002433s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000184s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000990s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000301s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000424s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000274s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000189s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.001248s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000961s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000348s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000209s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000975s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000259s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000306s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000973s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000326s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000276s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000222s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000185s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000246s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000690s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000247s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000271s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000205s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000372s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000246s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000210s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000263s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000183s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000125s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000162s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000144s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000112s ]
+
+[ 2015-03-09T17:44:56+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894296&_hash=ebedfad8b5809566099b2ffd4f30562f6ec7de6c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001996s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000211s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000939s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000174s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000109s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000949s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000535s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000136s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000140s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000179s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000163s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000233s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000146s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000105s ]
+
+[ 2015-03-09T17:44:57+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894297&_hash=ea516e03d225eb90b66fd43faeccf26ca5144b34
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002000s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000196s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000891s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000181s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000155s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001141s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000169s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000164s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000155s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000133s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000159s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000105s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000138s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000161s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000085s ]
+
+[ 2015-03-09T17:45:00+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=lists&_time=1425894300&_hash=e0d7070bac3465cca76765558d9b243197386307
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001437s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top` FROM `jdi_production` WHERE `status` > '0' ORDER BY `update_time` DESC LIMIT 0,10   [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000999s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000184s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000162s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 19 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001025s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000678s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 83 LIMIT 1   [ RunTime:0.000836s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000682s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' LIMIT 1   [ RunTime:0.000133s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 18 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000145s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 17 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 16 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 82 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 15 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000180s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' LIMIT 1   [ RunTime:0.000124s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 14 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 81 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000118s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 12 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 10 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000122s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000108s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 9 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000084s ]
+
+[ 2015-03-09T18:21:13+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896473&_hash=d08b5886452a823a49f40c3121c41093a967e530
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001007s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896473,1425896473) [ RunTime:0.000716s ]
+
+[ 2015-03-09T18:21:16+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896475&_hash=f347cd35848f06ea075b552b17580be45ff045a0
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001564s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896476,1425896476) [ RunTime:0.000360s ]
+
+[ 2015-03-09T18:21:16+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896476&_hash=32fc1b96d1c7f447f3b03dd1badabc6bd5ca4447
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.002064s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896476,1425896476) [ RunTime:0.000374s ]
+
+[ 2015-03-09T18:21:17+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896477&_hash=17673f2e822893e9918ba4b905c05f02c028bee8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001626s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896477,1425896477) [ RunTime:0.000994s ]
+
+[ 2015-03-09T18:21:17+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896477&_hash=17673f2e822893e9918ba4b905c05f02c028bee8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001638s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896477,1425896477) [ RunTime:0.000386s ]
+
+[ 2015-03-09T18:21:17+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896477&_hash=17673f2e822893e9918ba4b905c05f02c028bee8
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001776s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896477,1425896477) [ RunTime:0.000342s ]
+
+[ 2015-03-09T18:21:18+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896478&_hash=f64d14e30c28f6cbbf293164c7148b41b4ea40a2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001612s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896478,1425896478) [ RunTime:0.000376s ]
+
+[ 2015-03-09T18:21:18+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896478&_hash=f64d14e30c28f6cbbf293164c7148b41b4ea40a2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001607s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896478,1425896478) [ RunTime:0.000353s ]
+
+[ 2015-03-09T18:21:18+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896478&_hash=f64d14e30c28f6cbbf293164c7148b41b4ea40a2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001629s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',19,'',0,1425896478,1425896478) [ RunTime:0.000380s ]
+
+[ 2015-03-09T18:24:49+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896689&_hash=8609852bce16cf461d26c884759fec1c9d3f1b75
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001095s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',0,'',0,1425896689,1425896689) [ RunTime:0.000681s ]
+
+[ 2015-03-09T18:24:54+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896693&_hash=32e3a2e0c27560d2198497196a9c6f99bc8ab87d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001666s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',-2,'',0,1425896694,1425896694) [ RunTime:0.000388s ]
+
+[ 2015-03-09T18:24:54+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896694&_hash=1dfb0d290caec114df848d42bbb384a13c64ca52
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001666s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',-2,'',0,1425896694,1425896694) [ RunTime:0.000365s ]
+
+[ 2015-03-09T18:24:55+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896695&_hash=53c1edf1533e7922fa220af4eaf4b9c4383f4b26
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001492s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',-2,'',0,1425896695,1425896695) [ RunTime:0.000437s ]
+
+[ 2015-03-09T18:24:55+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896695&_hash=53c1edf1533e7922fa220af4eaf4b9c4383f4b26
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001624s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',-2,'',0,1425896695,1425896695) [ RunTime:0.000284s ]
+
+[ 2015-03-09T18:25:02+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896701&_hash=13153473c71d24a3a43e363e7f7b93a97ebbd5ec
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001543s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',10000000,'',0,1425896702,1425896702) [ RunTime:0.000445s ]
+
+[ 2015-03-09T18:25:02+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896702&_hash=1500c6e9e53293bf2c40d58879e8e61fa191458a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001369s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',10000000,'',0,1425896702,1425896702) [ RunTime:0.000322s ]
+
+[ 2015-03-09T18:25:03+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896703&_hash=6d34c77de7c466c4afdedacb739e8641c986fbfb
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001265s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',10000000,'',0,1425896703,1425896703) [ RunTime:0.000311s ]
+
+[ 2015-03-09T18:25:03+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896703&_hash=6d34c77de7c466c4afdedacb739e8641c986fbfb
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001068s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',10000000,'',0,1425896703,1425896703) [ RunTime:0.000446s ]
+
+[ 2015-03-09T18:25:12+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896712&_hash=3f3128a9e0ed0503bc4a1ce246e4282a53fccd40
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001653s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',9223372036854775807,'',0,1425896712,1425896712) [ RunTime:0.000378s ]
+
+[ 2015-03-09T18:25:13+08:00 ] 192.168.0.104 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Staff&_A=addStaff&_time=1425896713&_hash=4ca3ccb42ba905ddba53f2b5a63224bfa7e01c5b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000988s ]
+SQL: INSERT INTO `jdi_user_staff` (`topic_table`,`topic_id`,`action`,`uid`,`create_time`,`update_time`) VALUES ('production',9223372036854775807,'',0,1425896713,1425896713) [ RunTime:0.000510s ]
+

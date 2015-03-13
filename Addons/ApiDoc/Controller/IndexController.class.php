@@ -75,6 +75,11 @@ class IndexController extends AddonsController{
                 preg_match('/@author(.+)\b/',$class_comment,$matchs);
                 $api_class['author'] = trim($matchs[1]);//作者
                 $api_class['name'] = $cls['name'];
+                if(!$this->isComment($class_comment)){//纯注释
+                    $api_class['introduce'] = str_replace("*","",str_replace("*/","",str_replace("/**","",$class_comment)));
+                }else{
+                    $api_class['introduce'] = str_replace("*","",str_replace('/**',"",str_replace(strstr($class_comment,"@"),"",$class_comment)));
+                }
                 $api_class['index'] = $k.','.$kk;
                 $methods = $reflect_class->getMethods();
                 $method_count = 0;

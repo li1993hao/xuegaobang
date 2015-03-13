@@ -117,6 +117,8 @@
                                             "buttonText": "上传图片",
                                             "uploader": "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
                                             "width": 120,
+                                            "fileSizeLimit"   :250,
+                                            'sizeLimit' 	 : 250*1024,
                                             'removeTimeout': 1,
                                             'fileTypeExts': '*.jpg; *.png; *.gif;',
                                             "onUploadSuccess": uploadPicture{$field.name},
@@ -162,6 +164,8 @@
                                             "buttonText": "上传附件",
                                             "uploader": "{:U('File/upload',array('session_id'=>session_id()))}",
                                             "width": 120,
+                                            "fileSizeLimit"   :250,
+                                            'sizeLimit' 	 : 250*1024,
                                             'removeTimeout': 1,
                                             "onUploadSuccess": uploadFile{$field.name},
                                         'onFallback':function () {

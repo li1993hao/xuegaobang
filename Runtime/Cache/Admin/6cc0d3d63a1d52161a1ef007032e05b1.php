@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -238,6 +238,7 @@
                 <th>状态</th>
                 <th>收藏数量</th>
                 <th>点赞数量</th>
+                <th>评论数量</th>
                 <th>相关评论</th>
                 <th>操作</th>
             </tr>
@@ -253,8 +254,9 @@
                         <td><?php echo ($vo["name"]); ?></td>
                         <td><?php echo (date('Y-m-d',$vo["create_time"])); ?></td>
                         <td><?php echo ($vo["status_text"]); ?></td>
-                        <td><?php echo ($vo["collect"]); ?></td>
-                        <td><?php echo ($vo["like"]); ?></td>
+                        <td><?php echo ($vo["collect_num"]); ?></td>
+                        <td><?php echo ($vo["like_num"]); ?></td>
+                        <td><?php echo ($vo["comment_num"]); ?></td>
                         <td><a href="<?php echo _U('comment?id='.$vo['id']);?>">点击查看</a></td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>

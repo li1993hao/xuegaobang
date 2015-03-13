@@ -1,5 +1,8 @@
 <?php
 namespace Home\Controller;
+use Common\Api\CategoryApi;
+use Common\Api\DocumentApi;
+use Common\Api\ModelApi;
 use Think\Controller;
 use Think\Page;
 class IndexController extends HomeController {
@@ -51,7 +54,7 @@ class IndexController extends HomeController {
      */
     public function  category($cate,$p=1){
 
-        $Category = api('Category/get_category',array('id'=>$cate));
+        $Category = CategoryApi::get_category($cate);
         $cate = $Category['id'];
         if(!$Category){
             $this->error('没找到该分类~~~');
@@ -71,8 +74,8 @@ class IndexController extends HomeController {
                     $this->display($temp);
                 }
             }else{//渲染列表页模版
-                $list =  api('Document/lists',array('category'=>$cate,'page'=>$p));
-                $total = api('Document/listCount',array('category'=>$cate));
+                $list =  DocumentApi::lists($cate,$p);
+                $total = DocumentApi::listCount($cate);
                 $page = new Page($total,$Category['list_num'],array('id'=>$cate));
                 if($total>$Category['list_num']){
                     $page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
@@ -92,17 +95,17 @@ class IndexController extends HomeController {
             }
         }elseif($Category['type']==2){
             //单页面
-            $model_id =  api('Category/get_category',array('id'=>$cate,'field'=>'model_id'));
+            $model_id =  CategoryApi::get_category($cate,'model_id');
             if(empty($model_id)){//分类不存在或者被禁用
                 $this->error('分类不存在或者被禁用!');
             }
-            $model_name = api('Model/get_model_by_id',array('id'=>$model_id,'field'=>'name'));
+            $model_name = ModelApi::get_model_by_id($model_id,'name');
 
 
             if(empty($model_name)){//模型不存在或者被禁用
                 $this->error('模型不存在或者被禁用!');
             }
-            $info =  api('Document/record',array('category'=>$cate,'modelName'=>$model_name));
+            $info =  DocumentApi::record($cate,$model_name);
             $temp = temp_path().'/'.$Category['temp_content'];
 
             if($info['picture']){//图片模型
@@ -147,7 +150,7 @@ class IndexController extends HomeController {
             $root_nav = $cat['id'];//根栏目,控制导航显示
         }else{
             while(true){
-                $cat = api('Category/get_category',array('id'=>$cat['pid']));
+                $cat = CategoryApi::get_category($cat['pid']);
                 $cat = list_url($cat);
                 array_push($nav,array('name'=>$cat['name'],'url'=>$cat['url']));
                 if($cat['pid']==0){
@@ -174,7 +177,7 @@ class IndexController extends HomeController {
      * @param $id
      */
     public  function content($cate,$id){
-        $Category = api('Category/get_category',array('id'=>$cate));
+        $Category =  CategoryApi::get_category($cate);
         $cate = $Category['id'];
         $model_id =  $Category['model_id'];
         if(empty($model_id)){//分类不存在或者被禁用
@@ -184,7 +187,7 @@ class IndexController extends HomeController {
         if(empty($model_name)){//模型不存在或者被禁用
             $this->error('模型不存在或者被禁用!');
         }
-        $info =  api('Document/record',array('category'=>$cate,'modelName'=>$model_name,'id'=>$id));
+        $info = DocumentApi::record($cate,$model_name,$id);
 
         if(!$info){
             $this->error('您查询的内容不存在!');
@@ -195,7 +198,7 @@ class IndexController extends HomeController {
                     $this->error('文件找不到了..');
                 }
             }else{
-                $Category = api('Category/get_category',array('id'=>$cate));
+                $Category =  CategoryApi::get_category($cate);
                 $temp = temp_path().'/'.$Category['temp_content'];
                 if(!is_file($temp)){
                     $this->error('衣服丢了- -');

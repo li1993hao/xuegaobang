@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    <?php echo ($meta_title); ?>
+    钩子列表
 
                     </h1>
                 </div>
@@ -213,33 +213,40 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <?php if(!empty($list)): ?><div class="dialogs">
-            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="itemdiv dialogdiv">
-                    <div class="user">
-                        <img alt="<?php echo get_user_filed($vo['uid'],'nickname');?>"
-                             src="<?php echo (get_user_image($vo["uid"])); ?>"/>
-                    </div>
-                    <div class="body">
-                        <div class="time">
-                            <i class="icon-time"></i>
-                            <span class="green"><?php echo formatTime($vo['create_time']);?></span>
-                        </div>
-                        <div class="name">
-                            <a href="#"><?php echo get_user_filed($vo['uid'],'nickname');?></a>
-                        </div>
-                        <div class="text"><?php echo ($vo["content"]); ?></div>
-                        <div class="tools">
-                            <a href="<?php echo _U('delComment?id='.$vo['id']);?>" class="ajax-get" title="删除"><i class="red icon-trash bigger-150"></i></a>
-                        </div>
-                    </div>
-                </div><?php endforeach; endif; else: echo "" ;endif; ?>
-        </div>
-        <?php else: ?>
-        <h1 class="text-center">暂无评论!</h1><?php endif; ?>
-    <!-- 分页 -->
+	<div class="btn-group">
+		<?php if (IS_ROOT): ?>
+			<a class="btn btn-sm btn-primary" href="<?php echo U('addhook');?>">新 增</a>
+		<?php endif ?>
+	</div>
+	<!-- 数据列表 -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>名称</th>
+					<th>描述</th>
+					<th>类型</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+						<td><?php echo ($vo["id"]); ?></td>
+						<td><a href="<?php echo U('edithook?id='.$vo['id']);?>"><?php echo ($vo["name"]); ?></a></td>
+						<td><?php echo ($vo["description"]); ?></td>
+						<td><?php echo ($vo["type_text"]); ?></td>
+						<td>
+							<a title="编辑" href="<?php echo U('edithook?id='.$vo['id']);?>">编辑</a>
+							<a class="confirm ajax-get" title="删除" href="<?php echo U('delhook?id='.$vo['id']);?>">删除</a>
+						</td>
+					</tr><?php endforeach; endif; else: echo "" ;endif; ?>
+			</tbody>
+		</table>        
+	</div>
+	<!-- 分页 -->
     <div class="page">
         <?php echo ($_page); ?>
-    </div>
     </div>
 
                         <!-- /.col -->

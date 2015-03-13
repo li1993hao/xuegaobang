@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -152,51 +152,12 @@
         </a>
 
         
-            <div class="sidebar sidebar-fixed" id="sidebar">
-                <script type="text/javascript">
-                    try {
-                        ace.settings.check('sidebar', 'fixed')
-                    } catch (e) {
-                    }
-                </script>
+    <style>
+        .main-content{
+            margin-left: 0;
+        }
+    </style>
 
-                <ul class="nav nav-list">
-                    <?php if(!empty($_extra_menu)): ?>
-                        <?php echo extra_menu($_extra_menu,$__MENU__); endif; ?>
-                    <?php if(is_array($__MENU__["child"])): $i = 0; $__LIST__ = $__MENU__["child"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sub_menu): $mod = ($i % 2 );++$i;?><!-- 子导航 -->
-                        <?php if(!empty($sub_menu)): if(empty($key)): if(is_array($sub_menu)): $i = 0; $__LIST__ = $sub_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>">
-                                        <a href="<?php echo _U($menu['url']);?>">
-                                            <span class="menu-text"><?php echo ($menu["title"]); ?></span>
-                                        </a>
-                                    </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                                <?php else: ?>
-                                <?php $group_class = $__MENU__['group_class'][$key]; ?>
-                                <li class="<?php echo ($group_class); ?>">
-                                    <a href="#" class="dropdown-toggle">
-                                        <span class="menu-text"><?php echo ($key); ?></span>
-                                        <b class="arrow icon-angle-down"></b>
-                                    </a>
-                                    <ul class="submenu">
-                                        <?php if(is_array($sub_menu)): $i = 0; $__LIST__ = $sub_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>">
-                                                <a href="<?php echo _U($menu['url']);?>"><?php echo ($menu["title"]); ?></a>
-                                            </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                                    </ul>
-                                </li><?php endif; endif; ?>
-                        <!-- /子导航 --><?php endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-                <!-- /.nav-list -->
-                <div class="sidebar-collapse" id="sidebar-collapse">
-                    <i class="icon-double-angle-right" data-icon1="icon-double-angle-left"
-                       data-icon2="icon-double-angle-right"></i>
-                </div>
-                <script type="text/javascript">
-                    try {
-                        ace.settings.check('sidebar', 'collapsed')
-                    } catch (e) {
-                    }
-                </script>
-            </div>
-        
 
         <div class="main-content">
 
@@ -204,7 +165,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    <?php echo isset($info['id'])?'编辑':'新增';?>焦点图
+    修改昵称
 
                     </h1>
                 </div>
@@ -213,48 +174,26 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-        <div class="form-group">
-            <label>名称<span class="check-tips"></span></label>
-            <div>
-                <input type="text" class="text input-large" id="name" name="name" value="<?php echo ((isset($info["name"]) && ($info["name"] !== ""))?($info["name"]):''); ?>">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>排序<span class="check-tips">（用于分组显示的顺序）</span></label>
-            <div >
-                <input type="text" class="text input-small" id="sort" name="sort" value="<?php echo ((isset($info["sort"]) && ($info["sort"] !== ""))?($info["sort"]):0); ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <div id="upload-img-box">
-                <?php if($info['path']): ?><img class="block_img" src="<?php echo ($info['path']); ?>" height="70px" width="150px"/><?php endif; ?>
-            </div>
-            <input type="file" id="upload_file">
-            <input type="hidden" name="picture_id" id="file" value="<?php echo ((isset($info['id']) && ($info['id'] !== ""))?($info['id']):0); ?>"/>
-            </if>
-
-        </div>
-
-        <div class="form-group">
-            <label>链接<span class="check-tips">（如果没有链接的话请用###代替）</span></label>
-            <div>
-                <input type="text" id="url" class="text input-large" name="url" value="<?php echo ((isset($info["url"]) && ($info["url"] !== ""))?($info["url"]):''); ?>">
-            </div>
-        </div>
-        <div class="form-group">
-            <label>分组<span class="check-tips"></span></label>
-            <div >
-                <select name="group" id="group">
-                    <?php if(is_array($groups)): $i = 0; $__LIST__ = $groups;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>" ><?php echo ($vo); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <input type="hidden" name="id" id="info_id" value="<?php echo ((isset($info["id"]) && ($info["id"] !== ""))?($info["id"]):''); ?>">
-            <a class="btn btn-primary btn-sm " onclick="add()">确 定</a>
-            <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
-        </div>
+    <div class="tab-content">
+    <form action="<?php echo U();?>" method="post" class="form-horizontal normal-form" autocomplete="off">
+		<div class="form-group">
+			<label class="item-label">密码：<span class="check-tips">（请输入密码）</span></label>
+			<div class="controls">
+				<input type="password" name="password" class="text input-large"  autocomplete="off"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="item-label">姓名：<span class="check-tips">（请输入新姓名）</span></label>
+			<div class="controls">
+				<input type="text" name="nickname" class="text input-large" autocomplete="off" value="<?php echo user_field('nickname');?>"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="form-horizontal">确 认</button>
+			<button class="btn btn-sm " onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+	</form>
+	</div>
 
                         <!-- /.col -->
                     </div>
@@ -327,110 +266,6 @@
 
 
 
-    <script type="text/javascript" src="/xuegaobang/Public/vendor/uploadify/jquery.uploadify.min.js?ver=<?php echo time();?>"></script>
-    <script type="text/javascript">
-        Think.setValue("group", "<?php echo ((isset($info["group"]) && ($info["group"] !== ""))?($info["group"]): 'p-1'); ?>");
-        //上传文件
-        /* 初始化上传插件 */
-        $("#upload_file").uploadify({
-            "width": 120,
-            "height": 30,
-            "swf": "/xuegaobang/Public/vendor/uploadify/uploadify.swf",
-            "fileObjName": "download",
-            "buttonText": "上传图片",
-            "uploader": "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
-            'removeTimeout': 1,
-            'fileTypeExts': '*.png;*.jpg;*.bmp;*.gif;',
-            "onUploadSuccess": uploadFile,
-            'onFallback': function () {
-                alert('未检测到兼容版本的Flash.');
-            }
-        });
-
-        checkGroupType();
-        $("#group").change(function () {
-            checkGroupType();
-        });
-
-
-        function uploadFile(file, data) {
-            var json = $.parseJSON(data);
-            if (json.status) {
-                setTimeout(function () {
-                    $("#upload-img-box").empty().html(
-                            '<img class="block_img" src="'+Think.ROOT+json.path+'" height="70px" width="150px"/>'
-                    );
-                }, 1500);
-                $("#file").val(json.id);
-            } else {
-                errorAlert(json.msg);
-            }
-        }
-
-        function checkGroupType() {
-            var group = $("#group").val().split("-");
-            var group_type = group[0];
-            if (group_type == 't') {
-                $("#upload_file").hide();
-                $("#upload-img-box").hide();
-            } else {
-                $("#upload_file").show();
-                $("#upload-img-box").show();
-            }
-        }
-
-
-        function add() {
-            var name = $("#name").val();
-            var des = $("#url").val();
-            var file = $("#file").val();
-            var info_id = $('#info_id').val();
-            var group = $("#group").val().split("-");
-            var group_id = group[1];
-            var group_type = group[0];
-
-
-            if (name == "") {
-                errorAlert("名称不能为空!");
-                $("#name").focus();
-                return;
-            }
-            if (des == "") {
-                errorAlert("url不能为空!");
-                $("#url").focus();
-                return;
-            }
-
-
-            var data = {};
-            data.name = name;
-            data.url = des;
-            data.group= $("#group").val();
-            if(info_id!==''){
-                data.id = info_id;
-            }
-            if (group_type == 'p' && file==0) {
-                errorAlert("您必须上传一张图片!");
-                return;
-            }
-
-            if(group_type != 1){
-                data.picture_id=file;
-            }
-            $.post("<?php echo _U(__CURRENT_ACTION__);?>",data,function(datas){
-                if(datas.status){
-                    okAlert(datas.msg);
-                    setTimeout(function(){
-                        location.reload();
-
-                    },1500);
-                }else{
-                    errorAlert(datas.msg);
-                }
-
-            },'json');
-        }
-    </script>
 
 </body>
 </html>

@@ -20,7 +20,7 @@
 <body class="login-layout blur-login">
 
 <div class="main-container">
-<div class="main-content">
+<div class="main-content ">
 <div class="row">
 <div class="col-sm-10 col-sm-offset-1">
 <div class="login-container">
@@ -129,13 +129,13 @@
                     <fieldset>
                         <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
+															<input type="email" id="password_email"  class="form-control" placeholder="Email" />
 															<i class="icon-envelope"></i>
 														</span>
                         </label>
-
+                        <p id="back_error_tip" class="red"></p>
                         <div class="clearfix">
-                            <button type="button" class="width-35 pull-right btn btn-sm btn-danger">
+                            <button type="button" id="password_back" class="width-35 pull-right btn btn-sm btn-danger">
                                 <i class="icon-lightbulb-o"></i>
                                 <span class="bigger-110">确定</span>
                             </button>
@@ -244,7 +244,6 @@
 <!-- /.main-container -->
 
 <!-- 底部 -->
-<include file="Common@Base/head"/>
 <script  type="text/javascript">
     jQuery(function($) {
         $(document).on('click', '.toolbar a[data-target]', function(e) {
@@ -282,15 +281,31 @@
 
 
     $("#register_button").click(function(){
+        $(this).addClass("disabled");
         $.post("{:U('register')}", $("#register_form").serialize(),function(data){
+            $("#register_button").removeClass("disabled");
             if(data.status){
-                $("#register_error_tip").empty().text("注册成功!");
+                $("#register_error_tip").css('color',"green").empty().text("注册成功!");
                 setTimeout(function(){
                     location.href="{:U('index/index')}";
                 },1000);
             }else{
-                $("#register_error_tip").empty().text(data.msg);
+                $("#register_error_tip").css('color',"red").empty().text(data.msg);
             }
+            shake("#register_error_tip");
+        },'json');
+    });
+
+    $("#password_back").click(function(){
+        $(this).addClass("disabled");
+        $.post("{:U('getPasswordBack')}", {"email":$("#password_email").val()},function(data){
+            $("#password_back").removeClass("disabled");
+            if(data.status){
+                $("#back_error_tip").css('color',"green").empty().text(data.msg);
+            }else{
+                $("#back_error_tip").css('color',"red").empty().text(data.msg);
+            }
+            shake("#back_error_tip");
         },'json');
     });
 

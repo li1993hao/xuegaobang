@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class LinkApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:57:04
+ */
 class LinkApi {
     /**
      * 获得外部链接

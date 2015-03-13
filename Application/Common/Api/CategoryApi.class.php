@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class CategoryApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:56:32
+ */
 class CategoryApi {
     /**
      * 获取分类信息并缓存分类

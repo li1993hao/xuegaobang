@@ -29,9 +29,12 @@
                 <div><a href="javascript:;">{$module['module']['title']}</a></div>
                 <ul>
                     <volist name="module.apiClass" id="apiClass">
-                        <li data-id="{$apiClass['index']}" data-name="{$apiClass['name']}">
+                        <li data-index="{$apiClass['index']}" data-name="{$apiClass['name']}">
                             <div><a href="javascript:;">{$apiClass['name']}</a></div>
                             <ul>
+                                <li data-id="3" data-name="preface" class="active">
+                                    <div><a class="apiDoc jdi-class-doc" data-index="{$apiClass.index}"  href="javascript:;">说明</a></div>
+                                </li>
                                 <volist name="apiClass.method" id="method">
                                     <li data-name="{$method.name}">
                                         <div><a class="apiDoc" data-index="{$method.index}" href="javascript:;">{$method.name}</a></div>
@@ -62,6 +65,13 @@
             </ul>
         </p>
         <br/>
+    </div>
+    <div id="apiClass" style="display: none">
+        <h1 class="title" style="margin: 20px"></h1>
+        <div class="jdi-package"  style="margin: 20px"></div>
+        <div class="jdi-introduce"  style="margin: 20px"></div>
+        <div class="jdi-author"  style="margin: 20px"></div>
+        <div class="jdi-time"  style="margin: 20px"></div>
     </div>
     <div id="apiDetail" style="display: none">
         <h1 class="title" style="margin: 20px"></h1>

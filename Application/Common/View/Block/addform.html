@@ -100,6 +100,8 @@
                                             'removeTimeout'	  : 1,
                                             'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
                                             "onUploadSuccess" : uploadPicture{$field.name},
+                                             "fileSizeLimit"   :250,
+                                                'sizeLimit' 	 : 250*1024,
                                         'onFallback' : function() {
                                             alert('未检测到兼容版本的Flash.');
                                         }
@@ -346,6 +348,8 @@
                                                 "width"           : 120,
                                                 'removeTimeout'	  : 1,
                                                 'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+                                                "fileSizeLimit"   :250,
+                                                'sizeLimit' 	 : 250*1024,
                                                 "onUploadSuccess" : uploadPicture{$field.name},
                                                 "onFallback" : function() {
                                                     alert('未检测到兼容版本的Flash.');

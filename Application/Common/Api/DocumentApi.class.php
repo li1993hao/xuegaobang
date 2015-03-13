@@ -10,6 +10,12 @@
 // +----------------------------------------------------------------------
 
 namespace Common\Api;
+/**
+ * Class DocumentApi
+ * @package Common\Api
+ * @author lh
+ * @time 2015-03-07 09:56:53
+ */
 class DocumentApi {
     /**
      * 设置where查询条件sdadsa

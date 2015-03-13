@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -298,13 +298,9 @@
                 <th>发布人</th>
                 <th>相关评论</th>
                 <th>创建时间</th>
-<<<<<<< HEAD
-                <th>更新时间</th>
-=======
                 <th>置顶</th>
                 <th>推荐</th>
                 <th>设精</th>
->>>>>>> origin/master
                 <th>状态</th>
                 <th>操作</th>
             </tr>
@@ -319,11 +315,6 @@
                         </td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><?php echo get_user_filed($com.uid,"username");?></td>
-<<<<<<< HEAD
-                        <td><a title="查看评论"    href="<?php echo _U('comment?table=tieba&name='.$com['name'].'id='.$com['id']);?>">点击查看</a></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["update_time"])); ?></td>
-=======
                         <td><a title="查看评论"    href="<?php echo _U('comment?table=tieba&name='.$com['name'].'&id='.$com['id']);?>">点击查看</a></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
                         <th>
@@ -341,7 +332,6 @@
                                 <?php else: ?>
                                 <a title="取消设精" class="ajax-get"   href="<?php echo _U('excellent?status=0&id='.$com['id']);?>">取消设精</a><?php endif; ?>
                         </th>
->>>>>>> origin/master
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>

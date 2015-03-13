@@ -67,9 +67,16 @@ class CommonController extends ModuleController{
      */
     public function delComment(){
         $id    = array_unique((array)I('id',0));
+        if(empty($id)){
+            $this->error("请选择要操作的数据!");
+        }
+        $_id = $id[0];
+        $_count = count($id);
         $id    = is_array($id) ? implode(',',$id) : $id;
         $where = array('id' => array('in', $id ));
+        $result = M('Comment')->where(array('id'=>$_id))->field("topic_table,topic_id")->find();
         if(M('Comment')->where($where)->delete() !== false){
+            M($result['topic_table'])->where(array('id'=>$result['topic_id']))->setDec('comment_num',$_count);
             $this->success("删除成功!");
         }else{
             $this->success("删除失败!");

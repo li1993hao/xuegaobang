@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -233,10 +233,7 @@
                 </th>
                 <th>标题</th>
                 <th>状态</th>
-<<<<<<< HEAD
-=======
                 <th>时间</th>
->>>>>>> origin/master
                 <th>详情</th>
                 <th>操作</th>
             </tr>
@@ -251,10 +248,7 @@
                         </td>
                         <td><?php echo ($vo["title"]); ?></td>
                         <td><?php echo ($vo["status_text"]); ?></td>
-<<<<<<< HEAD
-=======
                         <th><?php echo (date("Y-m-d",$vo["create_time"])); ?></th>
->>>>>>> origin/master
                         <td><?php echo ($vo["detail"]); ?></td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>
@@ -262,7 +256,7 @@
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
-                <td colspan="5" class="text-center"> aOh! 暂时还没有通知!</td><?php endif; ?>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有通知!</td><?php endif; ?>
             </tbody>
         </table>
         <!-- 分页 -->

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    焦点图列表
+    <h1>配置管理</h1>
 
                     </h1>
                 </div>
@@ -215,37 +215,32 @@
                         
     <div>
         <div class="btn-group">
-            <?php if(isset($current_group)): if(is_array($groups)): foreach($groups as $key=>$vo): if(($current_group) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
+            <?php if(isset($_GET['group'])): if(is_array($group)): foreach($group as $key=>$vo): if(($group_id) == $key): ?><button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle"><?php echo ($vo); ?>
                             <span class="icon-caret-down icon-on-right"></span>
                         </button><?php endif; endforeach; endif; ?>
                 <?php else: ?>
                 <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">全部
                     <span class="icon-caret-down icon-on-right"></span>
                 </button><?php endif; ?>
+
             <ul class="dropdown-menu dropdown-primary">
-                <?php if(isset($current_group)): ?><li>
-                        <a href="<?php echo _U('index');?>" >全部</a>
-                    </li>
-                    <?php if(is_array($groups)): foreach($groups as $key=>$vo): ?><li>
-                            <?php if(($current_group) != $key): ?><a href="<?php echo _U('index?group='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
-                        </li><?php endforeach; endif; ?>
-                    <?php else: ?>
-                    <?php if(is_array($groups)): foreach($groups as $key=>$vo): ?><li>
-                            <a href="<?php echo _U('index?group='.$key);?>"><?php echo ($vo); ?></a>
-                        </li><?php endforeach; endif; endif; ?>
+                <?php if(isset($_GET['group'])): ?><li>
+                    <a href="<?php echo U('index');?>" >全部</a>
+                    </li><?php endif; ?>
+                <?php if(is_array($group)): foreach($group as $key=>$vo): ?><li>
+                        <?php if(($group_id) != $key): ?><a href="<?php echo U('index?group='.$key);?>"><?php echo ($vo); ?></a><?php endif; ?>
+                    </li><?php endforeach; endif; ?>
             </ul>
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('add');?>">新 增</a>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('changeStatus',array('method'=>'resume'));?>" target-form="ids">启 用</button>
-            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('changeStatus',array('method'=>'forbid'));?>" target-form="ids">禁 用</button>
-            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids" data-tip="确定要删除所选链接么?">删 除</button>
-            <button class="btn list_sort btn-sm btn-primary" >排序</button>
+            <a class="btn btn-sm btn-primary" href="<?php echo U('add');?>">新 增</a>
+            <a class="btn btn-sm btn-primary" href="javascript:;">删 除</a>
+            <button class="btn btn-sm btn-primary list_sort" url="<?php echo U('sort?group='.I('group'),'','');?>">排序</button>
         </div>
         <!-- 高级搜索 -->
         <div class="pull-right">
             <span class="input-icon">
-                <input type="text" placeholder="搜索..." autocomplete="off" id="search">
+                <input type="text" placeholder="请输入配置名称..." value="<?php echo I('name');?>" autocomplete="off" id="search">
                 <i class="icon-search"></i>
-			</span>
+            </span>
         </div>
     </div>
 
@@ -253,51 +248,40 @@
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <th class="center">
+                <th class="text-center">
                     <label>
                         <input type="checkbox" class="ace check-all">
                         <span class="lbl"></span>
                     </label>
                 </th>
                 <th>ID</th>
-                <th>排序</th>
                 <th>名称</th>
-                <th>URL</th>
-                <th>图片</th>
+                <th>标题</th>
                 <th>分组</th>
-                <th>分组id</th>
+                <th>类型</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$link): $mod = ($i % 2 );++$i;?><tr>
-                        <td class="center">
+            <?php if(!empty($list)): if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$config): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="text-center">
                             <label>
-                                <input type="checkbox" class="ids ace" name="ids[]" value="<?php echo ($link["id"]); ?>">
+                                <input class="ids ace" type="checkbox" name="id[]" value="<?php echo ($config["id"]); ?>">
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($link["id"]); ?></td>
-                        <td><?php echo ($link["sort"]); ?></td>
+                        <td><?php echo ($config["id"]); ?></td>
+                        <td><a href="<?php echo U('edit?id='.$config['id']);?>"><?php echo ($config["name"]); ?></a></td>
+                        <td><?php echo ($config["title"]); ?></td>
+                        <td><?php echo (get_config_group($config["group"])); ?></td>
+                        <td><?php echo (get_config_type($config["type"])); ?></td>
                         <td>
-                            <?php echo ($link["name"]); ?>
-                        </td>
-                        <td><?php echo ($link["url"]); ?></td>
-                        <td class="center">
-                        <?php if($link["picture_id"] != 0): ?><img src="<?php echo get_cover_path($link['picture_id']);?>" width="100px" height="50px"/>
-                            <?php else: ?>
-                            -<?php endif; ?></td>
-                        <td><?php echo get_link_group($link['group']);?></td>
-                        <td><?php echo ($link["group"]); ?></td>
-                        <td><?php if(($link["status"]) == "1"): ?><a href="<?php echo _U('changeStatus?method=forbid&ids='.$link['id']);?>" class="ajax-get">禁用</a>
-                            <?php else: ?>
-                            <a href="<?php echo _U('changeStatus?method=resume&ids='.$link['id']);?>" class="ajax-get">启用</a><?php endif; ?>
-                            <a class="confirm ajax-get" title="删除" href="<?php echo _U('del?ids='.$link['id']);?>">删除</a>
-                            <a title="编辑" href="<?php echo _U('edit?id='.$link['id']);?>">编辑</a>
+                            <a title="编辑" href="<?php echo U('edit?id='.$config['id']);?>">编辑</a>
+                            <a class="confirm ajax-get" title="删除" href="<?php echo U('del?id='.$config['id']);?>">删除</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
-                <td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
+                <td colspan="6" class="text-center"> aOh! 暂时还没有内容!</td><?php endif; ?>
             </tbody>
         </table>
         <!-- 分页 -->
@@ -378,29 +362,33 @@
 
 
     <script type="text/javascript">
-        $(function() {
+        $(function () {
+            //回车搜索
+            $("#search").keyup(function (e) {
+                if (e.keyCode === 13) {
+                    var url =  "<?php echo U(CONTROLLER_NAME.'/'.ACTION_NAME.'?name=PLACEHODLE');?>";
+                    var query = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                    return false;
+                }
+            });
+
             //点击排序
             $('.list_sort').click(function(){
-                var url ="<?php echo _U('sort?ids=PLACEHODLE');?>";
+                var url = $(this).attr('url');
                 var ids = $('.ids:checked');
                 var param = '';
-                if(ids.length == 0){
-                    ids = $('.ids'); //默认选中全部
-                }
-
                 if(ids.length > 0){
                     var str = new Array();
                     ids.each(function(){
                         str.push($(this).val());
                     });
                     param = str.join(',');
-                }else{
-                    errorAlert('请选中要操作的数据');
-                    return;
                 }
 
                 if(url != undefined && url != ''){
-                    window.location.href = url.replace('PLACEHODLE',param);
+                    window.location.href = url + '/ids/' + param;
                 }
             });
         });

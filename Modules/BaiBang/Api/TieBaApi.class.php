@@ -1,9 +1,13 @@
 <?php
 namespace Modules\BaiBang\Api;
+use Modules\Person\Api\CommentApi;
+use Modules\Person\Api\StaffApi;
+
 /**
- * Class SampleApi
+ * 帖子接口
  * @package Modules\BaiBang\Api
- * @author  lihao
+ * @author zl
+ * @time 2015-03-07 09:54:29
  */
 class TieBaApi {
     /**
@@ -20,7 +24,7 @@ class TieBaApi {
      * @param string $order 排序
      * @return array 结果
      */
-    public static function TieZilists($page=1,$page_size=10,$where=array(),$order = '`update_time` DESC'){
+    public static function TieZilists($page=1,$page_size=10,$where=array(),$order = '`is_top` DESC,`update_time` DESC'){
         $map['status'] = array('gt','0');
         if(is_string($where)){
             $map["_string"] = $where;
@@ -30,18 +34,46 @@ class TieBaApi {
         $model = M('Tieba')->field(true)->where($map)->order($order);
         $model->page($page,$page_size);
         $result = $model->select();
-
-        for($i=0;$i<count($result);$i++){
-            $user = get_user_filed($result[$i]['uid']);
-            $result[$i]['user_head'] = $user['head'];
-            $result[$i]['user_nickname'] = $user['nickname'];
+        if($result){
+            for($i=0;$i<count($result);$i++){
+                $user = get_user_filed($result[$i]['uid']);
+                $result[$i]['user_head'] = get_cover_path($user['head']);
+                $result[$i]['user_nickname'] = $user['nickname'];
+                if($result[$i]['comment_num'] > 10){
+                    $result[$i]['is_hot'] = 1;
+                }else{
+                    $result[$i]['is_hot'] = 0;
+                }
+                if($result[$i]['create_time'] > (NOW_TIME-(60*60*24*30))){
+                    $result[$i]['is_new'] = 1;
+                }else{
+                    $result[$i]['is_new'] = 0;
+                }
+                $result[$i]['create_time'] = formatTime($result[$i]['create_time']);
+            }
         }
+
         if(!$result){
             api_msg("暂无帖子!");
             return false;
         }else{
             return $result;
         }
+    }
+
+
+
+
+    public static function  getTezi($id){
+        $result = M('Tieba')->field(true)->where(array('id'=>$id))->find();
+        $user = get_user_filed($result['uid']);
+        $result['user_head'] = get_cover_path($user['head']);
+        $result['user_nickname'] = $user['nickname'];
+        $result['collect_num'] = StaffApi::staffNum("tieba",$result['id']);
+        $result['like_num'] = StaffApi::staffNum("tieba",$result['id'],"like");
+        $result['commentNum'] = CommentApi::commentNum("tieba",$result['id']);
+
+        return $result;
     }
 
     /**
@@ -63,7 +95,6 @@ class TieBaApi {
 
     /**
      * 编辑帖子
-     *
      */
     public static function editTiezi(){
         $Model  =   checkAttr(D('Tieba'),"Tieba");
@@ -78,7 +109,7 @@ class TieBaApi {
     /**
      * 删除贴子
      * @param int $id 贴子id
-     * @return mixed 返回结果 false：操作失败；1：成功； 0：删除失败
+     * @return mixed
      */
     public static function delTiezi($id=-1) {
         return $result = M("tieba")->where("id=".$id)->delete();

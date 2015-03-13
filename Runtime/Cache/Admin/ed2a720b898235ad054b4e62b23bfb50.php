@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):'jdicms内容管理框架'); ?></title>
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):C('WEB_SITE_TITLE')); ?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -152,51 +152,12 @@
         </a>
 
         
-            <div class="sidebar sidebar-fixed" id="sidebar">
-                <script type="text/javascript">
-                    try {
-                        ace.settings.check('sidebar', 'fixed')
-                    } catch (e) {
-                    }
-                </script>
+    <style>
+        .main-content{
+            margin-left: 0;
+        }
+    </style>
 
-                <ul class="nav nav-list">
-                    <?php if(!empty($_extra_menu)): ?>
-                        <?php echo extra_menu($_extra_menu,$__MENU__); endif; ?>
-                    <?php if(is_array($__MENU__["child"])): $i = 0; $__LIST__ = $__MENU__["child"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$sub_menu): $mod = ($i % 2 );++$i;?><!-- 子导航 -->
-                        <?php if(!empty($sub_menu)): if(empty($key)): if(is_array($sub_menu)): $i = 0; $__LIST__ = $sub_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>">
-                                        <a href="<?php echo _U($menu['url']);?>">
-                                            <span class="menu-text"><?php echo ($menu["title"]); ?></span>
-                                        </a>
-                                    </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                                <?php else: ?>
-                                <?php $group_class = $__MENU__['group_class'][$key]; ?>
-                                <li class="<?php echo ($group_class); ?>">
-                                    <a href="#" class="dropdown-toggle">
-                                        <span class="menu-text"><?php echo ($key); ?></span>
-                                        <b class="arrow icon-angle-down"></b>
-                                    </a>
-                                    <ul class="submenu">
-                                        <?php if(is_array($sub_menu)): $i = 0; $__LIST__ = $sub_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?><li class="<?php echo ((isset($menu["class"]) && ($menu["class"] !== ""))?($menu["class"]):''); ?>">
-                                                <a href="<?php echo _U($menu['url']);?>"><?php echo ($menu["title"]); ?></a>
-                                            </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                                    </ul>
-                                </li><?php endif; endif; ?>
-                        <!-- /子导航 --><?php endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-                <!-- /.nav-list -->
-                <div class="sidebar-collapse" id="sidebar-collapse">
-                    <i class="icon-double-angle-right" data-icon1="icon-double-angle-left"
-                       data-icon2="icon-double-angle-right"></i>
-                </div>
-                <script type="text/javascript">
-                    try {
-                        ace.settings.check('sidebar', 'collapsed')
-                    } catch (e) {
-                    }
-                </script>
-            </div>
-        
 
         <div class="main-content">
 
@@ -204,7 +165,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    新增模型
+    修改密码
 
                     </h1>
                 </div>
@@ -213,60 +174,34 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <!-- 表单 -->
-    <form id="form" action="<?php echo U('update');?>" method="post" class="form-horizontal ">
-        <div class="form-group">
-            <label class="item-label">父级模型<span class="check-tips">（选择父级模型将会继承父级模型的字段定义和约束）</span></label>
-            <div class="controls">
-                <select name="pid">
-                    <option value="0">无</option>
-                    <?php if(is_array($models)): $i = 0; $__LIST__ = $models;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$m): $mod = ($i % 2 );++$i;?><option value="<?php echo ($m["id"]); ?>"><?php echo ($m["name"]); ?>|<?php echo ($m["title"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="item-label">模型标识<span class="check-tips">（模型表名）</span></label>
-            <div class="controls">
-                <input type="text" class="text " name="name" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="item-label">模型名称<span class="check-tips">（请输入模型的名称,用于表单显示）</span></label>
-            <div class="controls">
-                <input type="text" class="text " name="title" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="item-label">模型组别<span class="check-tips">（模型组别）</span></label>
-            <div class="controls">
-                <select name="type">
-                    <?php if(is_array($types)): $i = 0; $__LIST__ = $types;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i;?><option value="<?php echo ($key); ?>"><?php echo ($t); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="item-label">引擎类型<span class="check-tips"></span></label>
-            <div class="controls">
-                <select name="engine_type">
-                    <option value="MyISAM">MyISAM</option>
-                    <option value="InnoDB">InnoDB</option>
-                    <option value="MEMORY">MEMORY</option>
-                    <option value="BLACKHOLE">BLACKHOLE</option>
-                    <option value="MRG_MYISAM">MRG_MYISAM</option>
-                    <option value="ARCHIVE">ARCHIVE</option>
-                </select>
-            </div>
-        </div>
-        <!-- 按钮 -->
-        <div class="form-group">
-            <label class="item-label"></label>
-            <div class="controls edit_sort_btn">
-                <button class="btn btn-sm btn-primary ajax-post no-refresh" type="submit" target-form="form-horizontal">确 定</button>
-                <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
-            </div>
-        </div>
-    </form>
+		<div class="tab-content">
+	<!-- 修改密码表单 -->
+	<form action="<?php echo U();?>" method="post" class="form-horizontal normal-form">
+		<div class="form-group">
+			<label class="item-label">原密码：</label>
+			<div class="controls">
+				<input type="password" name="old" class="text input-large" autocomplete="off" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="item-label">新密码：</label>
+			<div class="controls">
+				<input type="password" name="password" class="text input-large" autocomplete="off" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="item-label">确认密码：</label>
+			<div class="controls">
+				<input type="password" name="repassword" class="text input-large" autocomplete="off" />
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="form-horizontal">确 认</button>
+			<button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+	</form>
+			</div>
+	</div>
 
                         <!-- /.col -->
                     </div>
