@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    产品管理
+    用户管理
 
                     </h1>
                 </div>
@@ -216,7 +216,9 @@
     <!--"Modules://BaiBang@index/aa"-->
     <div>
         <div class="btn-group">
-            <!--<a class="btn btn-sm btn-primary" href="<?php echo U('addCompetition');?>">新 增</a>-->
+            <a class="btn btn-sm btn-primary" href="<?php echo _U('add');?>">新 增</a>
+            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
+            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
             <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
                     data-tip="确定要删除么?">删 除
             </button>
@@ -227,7 +229,7 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索产品名称.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索用户昵称,按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -243,8 +245,15 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td>产品名称：<input type="text" name="query_name" ></td>
-                            <td>公司名称：<input type="text" name="query_company" ></td>
+                            <td>用户名：<input type="text" name="query_username"></td>
+                            <td>用户昵称：<input type="text" name="query_nickname"></td>
+                            <td>用户类型：
+                                <select name="query_type">
+                                    <option value="">不限</option>
+                                    <option value="1">企业用户</option>
+                                    <option value="2">普通用户</option>
+                                </select>
+                            </td>
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -259,8 +268,6 @@
                     </table>
                 </div>
             </div>
-
-
         </form>
     </div>
     <div class="table-responsive">
@@ -273,17 +280,14 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>产品id</th>
-                <th>产品名称</th>
+                <th>用户名</th>
+                <th>昵称</th>
                 <th>公司名称</th>
-                <th>产品发布者</th>
-                <th>点赞数量</th>
-                <th>收藏数量</th>
-                <th>评论数量</th>
-                <th>创建时间</th>
+                <th>登录次数</th>
+                <th>类型</th>
+                <th>评论次数</th>
+                <th>最后登录时间</th>
                 <th>状态</th>
-                <th>置顶</th>
-                <th>推荐</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -295,32 +299,38 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["id"]); ?></td>
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
-                        <td><?php echo get_user_filed($com.uid,"username");?></td>
-                        <td><?php echo ($com["like_num"]); ?></td>
-                        <td><?php echo ($com["collect_num"]); ?></td>
-                        <td><?php echo ($com["comment_num"]); ?></td>
-                        <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
+                        <td><?php echo ($com["username"]); ?></td>
+                        <td>
+                            <?php if($com["type"] == 1): ?><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a>
+                                <?php else: ?>
+                                <?php echo ($com["nickname"]); endif; ?>
+                        </td>
+                        <td>
+                            <?php if($com["type"] == 1): echo (get_company_name($com["id"])); ?>
+                                <?php else: ?>
+                                --<?php endif; ?>
+                        </td>
+                        <td><?php echo ($com["login_times"]); ?></td>
+                        <td>
+                            <?php if($com["type"] == 1): ?>公司
+                                <?php else: ?>
+                                普通用户<?php endif; ?>
+                        </td>
+                        <td>
+                            <?php if($com["type"] == 1): echo \Modules\Person\Api\CommentApi::commentNum("company",get_company_id($com['id'])) ?>
+                             <?php else: ?>
+                                --<?php endif; ?>
+                        </td>
+                        <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
                         </td>
-                        <th>
-                            <?php if($com['is_top'] == 0): ?><a title="置顶" class="ajax-get"   href="<?php echo _U('top?status=1&id='.$com['id']);?>">置顶</a>
-                                <?php else: ?>
-                                <a title="取消置顶" class="ajax-get"   href="<?php echo _U('top?status=0&id='.$com['id']);?>">取消置顶</a><?php endif; ?>
-                        </th>
-                        <th>
-                            <?php if($com['recommend'] == 0): ?><a title="推荐" class="ajax-get"   href="<?php echo _U('recommend?status=1&id='.$com['id']);?>">推荐</a>
-                                <?php else: ?>
-                                <a title="取消推荐" class="ajax-get"   href="<?php echo _U('recommend?status=0&id='.$com['id']);?>">取消推荐</a><?php endif; ?>
-                        </th>
                         <td>
-                            <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>">相关评论</a>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
+                            <?php if(($com["type"]) == "1"): ?><a title="查看评论"    href="<?php echo _U('member/comment?table=company&name='.$com['nickname'].'&id='.get_company_id($com['id']));?>">相关评论 </a>
+                                <a title="公司产品"    href="<?php echo _U('production/index?query_uid='.$com['id']);?>">公司产品 </a><?php endif; ?>
+                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del',array('id'=>$com['id'],'controller'=>'member'));?>">删除</a>
+                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'member'));?>">启用</a><?php endif; ?>
+                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid',array('id'=>$com['id'],'controller'=>'member'));?>">禁用</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
@@ -348,7 +358,6 @@
     <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" style="text-align:center"></h4>
@@ -424,7 +433,6 @@
 
 
 
-
     <script>
         $('#adv_show').click(function(){
             var ele = $(this).find('i');
@@ -443,7 +451,8 @@
             var url = "<?php echo _U('info');?>";
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
-            $.post(url,{'id':id,"company":$(this).data("company")},function(data){
+            $("#print_single").data('id',id);
+            $.post(url,{'id':id,'controller':"company"},function(data){
                 if($.isPlainObject(data)){
                     $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
                 }else{
@@ -456,7 +465,7 @@
             //回车搜索
             $("#search").keyup(function(e) {
                 if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('index?query_name=PLACEHODLE');?>";
+                    var url =  "<?php echo _U('index?query_nickname=PLACEHODLE');?>";
                     var query = $('#search').val();
                     url = url.replace('PLACEHODLE',query);
                     window.location.href = url;

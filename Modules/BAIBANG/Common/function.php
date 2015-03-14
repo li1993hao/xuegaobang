@@ -11,3 +11,11 @@ function get_company_id($uid){
     return $company['id'];
 }
 
+function get_company_name($uid){
+    $company = M("company")->where("uid=".$uid)->field("name")->find();
+    if($company){
+        return $company['name'];
+    }else{
+        return "未填写";
+    }
+}

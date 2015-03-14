@@ -9,16 +9,6 @@ use Modules\Person\Api\StaffApi;
  * @package Modules\BaiBang\Controller
  */
 class ProductionController extends CommonController {
-    /**
-     * 搜索功能
-     */
-    public function search(){
-        $map = $this->searc_parse();
-        $result = $this->p_lists('Production',$map,'',array(),true);
-        $this->assign('type',1);
-        $this->assign('list',$result);
-        $this->_display('index');
-    }
     private function searc_parse(){
         $map = array();
         $team_map = array(); //模版赋值
@@ -34,8 +24,8 @@ class ProductionController extends CommonController {
                     $team_map[$k] = $v;
                     continue;
                 }
-                if($kk[1] == "vender"){
-                    $map[] = "vender LIKE '%{$v}%'";
+                if($kk[1] == "company"){
+                    $map[] = "company LIKE '%{$v}%'";
                     $team_map[$k] = $v;
                     continue;
                 }
@@ -63,8 +53,6 @@ class ProductionController extends CommonController {
             $company = M("company")->where("name = '$company_name'")->find();
             $id = $company['id'];
         }
-//        $modelType = I("controller");
-//        $name = empty($modelType) ? "production" : $modelType;
         ThinkController::info($name, $id, '','public/info');
     }
 
@@ -73,11 +61,11 @@ class ProductionController extends CommonController {
      */
     public function  index(){
         MK();
-        $map  = array('status' => array('gt',-1));
+        $map = $this->searc_parse();
+        $map['status']  = array('gt',-1);
         $list = $this->p_lists('Production',$map,'is_top desc,create_time desc');
         int_to_string($list);
         $list = list_sort_by($list,'status');
-
         for($i=0;$i<count($list);$i++){
             $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
             $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
@@ -87,13 +75,5 @@ class ProductionController extends CommonController {
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();
-    }
-
-    /**
-     * 产品审核
-     */
-    public function verify(){
-        echo "verify";
-//        $this->_display();
     }
 }

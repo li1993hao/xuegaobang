@@ -91,9 +91,11 @@ class CommonController extends ModuleController{
         $name = I('get.name');
         $id = I('get.id');
         $this->assign('meta_title',$name.'的相关评论');
-        $map  = array('topic_table'=>$table_name,'topic_id'=>$id);
-        $list = $this->p_lists('Comment',$map,'update_time');
-        $this->assign('list',$list);
+        if(is_numeric($id) && $id>0){
+            $map  = array('topic_table'=>$table_name,'topic_id'=>$id);
+            $list = $this->p_lists('Comment',$map,'update_time');
+            $this->assign('list',$list);
+        }
         $this->_display("common/comment");
     }
 }

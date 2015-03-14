@@ -216,7 +216,7 @@
     <!--"Modules://BaiBang@index/aa"-->
     <div>
         <div class="btn-group">
-            <a class="btn btn-sm btn-primary" href="<?php echo _U('save');?>">新 增</a>
+            <a class="btn btn-sm btn-primary" href="<?php echo _U('add');?>">新 增</a>
             <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">启 用</button>
             <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('forbid');?>" target-form="ids">禁 用</button>
             <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
@@ -229,13 +229,13 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索用户名称,按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索用户昵称,按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
     </div>
     <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
+        <form class="search-form" method="post" action="<?php echo _U('index');?>">
             <div class="panel-body table-responsive">
                 <div class="panel-heading clearfix">
                     <div class="pull-right">
@@ -245,8 +245,8 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td>名称：<input type="text" name="query_username"></td>
-                            <td>昵称：<input type="text" name="query_nickname"></td>
+                            <td>用户名：<input type="text" name="query_username"></td>
+                            <td>用户昵称：<input type="text" name="query_nickname"></td>
                             <td>用户类型：
                                 <select name="query_type">
                                     <option value="">不限</option>
@@ -263,7 +263,6 @@
                                     <option value="3">未通过</option>
                                 </select>
                             </td>
-
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -278,8 +277,6 @@
                     </table>
                 </div>
             </div>
-
-
         </form>
     </div>
     <div class="table-responsive">
@@ -295,7 +292,7 @@
                 <th>用户名</th>
                 <th>昵称</th>
                 <th>登录次数</th>
-                <th>类别</th>
+                <th>类型</th>
                 <th>最后登录时间</th>
                 <th>状态</th>
                 <th>操作</th>
@@ -318,6 +315,10 @@
 
                         <td><?php echo ($com["login_times"]); ?></td>
                         <td>
+                            <?php if($com["type"] == 1): ?>公司
+                                <?php else: ?>
+                                普通用户<?php endif; ?>
+                        </td>
                         </td>
                         <td><?php echo (date("Y-m-d h:i",$com["last_login_time"])); ?></td>
                         <td>
@@ -355,7 +356,6 @@
     <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h4 class="modal-title" style="text-align:center"></h4>
@@ -431,7 +431,6 @@
 
 
 
-
     <script>
         $('#adv_show').click(function(){
             var ele = $(this).find('i');
@@ -448,14 +447,16 @@
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
-            console.log(id+"++++ "+ url);
-
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
             $("#print_single").data('id',id);
             $.post(url,{'id':id,'controller':"company"},function(data){
-                console.log(data);
-                $("#user_info .modal-body").empty().html(data);
+                if($.isPlainObject(data)){
+                    $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
+                }else{
+                    $("#user_info .modal-body").empty().html(data);
+
+                }
             });
         });
 
@@ -463,7 +464,7 @@
             //回车搜索
             $("#search").keyup(function(e) {
                 if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
+                    var url =  "<?php echo _U('index?query_nickname=PLACEHODLE');?>";
                     var query = $('#search').val();
                     url = url.replace('PLACEHODLE',query);
                     window.location.href = url;

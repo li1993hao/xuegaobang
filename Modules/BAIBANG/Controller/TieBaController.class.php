@@ -21,16 +21,7 @@ class TiebaController extends CommonController{
             $this->error('参数不合法!');
         }
     }
-    /**
-     * 搜索功能
-     */
-    public function search(){
-        $map = $this->searc_parse();
-        $result = $this->p_lists('tieba',$map,'',array(),true);
-        $this->assign('type',1);
-        $this->assign('list',$result);
-        $this->_display('index');
-    }
+
 
     private function searc_parse(){
         $map = array();
@@ -47,8 +38,13 @@ class TiebaController extends CommonController{
                     $team_map[$k] = $v;
                     continue;
                 }
-                if($kk[1] == "vender"){
-                    $map[] = "BINARY 'vender' LIKE '%{$v}%'";
+                if($kk[1] == "nickname"){
+                    $result = M('Member')->where(array('_string'=>"BINARY `nickname` LIKE '%{$v}%'"))->field('id')->select();
+                    if($result){
+                        $map['uid'] = array('in',arr2str(array_column($result,"id")));
+                    }else{
+                        $map['uid'] = -1;
+                    }
                     $team_map[$k] = $v;
                     continue;
                 }
@@ -75,7 +71,8 @@ class TiebaController extends CommonController{
      */
     public function index(){
         MK();
-        $map  = array('status' => array('gt',-1));
+        $map = $this->searc_parse();
+        $map['status']  =  array('gt',-1);
         $list = $this->p_lists('tieba',$map,'is_top desc,create_time desc');
         int_to_string($list);
         $list = list_sort_by($list,'status');

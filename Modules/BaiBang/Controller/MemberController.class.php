@@ -7,17 +7,11 @@ use Common\Controller\ThinkController;
  * Class ProductionController
  * @package Modules\BaiBang\Controller
  */
-class UserController extends CommonController
+class MemberController extends CommonController
 {
     public function index(){
-        $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
-        $map['type'] = array('gt',0);
-        if(is_numeric($nickname)){
-            $map['id']=   array('id'=>$nickname);
-        }else if(isset($nickname)){
-            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
-        }
+        $map = $this->search_parse();
+        $map['status'] = array('gt',-1);
         $model =D('Member');
         $list   = $this->p_lists($model, $map,'id asc');
         int_to_string($list);
@@ -26,31 +20,6 @@ class UserController extends CommonController
         $this->_display();
     }
 
-//    public function info() {
-//        $id = I("id");
-//        if (is_numeric($id)) {
-//            if(I("controller")){
-//                parent::info("company");
-//                return;
-//            }
-//            $user = M("member")->find($id);
-//            switch($user['type']){
-//                case  0:
-//                $user['type_text'] = '<span class="label label-warning ">佰帮</span>';
-//                break;
-//                case  1:
-//                $user['type_text'] = '<span class="label label-warning ">企业用户</span>';
-//                break;
-//                case  2:
-//                $user['type_text'] = '<span class="label label-warning ">普通用户</span>';
-//                break;
-//            }
-//            $this->assign("user", $user);
-//            $this->_display();
-//        } else {
-//            $this->error('参数不合法!');
-//        }
-//    }
     public function info() {
         $id = I("id");
         ThinkController::info('company',array("uid"=>$id),'','public/info');
@@ -58,7 +27,7 @@ class UserController extends CommonController
     /**
      * 添加或者修改
      */
-    public function save($username = '', $password = '', $nickname='' ,$repassword = '', $email = ''){
+    public function add($username = '', $password = '', $nickname='' ,$repassword = '', $email = ''){
         if(IS_POST){
             /* 检测密码 */
             if($password != $repassword){
@@ -80,21 +49,6 @@ class UserController extends CommonController
             $this->_display("add");
         }
     }
-    /**
-     * 搜索功能
-     */
-    public function search(){
-        $map = $this->search_parse();
-        $map[] = 'status > 0';
-        $map[] = 'type > 0';
-        $model =D('Member');
-        $result = $this->p_lists($model, $map,'',array());
-        int_to_string($result);
-
-        $this->assign('type',1);
-        $this->assign('list',$result);
-        $this->_display('index');
-    }
     private function search_parse(){
         $map = array();
         $team_map = array(); //模版赋值
@@ -114,7 +68,7 @@ class UserController extends CommonController
                     $map[] = "nickname LIKE '%{$v}%'";
                     $team_map[$k] = $v;
                     continue;
-                }if($kk[1] == 'status'){//模糊查询
+                }if($kk[1] == 'status'){
                     $map['status'] = $v;
                     $team_map[$k] = $v;
                     continue;
@@ -139,34 +93,11 @@ class UserController extends CommonController
         $this->assign('where',$team_map);
         return $map;
     }
-    private function isType(){
-        return I("controller")==''?'member' : I("controller");
-    }
-    /**
-     * 删除数据
-     */
-    public function  del(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>-1),null);
-    }
-    /**
-     * 禁用数据
-     */
-    public function  forbid(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>0),null);
-    }
-    /**
-     * 恢复数据
-     */
-    public function resume(){
-        $str = $this->isType();
-        parent::editRow($str,array('status'=>1),null);
-    }
+
 
     public function verify(){
+        $map = $this->search_parse();
         $map['status']  =   array('eq',2);
-
         $list   = $this->p_lists("Company", $map,'id asc');
         int_to_string($list);
         //        int_to_string($list,

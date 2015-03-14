@@ -2,6 +2,7 @@
 
 namespace Modules\BaiBang;
 use Common\Controller\Module;
+use Modules\Person\Api\CommentApi;
 
 /**
  *
@@ -19,6 +20,7 @@ class BaiBangModule extends Module{
     public $enter_action = "index";//入口方法
 
     public function install(){
+
         return true;
     }
 

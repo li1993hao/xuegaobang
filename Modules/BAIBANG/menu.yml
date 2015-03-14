@@ -21,14 +21,14 @@
           url: tieba/comment
 用户:
   - title: 用户管理
-    url: user/index
-  - title: 公司审核
-    url: user/verify
+    url: member/index
     children:
-        - title: 搜索
-          url: user/search
-        - title: 评论
-          url: user/comment
+          - title: 新增
+            url: member/add
+          - title: 评论
+            url: member/comment
+  - title: 公司审核
+    url: member/verify
 焦点:
   - title: 焦点图管理
     url: hotMap/index

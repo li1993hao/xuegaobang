@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    产品管理
+    贴子管理
 
                     </h1>
                 </div>
@@ -227,7 +227,7 @@
                 <i class="icon-chevron-up"></i>
             </a>
             <span class="input-icon">
-                <input type="text" placeholder="搜索产品名称.按回车搜索" autocomplete="off" id="search">
+                <input type="text" placeholder="搜索帖子标题.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
 			</span>
         </div>
@@ -243,8 +243,8 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td>产品名称：<input type="text" name="query_name" ></td>
-                            <td>公司名称：<input type="text" name="query_company" ></td>
+                            <td>帖子标题：<input type="text" name="query_name" ></td>
+                            <td>发帖人：<input type="text" name="query_nickname" ></td>
                             <td>每页显示数量：
                                 <select name="r">
                                     <option value="10">10</option>
@@ -259,8 +259,6 @@
                     </table>
                 </div>
             </div>
-
-
         </form>
     </div>
     <div class="table-responsive">
@@ -273,17 +271,15 @@
                         <span class="lbl"></span>
                     </label>
                 </th>
-                <th>产品id</th>
-                <th>产品名称</th>
-                <th>公司名称</th>
-                <th>产品发布者</th>
-                <th>点赞数量</th>
-                <th>收藏数量</th>
+                <th>标题</th>
+                <th>发贴人</th>
                 <th>评论数量</th>
+                <th>相关评论</th>
                 <th>创建时间</th>
-                <th>状态</th>
                 <th>置顶</th>
                 <th>推荐</th>
+                <th>设精</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -295,17 +291,11 @@
                                 <span class="lbl"></span>
                             </label>
                         </td>
-                        <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
-                        <td><?php echo get_user_filed($com.uid,"username");?></td>
-                        <td><?php echo ($com["like_num"]); ?></td>
-                        <td><?php echo ($com["collect_num"]); ?></td>
+                        <td><?php echo get_user_filed($com['uid'],"nickname");?></td>
                         <td><?php echo ($com["comment_num"]); ?></td>
+                        <td><a title="查看评论"    href="<?php echo _U('comment?table=tieba&name='.$com['name'].'&id='.$com['id']);?>">点击查看</a></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
-                        <td>
-                            <?php echo ($com["status_text"]); ?>
-                        </td>
                         <th>
                             <?php if($com['is_top'] == 0): ?><a title="置顶" class="ajax-get"   href="<?php echo _U('top?status=1&id='.$com['id']);?>">置顶</a>
                                 <?php else: ?>
@@ -316,8 +306,16 @@
                                 <?php else: ?>
                                 <a title="取消推荐" class="ajax-get"   href="<?php echo _U('recommend?status=0&id='.$com['id']);?>">取消推荐</a><?php endif; ?>
                         </th>
+                        <th>
+                            <?php if($com['excellent'] == 0): ?><a title="设精" class="ajax-get"   href="<?php echo _U('excellent?status=1&id='.$com['id']);?>">设精</a>
+                                <?php else: ?>
+                                <a title="取消设精" class="ajax-get"   href="<?php echo _U('excellent?status=0&id='.$com['id']);?>">取消设精</a><?php endif; ?>
+                        </th>
                         <td>
-                            <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>">相关评论</a>
+                            <?php echo ($com["status_text"]); ?>
+                        </td>
+                        <td>
+
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
                             <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
                             <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
@@ -441,14 +439,14 @@
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
+            console.log(id+"++++ "+ url);
+
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
-            $.post(url,{'id':id,"company":$(this).data("company")},function(data){
-                if($.isPlainObject(data)){
-                    $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
-                }else{
-                    $("#user_info .modal-body").empty().html(data);
-                }
+            $("#print_single").data('id',id);
+            $.post(url,{'id':id},function(data){
+                console.log(data);
+                $("#user_info .modal-body").empty().html(data);
             });
         });
 
@@ -456,7 +454,7 @@
             //回车搜索
             $("#search").keyup(function(e) {
                 if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('index?query_name=PLACEHODLE');?>";
+                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
                     var query = $('#search').val();
                     url = url.replace('PLACEHODLE',query);
                     window.location.href = url;

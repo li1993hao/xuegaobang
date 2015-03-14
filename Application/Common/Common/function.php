@@ -136,7 +136,8 @@ function user_field($field){
  * @return mixed
  */
 function get_user_filed($uid,$field=''){
-    return api('User/get_user_field',array('uid'=>$uid,'field'=>$field));
+    $result = \Common\Api\UserApi::get_user_field($uid,$field);
+    return $result;
 }
 /**获得制定id的用户昵称
  * @param $uid

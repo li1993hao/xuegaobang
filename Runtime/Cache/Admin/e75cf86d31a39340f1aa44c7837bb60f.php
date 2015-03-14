@@ -233,7 +233,7 @@
         </div>
     </div>
     <div class="panel panel-default" id="adv_search" style="display:none">
-        <form class="search-form" method="post" action="<?php echo _U('search');?>">
+        <form class="search-form" method="post" action="<?php echo _U('index');?>">
             <div class="panel-body table-responsive">
                 <div class="panel-heading clearfix">
                     <div class="pull-right">
@@ -243,7 +243,7 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <tr>
-                            <td>名称：<input type="text" name="query_name" ></td>
+                            <td>产品名称：<input type="text" name="query_name" ></td>
                             <td>公司名称：<input type="text" name="query_company" ></td>
                             <td>每页显示数量：
                                 <select name="r">
@@ -298,7 +298,7 @@
                         <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
-                        <td><?php echo get_user_filed($com.uid,"username");?></td>
+                        <td><?php echo get_user_filed($com['uid'],"username");?></td>
                         <td><?php echo ($com["like_num"]); ?></td>
                         <td><?php echo ($com["collect_num"]); ?></td>
                         <td><?php echo ($com["comment_num"]); ?></td>
@@ -441,12 +441,14 @@
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
-
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
-            $("#print_single").data('id',id);
             $.post(url,{'id':id,"company":$(this).data("company")},function(data){
-                $("#user_info .modal-body").empty().html(data);
+                if($.isPlainObject(data)){
+                    $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
+                }else{
+                    $("#user_info .modal-body").empty().html(data);
+                }
             });
         });
 
@@ -454,7 +456,7 @@
             //回车搜索
             $("#search").keyup(function(e) {
                 if (e.keyCode === 13) {
-                    var url =  "<?php echo _U('search?query_name=PLACEHODLE');?>";
+                    var url =  "<?php echo _U('index?query_name=PLACEHODLE');?>";
                     var query = $('#search').val();
                     url = url.replace('PLACEHODLE',query);
                     window.location.href = url;

@@ -110,6 +110,9 @@ class CommentApi {
      * @return mixed
      */
      static  public function commentNum($topic_table,$topic_id){
+         if(empty($topic_id)){
+             return 0;
+         }
         $map['topic_table'] = $topic_table;
         $map['topic_id'] = $topic_id;
         return D('Comment')->where($map)->count(); //评论数量,不包括回复数量
