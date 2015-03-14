@@ -49,7 +49,9 @@ class ContentController extends ThinkController {
         if(!is_administrator()){//得到该用户的授权管理菜单
             $auth =  AuthGroupModel::getAuthCategories(UID);
             if(!$auth){
-                $this->error('未授权访问');
+                $this->assign("nodeList");
+                $this->display();
+                return;
             }else{
                 $map['id']= array('in',$auth);
             }

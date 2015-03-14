@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    分类列表
+    栏目授权
 
                     </h1>
                 </div>
@@ -214,46 +214,56 @@
                     <div class="col-xs-12">
                         
     <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>排序</th>
-            <th>ID</th>
-            <th>分类名称</th>
-            <th>类型</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr>
-                    <td><?php echo ($node["sort"]); ?></td>
-                    <td><?php echo ($node["id"]); ?></td>
-                    <td>
-                        <?php $__FOR_START_75719985__=0;$__FOR_END_75719985__=$node["level"];for($i=$__FOR_START_75719985__;$i < $__FOR_END_75719985__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
-                                    <?php else: ?>
-                                    |--<?php endif; ?>
+        <form action="<?php echo U('addToCategory');?>"  class="form-horizontal">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="center">
+                    <label>
+                        <input type="checkbox" class="ace check-all">
+                        <span class="lbl"></span>
+                    </label>
+                </th>
+                <th>栏目名称</th>
+                <th>栏目类型</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr class="level" data-level="<?php echo ($node['level']); ?>">
+                        <td class="center">
+                            <label>
+                                <?php if(in_array($node['id'],$authed_group)): ?><input type="checkbox" class="ace ids" value="<?php echo ($node["id"]); ?>" checked="true"  name="cid[]">
                                 <?php else: ?>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
-                        <?php echo ($node["name"]); ?>
-                    </td>
-                    <td>
-                        <?php switch($node["type"]): case "1": ?>分类<?php break;?>
-                            <?php case "2": ?>单页面<?php break;?>
-                            <?php case "3": ?>外部链接<?php break;?>
-                            <?php default: ?>
-                            栏目<?php endswitch;?>
-                    </td>
-                    <td>
-                        <?php if($node['type'] == 1): ?><a href="<?php echo U('add?category_id='.$node['id']);?>">添加内容</a>|
-                            <a href="<?php echo U('news?category_id='.$node['id']);?>">查看</a><?php endif; ?>
-                        <?php if($node['type'] == 2): ?><a href="<?php echo U('edit?category_id='.$node['id']);?>">修改</a><?php endif; ?>
-                        </switch></td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            <?php else: ?>
-            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
+                                    <input type="checkbox" class="ace ids" value="<?php echo ($node["id"]); ?>"  name="cid[]"><?php endif; ?>
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td>
+                            <?php $__FOR_START_207072856__=0;$__FOR_END_207072856__=$node["level"];for($i=$__FOR_START_207072856__;$i < $__FOR_END_207072856__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?><span >|__</span>
+                                        <?php else: ?>
+                                        <span>|--</span><?php endif; ?>
+                                    <?php else: ?>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
+                            <?php echo ($node["name"]); ?>
+                        </td>
+                        <td>
+                            <?php switch($node["type"]): case "1": ?>栏目<?php break;?>
+                                <?php case "2": ?>单页面<?php break;?>
+                                <?php default: ?>
+                                栏目<?php endswitch;?>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                <?php else: ?>
+                <tr><td colspan="3"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+            <input type="hidden" value="<?php echo ($this_group); ?>" name="group_id"/>
+        </form>
+        <div class="form-group">
+            <button class="btn btn-primary btn-sm ajax-post"  type="submit"  target-form="form-horizontal">确 定</button>
+            <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
     </div>
 
                         <!-- /.col -->
@@ -327,6 +337,72 @@
 
 
 
+    <script type="text/javascript">
+        $('.ids').change(function(){
+            var tr = $(this).parents('.level');
+            var currentLevel = getLevel(tr);
+            var status = $(this).prop('checked');
+
+            var ob = getNextLevel(tr);
+            //下层检测
+            while(true){
+                if(ob.level == 0||ob.level===undefined){
+                    break;
+                }
+                if(ob.level>currentLevel){
+                    $($(ob.tr).find("input[type='checkbox']")).prop('checked',status);
+                }else{
+                    break;
+                }
+                ob = getNextLevel(ob.tr); //指针替换
+            }
+
+
+
+            if(currentLevel != 0){ //根节点不做上层检测
+                ob = getPreLevel(tr);
+                //上层检测
+                while(true){
+                    if(ob.level == 0||ob.level===undefined){
+                        if(status && ob.level == 0){
+                            $($(ob.tr).find("input[type='checkbox']")).prop('checked',true);
+                        }
+                        break;
+                    }
+                    if(ob.level<currentLevel){
+                        if(status){
+                            $($(ob.tr).find("input[type='checkbox']")).prop('checked',true);
+                        }
+                    }
+                    ob = getPreLevel(ob.tr); //指针替换
+                }
+            }
+        });
+
+        /**
+         * 获得下一行层次
+         * @param current
+         */
+        function getNextLevel(tr){
+            var nextTr = $(tr).next('tr');
+            var level = getLevel(nextTr);
+            return {'level':level,'tr':nextTr};
+        }
+
+        /**
+         * 获得上一行的层次
+         * @param current
+         */
+        function getPreLevel(tr){
+            var preTr = $(tr).prev('tr');
+            var level = getLevel(preTr);
+            return {'level':level,'tr':preTr};
+        }
+
+        function getLevel(tr){
+            return $(tr).data('level');
+        }
+    </script>
 
 </body>
 </html>

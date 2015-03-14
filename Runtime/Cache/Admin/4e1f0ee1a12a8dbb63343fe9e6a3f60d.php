@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    分类列表
+    新增用户
 
                     </h1>
                 </div>
@@ -213,48 +213,36 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>排序</th>
-            <th>ID</th>
-            <th>分类名称</th>
-            <th>类型</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr>
-                    <td><?php echo ($node["sort"]); ?></td>
-                    <td><?php echo ($node["id"]); ?></td>
-                    <td>
-                        <?php $__FOR_START_75719985__=0;$__FOR_END_75719985__=$node["level"];for($i=$__FOR_START_75719985__;$i < $__FOR_END_75719985__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
-                                    <?php else: ?>
-                                    |--<?php endif; ?>
-                                <?php else: ?>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
-                        <?php echo ($node["name"]); ?>
-                    </td>
-                    <td>
-                        <?php switch($node["type"]): case "1": ?>分类<?php break;?>
-                            <?php case "2": ?>单页面<?php break;?>
-                            <?php case "3": ?>外部链接<?php break;?>
-                            <?php default: ?>
-                            栏目<?php endswitch;?>
-                    </td>
-                    <td>
-                        <?php if($node['type'] == 1): ?><a href="<?php echo U('add?category_id='.$node['id']);?>">添加内容</a>|
-                            <a href="<?php echo U('news?category_id='.$node['id']);?>">查看</a><?php endif; ?>
-                        <?php if($node['type'] == 2): ?><a href="<?php echo U('edit?category_id='.$node['id']);?>">修改</a><?php endif; ?>
-                        </switch></td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            <?php else: ?>
-            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
-
-        </tbody>
-    </table>
-    </div>
+    <form action="<?php echo U();?>" method="post" class="form-horizontal normal-form">
+        <div class="form-group">
+            <label>用户名<span class="check-tips">（用户名会作为默认的昵称）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="username" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label >密码<span class="check-tips">（用户密码不能少于6位）</span></label>
+            <div class="controls">
+                <input type="password" class="text input-large" name="password" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label >确认密码</label>
+            <div class="controls">
+                <input type="password" class="text input-large" name="repassword" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label >邮箱<span class="check-tips">（用户邮箱，用于找回密码等安全操作）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="email" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-sm btn-primary ajax-post"  type="submit" target-form="form-horizontal">确 定</button>
+            <button class="btn btn-sm" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+    </form>
 
                         <!-- /.col -->
                     </div>

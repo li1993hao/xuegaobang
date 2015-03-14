@@ -204,7 +204,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    分类列表
+    数据备份
 
                     </h1>
                 </div>
@@ -213,47 +213,48 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>排序</th>
-            <th>ID</th>
-            <th>分类名称</th>
-            <th>类型</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr>
-                    <td><?php echo ($node["sort"]); ?></td>
-                    <td><?php echo ($node["id"]); ?></td>
-                    <td>
-                        <?php $__FOR_START_75719985__=0;$__FOR_END_75719985__=$node["level"];for($i=$__FOR_START_75719985__;$i < $__FOR_END_75719985__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
-                                    <?php else: ?>
-                                    |--<?php endif; ?>
-                                <?php else: ?>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
-                        <?php echo ($node["name"]); ?>
-                    </td>
-                    <td>
-                        <?php switch($node["type"]): case "1": ?>分类<?php break;?>
-                            <?php case "2": ?>单页面<?php break;?>
-                            <?php case "3": ?>外部链接<?php break;?>
-                            <?php default: ?>
-                            栏目<?php endswitch;?>
-                    </td>
-                    <td>
-                        <?php if($node['type'] == 1): ?><a href="<?php echo U('add?category_id='.$node['id']);?>">添加内容</a>|
-                            <a href="<?php echo U('news?category_id='.$node['id']);?>">查看</a><?php endif; ?>
-                        <?php if($node['type'] == 2): ?><a href="<?php echo U('edit?category_id='.$node['id']);?>">修改</a><?php endif; ?>
-                        </switch></td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            <?php else: ?>
-            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
-
-        </tbody>
-    </table>
+    <div class="btn-group">
+        <a id="export"  class="btn btn-primary btn-sm"   href="javascript:;">立即备份</a>
+        <a class="btn btn-primary btn-sm ajax-post " target-form="ids" href="<?php echo U('optimize');?>">优化表</a>
+        <a class="btn btn-primary btn-sm ajax-post" target-form="ids" href="<?php echo U('repair');?>">修复表</a>
+    </div>
+    <div class="table-responsive" >
+        <form id="export-form" action="<?php echo U('export');?>">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">
+                        <label>
+                        <input class="check-all" checked="true" type="checkbox">
+                        </label>
+                    </th>
+                    <th>表名</th>
+                    <th>数据量</th>
+                    <th>数据大小</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$table): $mod = ($i % 2 );++$i;?><tr>
+                        <td class="text-center">
+                            <label>
+                            <input class="ids ace" checked="chedked" type="checkbox" name="tables[]" value="<?php echo ($table["name"]); ?>">
+                            <span class="lbl"></span>
+                            </label>
+                        </td>
+                        <td><?php echo ($table["name"]); ?></td>
+                        <td><?php echo ($table["rows"]); ?></td>
+                        <td><?php echo (format_bytes($table["data_length"])); ?></td>
+                        <td><?php echo ($table["create_time"]); ?></td>
+                        <td class="action">
+                            <a class="ajax-get no-refresh" href="<?php echo U('optimize?tables='.$table['name']);?>">优化表</a>&nbsp;
+                            <a class="ajax-get no-refresh" href="<?php echo U('repair?tables='.$table['name']);?>">修复表</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+            </tbody>
+        </table>
+        </form>
     </div>
 
                         <!-- /.col -->
@@ -327,6 +328,54 @@
 
 
 
+    <script type="text/javascript">
+        !function (){
+            var $export_form = $("#export-form");
+            var tables;
+            var rate = 0;
+            $("#export").click(function(){
+                showLoading('正在准备备份!请不要关闭此页面');
+                $.post(
+                    $($export_form).attr("action"),
+                    $($export_form).serialize(),
+                    function(data){
+                        removeLoading();
+                        if(data.status){
+                            tables = data.tables;
+                            showProgress('备份'+tables[0]+"(剩于"+(tables.length-1)+"张表)",1);
+                            backup(data.tab,false);
+                            window.onbeforeunload = function(){ return "正在备份数据库，请不要关闭！" }
+                        } else {
+                            errorAlert(data.msg);
+                        }
+                    },
+                    "json"
+                );
+                return false;
+            });
+
+            function backup(tab, status){
+                //是否进入下个数据表的备份
+                status && changeProgress(rate,'备份'+tables[tab.id]+"(剩于"+(tables.length-tab.id-1)+"张表)");
+                $.get($export_form.attr("action"), tab, function(data){
+                    if(data.status){
+                        if(!$.isPlainObject(data.tab)){
+                            removeProgress();
+                            okAlert('备份完成!');
+                            window.onbeforeunload = function(){ return null }
+                            return;
+                        }else{
+                            rate = data.rate; // 更新进度
+                        }
+                        backup(data.tab, tab.id != data.tab.id);
+                    } else {
+                        removeProgress();
+                        errorAlert(data.msg);
+                    }
+                }, "json");
+            }
+        }();
+    </script>
 
 </body>
 </html>

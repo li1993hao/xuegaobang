@@ -53,8 +53,34 @@
 <![endif]-->
 
     
+   <style>
+       .rule_check,.child_row{
+           margin:10px 0 10px 20px;
 
-    
+       }
+       .child_row label{
+           display: inline-block;
+           margin-right: 10px;
+       }
+
+
+       .checkmod{
+           border:#ebebeb 1px solid;
+       }
+
+       .checkmod .hd{
+            background-color: #ECECEC;
+           line-height: 30px;
+           margin-bottom: 10px;
+           padding-left: 10px;
+
+       }
+       .auth_rules{
+           margin-right: 5px;
+       }
+
+   </style>
+
 </head>
 <body class="navbar-fixed">
 <div class="shade" style="display:none"></div>
@@ -204,7 +230,7 @@
                 <div class="page-header">
                     <h1 class="page-header-title">
                         
-    分类列表
+    访问授权
 
                     </h1>
                 </div>
@@ -213,48 +239,46 @@
                 <div class="row">
                     <div class="col-xs-12">
                         
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>排序</th>
-            <th>ID</th>
-            <th>分类名称</th>
-            <th>类型</th>
-            <th>操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php if(!empty($nodeList)): if(is_array($nodeList)): $i = 0; $__LIST__ = $nodeList;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><tr>
-                    <td><?php echo ($node["sort"]); ?></td>
-                    <td><?php echo ($node["id"]); ?></td>
-                    <td>
-                        <?php $__FOR_START_75719985__=0;$__FOR_END_75719985__=$node["level"];for($i=$__FOR_START_75719985__;$i < $__FOR_END_75719985__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
-                                    <?php else: ?>
-                                    |--<?php endif; ?>
-                                <?php else: ?>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php endif; } ?>
-                        <?php echo ($node["name"]); ?>
-                    </td>
-                    <td>
-                        <?php switch($node["type"]): case "1": ?>分类<?php break;?>
-                            <?php case "2": ?>单页面<?php break;?>
-                            <?php case "3": ?>外部链接<?php break;?>
-                            <?php default: ?>
-                            栏目<?php endswitch;?>
-                    </td>
-                    <td>
-                        <?php if($node['type'] == 1): ?><a href="<?php echo U('add?category_id='.$node['id']);?>">添加内容</a>|
-                            <a href="<?php echo U('news?category_id='.$node['id']);?>">查看</a><?php endif; ?>
-                        <?php if($node['type'] == 2): ?><a href="<?php echo U('edit?category_id='.$node['id']);?>">修改</a><?php endif; ?>
-                        </switch></td>
-                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            <?php else: ?>
-            <tr><td colspan="5"><h1 class="text-center">暂无数据!</h1></td></tr><?php endif; ?>
+	<div>
+        <!-- 访问授权 -->
+            <form action="<?php echo U('AuthManager/writeGroup');?>" enctype="application/x-www-form-urlencoded" method="POST" class="form-horizontal auth-form">
+                <?php if(is_array($node_list)): $i = 0; $__LIST__ = $node_list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$node): $mod = ($i % 2 );++$i;?><dl class="checkmod">
+                        <dt class="hd dd-item">
+                            <label>
+                               <input class="auth_rules rules_all ace" type="checkbox" name="rules[]" value="<?php echo $main_rules[$node['url']] ?>">
+                                <span class="lbl"><?php echo ($node["title"]); ?>管理</span>
+                            </label>
+                        </dt>
+                        <dd class="bd">
+                            <?php if(isset($node['child'])): if(is_array($node['child'])): $i = 0; $__LIST__ = $node['child'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$child): $mod = ($i % 2 );++$i;?><div class="rule_check">
+                                    <div class="dd-item">
+                                        <label>
+                                       <input class="auth_rules rules_row ace" type="checkbox" name="rules[]" value="<?php echo $auth_rules[$child['url']] ?>"/>
 
-        </tbody>
-    </table>
-    </div>
+                                            <?php if(!empty($child['tip'])): ?><span class="lbl" data-rel="tooltip"  data-original-title="<?php echo ($child["tip"]); ?>"><?php echo ($child["title"]); ?></span>
+                                            <?php else: ?>
+                                                <span class="lbl"><?php echo ($child["title"]); ?></span><?php endif; ?>
+                                        </label>
+                                    </div>
+                                   <?php if(!empty($child['operator'])): ?><div class="child_row">
+                                           <?php if(is_array($child['operator'])): $i = 0; $__LIST__ = $child['operator'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$op): $mod = ($i % 2 );++$i;?><label>
+                                                   <input class="auth_rules rules_col ace" type="checkbox" name="rules[]"
+                                                   value="<?php echo $auth_rules[$op['url']] ?>"/>
+                                                   <?php if(!empty($op['tip'])): ?><span class="lbl" data-rel="tooltip"  data-original-title="<?php echo ($op["tip"]); ?>"><?php echo ($op["title"]); ?></span>
+                                                       <?php else: ?>
+                                                       <span class="lbl"><?php echo ($op["title"]); ?></span><?php endif; ?>
+                                               </label><?php endforeach; endif; else: echo "" ;endif; ?>
+                                       </div><?php endif; ?>
+                                </div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+                        </dd>
+                    </dl><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                <input type="hidden" name="id" value="<?php echo ($this_group["id"]); ?>" />
+                <button type="submit" class="btn btn-sm btn-primary ajax-post" target-form="auth-form">确 定</button>
+                <button class="btn btn-sm " onclick="javascript:history.back(-1);return false;">返 回</button>
+            </form>
+	</div>
+
 
                         <!-- /.col -->
                     </div>
@@ -327,6 +351,68 @@
 
 
 
+<script type="text/javascript" charset="utf-8">
+    $('[data-rel=tooltip]').tooltip();
+    +function($){
+        var rules = [<?php echo ($this_group["rules"]); ?>];
+        $('.auth_rules').each(function(){
+            if( $.inArray( parseInt(this.value,10),rules )>-1 ){
+                $(this).prop('checked',true);
+            }
+            if(this.value==''){
+                $(this).closest('span').remove();
+            }
+        }).on('change',function(){
+            if($(this).hasClass("rules_row")){
+                if(this.checked){
+                   $(this).parents('dl').find('.rules_all').prop('checked',true);
+                }
+            }else if($(this).hasClass("rules_col")){
+                if(this.checked){
+                    $(this).parents('.rule_check').find('.rules_row').prop('checked',true);
+                    $(this).parents('dl').find('.rules_all').prop('checked',true);
+                }
+            }
+        });
+
+        //全选节点
+        $('.rules_all').on('change',function(){
+            $(this).closest('dl').find('dd').find('input').prop('checked',this.checked);
+        });
+        $('.rules_row').on('change',function(){
+            $(this).closest('.rule_check').find('.child_row').find('input').prop('checked',this.checked);
+        });
+
+
+
+        $('.checkbox').each(function(){
+            $(this).qtip({
+                content: {
+                    text: $(this).attr('title'),
+                    title: $(this).text()
+                },
+                position: {
+                    my: 'bottom center',
+                    at: 'top center',
+                    target: $(this)
+                },
+                style: {
+                    classes: 'qtip-dark',
+                    tip: {
+                        corner: true,
+                        mimic: false,
+                        width: 10,
+                        height: 10
+                    }
+                }
+            });
+        });
+
+        $('select[name=group]').change(function(){
+			location.href = this.value;
+        });
+    }(jQuery);
+</script>
 
 </body>
 </html>

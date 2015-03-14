@@ -36,10 +36,11 @@ class AdminController extends DataBaseController {
             if( $dynamic === null ){
                 //检测非动态权限
                 $rule  = strtolower(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME);
-                if ( !$this->checkRule($rule,array('in','1,2')) ){
+                if (!$this->checkRule($rule,array('in','1,2')) ){
                     $this->error('未授权访问!');
                 }
             }elseif( $dynamic === false ){
+
                 $this->error('未授权访问!');
             }
         }
@@ -147,7 +148,8 @@ class AdminController extends DataBaseController {
      * @author 朱亚杰  <xcoolcc@gmail.com>
      */
      final  protected  function getMenus($controller=CONTROLLER_NAME){
-        $controller = strtolower($controller);
+
+         $controller = strtolower($controller);
         // $menus  =   session('ADMIN_MENU_LIST'.$controller);
         if(empty($menus)){
             // 获取主菜单

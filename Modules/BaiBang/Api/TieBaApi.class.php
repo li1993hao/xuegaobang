@@ -85,8 +85,13 @@ class TieBaApi {
      */
     public static function addTiezi(){
         $Model  =   checkAttr(D('Tieba'),"Tieba");
-        if($Model->create() && $Model->add()!==false){
-            return true;
+        if($Model->create()){
+            $result = $Model->add();
+            if($result){
+                return $result;
+            }else{
+                return false;
+            }
         } else {
             api_msg($Model->getError());
             return false;

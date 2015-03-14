@@ -40,3 +40,8 @@ NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be rem
 SQL: SHOW COLUMNS FROM `jdi_link` [ RunTime:0.000974s ]
 SQL: SELECT * FROM `jdi_link` WHERE `status` = 1 AND `group` = 'group' ORDER BY sort asc,id asc  [ RunTime:0.000241s ]
 
+[ 2015-03-14T19:12:59+08:00 ] 192.168.0.111 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=getUnReadNotice&_time=1426331579&_hash=b28f98422d073fecdc4e71a64ba4801cae6857bd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_notice` [ RunTime:0.001119s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_notice` WHERE `uid` = 44 AND `status` = 0 LIMIT 1   [ RunTime:0.000243s ]
+
