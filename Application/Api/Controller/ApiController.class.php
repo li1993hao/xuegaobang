@@ -1,12 +1,4 @@
 <?php
-// +----------------------------------------------------------------------
-// | OneThink [ WE CAN DO IT JUST THINK IT ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2013 http://www.onethink.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
-// +----------------------------------------------------------------------
-
 namespace Api\Controller;
 use Common\Controller\BaseController;
 use Think\Controller;
@@ -44,9 +36,9 @@ class ApiController extends BaseController{
             $this->unsetGetPost('_hash');
             if($hash == api_auth_sign($_REQUEST,C('API_PRIVATE_KEY'))){ //签名认证
                 $this->unsetGetPost('_time');
-                if((NOW_TIME - $time)  > C('API_OUT_TIME')){ //检测请求是否失效
-                    $this->error("请求已经失效！");
-                }
+//                if((NOW_TIME - $time)  > C('API_OUT_TIME')){ //检测请求是否失效
+//                    $this->error("请求已经失效！");
+//                }
                 $access_key = isset($_REQUEST['_sid'])?$_REQUEST['_sid']:0;
                 if($access_key !== 0){ //是否携带用户登陆key,用于手机客户端访问
                     define('UID',think_decrypt($access_key,C('UID_KEY')));

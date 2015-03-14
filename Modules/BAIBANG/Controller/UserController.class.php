@@ -21,8 +21,6 @@ class UserController extends CommonController
         $model =D('Member');
         $list   = $this->p_lists($model, $map,'id asc');
         int_to_string($list);
-
-//        $this->assign('group',$group);
         $this->assign('list', $list);
         $this->meta_title = '用户信息';
         $this->_display();

@@ -60,11 +60,21 @@ class CommentApi {
      * @return bool true为成功 false为失败
      */
     static public function addComment(){
+        if(UID <= 0){
+            api_msg("用户尚未登录!");
+            return false;
+        }
         $model = D('Comment');
-        if($model->create() && $model->add()!==false){
-            api_msg("评论成功!");
-            M($_POST['topic_table'])->where(array('id'=>$_POST['topic_id']))->setInc('comment_num');
-            return true;
+        $_POST['uid'] = UID;
+        if($model->create()){
+            $result = $model->add();
+            if($result){
+                api_msg("评论成功!");
+                M($_POST['topic_table'])->where(array('id'=>$_POST['topic_id']))->setInc('comment_num');
+                return $result;
+            }else{
+                return false;
+            }
         }else{
             api_msg($model->getError());
             return false;
@@ -79,6 +89,10 @@ class CommentApi {
      * @return bool true为成功 false为失败
      */
     static public function editComment(){
+        if(UID <= 0){
+            api_msg("用户尚未登录!");
+            return false;
+        }
         $model = D('Comment');
         if($model->create() && $model->save()!==false){
             api_msg("修改成功!");

@@ -134,7 +134,7 @@ class UserApi {
      * @retrun array
      */
     public static  function login($u,$p){
-        $result = D('Member')->apiLogin($u,$p,'1,2');
+        $result = D('Member')->apiLogin($u,$p,-1,'1,2');
         if(is_array($result)){//登陆成功返回accesskey
             $data['sid'] =  think_encrypt($result['id'],C('UID_KEY'));
             $data['nickname'] = $result['nickname'];

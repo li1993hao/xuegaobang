@@ -28,9 +28,8 @@ class PersonApi {
      */
     public static  function company($uid,$type="uid"){
         if(!isset($uid)){
-            if(defined(UID)){
               $uid = UID;
-            }else{
+            if($uid <= 0){
                 api_msg("没有指定uid而且用户尚未登录!");
                 return false;
             }
@@ -46,6 +45,17 @@ class PersonApi {
             api_msg("企业资料还未填写!");
             return false;
         }
+    }
+
+    public static function companyPosition(){
+        $map['status'] = 1;
+        $result = M('Company')->where($map)->field("name,id,point")->select();
+        if(!$result){
+            api_msg("暂无结果!!");
+            return false;
+        }
+        return $result;
+
     }
 
     /**

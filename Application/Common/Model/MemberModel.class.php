@@ -213,14 +213,17 @@ class MemberModel extends \Think\Model{
     public function apiLogin($username, $password, $type = 1, $checkType=""){
         $map = array();
         switch ($type) {
+            case -1: //智能判断
+                $map['_string'] = "`username`='{$username}' OR `mobile`='{$username}'";
+                break;
             case 1:
                 $map['username'] = $username;
                 break;
-            case 2:
-                $map['email'] = $username;
-                break;
             case 3:
                 $map['mobile'] = $username;
+                break;
+            case 2:
+                $map['email'] = $username;
                 break;
             case 4:
                 $map['id'] = $username;
