@@ -149,7 +149,7 @@ function get_nickname($uid){
 
 function get_user_image($uid){
     $result = get_user_filed($uid,'head');
-    return $result?$result:C('TMPL_PARSE_STRING.__DEFAULT_PERSON_IMAGE__');
+    return $result?get_cover_path($result):C('TMPL_PARSE_STRING.__DEFAULT_PERSON_IMAGE__');
 }
 
 
