@@ -677,6 +677,7 @@ function get_cover($cover_id, $field = null){
     return empty($field) ? $picture : $picture[$field];
 }
 
+
 /**获得完整的图片地址
  * @param $cover_id
  * @return bool|string
@@ -1573,7 +1574,7 @@ function link_url($list){
                 if(APP_MODE != 'api'){
                     $list[$k]['url'] = U($v['url']);
                 }else{
-                    $list[$k]['url'] = 'function'; //表明时功能节点,不是新闻
+                    $list[$k]['url'] = $v['url']; //表明时功能节点,不是新闻
                 }
             }
 
@@ -1584,15 +1585,11 @@ function link_url($list){
             }
         }
     }else{
-        if('http://' === substr($list['url'], 0, 7)){
-            $list['url'] = $list['url'];
-        }else if('www' === substr($list['url'], 0, 3)){
+        if('www' === substr($list['url'], 0, 3)){
             $list['url'] = ('http://'.$list['url']);
         }else{
             if(APP_MODE != 'api'){
                 $list['url'] = U($list['url']);
-            }else{
-                $list['url'] = 'function';
             }
         }
         if($list['picture_id]']>0){

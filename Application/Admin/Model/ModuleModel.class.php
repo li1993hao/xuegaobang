@@ -50,7 +50,6 @@ class ModuleModel extends Model {
             $this->error = '模块目录不可读或者不存在';
             return FALSE;
         }
-
         $modules			=	array();
 		$where['name']	=	array('in',$dirs);
 		$list			=	$this->where($where)->field(true)->select();
@@ -63,7 +62,7 @@ class ModuleModel extends Model {
 				$class = get_module_class($value);
 				if(!class_exists($class)){ // 实例化插件失败忽略执行
 					\Think\Log::record('模块'.$value.'的入口文件不存在！');
-					continue;
+                    continue;
 				}
                 $obj    =   new $class;
 				$modules[$value]	= $obj->info;

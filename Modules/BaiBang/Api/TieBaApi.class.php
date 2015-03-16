@@ -35,22 +35,7 @@ class TieBaApi {
         $model->page($page,$page_size);
         $result = $model->select();
         if($result){
-            for($i=0;$i<count($result);$i++){
-                $user = get_user_filed($result[$i]['uid']);
-                $result[$i]['user_head'] = get_cover_path($user['head']);
-                $result[$i]['user_nickname'] = $user['nickname'];
-                if($result[$i]['comment_num'] > 10){
-                    $result[$i]['is_hot'] = 1;
-                }else{
-                    $result[$i]['is_hot'] = 0;
-                }
-                if($result[$i]['create_time'] > (NOW_TIME-(60*60*24*30))){
-                    $result[$i]['is_new'] = 1;
-                }else{
-                    $result[$i]['is_new'] = 0;
-                }
-                $result[$i]['create_time'] = formatTime($result[$i]['create_time']);
-            }
+            self::parseTezi($result);
         }
 
         if(!$result){
@@ -60,8 +45,38 @@ class TieBaApi {
             return $result;
         }
     }
-
-
+    
+    private static function parseTezi(&$list){
+        for($i=0;$i<count($list);$i++){
+            $user = get_user_filed($list[$i]['uid']);
+            if(!empty($list[$i]['pictures'])){
+                $list[$i]['pictures'] = str2arr( $list[$i]['pictures']);
+                $paths = array();
+                $list[$i]['pictures_path'] = array();
+                foreach($list[$i]['pictures'] as $v){
+                    $path = get_cover_path($v);
+                    $paths[]  = $path;
+                    $list[$i]['pictures_thumb'][] = thumb($path,100,120);
+                }
+                $list[$i]['pictures'] = $paths;
+            }else{
+                unset($list[$i]['pictures']);
+            }
+            $list[$i]['user_head'] = get_cover_path($user['head']);
+            $list[$i]['user_nickname'] = $user['nickname'];
+            if($list[$i]['comment_num'] > 10){
+                $list[$i]['is_hot'] = 1;
+            }else{
+                $list[$i]['is_hot'] = 0;
+            }
+            if($list[$i]['create_time'] > (NOW_TIME-(60*60*24*30))){
+                $list[$i]['is_new'] = 1;
+            }else{
+                $list[$i]['is_new'] = 0;
+            }
+            $list[$i]['create_time'] = formatTime($list[$i]['create_time']);
+        }
+    }
 
 
     public static function  getTezi($id){
@@ -85,10 +100,28 @@ class TieBaApi {
      */
     public static function addTiezi(){
         $Model  =   checkAttr(D('Tieba'),"Tieba");
+        $has_image = false;
+        if(!empty($_FILES)){
+            $has_image = true;
+            $images = upload_image();
+            if($images['status'] == 0){// 图片上次失败
+                api_msg($images['msg']);
+                return false;
+            }
+        }
         if($Model->create()){
             $result = $Model->add();
+            if($has_image){
+                $data['id'] = $result;
+                $imagesData = $images['data'];
+                $ids = array_column($imagesData,"id");
+                $data['pictures'] =   arr2str($ids);
+                D('Tieba')->save($data); //保存上传的图片
+            }
             if($result){
-                return $result;
+                $addData =  $Model->where(array('id'=>$result))->select();
+                self::parseTezi($addData);
+                return $addData[0];
             }else{
                 return false;
             }

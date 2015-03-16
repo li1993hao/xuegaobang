@@ -298,7 +298,7 @@
                         <td><?php echo ($com["id"]); ?></td>
                         <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
-                        <td><?php echo get_user_filed($com.uid,"username");?></td>
+                        <td><?php echo get_user_filed($com['uid'],"username");?></td>
                         <td><?php echo ($com["like_num"]); ?></td>
                         <td><?php echo ($com["collect_num"]); ?></td>
                         <td><?php echo ($com["comment_num"]); ?></td>
@@ -407,7 +407,7 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
-            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
+            "APP"    : "/xuegaobang/index.php", //当前项目地址
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],

@@ -75,12 +75,7 @@ class ProductionController extends ModuleController {
     public function edit(){
         if(IS_POST){
             $id = I('post.id');
-            $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->count();
-            if($data){
-                parent::edit('Production',$id);
-            }else{
-                $this->error('编辑数据非法!');
-            }
+            parent::edit('Production',$id);
         }else{
             $id = I('get.id');
             $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->find();

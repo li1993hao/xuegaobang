@@ -10,7 +10,7 @@ use Think\Controller;
 class ApiController extends BaseController{
     public function  _initialize(){
         parent::_initialize();
-        if(ACTION_NAME != "time"){
+        if(ACTION_NAME != "time" && $_REQUEST['_M']!="AppClient"){
             $this->checkSign();
         }
     }

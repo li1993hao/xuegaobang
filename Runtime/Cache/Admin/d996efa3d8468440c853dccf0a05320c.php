@@ -483,7 +483,6 @@
                                     </script><?php break;?>
                                 <?php case "multiPicture": ?><div class="controls">
                                         <div class="upload-img-box">
-
                                         </div>
                                         <input type="file" id="upload_picture_<?php echo ($field["name"]); ?>">
                                         <input type="hidden" name="<?php echo ($field["name"]); ?>" id="<?php echo ($field["name"]); ?>"/>
@@ -559,6 +558,7 @@
                                         });
 
                                     </script><?php break;?>
+
                                 <?php default: ?>
                                 <input type="text" class="text" name="<?php echo ($field["name"]); ?>" value=""><?php endswitch;?>
                         </div>
@@ -626,7 +626,7 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
-            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
+            "APP"    : "/xuegaobang/index.php", //当前项目地址
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],

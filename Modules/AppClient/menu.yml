@@ -1,0 +1,11 @@
+---
+平台:
+  - title: app管理
+    url: index/index
+    children:
+      - title: 添加客户端
+        url: index/add
+      - title: 编辑客户端
+        url: index/edit
+
+

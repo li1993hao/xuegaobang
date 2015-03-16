@@ -96,7 +96,14 @@
         {$data[$field['name']]}
     </span>
 </case>
-
+<case value="SimpleMultiPicture">
+    <div class="controls">
+        <div class="upload-img-box">
+        </div>
+        <input type="file" id="upload_picture_{$field.name}">
+        <input type="hidden" name="{$field.name}" id="{$field.name}"/>
+    </div>
+</case>
 <default/>
 {$data[$field['name']]}
 </switch>

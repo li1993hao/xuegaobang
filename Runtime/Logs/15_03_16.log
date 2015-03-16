@@ -1,0 +1,66 @@
+[ 2015-03-16T10:12:10+08:00 ] 192.168.0.107 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProduction&_time=1426471930&_hash=0563aca20f4f0bf71e7ccbfd4b1e228bcbfbb484
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003119s ]
+SQL: SELECT `id`,`uid`,`name`,`company`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top`,`comment_num`,`collect_num`,`place`,`like_num` FROM `jdi_production` WHERE `id` = 13 LIMIT 1   [ RunTime:0.001099s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.001277s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000211s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = 13 AND `action` = 'like' AND `uid` = 0 LIMIT 1   [ RunTime:0.000194s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001431s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000220s ]
+
+[ 2015-03-16T10:48:26+08:00 ] 192.168.0.107 /xuegaobang/api.php?_R=App&_M=Common&_C=Document&_A=detail&_time=1426474106&_hash=34fcef889d1a2ad28e040c31c1f4543b98c7c283
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.001449s ]
+SQL: SELECT `name` FROM `jdi_model` WHERE `id` = 20 LIMIT 1   [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `jdi_article` [ RunTime:0.002948s ]
+SQL: SELECT * FROM `jdi_article` WHERE `status` = 1 AND `category_id` = 3 AND `create_time` < 1426474106 AND ( deadline <= 0 OR deadline > 1426474106 ) AND `id` = 3 LIMIT 1   [ RunTime:0.000984s ]
+
+[ 2015-03-16T10:48:52+08:00 ] 192.168.0.107 /xuegaobang/api.php?_R=App&_M=Common&_C=Document&_A=detail&_time=1426474132&_hash=8b95ab70cd50fb62cbbbe753e79d3680cd0277ba
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_model` [ RunTime:0.002775s ]
+SQL: SELECT `name` FROM `jdi_model` WHERE `id` = 20 LIMIT 1   [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `jdi_article` [ RunTime:0.001408s ]
+SQL: SELECT * FROM `jdi_article` WHERE `status` = 1 AND `category_id` = 3 AND `create_time` < 1426474132 AND ( deadline <= 0 OR deadline > 1426474132 ) AND `id` = 1 LIMIT 1   [ RunTime:0.000212s ]
+SQL: UPDATE `jdi_article` SET `view`=view+1 WHERE `status` = 1 AND `category_id` = 3 AND `create_time` < 1426474132 AND ( deadline <= 0 OR deadline > 1426474132 ) AND `id` = 1 [ RunTime:0.000156s ]
+
+[ 2015-03-16T15:04:20+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&_time=1426489460&_hash=822f93c8a3326a98cada4cfb1b6ec24715523f4f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_app_client` [ RunTime:0.002010s ]
+SQL: SELECT * FROM `jdi_app_client` WHERE `type` = '1' ORDER BY create_time LIMIT 1   [ RunTime:0.000149s ]
+SQL: SHOW COLUMNS FROM `jdi_file` [ RunTime:0.001231s ]
+SQL: SELECT * FROM `jdi_file` WHERE `id` = 16 LIMIT 1   [ RunTime:0.000391s ]
+NOTIC: [8] Undefined index: type /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/FileModel.class.php 第 137 行.
+
+[ 2015-03-16T15:04:37+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&_time=1426489477&_hash=7ad69f01858a89e400edfcfc81bd574931e9f97d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_app_client` [ RunTime:0.001229s ]
+SQL: SELECT * FROM `jdi_app_client` WHERE `type` = '1' ORDER BY create_time LIMIT 1   [ RunTime:0.000141s ]
+SQL: SHOW COLUMNS FROM `jdi_file` [ RunTime:0.001132s ]
+SQL: SELECT * FROM `jdi_file` WHERE `id` = 16 LIMIT 1   [ RunTime:0.000479s ]
+NOTIC: [8] Undefined index: type /Users/haoli/Desktop/www/xuegaobang/Application/Common/Model/FileModel.class.php 第 137 行.
+
+[ 2015-03-16T15:33:19+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=checkUpdate&_time=1426491199&_hash=ce89818986e0aed0f6e77666ee19870ec305db11
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_app_client` [ RunTime:0.001280s ]
+SQL: SELECT `description`,`code` FROM `jdi_app_client` WHERE `type` = '1' ORDER BY create_time LIMIT 1   [ RunTime:0.000165s ]
+
+[ 2015-03-16T20:12:39+08:00 ] 192.168.0.106 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&type=1
+ERR: 非法数据对象！:[1=>Array]
+
+[ 2015-03-16T20:13:13+08:00 ] 192.168.0.101 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&type=1
+ERR: 非法数据对象！:[1=>Array]
+
+[ 2015-03-16T20:14:59+08:00 ] 192.168.0.101 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&type=1
+ERR: 非法数据对象！:[1=>Array]
+
+[ 2015-03-16T20:15:58+08:00 ] 192.168.0.101 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&type=1
+ERR: 非法数据对象！:[1=>Array]
+
+[ 2015-03-16T20:16:16+08:00 ] 192.168.0.101 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=downLoadApp&type=1
+ERR: 非法数据对象！:[1=>Array]
+
+[ 2015-03-16T21:30:09+08:00 ] 192.168.0.101 /xuegaobang/api.php?_R=Modules&_M=AppClient&_C=AppClient&_A=checkUpdate&type=1&_time=1426512608&_hash=d0f8c26b8761e72eb27502b1704c239bb5564f68
+ERR: Can't connect to local MySQL server through socket '/Applications/MAMP/tmp/mysql/mysql.sock' (2)
+

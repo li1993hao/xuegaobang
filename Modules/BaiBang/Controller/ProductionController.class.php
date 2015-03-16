@@ -71,7 +71,6 @@ class ProductionController extends CommonController {
             $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
             $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
         }
-
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();

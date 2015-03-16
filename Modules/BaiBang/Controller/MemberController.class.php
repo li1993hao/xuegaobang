@@ -12,6 +12,7 @@ class MemberController extends CommonController
     public function index(){
         $map = $this->search_parse();
         $map['status'] = array('gt',-1);
+        $map['type'] = array('gt',0);
         $model =D('Member');
         $list   = $this->p_lists($model, $map,'id asc');
         int_to_string($list);

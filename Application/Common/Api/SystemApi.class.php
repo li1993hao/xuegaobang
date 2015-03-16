@@ -17,5 +17,20 @@ namespace Common\Api;
  * @time 2015-03-07 09:57:37
  */
 class SystemApi {
-
+    /**
+     * 图片上传
+     */
+    public static function upLoadImage(){
+        if(UID <=0){
+            api_msg("用户未登录");
+            return false;
+        }
+        $result = upload_image();
+        if($result['status']==0){
+            api_msg($result['msg']);
+            return false;
+        }else{
+            return $result['data'];
+        }
+    }
 }
