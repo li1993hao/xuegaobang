@@ -57,7 +57,7 @@
                         <td>{$vo.create_time|date="Y-m-d",###}</td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="{:_U('del?id='.$vo['id'])}">删除</a>
-                            <a title="编辑"    href="{:_U('edit?id='.$vo['id'])}">编辑</a>
+                            <a title="编辑"    href="{:_U('edit?id='.$vo['id'].'&name='.$vo['name'])}">编辑</a>
                         </td>
                     </tr>
                 </volist>

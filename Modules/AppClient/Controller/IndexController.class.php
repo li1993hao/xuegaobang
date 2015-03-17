@@ -40,7 +40,9 @@ class IndexController extends ModuleController {
             $id = I('post.id');
             parent::edit('app_client',$id);
         }else{
-            parent::edit('app_client',$id,$data['name'].'[修改]');
+            $name = I('get.name');
+            $id = I('get.id');
+            parent::edit('app_client',$id,$name.'[修改]');
         }
     }
 }

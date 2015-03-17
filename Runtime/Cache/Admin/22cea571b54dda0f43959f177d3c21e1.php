@@ -263,7 +263,7 @@
                         <td><?php echo (date("Y-m-d",$vo["create_time"])); ?></td>
                         <td>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$vo['id']);?>">删除</a>
-                            <a title="编辑"    href="<?php echo _U('edit?id='.$vo['id']);?>">编辑</a>
+                            <a title="编辑"    href="<?php echo _U('edit?id='.$vo['id'].'&name='.$vo['name']);?>">编辑</a>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
