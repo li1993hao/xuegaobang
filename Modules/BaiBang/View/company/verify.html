@@ -1,0 +1,142 @@
+<extend name="Common@Base/base"/>
+<block name="title">
+    公司审核
+</block>
+<block name="content">
+    <!--include format "Modules://BaiBang@index/aa"-->
+    <div>
+        <div class="pull-right">
+            <span class="input-icon">
+                <input type="text" placeholder="搜索企业名称,按回车搜索" autocomplete="off" id="search">
+                <i class="icon-search"></i>
+			</span>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>企业名称</th>
+                <th>企业类别</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <notempty name="list">
+                <volist name="list" id="com">
+                    <tr>
+                        <td><a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.name}</a></td>
+                        <td>{:C("PRODUCTION_CATEGORY.".$com['category'])}</td>
+                        <td>{$com.create_time|date="Y-m-d H:i",###}</td>
+                        <td>{$com.update_time|date="Y-m-d H:i",###}</td>
+                        <td>
+                            {$com.status_text}
+                        </td>
+                        <td>
+                            <if condition="$com['status'] eq 2">
+                                <a title="设为通过" class="ajax-get"   href="{:_U('company/resume',array('id'=>$com['id']))}">审核通过</a>
+                                <a title="设为不通过" class="verifyNot" data-id="{$com['id']}" data-uid="{$com.uid}"  data-url="{:_U('company/verifyNot')}" href="javascript:;">审核不通过</a>
+                            </if>
+                        </td>
+                    </tr>
+                </volist>
+                <else/>
+                <td colspan="10" class="text-center"> aOh! 暂时还没有内容! </td>
+            </notempty>
+            </tbody>
+        </table>
+
+        <!-- 分页 -->
+        <div class="page">
+            {$_page}
+        </div>
+    </div>
+</block>
+
+<block name="hide">
+    <div id="user_info" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="group_check-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" style="text-align:center"></h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center">
+                        <i class="icon-spinner icon-spin orange bigger-300"></i>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script>
+        $(".verifyNot").click(function() {
+            var url =  $(this).data('url');
+            var uid = $(this).data("uid");
+            var id = $(this).data("id");
+            bootbox.prompt("请输入未通过原因", function(result) {
+                if(result !== null){
+                    if (result) {
+                        $.post(
+                                url
+                                ,
+                                {
+                                    'reason' : result,
+                                    'uid' : uid,
+                                    'id':id
+                                },
+                                function(data){
+                                    if (data.status) {
+                                        okAlert(data.msg);
+                                        setTimeout(function(){
+                                            location.reload();
+                                        },1500);
+                                    }else{
+                                        errorAlert(data.msg);
+                                    }
+                                },
+                                'json'
+                        );
+                    } else {
+                        alert("您必须说明原因才能继续操作!");
+                    }
+                }
+            });
+        });
+
+        $('.info').click(function(){
+            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
+            $('#user_info').modal('show');
+            var id = $(this).data('id')
+            var url = "{:_U('info')}";
+            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
+            $("#user_info .modal-body").empty().html(wait);
+            $.post(url,{'id':id,'controller':'company'},function(data){
+                $("#user_info .modal-body").empty().html(data);
+            });
+        });
+
+        $(function() {
+            //回车搜索
+            $("#search").keyup(function(e) {
+                if (e.keyCode === 13) {
+                    var url =  "{:_U('verify?query_name=PLACEHODLE')}";
+                    var query = $('#search').val();
+                    url = url.replace('PLACEHODLE',query);
+                    window.location.href = url;
+                    return false;
+                }
+            });
+        });
+    </script>
+</block>
+

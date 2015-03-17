@@ -276,7 +276,6 @@ function upload_image(){
         C("UPLOAD_{$pic_driver}_CONFIG")
     ); //TODO:上传到远程服务器
 
-    /* 记录图片信息 */
     if($info){
         $return['status'] = 1;
         if(APP_MODE =="api"){
@@ -324,7 +323,7 @@ function notice($uid,$title,$detail=''){
 function int_to_string(&$data, $map = array('status' => array
     (1 => '<span class="label label-success ">正常</span>',
         -1 => '删除', 0 => '<span class="label label-danger ">禁用</span>',
-        2 => '<span class="label label-warning">未审核</span>', 3 => '<span class="label">草稿</span>')))
+        2 => '<span class="label label-warning">未审核</span>', 3 => '<span class="label">审核未通过</span>')))
 {
     if ($data === false || $data === null) {
         return $data;

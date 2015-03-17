@@ -9,7 +9,12 @@ use Modules\Person\Api\StaffApi;
  * @package Modules\BaiBang\Controller
  */
 class ProductionController extends CommonController {
-    private function searc_parse(){
+    public function companyInfo(){
+        $uid= I('post.uid');
+        ThinkController::info('company',array("uid"=>$uid),'','public/info');
+    }
+
+    private function search_parse(){
         $map = array();
         $team_map = array(); //模版赋值
         foreach($_REQUEST as $k => $v){
@@ -61,8 +66,8 @@ class ProductionController extends CommonController {
      */
     public function  index(){
         MK();
-        $map = $this->searc_parse();
-        $map['status']  = array('gt',-1);
+        $map = $this->search_parse();
+        $map['status'] = 1;
         $list = $this->p_lists('Production',$map,'is_top desc,create_time desc');
         int_to_string($list);
         $list = list_sort_by($list,'status');
@@ -74,5 +79,34 @@ class ProductionController extends CommonController {
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();
+    }
+
+    public function verify(){
+        $map = $this->search_parse();
+        $map['status']  =   2;
+        $list   = $this->p_lists("Production", $map,'id asc');
+        int_to_string($list);
+        $this->assign('list', $list);
+        $this->meta_title = '用户信息';
+        $this->_display();
+    }
+
+    /**
+     * 设置编码
+     */
+    public function setCode(){
+        parent::edit('Production');
+    }
+
+    /**
+     * 审核不通过
+     * @return mixed|null|string
+     */
+    public function verifyNot(){
+        $uid = I("post.uid");
+        $name = I("post.name");
+        $reason = I("post.reason");
+        notice($uid,"您的产品\"".$name."\"未通过审核",$reason);
+        parent::editRow("Production",array('status'=>3));
     }
 }

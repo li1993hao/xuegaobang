@@ -1,0 +1,32 @@
+[ 2015-03-17T03:12:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=TieBa&_A=TieZilists&_time=1426533178&_hash=0129e578c9b969f3f2bf409920e877bc9c3259e5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_tieba` [ RunTime:0.001990s ]
+SQL: SELECT `id`,`name`,`content`,`create_time`,`update_time`,`status`,`uid`,`is_top`,`recommend`,`excellent`,`comment_num`,`collect_num`,`like_num`,`pictures` FROM `jdi_tieba` WHERE `status` > '0' ORDER BY `is_top` DESC,`update_time` DESC LIMIT 0,10   [ RunTime:0.000221s ]
+SQL: SHOW COLUMNS FROM `jdi_member` [ RunTime:0.001249s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 44 LIMIT 1   [ RunTime:0.000152s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000965s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 52 LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT * FROM `jdi_member` WHERE `id` = 45 LIMIT 1   [ RunTime:0.000143s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php on line 53 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 436 行.
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 132 LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 127 LIMIT 1   [ RunTime:0.000108s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php on line 53 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 436 行.
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 130 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 131 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000106s ]
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php on line 53 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 436 行.
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 127 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 126 LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 128 LIMIT 1   [ RunTime:0.000132s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 129 LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000091s ]
+NOTIC: [2] Missing argument 3 for str2arr(), called in /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/TieBaApi.class.php on line 53 and defined /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php 第 436 行.
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 126 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 94 LIMIT 1   [ RunTime:0.000086s ]
+

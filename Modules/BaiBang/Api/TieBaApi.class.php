@@ -52,7 +52,6 @@ class TieBaApi {
             if(!empty($list[$i]['pictures'])){
                 $list[$i]['pictures'] = str2arr( $list[$i]['pictures']);
                 $paths = array();
-                $list[$i]['pictures_path'] = array();
                 foreach($list[$i]['pictures'] as $v){
                     $path = get_cover_path($v);
                     $paths[]  = $path;
@@ -69,7 +68,7 @@ class TieBaApi {
             }else{
                 $list[$i]['is_hot'] = 0;
             }
-            if($list[$i]['create_time'] > (NOW_TIME-(60*60*24*30))){
+            if($list[$i]['create_time'] > (NOW_TIME-(60*60*24))){
                 $list[$i]['is_new'] = 1;
             }else{
                 $list[$i]['is_new'] = 0;
@@ -121,7 +120,6 @@ class TieBaApi {
             if($result){
                 $addData =  $Model->where(array('id'=>$result))->select();
                 self::parseTezi($addData);
-                return $addData[0];
             }else{
                 return false;
             }

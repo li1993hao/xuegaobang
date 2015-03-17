@@ -301,13 +301,11 @@
                         </td>
                         <td><?php echo ($com["username"]); ?></td>
                         <td>
-                            <?php if($com["type"] == 1): ?><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["nickname"]); ?></a>
-                                <?php else: ?>
-                                <?php echo ($com["nickname"]); endif; ?>
+                            <?php echo ($com["nickname"]); ?>
                         </td>
                         <td>
-                            <?php if($com["type"] == 1): echo (get_company_name($com["id"])); ?>
-                                <?php else: ?>
+                            <?php if($com["type"] == 1): ?><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo (get_company_name($com["id"])); ?></a>
+                            <?php else: ?>
                                 --<?php endif; ?>
                         </td>
                         <td><?php echo ($com["login_times"]); ?></td>
@@ -416,7 +414,7 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
-            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
+            "APP"    : "/xuegaobang/index.php", //当前项目地址
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
@@ -445,7 +443,7 @@
             }
         });
         $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
+            $("#user_info .modal-title").empty().html($(this).text()+"的详细信息");
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";

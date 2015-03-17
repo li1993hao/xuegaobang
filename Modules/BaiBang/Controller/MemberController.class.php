@@ -96,35 +96,5 @@ class MemberController extends CommonController
     }
 
 
-    public function verify(){
-        $map = $this->search_parse();
-        $map['status']  =   array('eq',2);
-        $list   = $this->p_lists("Company", $map,'id asc');
-        int_to_string($list);
-        //        int_to_string($list,
-//            array('status' => array
-//                            (1 => '<span class="label label-success ">正常</span>',
-//                             -1 => '删除', 0 => '<span class="label label-danger ">禁用</span>',
-//                             2 => '<span class="label label-warning">未审核</span>', 3 => '<span class="label">草稿</span>'),
-//            'category' => array
-//                            (1 => '<span class="label label-success ">正常</span>',
-//                                -1 => '删除', 0 => '<span class="label label-danger ">禁用</span>',
-//                                2 => '<span class="label label-warning">未审核</span>', 3 => '<span class="label">草稿</span>'))
-//        );
-        $this->assign('list', $list);
-        $this->meta_title = '用户信息';
-        $this->_display();
-    }
 
-
-    /**
-     * 审核不通过
-     * @return mixed|null|string
-     */
-    public function verifyNot(){
-        $uid = I("post.uid");
-        $reason = I("post.reason");
-        notice($uid,"企业资料未通过审核",$reason);
-        parent::editRow("Company",array('status'=>3));
-    }
 }

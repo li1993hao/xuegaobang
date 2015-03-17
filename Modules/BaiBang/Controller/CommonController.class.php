@@ -7,13 +7,11 @@ class CommonController extends ModuleController{
      * @param null $id
      * @param string $method
      */
-    public function info($name=null){
-        if(empty($name))
-            $name = $this->isType();
+    public function info(){
+        $_name = I('post.name');
         $_id= I('post.id');
         if (is_numeric($_id)) {
-            //$user = M($name)->find($_id);
-            parent::info($name, array('id' => $_id), '','public/info');//, 'public/info'
+            parent::info($_name, array('id' => $_id));
             return;
         } else {
             $this->error('param error!');

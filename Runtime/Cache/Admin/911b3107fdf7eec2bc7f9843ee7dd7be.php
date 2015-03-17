@@ -277,6 +277,7 @@
                 <th>产品名称</th>
                 <th>公司名称</th>
                 <th>产品发布者</th>
+                <th>产品编码</th>
                 <th>点赞数量</th>
                 <th>收藏数量</th>
                 <th>评论数量</th>
@@ -296,9 +297,10 @@
                             </label>
                         </td>
                         <td><?php echo ($com["id"]); ?></td>
-                        <td><a href="javascript:void(0);" class="info" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
-                        <td><a href="javascript:void(0);" class="info" data-uid = "<?php echo ($com["uid"]); ?>" data-name="<?php echo ($com["name"]); ?>" data-id="<?php echo ($com["id"]); ?>" data-company="<?php echo ($com["company"]); ?>"><?php echo ($com["company"]); ?></a></td>
+                        <td><a href="javascript:void(0);" class="production_info" data-name="<?php echo ($com["name"]); ?>"  data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
+                        <td><a href="javascript:void(0);" class="company_info" data-uid = "<?php echo ($com["uid"]); ?>"  data-name="<?php echo get_company_name($com['uid']);?>" data-id="<?php echo ($com["id"]); ?>"><?php echo get_company_name($com['uid']);?></a></td>
                         <td><?php echo get_user_filed($com['uid'],"username");?></td>
+                        <th><?php echo ((isset($com["code"]) && ($com["code"] !== ""))?($com["code"]):"未设置"); ?></th>
                         <td><?php echo ($com["like_num"]); ?></td>
                         <td><?php echo ($com["collect_num"]); ?></td>
                         <td><?php echo ($com["comment_num"]); ?></td>
@@ -317,6 +319,7 @@
                                 <a title="取消推荐" class="ajax-get"   href="<?php echo _U('recommend?status=0&id='.$com['id']);?>">取消推荐</a><?php endif; ?>
                         </th>
                         <td>
+                            <?php if(empty($com["code"])): ?><a title="设置编码" class="setCode" data-id="<?php echo ($com['id']); ?>"   data-url="<?php echo _U('setCode');?>" href="javascript:;">设置编码</a><?php endif; ?>
                             <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>">相关评论</a>
                             <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
                             <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
@@ -426,6 +429,45 @@
 
 
     <script>
+
+        $(".setCode").click(function() {
+            var id = $(this).data("id")
+            var url =$(this).data("url");
+            bootbox.prompt("请输入编码", function(result) {
+                if(result !== null){
+                    if (result) {
+                        var reg = /^[A-Za-z\d]{4,50}$/;
+                        if(!result.match(reg)){
+                            alert("编码必须是英文或数字,或者是二者的组合,并且不能长度不能小于4大于50");
+                            return;
+                        }
+                        $.post(
+                                url
+                                ,
+                                {
+                                    'code':result,
+                                    'id':id
+                                },
+                                function(data){
+                                    if (data.status) {
+                                        okAlert(data.msg);
+                                        setTimeout(function(){
+                                            location.reload();
+                                        },1500);
+                                    }else{
+                                        errorAlert(data.msg);
+                                    }
+                                },
+                                'json'
+                        );
+                    } else {
+                        alert("输入不能为空!");
+                    }
+                }
+            });
+        });
+
+
         $('#adv_show').click(function(){
             var ele = $(this).find('i');
             if($(ele).hasClass('icon-chevron-up')){
@@ -436,16 +478,32 @@
                 $(ele).removeClass('icon-chevron-down').addClass('icon-chevron-up');
             }
         });
-        $('.info').click(function(){
+        $('.company_info').click(function(){
+            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
+            $('#user_info').modal('show');
+            var uid = $(this).data('uid')
+            var url = "<?php echo _U('companyInfo');?>";
+            var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
+            $("#user_info .modal-body").empty().html(wait);
+            $.post(url,{'uid':uid},function(data){
+                if($.isPlainObject(data)){
+                    $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
+                }else{
+                    $("#user_info .modal-body").empty().html(data);
+                }
+            });
+        });
+
+        $('.production_info').click(function(){
             $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "<?php echo _U('info');?>";
             var wait ='<div style="text-align: center"><i class="icon-spinner icon-spin orange bigger-300"></i></div>'
             $("#user_info .modal-body").empty().html(wait);
-            $.post(url,{'id':id,"company":$(this).data("company")},function(data){
+            $.post(url,{'id':id,"name":"production"},function(data){
                 if($.isPlainObject(data)){
-                    $("#user_info .modal-body").empty().html("<h1 class='center'>企业信息还未填写！</h1>");
+                    $("#user_info .modal-body").empty().html("<h1 class='center'>获取信息出错!</h1>");
                 }else{
                     $("#user_info .modal-body").empty().html(data);
                 }

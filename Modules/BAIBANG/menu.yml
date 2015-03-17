@@ -7,8 +7,8 @@
         url: production/search
       - title: 评论
         url: production/comment
-#  - title: 产品审核
-#    url: production/verify
+  - title: 产品审核
+    url: production/verify
 论坛:
   - title: 帖子管理
     url: tieBa/index
@@ -28,7 +28,7 @@
           - title: 评论
             url: member/comment
   - title: 公司审核
-    url: member/verify
+    url: company/verify
 焦点:
   - title: 焦点图管理
     url: hotMap/index

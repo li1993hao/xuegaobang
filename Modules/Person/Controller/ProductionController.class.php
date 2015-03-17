@@ -28,10 +28,12 @@ class ProductionController extends ModuleController {
         $list = $this->p_lists('Production',$map,'update_time');
         int_to_string($list);
         $list = list_sort_by($list,'status');
-        for($i=0;$i<count($list);$i++){
-            $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
-            $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
-            $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
+        if($list){
+            for($i=0;$i<count($list);$i++){
+                $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
+                $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
+                $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
+            }
         }
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
@@ -75,12 +77,13 @@ class ProductionController extends ModuleController {
     public function edit(){
         if(IS_POST){
             $id = I('post.id');
+            $_POST['status'] = 2;//状态改变为未审核
             parent::edit('Production',$id);
         }else{
             $id = I('get.id');
             $data = M('Production')->where(array('id'=>$id,'uid'=>UID))->find();
             if($data){
-                parent::edit('Production',$id,$data['name'].'[修改]');
+                parent::edit('Production',$id,$data['name'].'[修改](产品信息修改后需要重新审核)');
             }else{
                 $this->error("编辑数据非法!");
             }

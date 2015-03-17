@@ -93,16 +93,12 @@
                         </td>
                         <td>{$com.username}</td>
                         <td>
-                            <if condition="$com.type eq 1">
-                                <a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.nickname}</a>
-                                <else/>
-                                {$com.nickname}
-                            </if>
+                            {$com.nickname}
                         </td>
                         <td>
                             <if condition="$com.type eq 1">
-                                {$com.id|get_company_name}
-                                <else/>
+                                <a href="javascript:void(0);" class="info" data-name="{$com.name}" data-id="{$com.id}">{$com.id|get_company_name}</a>
+                            <else/>
                                 --
                             </if>
                         </td>
@@ -186,7 +182,7 @@
             }
         });
         $('.info').click(function(){
-            $("#user_info .modal-title").empty().html($(this).data('name')+"的详细信息");
+            $("#user_info .modal-title").empty().html($(this).text()+"的详细信息");
             $('#user_info').modal('show');
             var id = $(this).data('id')
             var url = "{:_U('info')}";

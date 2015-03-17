@@ -244,7 +244,7 @@
                             <?php echo ($com["status_text"]); ?>
                         </td>
                         <td>
-                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id'],'controller'=>'company'));?>">审核通过</a>
+                            <?php if($com['status'] == 2): ?><a title="设为通过" class="ajax-get"   href="<?php echo _U('resume',array('id'=>$com['id']));?>">审核通过</a>
                                 <a title="设为不通过" class="verifyNot" data-id="<?php echo ($com['id']); ?>" data-uid="<?php echo ($com["uid"]); ?>"  data-url="<?php echo _U('verifyNot');?>" href="javascript:;">审核不通过</a><?php endif; ?>
                         </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -332,7 +332,7 @@
     (function(){
         var ThinkPHP = window.Think = {
             "ROOT"   : "/xuegaobang", //当前网站地址
-            "APP"    : "/xuegaobang/index.php?s=", //当前项目地址
+            "APP"    : "/xuegaobang/index.php", //当前项目地址
             "PUBLIC" : "/xuegaobang/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
