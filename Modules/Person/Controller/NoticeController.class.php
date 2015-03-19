@@ -17,11 +17,13 @@ class NoticeController extends ModuleController {
         /* 查询条件初始化 */
         $map  = array('status' => array('gt',-1),'uid'=>UID);
         $list = $this->p_lists('Notice',$map,'update_time');
-        int_to_string($list, array('status'=>array
-        (1=>'<span class="label label-success ">已读</span>',
-            -1=>'删除',0=>'<span class="label label-danger ">未读</span>',
-        )));
-        $list = list_sort_by($list,'status');
+        if($list){
+            int_to_string($list, array('status'=>array
+            (1=>'<span class="label label-success ">已读</span>',
+                -1=>'删除',0=>'<span class="label label-danger ">未读</span>',
+            )));
+            $list = list_sort_by($list,'status');
+        }
         $this->assign('list', $list);
         $this->meta_title = '产品管理';
         $this->_display();

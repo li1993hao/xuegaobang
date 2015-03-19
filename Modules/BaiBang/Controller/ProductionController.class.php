@@ -20,7 +20,6 @@ class ProductionController extends CommonController {
         foreach($_REQUEST as $k => $v){
             $kk = str2arr($k,'_');
             if($kk[0] == 'query'){ //查询字段
-
                 if(trim($_REQUEST[$k]) === ""){
                     continue;
                 }
@@ -30,8 +29,13 @@ class ProductionController extends CommonController {
                     continue;
                 }
                 if($kk[1] == "company"){
-                    $map[] = "company LIKE '%{$v}%'";
+                    $result = M('Company')->where(array('_string'=>"name LIKE '%{$v}%'"))->field("uid")->select();
                     $team_map[$k] = $v;
+                    if($result){
+                        $map['uid'] = array('in',arr2str(array_column($result,"uid")));
+                    }else{
+                        $map['uid'] = -1;
+                    }
                     continue;
                 }
                 if($v == '__whatever__'){ //不限
@@ -68,14 +72,17 @@ class ProductionController extends CommonController {
         MK();
         $map = $this->search_parse();
         $map['status'] = 1;
+
         $list = $this->p_lists('Production',$map,'is_top desc,create_time desc');
-        int_to_string($list);
-        $list = list_sort_by($list,'status');
-        for($i=0;$i<count($list);$i++){
-            $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
-            $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
-            $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
+        if($list){
+            int_to_string($list);
+            for($i=0;$i<count($list);$i++){
+                $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
+                $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);
+                $list[$i]["like_num"] = StaffApi::staffNum("production",$list[$i]['id'],'like');
+            }
         }
+
         $this->assign('list', $list);
         $this->meta_title = '产品列表';
         $this->_display();

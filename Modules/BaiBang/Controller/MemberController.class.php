@@ -1,6 +1,8 @@
 <?php
 namespace Modules\BaiBang\Controller;
 use Common\Controller\ThinkController;
+use Common\Model\AuthGroupModel;
+use Common\Model\MemberModel;
 
 
 /**用户管理页面
@@ -15,7 +17,9 @@ class MemberController extends CommonController
         $map['type'] = array('gt',0);
         $model =D('Member');
         $list   = $this->p_lists($model, $map,'id asc');
-        int_to_string($list);
+        if($list){
+            int_to_string($list);
+        }
         $this->assign('list', $list);
         $this->meta_title = '用户信息';
         $this->_display();
@@ -28,20 +32,26 @@ class MemberController extends CommonController
     /**
      * 添加或者修改
      */
-    public function add($username = '', $password = '', $nickname='' ,$repassword = '', $email = ''){
+    public function add(){
         if(IS_POST){
+            $username = I('post.username');
+            $password = I('post.password');
+            $type = I('post.type');
+            $repassword = I('post.repassword');
+            $email = I('post.email');
             /* 检测密码 */
             if($password != $repassword){
                 $this->error('密码和重复密码不一致！');
             }
-            if($nickname === ''){
-                $nickname = $username;
-            }
-
+            $nickname = $username;
             $member = D('Member');
-            $uid    =   $member->register($username, $password,$nickname,0,$status=1); //后台用户模块添加默认是管理员
+            $uid    =   $member->register($username, $password,$nickname,$type,$status=1,$email);
             if(0 < $uid){ //注册成功
-                $this->success('用户添加成功！',U('index'));
+                $model_access = D('AuthGroup');
+                if($type == 1){
+                    $model_access->addToGroup($uid,13);
+                }
+                $this->success("新增成功!");
             } else { //注册失败，显示错误信息
                 $this->error(MemberModel::showRegError($uid));
             }

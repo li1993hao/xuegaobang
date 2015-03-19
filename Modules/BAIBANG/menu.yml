@@ -11,12 +11,12 @@
     url: production/verify
 论坛:
   - title: 帖子管理
-    url: tieBa/index
+    url: tieba/index
     children:
         - title: 搜索
-          url: tieBa/search
+          url: tieba/search
         - title: 新增
-          url: tieBa/add
+          url: tieba/add
         - title: 评论
           url: tieba/comment
 用户:

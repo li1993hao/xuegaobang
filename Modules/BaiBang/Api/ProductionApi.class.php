@@ -32,7 +32,8 @@ class ProductionApi {
      * @return array 结果
      */
     public static function lists($page=1,$page_size=10,$where=array(),$order = '`update_time` DESC',$width=200,$height=100){
-        $map['status'] = array('gt','0');
+        $map['status'] = 1;
+
         if(is_string($where)){
             $map["_string"] = $where;
         }else{
@@ -70,8 +71,8 @@ class ProductionApi {
         }
     }
 
-    public static function getProduction($id,$width=200,$height=100){
-        $result = M('Production')->field(true)->where(array('id'=>$id))->find();
+    public static function getProduction($id,$key="id",$width=200,$height=100){
+        $result = M('Production')->field(true)->where(array($key=>$id))->find();
         $result['collect_num'] = StaffApi::staffNum("production",$result['id']);
         $result['like_num'] = StaffApi::staffNum("production",$result['id'],"like");
         $result['is_collect'] = StaffApi::hasStaff("production",$result['id']);

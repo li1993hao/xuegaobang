@@ -12,7 +12,7 @@ class BaseFileController extends BaseController {
 
     public function ueditor(){
         $data = new \Org\Util\Ueditor();
-        echo $data->output();
+        $this->ajaxReturn($data->output());
     }
     /* 文件上传 */
     public function upload(){

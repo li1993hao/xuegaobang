@@ -21,8 +21,6 @@ class TiebaController extends CommonController{
             $this->error('参数不合法!');
         }
     }
-
-
     private function searc_parse(){
         $map = array();
         $team_map = array(); //模版赋值
@@ -74,8 +72,9 @@ class TiebaController extends CommonController{
         $map = $this->searc_parse();
         $map['status']  =  array('gt',-1);
         $list = $this->p_lists('tieba',$map,'is_top desc,create_time desc');
-        int_to_string($list);
-        $list = list_sort_by($list,'status');
+        if($list){
+            int_to_string($list);
+        }
         $this->assign('list', $list);
         $this->meta_title = '贴子列表';
         $this->_display();

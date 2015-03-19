@@ -23,7 +23,9 @@ class HotMapController extends ModuleController
         }
         $this->assign('groups', C('LINK_GROUP'));
         $list = $this->p_lists('Link',$map);
-        int_to_string($list);
+        if($list){
+            int_to_string($list);
+        }
         // 记录当前列表页的cookie
         MK();
         $this->assign('list', $list);

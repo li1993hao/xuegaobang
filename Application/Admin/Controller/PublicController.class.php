@@ -99,7 +99,7 @@ class PublicController extends \Think\Controller {
     }
 
     public function verify(){
-        $verify = new \Think\Verify();
+        $verify = new \Think\Verify(array('length'=>4,'codeSet'=>'23456789','fontSize'  =>  12,'useCurve'  =>  false,'useNoise'  =>  false));
         $verify->entry(1);
     }
 

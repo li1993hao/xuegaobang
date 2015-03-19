@@ -26,9 +26,9 @@ class ProductionController extends ModuleController {
         MK();
         $map  = array('status' => array('gt',-1),'uid'=>UID);
         $list = $this->p_lists('Production',$map,'update_time');
-        int_to_string($list);
-        $list = list_sort_by($list,'status');
         if($list){
+            int_to_string($list);
+            $list = list_sort_by($list,'status');
             for($i=0;$i<count($list);$i++){
                 $list[$i]["collect_num"] = StaffApi::staffNum("production",$list[$i]['id']);
                 $list[$i]["comment_num"] =CommentApi::commentNum("production",$list[$i]['id']);

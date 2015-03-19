@@ -12,7 +12,9 @@ class CompanyController extends CommonController
     public function verify(){
         $map['status']  =   array('eq',2);
         $list   = $this->p_lists("Company", $map,'id asc');
-        int_to_string($list);
+        if($list){
+            int_to_string($list);
+        }
         $this->assign('list', $list);
         $this->meta_title = '用户信息';
         $this->_display();

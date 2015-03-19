@@ -6,9 +6,6 @@
     <!--include format "Modules://BaiBang@index/aa"-->
     <div>
         <div class="pull-right">
-            <a href="#" id="adv_show">
-                <i class="icon-chevron-up"></i>
-            </a>
             <span class="input-icon">
                 <input type="text" placeholder="搜索产品名称.按回车搜索" autocomplete="off" id="search">
                 <i class="icon-search"></i>
@@ -168,7 +165,7 @@
             //回车搜索
             $("#search").keyup(function(e) {
                 if (e.keyCode === 13) {
-                    var url =  "{:_U('index?query_name=PLACEHODLE')}";
+                    var url =  "{:_U('verify?query_name=PLACEHODLE')}";
                     var query = $('#search').val();
                     url = url.replace('PLACEHODLE',query);
                     window.location.href = url;
