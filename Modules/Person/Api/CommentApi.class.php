@@ -37,7 +37,11 @@ class CommentApi {
         $model->page($page,$page_size);
         $result = $model->select();
         if(!$result){
-            api_msg("暂无数据!");
+            if($page == 1){
+                api_msg("还没有评论呢,赶快来评论一个吧!");
+            }else{
+                api_msg("没有更多评论了");
+            }
             return false;
         }else{
             for($i=0;$i<count($result);$i++){

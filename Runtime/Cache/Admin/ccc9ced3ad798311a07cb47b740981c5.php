@@ -229,7 +229,7 @@
                     <td><?php echo ($node["sort"]); ?></td>
                     <td><?php echo ($node["id"]); ?></td>
                     <td>
-                        <?php $__FOR_START_319787151__=0;$__FOR_END_319787151__=$node["level"];for($i=$__FOR_START_319787151__;$i < $__FOR_END_319787151__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
+                        <?php $__FOR_START_1016492778__=0;$__FOR_END_1016492778__=$node["level"];for($i=$__FOR_START_1016492778__;$i < $__FOR_END_1016492778__;$i+=1){ if($i == $node['level']-1): if($node['last']): ?>|__
                                     <?php else: ?>
                                     |--<?php endif; ?>
                                 <?php else: ?>

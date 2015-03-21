@@ -1,0 +1,310 @@
+[ 2015-03-20T16:24:47+08:00 ] 192.168.0.105 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426839885&_hash=0d8aa98c7a2b8f4c688ce66b5539747b8450edcf
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001223s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 0 AND `temp_end` < 101 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 117 行.
+
+[ 2015-03-20T16:36:21+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426840581&_hash=0dbaba08c54d04fcf27d934afe3f79603a0cb9a3
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002031s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 9 AND `temp_end` < 21 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 117 行.
+
+[ 2015-03-20T16:37:05+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426840625&_hash=c4779d02538da640c7531cb2b8822b6a765be0e0
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002445s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 9 AND `temp_end` < 21 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+
+[ 2015-03-20T16:37:15+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426840635&_hash=f4c32ab14deeb3c6ef688b4fafed8d102d36be00
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002510s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 9 AND `temp_end` < 21 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.002329s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000641s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000384s ]
+
+[ 2015-03-20T16:37:25+08:00 ] 192.168.0.105 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426840644&_hash=cd199629be6ecde9f85eb3a6a0a31f869619620a
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002001s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 0 AND `temp_end` < 101 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000186s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000934s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000098s ]
+
+[ 2015-03-20T17:03:28+08:00 ] 192.168.0.105 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426842208&_hash=37b0d05db7ee6df142566eb3437e4ca3527c165c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001472s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 0 AND `temp_end` < 101 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000949s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000502s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000194s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000110s ]
+
+[ 2015-03-20T17:03:29+08:00 ] 192.168.0.105 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426842208&_hash=37b0d05db7ee6df142566eb3437e4ca3527c165c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002077s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 0 AND `temp_end` < 101 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000210s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000965s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000138s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000096s ]
+
+[ 2015-03-20T17:27:10+08:00 ] 192.168.0.105 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426843629&_hash=de7fec4fbb07f53e23a6e7f1e0332785c2a67bd4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001349s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 0 AND `temp_end` < 101 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000573s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001051s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000470s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000492s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000127s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000110s ]
+
+[ 2015-03-20T17:51:35+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845095&_hash=882c6e8789d1823c5d79388414a4747ec0c18fdd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002146s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > -1 AND `temp_end` < 9 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000946s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 118 LIMIT 1   [ RunTime:0.000141s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 186 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 70 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 71 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 75 LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000174s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000117s ]
+
+[ 2015-03-20T17:52:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845161&_hash=c91d840edf11b930fe2ad7120695caf8bce5ab13
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001982s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > 9 AND `temp_end` < 21 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001039s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000147s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:115) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T17:53:03+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845183&_hash=1be13a66ca3b566f5cd9f5182d103ac39d8ba129
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001988s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > -1 AND `temp_end` < 9 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000826s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 118 LIMIT 1   [ RunTime:0.000135s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 186 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 70 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 71 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 73 LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 74 LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 75 LIMIT 1   [ RunTime:0.000201s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000167s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 80 LIMIT 1   [ RunTime:0.000168s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:115) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T17:54:56+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845296&_hash=4c1a95538d59a2b21430878df611f417ae5a7258
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002001s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` <> 0 AND `temp_end` <> 0 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000193s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000897s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000128s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000089s ]
+
+[ 2015-03-20T17:55:18+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845318&_hash=77d58a8c1778c68b07f23bd3588c59d8b234fb30
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002085s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` <> 0 AND `temp_end` <> 0 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000186s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001572s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000493s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 211 LIMIT 1   [ RunTime:0.000089s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:117) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T17:57:37+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845457&_hash=eb5d967c14f2ba11fd6b438b57b41cea09b541d7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002957s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <8 AND temp_start != 0 AND temp_end !=0 ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000196s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:114) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T18:02:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845778&_hash=04b33c1eda27c234abdf1ff0980f4dbeb68c771c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001279s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <8 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000219s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:114) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T18:04:16+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845856&_hash=557c009f50b2476072d26ddeddbc16c7830f3c40
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003289s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <8 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000187s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <8 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10  
+
+[ 2015-03-20T18:04:20+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845860&_hash=26fb6718566ce4a62942d648a31aa42c08967680
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001961s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <50 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000105s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <50 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10  
+
+[ 2015-03-20T18:04:23+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845863&_hash=7773cc98bc880136f1c4c57266b2988395a95a4f
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002198s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000358s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10  
+
+[ 2015-03-20T18:04:28+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845868&_hash=f400cbaf701f479d014a54a0f7aabb58445d2b63
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002295s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000087s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10' at line 1
+ [ SQL语句 ] : SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0)) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10  
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:114) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T18:04:40+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845880&_hash=eb1ce0879ca0f6a135cfb6b24ec87a0f8178c3b1
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002281s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000206s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:114) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T18:04:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845881&_hash=bb0af6f1e6d66ad532ed46d9f2015c07e8f91dbf
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002512s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000182s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php:114) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-20T18:04:44+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845884&_hash=99adcd4d707f2da62d2c471da774c01aa0486693
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002370s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <20 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000204s ]
+
+[ 2015-03-20T18:04:47+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845887&_hash=7214a339b1fc0eaaf42bdb5268ce9c4c4138d7cf
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002003s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <30 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000974s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000481s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000540s ]
+
+[ 2015-03-20T18:05:23+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845923&_hash=0b0474265aa2b328d2736ab4f3d8ca50e6f94717
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001257s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <9 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000191s ]
+
+[ 2015-03-20T18:05:29+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426845929&_hash=579d282262fce4a9a3e5d557a1f31372430ea574
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002369s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end <10 AND !(temp_start=0 AND temp_start=0) ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000214s ]
+
+[ 2015-03-20T18:06:55+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846014&_hash=f6ae96ce96309e02b13818b197955452be320832
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.003044s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end<8 ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000277s ]
+
+[ 2015-03-20T18:06:58+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846018&_hash=9f2f3d40adbdf7e6c7defafe6d8eff8078b2a013
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001903s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE ( temp_start >0 AND temp_end<10 ) ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000173s ]
+
+[ 2015-03-20T18:07:36+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846056&_hash=73627ca03698f304e630b8ad2d27dd00265d2e3b
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002383s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '0' AND `temp_end` < '10' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000217s ]
+
+[ 2015-03-20T18:07:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846061&_hash=7e6099d9d709fb11705004dce7fc11066474bd69
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001936s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '0' AND `temp_end` < '100' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000205s ]
+NOTIC: [8] Undefined index: temp_start /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+NOTIC: [8] Undefined index: temp_end /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+NOTIC: [8] Undefined index: temp_start /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+NOTIC: [8] Undefined index: temp_end /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+
+[ 2015-03-20T18:07:57+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846077&_hash=aced1024a94204d32cdef77c415b1754c2b05927
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002120s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '5' AND `temp_end` < '10' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000213s ]
+
+[ 2015-03-20T18:08:14+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846094&_hash=6f003b1e4ce86a9020b0934ae9849c8fa191a48c
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001393s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '20' AND `temp_end` < '40' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000200s ]
+
+[ 2015-03-20T18:08:18+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846098&_hash=cf2fa800260e09bc0514106143c5e9c1b04723d5
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002946s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '20' AND `temp_end` < '45' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000305s ]
+NOTIC: [8] Undefined index: temp_start /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+NOTIC: [8] Undefined index: temp_end /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 118 行.
+
+[ 2015-03-20T18:09:14+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846154&_hash=13fbb4c53194edb177283ecd6ae63c8c2e053bcd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002436s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '20' AND `temp_end` < '45' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000212s ]
+NOTIC: [8] Undefined index: temp_start /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 119 行.
+NOTIC: [8] Undefined index: temp_end /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 119 行.
+
+[ 2015-03-20T18:09:24+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846164&_hash=fafadef09cd7d8f3df6e6ff9bf4986ddab943602
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002899s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '10' AND `temp_end` < '25' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000212s ]
+
+[ 2015-03-20T18:09:31+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846171&_hash=36455ce84d03aa157ef139c9262bf1f30a369c4e
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002798s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '10' AND `temp_end` < '25' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000301s ]
+
+[ 2015-03-20T18:21:06+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846866&_hash=9bb170a414eb17f9eb8b838bf2673246897e61dd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002037s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '10' AND `temp_end` < '25' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000196s ]
+
+[ 2015-03-20T18:21:17+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846877&_hash=7e2a768f8174251ef5847488e3462813850cc186
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001973s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '0' AND `temp_end` < '25' AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: temp_start /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 119 行.
+NOTIC: [8] Undefined index: temp_end /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 119 行.
+
+[ 2015-03-20T18:21:59+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426846919&_hash=c50e9db07ff2376535fd16ebb7d535c0d9c70794
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002390s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '0' AND `temp_end` < '25' AND `is_set_temp` = 1 AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000228s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000936s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000477s ]
+
+[ 2015-03-20T18:26:13+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426847173&_hash=0c524d6822fd1f04f798edcc08fba09c331c9311
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001421s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '9' AND `temp_end` < '18' AND `is_set_temp` = 1 AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000220s ]
+
+[ 2015-03-20T18:26:35+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426847195&_hash=eada222bb27fcd2caba194adbc9bc7d3a0602c6e
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002907s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '0' AND `temp_end` < '25' AND `is_set_temp` = 1 AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.001035s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000163s ]
+
+[ 2015-03-20T18:26:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426847202&_hash=fbc449d0e8675fe9f9fbe778242058ea8b34abdd
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002115s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` > '9' AND `temp_end` < '18' AND `is_set_temp` = 1 AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.000462s ]
+
+[ 2015-03-20T18:30:16+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProductionByTemp&_time=1426847416&_hash=a5a0d363e6639836e06f7307cf69626b86c23189
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.001199s ]
+SQL: SELECT `id`,`picture`,`name` FROM `jdi_production` WHERE `temp_start` < 13.5 AND `temp_end` > 13.5 AND `is_set_temp` = 1 AND `status` = 1 ORDER BY is_top desc,recommend desc,create_time LIMIT 0,10   [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000988s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 183 LIMIT 1   [ RunTime:0.000462s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 206 LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 207 LIMIT 1   [ RunTime:0.000129s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 210 LIMIT 1   [ RunTime:0.000109s ]
+

@@ -61,29 +61,70 @@ class ProductionApi {
                 }
             }
         }
-
-
         if(!$result){
-            api_msg("没有产品!");
+            if($page == 1){
+                api_msg("暂时还没有产品!");
+            }else{
+                api_msg("没有更多的产品了!");
+            }
             return false;
         }else{
             return $result;
         }
     }
 
+    /**
+     * 获取产品
+     * @param int $id 查询
+     * @param string $key key
+     * @param int $width 宽度
+     * @param int $height 高度
+     * @return mixed
+     */
     public static function getProduction($id,$key="id",$width=200,$height=100){
         $result = M('Production')->field(true)->where(array($key=>$id))->find();
-        $result['collect_num'] = StaffApi::staffNum("production",$result['id']);
-        $result['like_num'] = StaffApi::staffNum("production",$result['id'],"like");
-        $result['is_collect'] = StaffApi::hasStaff("production",$result['id']);
-        $result['is_like'] = StaffApi::hasStaff("production",$result['id'],"like");
-        $cover_path  = get_cover_path($result['picture']);;
-        $result['picture_no_thumb'] = $cover_path;
-        if($width !=0 && $height!=0){
-            $result['picture'] = thumb($cover_path,$width,$height);
+        if($result){
+            $result['collect_num'] = StaffApi::staffNum("production",$result['id']);
+            $result['like_num'] = StaffApi::staffNum("production",$result['id'],"like");
+            $result['is_collect'] = StaffApi::hasStaff("production",$result['id']);
+            $result['is_like'] = StaffApi::hasStaff("production",$result['id'],"like");
+            $cover_path  = get_cover_path($result['picture']);;
+            $result['picture_no_thumb'] = $cover_path;
+            if($width !=0 && $height!=0){
+                $result['picture'] = thumb($cover_path,$width,$height);
+            }else{
+                $result['picture'] = get_cover_path($result['picture']);
+            }
+            return $result;
         }else{
-            $result['picture'] = get_cover_path($result['picture']);
+            return false;
         }
-        return $result;
+    }
+
+    /**
+     *
+     * 获取温度适合吃的雪糕
+     * @param int  $start 起始温度
+     * @param int $end 结束温度
+     * @return array|bool|mixed
+     */
+    public static function getProductionByTemp($start,$end){
+        $value = ($start+$end)/2;
+        $map['temp_start']= array('lt',$value);
+        $map['temp_end'] = array('gt',$value);
+        $map['is_set_temp'] = 1;
+        $map['status'] = 1;
+        $result = M('Production')->field("id,picture,name")->where($map)->order("is_top desc,recommend desc,create_time")->limit('0,10')->select();
+        if($result){
+            for($i=0;$i<count($result);$i++){
+                $cover_path  = get_cover_path($result[$i]['picture']);;
+                $result[$i]['picture'] = thumb($cover_path,200,100);
+                $real_result[] =$result[$i];
+            }
+            return $result;
+        }else{
+            api_msg("这个温度好像不太适合吃雪糕啊!");
+            return false;
+        }
     }
 }

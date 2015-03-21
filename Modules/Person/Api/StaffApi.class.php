@@ -50,7 +50,12 @@ class StaffApi {
         $result = $model->select();
         $return = array();
         if(!$result){
-            api_msg("暂无数据!");
+            $str = $action=="collect"?"收藏":"点赞";
+            if($page == 1){
+                api_msg("暂时还没有".$str."记录哦,赶快去".$str."一个吧!");
+            }else{
+                api_msg("没有更多的".$str."记录喽");
+            }
             return false;
         }else{
             for($i=0;$i<count($result);$i++){

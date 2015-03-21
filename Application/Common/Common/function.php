@@ -1346,10 +1346,10 @@ function api($array,$vars=array()){
     }
 
     $class = $module.'\\Api\\'.$class_name.'Api';
-
     try{
         $reflect_class = new ReflectionClass($class);
         if($reflect_class->hasMethod($method)){
+
             $reflect_method = $reflect_class->getMethod($method);
             $params =  $reflect_method->getParameters();
             $real_vars = array();

@@ -220,6 +220,11 @@
             <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('del');?>" target-form="ids"
                     data-tip="确定要删除么?">删 除
             </button>
+            <button class="btn btn-sm btn-primary ajax-post confirm" url="<?php echo _U('forbid');?>" target-form="ids">禁 用
+            </button>
+            <button class="btn btn-sm btn-primary ajax-post" url="<?php echo _U('resume');?>" target-form="ids">
+                启用
+            </button>
         </div>
 
         <div class="pull-right">
@@ -278,6 +283,7 @@
                 <th>公司名称</th>
                 <th>产品发布者</th>
                 <th>产品编码</th>
+                <th>推荐食用温度</th>
                 <th>点赞数量</th>
                 <th>收藏数量</th>
                 <th>评论数量</th>
@@ -285,7 +291,6 @@
                 <th>状态</th>
                 <th>置顶</th>
                 <th>推荐</th>
-                <th>操作</th>
             </tr>
             </thead>
             <tbody>
@@ -300,10 +305,18 @@
                         <td><a href="javascript:void(0);" class="production_info" data-name="<?php echo ($com["name"]); ?>"  data-id="<?php echo ($com["id"]); ?>"><?php echo ($com["name"]); ?></a></td>
                         <td><a href="javascript:void(0);" class="company_info" data-uid = "<?php echo ($com["uid"]); ?>"  data-name="<?php echo get_company_name($com['uid']);?>" data-id="<?php echo ($com["id"]); ?>"><?php echo get_company_name($com['uid']);?></a></td>
                         <td><?php echo get_user_filed($com['uid'],"username");?></td>
-                        <th><?php echo ((isset($com["code"]) && ($com["code"] !== ""))?($com["code"]):"未设置"); ?></th>
+                        <th><?php if(empty($com["code"])): ?><a title="设置编码" class="setCode" data-id="<?php echo ($com['id']); ?>"   data-url="<?php echo _U('setCode');?>" href="javascript:;">设置编码</a>
+                            <?php else: ?>
+                            <?php echo ($com["code"]); endif; ?>
+                            </th>
+                        <td>
+                            <?php if($com["temp_end"] == 0): ?><a title="设置推荐温度" class="setTemp" data-id="<?php echo ($com['id']); ?>"   data-url="<?php echo _U('setCode');?>" href="javascript:;">设置</a>
+                                <?php else: ?>
+                                <a title="设置推荐温度" class="setTemp" data-id="<?php echo ($com['id']); ?>"   data-url="<?php echo _U('setCode');?>" href="javascript:;"><?php echo ($com["temp_start"]); ?>&#176;C~<?php echo ($com["temp_end"]); ?>&#176;C</a><?php endif; ?>
+                        </td>
                         <td><?php echo ($com["like_num"]); ?></td>
                         <td><?php echo ($com["collect_num"]); ?></td>
-                        <td><?php echo ($com["comment_num"]); ?></td>
+                        <td> <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>"><?php echo ($com["comment_num"]); ?></a></td>
                         <td><?php echo (date("Y-m-d H:i",$com["create_time"])); ?></td>
                         <td>
                             <?php echo ($com["status_text"]); ?>
@@ -318,13 +331,6 @@
                                 <?php else: ?>
                                 <a title="取消推荐" class="ajax-get"   href="<?php echo _U('recommend?status=0&id='.$com['id']);?>">取消推荐</a><?php endif; ?>
                         </th>
-                        <td>
-                            <?php if(empty($com["code"])): ?><a title="设置编码" class="setCode" data-id="<?php echo ($com['id']); ?>"   data-url="<?php echo _U('setCode');?>" href="javascript:;">设置编码</a><?php endif; ?>
-                            <a title="查看评论"    href="<?php echo _U('comment?table=production&name='.$com['name'].'&id='.$com['id']);?>">相关评论</a>
-                            <a title="删除" class="confirm ajax-get"   href="<?php echo _U('del?id='.$com['id']);?>">删除</a>
-                            <?php if($com['status'] == 0): ?><a title="启用" class="ajax-get"   href="<?php echo _U('resume?id='.$com['id']);?>">启用</a><?php endif; ?>
-                            <?php if($com['status'] == 1): ?><a title="禁用" class="ajax-get"   href="<?php echo _U('forbid?id='.$com['id']);?>">禁用</a><?php endif; ?>
-                        </td>
                     </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php else: ?>
                 <td colspan="14" class="text-center"> aOh! 暂时还没有内容! </td><?php endif; ?>
@@ -446,6 +452,46 @@
                                 ,
                                 {
                                     'code':result,
+                                    'id':id
+                                },
+                                function(data){
+                                    if (data.status) {
+                                        okAlert(data.msg);
+                                        setTimeout(function(){
+                                            location.reload();
+                                        },1500);
+                                    }else{
+                                        errorAlert(data.msg);
+                                    }
+                                },
+                                'json'
+                        );
+                    } else {
+                        alert("输入不能为空!");
+                    }
+                }
+            });
+        });
+
+        $(".setTemp").click(function() {
+            var id = $(this).data("id")
+            var url =$(this).data("url");
+            bootbox.prompt("请输入适宜食用温度(比如20到30度的话就输入20,30 如果取消设置或者不设置就输入0,0)", function(result) {
+                if(result !== null){
+                    if (result) {
+                        var reg = /^\d+,\d+$/;
+                        if(!result.match(reg)){
+                            alert("输入的格式不正确！");
+                            return;
+                        }
+                        var arr = result.split(',');
+
+                        $.post(
+                                url
+                                ,
+                                {
+                                    'temp_start':arr[0],
+                                    'temp_end':arr[1],
                                     'id':id
                                 },
                                 function(data){

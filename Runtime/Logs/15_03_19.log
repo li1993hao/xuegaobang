@@ -1,0 +1,173 @@
+[ 2015-03-19T15:36:22+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProduction&_time=1426750582&_hash=637c835dbf0e586740598edc23c2bb384542a727
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002028s ]
+SQL: SELECT `id`,`uid`,`name`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top`,`comment_num`,`collect_num`,`place`,`like_num`,`code` FROM `jdi_production` WHERE `code` = '10' LIMIT 1   [ RunTime:0.000460s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.002203s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'collect' LIMIT 1   [ RunTime:0.009844s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 85 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'like' LIMIT 1   [ RunTime:0.000717s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 86 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'collect' AND `uid` = 1 LIMIT 1   [ RunTime:0.000196s ]
+NOTIC: [8] Undefined index: id /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 87 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'production' AND `topic_id` = null AND `action` = 'like' AND `uid` = 1 LIMIT 1   [ RunTime:0.000174s ]
+NOTIC: [8] Undefined index: picture /Users/haoli/Desktop/www/xuegaobang/Modules/BaiBang/Api/ProductionApi.class.php 第 88 行.
+
+[ 2015-03-19T15:36:52+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=BaiBang&_C=Production&_A=getProduction&_time=1426750612&_hash=a2b9ad0beae50ceb68767c04766f387bd08cad31
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_production` [ RunTime:0.002902s ]
+SQL: SELECT `id`,`uid`,`name`,`introduce`,`picture`,`create_time`,`update_time`,`status`,`category`,`burdening`,`recommend`,`is_top`,`comment_num`,`collect_num`,`place`,`like_num`,`code` FROM `jdi_production` WHERE `code` = '10' LIMIT 1   [ RunTime:0.000194s ]
+
+[ 2015-03-19T18:55:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762542&_hash=9ae5b30d0b525dca0ebd3cba7c80d0e30b0e3214
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001927s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000856s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 170 LIMIT 1   [ RunTime:0.000134s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 171 LIMIT 1   [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000971s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 208 LIMIT 1   [ RunTime:0.000136s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 209 LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000137s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 169 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 168 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 8 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 178 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 179 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 184 LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 185 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 11 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000269s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 189 LIMIT 1   [ RunTime:0.000179s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 191 LIMIT 1   [ RunTime:0.000149s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000151s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 198 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 199 LIMIT 1   [ RunTime:0.000162s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000153s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 196 LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 197 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000121s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 202 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 199 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000112s ]
+
+[ 2015-03-19T18:55:55+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762555&_hash=296285fddc5e5c3ccc913e6f30c2ac22f383a396
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001938s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 10,10   [ RunTime:0.000155s ]
+
+[ 2015-03-19T18:56:13+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762573&_hash=c7efc9195b867c365088004f1254458bb2698998
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003508s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000192s ]
+
+[ 2015-03-19T18:56:16+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762576&_hash=b88c7648238ea4f2c1e3e9a8e17f09016246dcb6
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001894s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 0,10   [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `jdi_picture` [ RunTime:0.000906s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 170 LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 171 LIMIT 1   [ RunTime:0.000103s ]
+SQL: SHOW COLUMNS FROM `jdi_user_staff` [ RunTime:0.000947s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 9 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 208 LIMIT 1   [ RunTime:0.000119s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 209 LIMIT 1   [ RunTime:0.000092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 7 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000126s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 169 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 168 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 8 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 178 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 179 LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 10 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 184 LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 185 LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 11 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 189 LIMIT 1   [ RunTime:0.000087s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 191 LIMIT 1   [ RunTime:0.000112s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 12 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000169s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 198 LIMIT 1   [ RunTime:0.000117s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 199 LIMIT 1   [ RunTime:0.000166s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 13 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000148s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 196 LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 197 LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 14 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000131s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 202 LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT * FROM `jdi_picture` WHERE `status` = 1 AND `id` = 199 LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jdi_user_staff` WHERE `topic_table` = 'company' AND `topic_id` = 15 AND `action` = 'collect' AND `uid` = 0 LIMIT 1   [ RunTime:0.000121s ]
+
+[ 2015-03-19T18:57:01+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762621&_hash=6e2cedba92c661155ddb1dd7aed33535bab53428
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001897s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000162s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1373) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:57:01+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762621&_hash=6e2cedba92c661155ddb1dd7aed33535bab53428
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001993s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000152s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1373) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:57:41+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762661&_hash=7627377cbc38cadd8592f8bdd935ebb68cc8003d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002619s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000151s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1349) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:57:42+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762662&_hash=68b55abd954252ff82e0508b37fa2cc10cf34fb4
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.001905s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000159s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1349) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:58:00+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762680&_hash=c0efbe8578b06a516b6b3c3c07342faaea788201
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002119s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000181s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1351) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:58:11+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762691&_hash=e556f3c52dd2fa84ecfb693d58751f46ca182c30
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003001s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000207s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1352) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:58:25+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762705&_hash=609e55d2c5f8c34b0b767a486718c1eb7191b203
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003082s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000177s ]
+
+[ 2015-03-19T18:58:46+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762726&_hash=42b715ffb9f23dd9c023e49ac3979b21eafd269d
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002282s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000178s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1351) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:59:00+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762740&_hash=6d9f4d48f4c2a3823e276412870385cc042e9695
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002405s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000190s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1352) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:59:09+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762749&_hash=43680eb49e7a7fbde855ee2dad7285983fb19fa7
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003171s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000160s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1367) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T18:59:25+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762765&_hash=305ecd8e4e916be33235ee9fce4444f4e7cfaa02
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003031s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000179s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1367) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T19:00:01+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762801&_hash=55bb6f52953d64a2e19e392484816378b4e6fdc2
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.002068s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000181s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/haoli/Desktop/www/xuegaobang/Application/Common/Common/function.php:1367) /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Mode/Api/Controller.class.php 第 60 行.
+
+[ 2015-03-19T19:00:30+08:00 ] ::1 /xuegaobang/api.php?_R=Modules&_M=Person&_C=Person&_A=companyLists&_time=1426762830&_hash=506cfbc0db1701edecc58f24f2aeb21bbc71c060
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead /Users/haoli/Desktop/www/xuegaobang/ThinkPHP/Library/Think/Db/Driver/Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jdi_company` [ RunTime:0.003195s ]
+SQL: SELECT `id`,`picture`,`name`,`telephone`,`uid`,`introduce`,`status`,`category`,`point`,`place`,`create_time`,`update_time`,`comment_num`,`collect_num`,`detail_banner`,`is_top` FROM `jdi_company` WHERE `status` = 1 LIMIT 20,10   [ RunTime:0.000160s ]
+

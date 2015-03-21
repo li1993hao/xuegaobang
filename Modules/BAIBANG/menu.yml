@@ -29,7 +29,7 @@
             url: member/comment
   - title: 公司审核
     url: company/verify
-焦点:
+其他:
   - title: 焦点图管理
     url: hotMap/index
     children:

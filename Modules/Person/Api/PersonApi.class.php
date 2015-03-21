@@ -79,7 +79,11 @@ class PersonApi {
         $model->page($page,$page_size);
         $result = $model->select();
         if(!$result){
-            api_msg("暂无结果!!");
+            if($page == 1){
+                api_msg("暂时还未有公司资料!");
+            }else{
+                api_msg("一共就这么多,没有更多的公司了!");
+            }
             return false;
         }else{
             for($i=0;$i<count($result);$i++){

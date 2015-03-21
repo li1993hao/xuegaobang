@@ -501,8 +501,6 @@
                                                 "width"           : 120,
                                                 'removeTimeout'	  : 1,
                                                 'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
-                                                "fileSizeLimit"   :250,
-                                                'sizeLimit' 	 : 250*1024,
                                                 "onUploadSuccess" : uploadPicture<?php echo ($field["name"]); ?>,
                                                 "onFallback" : function() {
                                                     alert('未检测到兼容版本的Flash.');

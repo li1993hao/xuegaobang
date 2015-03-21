@@ -39,7 +39,11 @@ class TieBaApi {
         }
 
         if(!$result){
-            api_msg("暂无帖子!");
+            if($page == 1){
+                api_msg("暂时还没有帖子,快来发布一个把!");
+            }else{
+                api_msg("没有更多帖子!");
+            }
             return false;
         }else{
             return $result;
@@ -86,7 +90,6 @@ class TieBaApi {
         $result['collect_num'] = StaffApi::staffNum("tieba",$result['id']);
         $result['like_num'] = StaffApi::staffNum("tieba",$result['id'],"like");
         $result['commentNum'] = CommentApi::commentNum("tieba",$result['id']);
-
         return $result;
     }
 

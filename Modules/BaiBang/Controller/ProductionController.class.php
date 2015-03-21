@@ -71,7 +71,7 @@ class ProductionController extends CommonController {
     public function  index(){
         MK();
         $map = $this->search_parse();
-        $map['status'] = 1;
+        $map['status'] = array('gt',-1);
 
         $list = $this->p_lists('Production',$map,'is_top desc,create_time desc');
         if($list){
@@ -102,8 +102,16 @@ class ProductionController extends CommonController {
      * 设置编码
      */
     public function setCode(){
+        if(isset($_POST['temp_start'])){
+            if($_POST['temp_start']==0 && $_POST['temp_end']==0){
+                $_POST['is_set_temp'] = 0;
+            }else{
+                $_POST['is_set_temp'] = 1;
+            }
+        }
         parent::edit('Production');
     }
+
 
     /**
      * 审核不通过
